@@ -2,8 +2,9 @@ name: Sincronizador Automático de Agenda Argentina UK
 
 on:
   schedule:
-    # Se ejecuta automáticamente 2 veces al día: a las 08:00 y a las 20:00 (Hora de Londres/Reino Unido)
-    - cron: '0 8,20 * * *'
+    # Se ejecuta automáticamente a las 07:00 y a las 17:00 (Hora de Londres / BST)
+    # Traducido a UTC (servidor): 06:00 y 16:00
+    - cron: '0 6,16 * * *'
   workflow_dispatch: # Te permite activar el rastreo manualmente con un botón si tenés una urgencia
 
 jobs:
