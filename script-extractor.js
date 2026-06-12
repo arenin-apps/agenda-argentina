@@ -2,7 +2,7 @@ const fs = require('fs');
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-// Portales oficiales monitoreados automáticamente (¡Ahora con Wigmore Hall!)
+// Portales oficiales monitoreados automáticamente
 const PORTALES = [
   { name: "Sadlers Wells", url: "https://www.sadlerswells.com/whats-on/?search=argent", base: "https://www.sadlerswells.com" },
   { name: "Southbank Centre", url: "https://www.southbankcentre.co.uk/?s=argent", base: "https://www.southbankcentre.co.uk" },
@@ -10,7 +10,7 @@ const PORTALES = [
   { name: "Barbican", url: "https://www.barbican.org.uk/whats-on?search=argent", base: "https://www.barbican.org.uk" },
   { name: "BFI Player", url: "https://player.bfi.org.uk/search?q=argent", base: "https://player.bfi.org.uk" },
   { name: "The Nickel", url: "https://thenickel.co.uk", base: "https://thenickel.co.uk" },
-  { name: "Wigmore Hall", url: "https://www.wblive.co.uk/events", base: "https://www.wblive.co.uk" } // NUEVA MINA DE ORO MÚSICAL
+  { name: "Wigmore Hall", url: "https://www.wblive.co.uk/events", base: "https://www.wblive.co.uk" }
 ];
 
 const TEXTOS_TICKET_VALIDOS = ['book', 'ticket', 'buy', 'reserva', 'entradas', 'event', 'whats-on/', 'tate-modern', 'movie', 'events/'];
@@ -20,12 +20,10 @@ function limpiarYOptimizarUrl(urlOriginal) {
   if (!urlOriginal) return null;
   let urlPura = urlOriginal.trim();
 
-  // Corregir de forma automática los cambios estructurales de la Tate Modern
   if (urlPura.includes('tate.org.uk')) {
     urlPura = urlPura.replace('/exhibition/', '/');
   }
 
-  // Podar parámetros basura de búsquedas (?s=, ?search=, ?utm_source=...)
   if (urlPura.includes('?')) {
     const partes = urlPura.split('?');
     if (!partes[1].includes('s=') && !partes[1].includes('search=') && !partes[1].includes('q=')) {
@@ -44,7 +42,6 @@ function esLinkProfundoValido(href, baseUrL) {
   return TEXTOS_TICKET_VALIDOS.some(texto => link.includes(texto));
 }
 
-// Extraer el dominio base de una URL para comparar anulaciones
 function obtenerDominio(url) {
   if (!url) return "";
   try {
@@ -57,9 +54,9 @@ function obtenerDominio(url) {
 
 // 2. PROCESO PRINCIPAL COMBINADO HÍBRIDO
 async function ejecutarRastreo() {
-  console.log("Iniciando escaneo inteligente Híbrido con Wigmore Hall incorporado...");
+  console.log("Iniciando escaneo multi-show: Extrayendo múltiples eventos por portal...");
   
-  // Lista inicial inmutable con tus producciones curadas de alta prioridad
+  // Lista inicial inmutable de alta prioridad
   let eventosFinales = [
     {
       category: "Artes Plásticas / Exhibición",
@@ -112,16 +109,15 @@ async function ejecutarRastreo() {
       const panel = JSON.parse(fs.readFileSync('panel-control.json', 'utf8'));
       urlMailchimp = panel.newsletter_mailchimp_url || "";
       urlsManualesAnulacion = panel.urls_individuales_extra || [];
-      console.log(`✓ Panel de control cargado. Enlaces manuales detectados: ${urlsManualesAnulacion.length}`);
     }
   } catch (err) {
-    console.log("Aviso: panel-control.json no inicializado. Se usará el rastreo puro.");
+    console.log("Uso de rastreo puro activo.");
   }
 
   // SECCIÓN A: RASTREAR EL NEWSLETTER MENSUAL DE MAILCHIMP
   if (urlMailchimp && urlMailchimp.includes('mailchi.mp')) {
     try {
-      console.log(`📡 Analizando boletín de la Embajada Argentina: ${urlMailchimp}`);
+      console.log(`📡 Analizando boletín de la Embajada Argentina...`);
       const resMailchimp = await axios.get(urlMailchimp, { headers: { 'User-Agent': 'Mozilla/5.0' }, timeout: 10000 });
       const $mc = cheerio.load(resMailchimp.data);
       
@@ -131,12 +127,9 @@ async function ejecutarRastreo() {
         
         if (titulo.length > 5 && titulo.length < 120 && !titulo.includes('Newsletter') && !titulo.includes('Embajada')) {
           let linkDestino = urlMailchimp;
-          
           $mc(el).parent().find('a').each((j, link) => {
             const href = $mc(link).attr('href');
-            if (href && !href.includes('mailchimp') && !href.includes('cancilleria')) {
-              linkDestino = href;
-            }
+            if (href && !href.includes('mailchimp') && !href.includes('cancilleria')) linkDestino = href;
           });
 
           eventosFinales.push({
@@ -152,102 +145,8 @@ async function ejecutarRastreo() {
         }
       });
     } catch (e) {
-      console.log(`⚠️ No se pudo procesar el link de Mailchimp en este ciclo: ${e.message}`);
+      console.log(`Error Mailchimp omitido.`);
     }
   }
 
-  // SECCIÓN B: RASTREO TRADICIONAL AUTOMÁTICO EN PORTALES DE UK CON OVERRIDE ACTIVO
-  for (const portal of PORTALES) {
-    try {
-      console.log(`Rastreando portal oficial: ${portal.name}...`);
-      const response = await axios.get(portal.url, { 
-        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
-        timeout: 8000
-      });
-      
-      const $ = cheerio.load(response.data);
-      let linksDelPortal = [];
-
-      // Recolectar todos los enlaces del HTML
-      $('a').each((i, el) => {
-        let href = $(el).attr('href');
-        if (!href) return;
-        if (href.startsWith('/')) href = portal.base + href;
-
-        // Regla especial para atrapar contenido argentino en Wigmore Hall si el texto o href matchea
-        const textoEnlace = $(el).text().toLowerCase();
-        const esArgentinoWigmore = portal.name === "Wigmore Hall" && (textoEnlace.includes('argent') || textoEnlace.includes('piazzolla') || textoEnlace.includes('tango'));
-
-        if (esLinkProfundoValido(href, portal.base) || esArgentinoWigmore) {
-          linksDelPortal.push(limpiarYOptimizarUrl(href));
-        }
-      });
-
-      // Si el portal devolvió enlaces válidos, procesamos el hallazgo
-      if (linksDelPortal.length > 0) {
-        let linkFinalAAsignar = linksDelPortal[0];
-        const dominioPortal = obtenerDominio(portal.base);
-
-        // --- SISTEMA CRÍTICO DE ANULACIÓN (OVERRIDE) ---
-        for (const urlManual of urlsManualesAnulacion) {
-          if (obtenerDominio(urlManual) === dominioPortal) {
-            console.log(`🎯 ¡ANULACIÓN APLICADA para ${portal.name}! Reemplazando error automático por tu link exacto: ${urlManual}`);
-            linkFinalAAsignar = urlManual; 
-            break;
-          }
-        }
-
-        // Determinar etiquetas según la sala
-        let categoriaAsignada = "Cultura / Agenda";
-        let tituloAsignado = `Espectáculo en ${portal.name}`;
-        if (portal.name === "The Nickel") { categoriaAsignada = "Cine / Proyección"; tituloAsignado = "Ciclo de Cine Argentino"; }
-        if (portal.name === "Wigmore Hall") { categoriaAsignada = "Música / Clásica"; tituloAsignado = "Concierto Especial en Wigmore Hall"; }
-
-        eventosFinales.push({
-          category: categoriaAsignada,
-          title: tituloAsignado,
-          artist: portal.name,
-          description: `Mapeo automático de cartelera activa en ${portal.name}. Ingresá al enlace oficial para revisar el programa de sala completo, precios de los tickets y artistas argentinos en escena.`,
-          venue: `${portal.name}, Londres`,
-          displayDate: "Consultar fechas en boletería",
-          date: "2026-06-28",
-          url: linkFinalAAsignar
-        });
-      }
-
-    } catch (error) {
-      console.log(`✕ Portal ${portal.name} omitido en este turno de reloj.`);
-    }
-  }
-
-  // SECCIÓN C: INYECTAR URLS MANUALES INDIVIDUALES QUE NO PERTENECEN A LOS PORTALES FIJOS
-  for (const urlManual of urlsManualesAnulacion) {
-    const dominioManual = obtenerDominio(urlManual);
-    const perteneceAPortalFijo = PORTALES.some(p => obtenerDominio(p.base) === dominioManual);
-
-    if (!perteneceAPortalFijo && urlManual.startsWith('http')) {
-      console.log(`🔗 Sumando link independiente exclusivo del panel: ${urlManual}`);
-      eventosFinales.push({
-        category: "Cultura / Destacado",
-        title: "Espectáculo Argentino Sincronizado",
-        artist: "Función Especial",
-        description: "Evento mapeado a través del Panel de Control. Accedé al enlace oficial de reserva para ver la grilla, precios y locación exacta.",
-        venue: "📍 Ver locación en ticketera",
-        displayDate: "Consultar fechas",
-        date: "2026-06-30",
-        url: limpiarYOptimizarUrl(urlManual)
-      });
-    }
-  }
-
-  // 3. GENERAR ARCHIVO COMPILADO FINAL
-  const resultadoFinal = {
-    lastUpdated: new Date().toLocaleString('es-ES', { timeZone: 'Europe/London' }) + ' (Hora UK)',
-    events: eventosFinales
-  };
-
-  fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log("¡Hecho! Archivo eventos.json actualizado con Wigmore Hall y Overrides.");
-}
-
-ejecutarRastreo();
+  // SECCIÓN B: RASTREO TRADICIONAL MULTI-SHOW CON OVERRIDE ACTIVO
