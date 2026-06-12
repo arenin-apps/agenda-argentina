@@ -2,7 +2,7 @@ const fs = require('fs');
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-// Portales oficiales monitoreados automáticamente (¡Ahora con la Royal Ballet and Opera!)
+// Portales oficiales monitoreados automáticamente (¡Ahora con De Puta Madre Club!)
 const PORTALES = [
   { name: "Sadlers Wells", url: "https://www.sadlerswells.com/whats-on/?search=argent", base: "https://www.sadlerswells.com" },
   { name: "Southbank Centre", url: "https://www.southbankcentre.co.uk/?s=argent", base: "https://www.southbankcentre.co.uk" },
@@ -11,10 +11,11 @@ const PORTALES = [
   { name: "BFI Player", url: "https://player.bfi.org.uk/search?q=argent", base: "https://player.bfi.org.uk" },
   { name: "The Nickel", url: "https://thenickel.co.uk", base: "https://thenickel.co.uk" },
   { name: "Wigmore Hall", url: "https://www.wblive.co.uk/events", base: "https://www.wblive.co.uk" },
-  { name: "Royal Ballet and Opera", url: "https://www.rbo.org.uk/tickets-and-events", base: "https://www.rbo.org.uk" } // NUEVA ADQUISICIÓN CRÍTICA
+  { name: "Royal Ballet and Opera", url: "https://www.rbo.org.uk/tickets-and-events", base: "https://www.rbo.org.uk" },
+  { name: "De Puta Madre Club", url: "https://deputamadreclub.eu/", base: "https://deputamadreclub.eu" } // NUEVA PRODUCTORA DE CONCIERTOS ROCK/POP
 ];
 
-const TEXTOS_TICKET_VALIDOS = ['book', 'ticket', 'buy', 'reserva', 'entradas', 'event', 'whats-on/', 'tate-modern', 'movie', 'events/', 'tickets-and-events/'];
+const TEXTOS_TICKET_VALIDOS = ['book', 'ticket', 'buy', 'reserva', 'entradas', 'event', 'whats-on/', 'tate-modern', 'movie', 'events/', 'tickets-and-events/', 'product/'];
 
 // 1. FUNCIÓN DE LIMPIEZA QUIRÚRGICA DE ENLACES
 function limpiarYOptimizarUrl(urlOriginal) {
@@ -55,9 +56,9 @@ function obtenerDominio(url) {
 
 // 2. PROCESO PRINCIPAL COMBINADO HÍBRIDO
 async function ejecutarRastreo() {
-  console.log("Iniciando escaneo multi-show global: Incluyendo Royal Ballet and Opera...");
+  console.log("Iniciando escaneo multi-show global: Portales Oficiales + Productoras de Rock/Pop...");
   
-  // Lista inicial inmutable de alta prioridad (Tus producciones directas y confirmadas)
+  // Lista inicial inmutable de alta prioridad (Tus eventos directos)
   let eventosFinales = [
     {
       category: "Artes Plásticas / Exhibición",
@@ -112,7 +113,7 @@ async function ejecutarRastreo() {
       urlsManualesAnulacion = panel.urls_individuales_extra || [];
     }
   } catch (err) {
-    console.log("Rastreo puro en ejecución.");
+    console.log("Rastreo puro activo.");
   }
 
   // SECCIÓN A: RASTREAR EL NEWSLETTER MENSUAL DE MAILCHIMP
@@ -171,13 +172,14 @@ async function ejecutarRastreo() {
         const textoEnlace = $(el).text().trim();
         const textoEnlaceLower = textoEnlace.toLowerCase();
         
-        // Disparadores inteligentes ampliados (Generales y específicos de danza/clásica)
+        // Filtros para capturar los shows de artistas argentinos
         const esArgentino = textoEnlaceLower.includes('argent') || 
                             textoEnlaceLower.includes('marianela') || 
                             textoEnlaceLower.includes('piazzolla') || 
-                            textoEnlaceLower.includes('tango');
+                            textoEnlaceLower.includes('tango') ||
+                            portal.name === "De Puta Madre Club"; // Todo lo de DPMC en UK entra a evaluación profunda
 
-        if (esLinkProfundoValido(href, portal.base) || ((portal.name === "Wigmore Hall" || portal.name === "Royal Ballet and Opera") && esArgentino)) {
+        if (esLinkProfundoValido(href, portal.base) || esArgentino) {
           let urlLimpia = limpiarYOptimizarUrl(href);
           
           if (urlsProcesadasEnEstePortal.has(urlLimpia)) return;
@@ -191,25 +193,33 @@ async function ejecutarRastreo() {
             }
           }
 
-          let tituloShow = textoEnlace.length > 10 && textoEnlace.length < 90 ? textoEnlace : `Espectáculo Especial en ${portal.name}`;
+          let tituloShow = textoEnlace.length > 8 && textoEnlace.length < 90 ? textoEnlace : `Concierto Especial en Londres`;
           
-          // Clasificación estética por categorías de salas de prestigio
-          let categoriaAsignada = "Cultura / Agenda";
-          if (portal.name === "The Nickel") { categoriaAsignada = "Cine / Proyección"; tituloShow = tituloShow.includes("Espectáculo") ? "Ciclo de Cine Argentino" : tituloShow; }
-          if (portal.name === "Wigmore Hall") { categoriaAsignada = "Música / Clásica"; tituloShow = tituloShow.includes("Espectáculo") ? "Concierto de Cámara" : tituloShow; }
-          if (portal.name === "Sadlers Wells" || portal.name === "Royal Ballet and Opera") {
-            categoriaAsignada = "Ballet / Danza";
-            tituloShow = tituloShow.includes("Espectáculo") ? "Gala de Ballet Internacional" : tituloShow;
+          // Clasificación estética por categorías de salas y productoras
+          let categoryAsignada = "Música / Concierto";
+          let artistAsignado = portal.name;
+          let venueAsignado = `${portal.name} Venue, Londres`;
+
+          if (portal.name === "The Nickel") { categoryAsignada = "Cine / Proyección"; tituloShow = "Ciclo de Cine Argentino"; venueAsignado = "The Nickel Cinema, Londres"; }
+          if (portal.name === "Wigmore Hall") { categoryAsignada = "Música / Clásica"; venueAsignado = "Wigmore Hall, Londres"; }
+          if (portal.name === "Sadlers Wells" || portal.name === "Royal Ballet and Opera") { categoryAsignada = "Ballet / Danza"; artistAsignado = "Elenco Oficial / Marianela Núñez"; venueAsignado = `${portal.name}, Londres`; }
+          
+          // Reglas para De Puta Madre Club (Rock, Pop, Indie Argentino)
+          if (portal.name === "De Puta Madre Club") {
+            categoryAsignada = "Música / Rock & Pop";
+            artistAsignado = "Gira Oficial UK";
+            venueAsignado = "📍 Consultar Sala en boletería";
+            if (tituloShow.includes("Concierto Especial")) tituloShow = "Artista Argentino en Tour";
           }
 
           eventosFinales.push({
-            category: categoriaAsignada,
+            category: categoryAsignada,
             title: tituloShow,
-            artist: portal.name === "Royal Ballet and Opera" ? "Marianela Núñez / Elenco Oficial" : portal.name,
-            description: `Mapeo automático de cartelera activa en ${portal.name}. Ingresá al enlace oficial para revisar la disponibilidad de ubicaciones en sala, horarios de las funciones y precios de los tickets.`,
-            venue: `${portal.name}, Covent Garden, Londres`,
-            displayDate: "Consultar fechas en boletería",
-            date: "2026-07-15", 
+            artist: artistAsignado,
+            description: `Sincronización de cartelera musical. Ingresá al enlace oficial provisto por ${portal.name} para revisar la disponibilidad de tickets, precios de preventa y salas de conciertos asignadas en Londres.`,
+            venue: venueAsignado,
+            displayDate: "Consultar fechas en tour",
+            date: "2026-07-20", 
             url: urlLimpia
           });
         }
@@ -246,7 +256,7 @@ async function ejecutarRastreo() {
   };
 
   fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log("¡Sincronización global terminada! RBO incorporada con éxito.");
+  console.log("¡Sincronización global terminada! De Puta Madre Club integrada con éxito.");
 }
 
 ejecutarRastreo();
