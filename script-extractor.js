@@ -2,7 +2,7 @@ const fs = require('fs');
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-// Portales oficiales monitoreados automáticamente (¡Ahora con De Puta Madre Club!)
+// Portales oficiales monitoreados automáticamente (¡Ahora con Nations Championship!)
 const PORTALES = [
   { name: "Sadlers Wells", url: "https://www.sadlerswells.com/whats-on/?search=argent", base: "https://www.sadlerswells.com" },
   { name: "Southbank Centre", url: "https://www.southbankcentre.co.uk/?s=argent", base: "https://www.southbankcentre.co.uk" },
@@ -12,10 +12,12 @@ const PORTALES = [
   { name: "The Nickel", url: "https://thenickel.co.uk", base: "https://thenickel.co.uk" },
   { name: "Wigmore Hall", url: "https://www.wblive.co.uk/events", base: "https://www.wblive.co.uk" },
   { name: "Royal Ballet and Opera", url: "https://www.rbo.org.uk/tickets-and-events", base: "https://www.rbo.org.uk" },
-  { name: "De Puta Madre Club", url: "https://deputamadreclub.eu/", base: "https://deputamadreclub.eu" } // NUEVA PRODUCTORA DE CONCIERTOS ROCK/POP
+  { name: "De Puta Madre Club", url: "https://deputamadreclub.eu/", base: "https://deputamadreclub.eu" },
+  { name: "England Rugby RFU", url: "https://www.englandrugby.com/", base: "https://www.englandrugby.com" },
+  { name: "Nations Championship", url: "https://nationschampionshiprugby.com/en", base: "https://nationschampionshiprugby.com" } // NUEVA COBERTURA DE LOS PUMAS
 ];
 
-const TEXTOS_TICKET_VALIDOS = ['book', 'ticket', 'buy', 'reserva', 'entradas', 'event', 'whats-on/', 'tate-modern', 'movie', 'events/', 'tickets-and-events/', 'product/'];
+const TEXTOS_TICKET_VALIDOS = ['book', 'ticket', 'buy', 'reserva', 'entradas', 'event', 'whats-on/', 'tate-modern', 'movie', 'events/', 'tickets-and-events/', 'product/', 'fixtures', 'matches', 'fixtures-results/'];
 
 // 1. FUNCIÓN DE LIMPIEZA QUIRÚRGICA DE ENLACES
 function limpiarYOptimizarUrl(urlOriginal) {
@@ -56,9 +58,9 @@ function obtenerDominio(url) {
 
 // 2. PROCESO PRINCIPAL COMBINADO HÍBRIDO
 async function ejecutarRastreo() {
-  console.log("Iniciando escaneo multi-show global: Portales Oficiales + Productoras de Rock/Pop...");
+  console.log("Iniciando escaneo global: Arte, Teatro, Recitales y Torneos de Rugby Internacional...");
   
-  // Lista inicial inmutable de alta prioridad (Tus eventos directos)
+  // Lista inicial inmutable de alta prioridad
   let eventosFinales = [
     {
       category: "Artes Plásticas / Exhibición",
@@ -172,14 +174,13 @@ async function ejecutarRastreo() {
         const textoEnlace = $(el).text().trim();
         const textoEnlaceLower = textoEnlace.toLowerCase();
         
-        // Filtros para capturar los shows de artistas argentinos
+        // Filtros cruzados para capturar contenido argentino, ópera y rugby
         const esArgentino = textoEnlaceLower.includes('argent') || 
+                            textoEnlaceLower.includes('pumas') || 
                             textoEnlaceLower.includes('marianela') || 
-                            textoEnlaceLower.includes('piazzolla') || 
-                            textoEnlaceLower.includes('tango') ||
-                            portal.name === "De Puta Madre Club"; // Todo lo de DPMC en UK entra a evaluación profunda
+                            textoEnlaceLower.includes('tango');
 
-        if (esLinkProfundoValido(href, portal.base) || esArgentino) {
+        if (esLinkProfundoValido(href, portal.base) || ((portal.name === "England Rugby RFU" || portal.name === "Nations Championship") && esArgentino)) {
           let urlLimpia = limpiarYOptimizarUrl(href);
           
           if (urlsProcesadasEnEstePortal.has(urlLimpia)) return;
@@ -193,33 +194,34 @@ async function ejecutarRastreo() {
             }
           }
 
-          let tituloShow = textoEnlace.length > 8 && textoEnlace.length < 90 ? textoEnlace : `Concierto Especial en Londres`;
+          let tituloShow = textoEnlace.length > 8 && textoEnlace.length < 90 ? textoEnlace : `Evento en ${portal.name}`;
           
-          // Clasificación estética por categorías de salas y productoras
-          let categoryAsignada = "Música / Concierto";
+          // Clasificación estética de las celdas según el origen
+          let categoryAsignada = "Cultura / Agenda";
           let artistAsignado = portal.name;
-          let venueAsignado = `${portal.name} Venue, Londres`;
+          let venueAsignado = `${portal.name}, UK`;
 
           if (portal.name === "The Nickel") { categoryAsignada = "Cine / Proyección"; tituloShow = "Ciclo de Cine Argentino"; venueAsignado = "The Nickel Cinema, Londres"; }
           if (portal.name === "Wigmore Hall") { categoryAsignada = "Música / Clásica"; venueAsignado = "Wigmore Hall, Londres"; }
-          if (portal.name === "Sadlers Wells" || portal.name === "Royal Ballet and Opera") { categoryAsignada = "Ballet / Danza"; artistAsignado = "Elenco Oficial / Marianela Núñez"; venueAsignado = `${portal.name}, Londres`; }
+          if (portal.name === "De Puta Madre Club") { categoryAsignada = "Música / Rock & Pop"; artistAsignado = "Gira Oficial UK"; venueAsignado = "📍 Ver sala en boletería"; }
+          if (portal.name === "Sadlers Wells" || portal.name === "Royal Ballet and Opera") { categoryAsignada = "Ballet / Danza"; artistAsignado = "Elenco Oficial"; venueAsignado = `${portal.name}, Londres`; }
           
-          // Reglas para De Puta Madre Club (Rock, Pop, Indie Argentino)
-          if (portal.name === "De Puta Madre Club") {
-            categoryAsignada = "Música / Rock & Pop";
-            artistAsignado = "Gira Oficial UK";
-            venueAsignado = "📍 Consultar Sala en boletería";
-            if (tituloShow.includes("Concierto Especial")) tituloShow = "Artista Argentino en Tour";
+          // Reglas de diseño para Rugby Internacional (RFU y Nations Championship)
+          if (portal.name === "England Rugby RFU" || portal.name === "Nations Championship") {
+            categoryAsignada = "Deportes / Rugby";
+            artistAsignado = "Los Pumas (Selección Argentina)";
+            venueAsignado = portal.name === "England Rugby RFU" ? "Twickenham Stadium, Londres" : "📍 Ver Sede asignada en fixture";
+            if (tituloShow.includes("Evento en")) tituloShow = "Los Pumas - Fixture Nations Championship";
           }
 
           eventosFinales.push({
             category: categoryAsignada,
             title: tituloShow,
             artist: artistAsignado,
-            description: `Sincronización de cartelera musical. Ingresá al enlace oficial provisto por ${portal.name} para revisar la disponibilidad de tickets, precios de preventa y salas de conciertos asignadas en Londres.`,
+            description: `Sincronización de fixture oficial. Entrá al enlace oficial de ${portal.name} para revisar la disponibilidad de localidades, cronograma de partidos internacionales y canales de venta autorizados.`,
             venue: venueAsignado,
-            displayDate: "Consultar fechas en tour",
-            date: "2026-07-20", 
+            displayDate: "Consultar fecha del partido",
+            date: "2026-11-01", 
             url: urlLimpia
           });
         }
@@ -256,7 +258,7 @@ async function ejecutarRastreo() {
   };
 
   fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log("¡Sincronización global terminada! De Puta Madre Club integrada con éxito.");
+  console.log("¡Hecho! Archivo eventos.json actualizado con toda la grilla de Rugby y cultura.");
 }
 
 ejecutarRastreo();
