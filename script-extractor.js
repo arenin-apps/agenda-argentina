@@ -2,7 +2,7 @@ const fs = require('fs');
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-// Portales oficiales monitoreados automáticamente
+// Portales oficiales monitoreados automáticamente (¡Ahora con la Royal Ballet and Opera!)
 const PORTALES = [
   { name: "Sadlers Wells", url: "https://www.sadlerswells.com/whats-on/?search=argent", base: "https://www.sadlerswells.com" },
   { name: "Southbank Centre", url: "https://www.southbankcentre.co.uk/?s=argent", base: "https://www.southbankcentre.co.uk" },
@@ -10,10 +10,11 @@ const PORTALES = [
   { name: "Barbican", url: "https://www.barbican.org.uk/whats-on?search=argent", base: "https://www.barbican.org.uk" },
   { name: "BFI Player", url: "https://player.bfi.org.uk/search?q=argent", base: "https://player.bfi.org.uk" },
   { name: "The Nickel", url: "https://thenickel.co.uk", base: "https://thenickel.co.uk" },
-  { name: "Wigmore Hall", url: "https://www.wblive.co.uk/events", base: "https://www.wblive.co.uk" }
+  { name: "Wigmore Hall", url: "https://www.wblive.co.uk/events", base: "https://www.wblive.co.uk" },
+  { name: "Royal Ballet and Opera", url: "https://www.rbo.org.uk/tickets-and-events", base: "https://www.rbo.org.uk" } // NUEVA ADQUISICIÓN CRÍTICA
 ];
 
-const TEXTOS_TICKET_VALIDOS = ['book', 'ticket', 'buy', 'reserva', 'entradas', 'event', 'whats-on/', 'tate-modern', 'movie', 'events/'];
+const TEXTOS_TICKET_VALIDOS = ['book', 'ticket', 'buy', 'reserva', 'entradas', 'event', 'whats-on/', 'tate-modern', 'movie', 'events/', 'tickets-and-events/'];
 
 // 1. FUNCIÓN DE LIMPIEZA QUIRÚRGICA DE ENLACES
 function limpiarYOptimizarUrl(urlOriginal) {
@@ -54,9 +55,9 @@ function obtenerDominio(url) {
 
 // 2. PROCESO PRINCIPAL COMBINADO HÍBRIDO
 async function ejecutarRastreo() {
-  console.log("Iniciando escaneo multi-show: Extrayendo múltiples eventos por portal...");
+  console.log("Iniciando escaneo multi-show global: Incluyendo Royal Ballet and Opera...");
   
-  // Lista inicial inmutable de alta prioridad
+  // Lista inicial inmutable de alta prioridad (Tus producciones directas y confirmadas)
   let eventosFinales = [
     {
       category: "Artes Plásticas / Exhibición",
@@ -111,7 +112,7 @@ async function ejecutarRastreo() {
       urlsManualesAnulacion = panel.urls_individuales_extra || [];
     }
   } catch (err) {
-    console.log("Uso de rastreo puro activo.");
+    console.log("Rastreo puro en ejecución.");
   }
 
   // SECCIÓN A: RASTREAR EL NEWSLETTER MENSUAL DE MAILCHIMP
@@ -150,3 +151,102 @@ async function ejecutarRastreo() {
   }
 
   // SECCIÓN B: RASTREO TRADICIONAL MULTI-SHOW CON OVERRIDE ACTIVO
+  for (const portal of PORTALES) {
+    try {
+      console.log(`Rastreando portal oficial: ${portal.name}...`);
+      const response = await axios.get(portal.url, { 
+        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
+        timeout: 8000
+      });
+      
+      const $ = cheerio.load(response.data);
+      const dominioPortal = obtenerDominio(portal.base);
+      let urlsProcesadasEnEstePortal = new Set();
+
+      $('a').each((i, el) => {
+        let href = $(el).attr('href');
+        if (!href) return;
+        if (href.startsWith('/')) href = portal.base + href;
+
+        const textoEnlace = $(el).text().trim();
+        const textoEnlaceLower = textoEnlace.toLowerCase();
+        
+        // Disparadores inteligentes ampliados (Generales y específicos de danza/clásica)
+        const esArgentino = textoEnlaceLower.includes('argent') || 
+                            textoEnlaceLower.includes('marianela') || 
+                            textoEnlaceLower.includes('piazzolla') || 
+                            textoEnlaceLower.includes('tango');
+
+        if (esLinkProfundoValido(href, portal.base) || ((portal.name === "Wigmore Hall" || portal.name === "Royal Ballet and Opera") && esArgentino)) {
+          let urlLimpia = limpiarYOptimizarUrl(href);
+          
+          if (urlsProcesadasEnEstePortal.has(urlLimpia)) return;
+          urlsProcesadasEnEstePortal.add(urlLimpia);
+
+          // --- SISTEMA DE ANULACIÓN CRÍTICO (OVERRIDE) ---
+          for (const urlManual of urlsManualesAnulacion) {
+            if (obtenerDominio(urlManual) === dominioPortal) {
+              urlLimpia = urlManual;
+              break;
+            }
+          }
+
+          let tituloShow = textoEnlace.length > 10 && textoEnlace.length < 90 ? textoEnlace : `Espectáculo Especial en ${portal.name}`;
+          
+          // Clasificación estética por categorías de salas de prestigio
+          let categoriaAsignada = "Cultura / Agenda";
+          if (portal.name === "The Nickel") { categoriaAsignada = "Cine / Proyección"; tituloShow = tituloShow.includes("Espectáculo") ? "Ciclo de Cine Argentino" : tituloShow; }
+          if (portal.name === "Wigmore Hall") { categoriaAsignada = "Música / Clásica"; tituloShow = tituloShow.includes("Espectáculo") ? "Concierto de Cámara" : tituloShow; }
+          if (portal.name === "Sadlers Wells" || portal.name === "Royal Ballet and Opera") {
+            categoriaAsignada = "Ballet / Danza";
+            tituloShow = tituloShow.includes("Espectáculo") ? "Gala de Ballet Internacional" : tituloShow;
+          }
+
+          eventosFinales.push({
+            category: categoriaAsignada,
+            title: tituloShow,
+            artist: portal.name === "Royal Ballet and Opera" ? "Marianela Núñez / Elenco Oficial" : portal.name,
+            description: `Mapeo automático de cartelera activa en ${portal.name}. Ingresá al enlace oficial para revisar la disponibilidad de ubicaciones en sala, horarios de las funciones y precios de los tickets.`,
+            venue: `${portal.name}, Covent Garden, Londres`,
+            displayDate: "Consultar fechas en boletería",
+            date: "2026-07-15", 
+            url: urlLimpia
+          });
+        }
+      });
+
+    } catch (error) {
+      console.log(`✕ Portal ${portal.name} omitido de forma segura.`);
+    }
+  }
+
+  // SECCIÓN C: INYECTAR URLS MANUALES SUELTAS QUE NO PERTENECEN A LOS PORTALES FIJOS
+  for (const urlManual of urlsManualesAnulacion) {
+    const dominioManual = urlManual;
+    const perteneceAPortalFijo = PORTALES.some(p => obtenerDominio(p.base) === obtenerDominio(dominioManual));
+
+    if (!perteneceAPortalFijo && urlManual.startsWith('http')) {
+      eventosFinales.push({
+        category: "Cultura / Destacado",
+        title: "Espectáculo Argentino Sincronizado",
+        artist: "Función Especial",
+        description: "Evento mapeado a través del Panel de Control. Accedé al enlace oficial de reserva para ver la grilla, precios y locación exacta.",
+        venue: "📍 Ver locación en ticketera",
+        displayDate: "Consultar fechas",
+        date: "2026-06-30",
+        url: limpiarYOptimizarUrl(urlManual)
+      });
+    }
+  }
+
+  // 3. GENERAR ARCHIVO COMPILADO FINAL
+  const resultadoFinal = {
+    lastUpdated: new Date().toLocaleString('es-ES', { timeZone: 'Europe/London' }) + ' (Hora UK)',
+    events: eventosFinales
+  };
+
+  fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
+  console.log("¡Sincronización global terminada! RBO incorporada con éxito.");
+}
+
+ejecutarRastreo();
