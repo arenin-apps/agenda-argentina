@@ -2,7 +2,7 @@ const fs = require('fs');
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-// Portales oficiales monitoreados automáticamente (¡Ahora con Nations Championship!)
+// Portales oficiales monitoreados automáticamente (¡Ahora con TV Guide de UK!)
 const PORTALES = [
   { name: "Sadlers Wells", url: "https://www.sadlerswells.com/whats-on/?search=argent", base: "https://www.sadlerswells.com" },
   { name: "Southbank Centre", url: "https://www.southbankcentre.co.uk/?s=argent", base: "https://www.southbankcentre.co.uk" },
@@ -14,10 +14,11 @@ const PORTALES = [
   { name: "Royal Ballet and Opera", url: "https://www.rbo.org.uk/tickets-and-events", base: "https://www.rbo.org.uk" },
   { name: "De Puta Madre Club", url: "https://deputamadreclub.eu/", base: "https://deputamadreclub.eu" },
   { name: "England Rugby RFU", url: "https://www.englandrugby.com/", base: "https://www.englandrugby.com" },
-  { name: "Nations Championship", url: "https://nationschampionshiprugby.com/en", base: "https://nationschampionshiprugby.com" } // NUEVA COBERTURA DE LOS PUMAS
+  { name: "Nations Championship", url: "https://nationschampionshiprugby.com/en", base: "https://nationschampionshiprugby.com" },
+  { name: "TV Guide UK", url: "https://www.tvguide.co.uk/search?q=argentina", base: "https://www.tvguide.co.uk" } // NUEVA COBERTURA DE TV
 ];
 
-const TEXTOS_TICKET_VALIDOS = ['book', 'ticket', 'buy', 'reserva', 'entradas', 'event', 'whats-on/', 'tate-modern', 'movie', 'events/', 'tickets-and-events/', 'product/', 'fixtures', 'matches', 'fixtures-results/'];
+const TEXTOS_TICKET_VALIDOS = ['book', 'ticket', 'buy', 'reserva', 'entradas', 'event', 'whats-on/', 'tate-modern', 'movie', 'events/', 'tickets-and-events/', 'product/', 'fixtures', 'matches', 'fixtures-results/', 'tv-listings'];
 
 // 1. FUNCIÓN DE LIMPIEZA QUIRÚRGICA DE ENLACES
 function limpiarYOptimizarUrl(urlOriginal) {
@@ -58,7 +59,7 @@ function obtenerDominio(url) {
 
 // 2. PROCESO PRINCIPAL COMBINADO HÍBRIDO
 async function ejecutarRastreo() {
-  console.log("Iniciando escaneo global: Arte, Teatro, Recitales y Torneos de Rugby Internacional...");
+  console.log("Iniciando escaneo global híbrido: Arte, Deportes, Conciertos y Guía de TV Británica...");
   
   // Lista inicial inmutable de alta prioridad
   let eventosFinales = [
@@ -174,13 +175,13 @@ async function ejecutarRastreo() {
         const textoEnlace = $(el).text().trim();
         const textoEnlaceLower = textoEnlace.toLowerCase();
         
-        // Filtros cruzados para capturar contenido argentino, ópera y rugby
+        // Filtros cruzados ampliados (Arte, Danza, Rugby y TV)
         const esArgentino = textoEnlaceLower.includes('argent') || 
                             textoEnlaceLower.includes('pumas') || 
                             textoEnlaceLower.includes('marianela') || 
                             textoEnlaceLower.includes('tango');
 
-        if (esLinkProfundoValido(href, portal.base) || ((portal.name === "England Rugby RFU" || portal.name === "Nations Championship") && esArgentino)) {
+        if (esLinkProfundoValido(href, portal.base) || ((portal.name === "England Rugby RFU" || portal.name === "Nations Championship" || portal.name === "TV Guide UK") && esArgentino)) {
           let urlLimpia = limpiarYOptimizarUrl(href);
           
           if (urlsProcesadasEnEstePortal.has(urlLimpia)) return;
@@ -200,13 +201,13 @@ async function ejecutarRastreo() {
           let categoryAsignada = "Cultura / Agenda";
           let artistAsignado = portal.name;
           let venueAsignado = `${portal.name}, UK`;
+          let descAsignada = `Sincronización automática de cartelera. Ingresá al enlace oficial de ${portal.name} para revisar la disponibilidad, horarios y canales formales de reserva.`;
 
           if (portal.name === "The Nickel") { categoryAsignada = "Cine / Proyección"; tituloShow = "Ciclo de Cine Argentino"; venueAsignado = "The Nickel Cinema, Londres"; }
           if (portal.name === "Wigmore Hall") { categoryAsignada = "Música / Clásica"; venueAsignado = "Wigmore Hall, Londres"; }
           if (portal.name === "De Puta Madre Club") { categoryAsignada = "Música / Rock & Pop"; artistAsignado = "Gira Oficial UK"; venueAsignado = "📍 Ver sala en boletería"; }
           if (portal.name === "Sadlers Wells" || portal.name === "Royal Ballet and Opera") { categoryAsignada = "Ballet / Danza"; artistAsignado = "Elenco Oficial"; venueAsignado = `${portal.name}, Londres`; }
           
-          // Reglas de diseño para Rugby Internacional (RFU y Nations Championship)
           if (portal.name === "England Rugby RFU" || portal.name === "Nations Championship") {
             categoryAsignada = "Deportes / Rugby";
             artistAsignado = "Los Pumas (Selección Argentina)";
@@ -214,14 +215,23 @@ async function ejecutarRastreo() {
             if (tituloShow.includes("Evento en")) tituloShow = "Los Pumas - Fixture Nations Championship";
           }
 
+          // Reglas específicas para la Guía de TV Británica
+          if (portal.name === "TV Guide UK") {
+            categoryAsignada = "Televisión / Transmisión";
+            artistAsignado = "Emisión del Reino Unido";
+            venueAsignado = "📺 Consultar canal en guía de TV";
+            descAsignada = "Programa o transmisión relacionada con Argentina detectada en la televisión británica. Accedé al enlace para revisar horarios de emisión y canales disponibles (BBC, ITV, Channel 4, etc.).";
+            if (tituloShow.includes("Evento en") || tituloShow.length < 15) tituloShow = "Especial sobre Argentina en TV";
+          }
+
           eventosFinales.push({
             category: categoryAsignada,
             title: tituloShow,
             artist: artistAsignado,
-            description: `Sincronización de fixture oficial. Entrá al enlace oficial de ${portal.name} para revisar la disponibilidad de localidades, cronograma de partidos internacionales y canales de venta autorizados.`,
+            description: descAsignada,
             venue: venueAsignado,
-            displayDate: "Consultar fecha del partido",
-            date: "2026-11-01", 
+            displayDate: portal.name === "TV Guide UK" ? "Ver horario de emisión" : "Consultar fecha del encuentro",
+            date: "2026-06-20", 
             url: urlLimpia
           });
         }
@@ -258,7 +268,7 @@ async function ejecutarRastreo() {
   };
 
   fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log("¡Hecho! Archivo eventos.json actualizado con toda la grilla de Rugby y cultura.");
+  console.log("¡Hecho! Archivo eventos.json actualizado incluyendo Guía de TV.");
 }
 
 ejecutarRastreo();
