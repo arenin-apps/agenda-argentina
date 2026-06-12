@@ -1,0 +1,38 @@
+name: Sincronizador Automático de Agenda Argentina UK
+
+on:
+  schedule:
+    # Se ejecuta automáticamente 2 veces al día: a las 08:00 y a las 20:00 (Hora del Reino Unido)
+    - cron: '0 8,20 * * *'
+  workflow_dispatch: # Te permite activar el rastreo manualmente con un botón si tenés una urgencia
+
+jobs:
+  rastrear-eventos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio de la app
+        uses: actions/checkout@v4
+
+      - name: Configurar entorno de Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-size: 20
+
+      - name: Instalar dependencias de rastreo web
+        run: |
+          npm install axios cheerio
+
+      - name: Ejecutar script de extracción en portales oficiales
+        env:
+          # Si en el futuro querés conectar una API Key para potenciar el motor con Gemini Live
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} 
+        run: |
+          node script-extractor.js
+
+      - name: Confirmar cambios y actualizar eventos.json en el servidor
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Bot"
+          git add eventos.json
+          git commit -m "Sincronización automática de eventos: $(date -u +'%Y-%m-%d %H:%M:%S') UTC" || exit 0
+          git push
