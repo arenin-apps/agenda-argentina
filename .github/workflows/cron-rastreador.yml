@@ -2,7 +2,7 @@ name: Sincronizador Automático de Agenda Argentina UK
 
 on:
   schedule:
-    # Se ejecuta automáticamente 2 veces al día: a las 08:00 y a las 20:00 (Hora del Reino Unido)
+    # Se ejecuta automáticamente 2 veces al día: a las 08:00 y a las 20:00 (Hora de Londres/Reino Unido)
     - cron: '0 8,20 * * *'
   workflow_dispatch: # Te permite activar el rastreo manualmente con un botón si tenés una urgencia
 
@@ -16,7 +16,7 @@ jobs:
       - name: Configurar entorno de Node.js
         uses: actions/setup-node@v4
         with:
-          node-size: 20
+          node-version: 20
 
       - name: Instalar dependencias de rastreo web
         run: |
@@ -24,7 +24,6 @@ jobs:
 
       - name: Ejecutar script de extracción en portales oficiales
         env:
-          # Si en el futuro querés conectar una API Key para potenciar el motor con Gemini Live
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} 
         run: |
           node script-extractor.js
