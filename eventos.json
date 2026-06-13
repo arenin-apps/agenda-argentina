@@ -1,26 +1,6 @@
 {
-  "lastUpdated": "13/6/2026, 15:01:39 (Hora UK)",
+  "lastUpdated": "13/6/2026, 15:09:26 (Hora UK)",
   "events": [
-    {
-      "category": "Ballet / Danza",
-      "title": "Marianela: Timeless Details - Royal Ballet",
-      "artist": "Marianela Núñez",
-      "description": "La consagrada bailarina principal argentina protagoniza una noche magistral en la ópera nacional británica.",
-      "venue": "Royal Ballet and Opera, Covent Garden, Londres",
-      "displayDate": "Viernes 10 de Julio de 2026",
-      "date": "2026-07-10",
-      "url": "https://www.rbo.org.uk/tickets-and-events/marianela-timeless-details"
-    },
-    {
-      "category": "Música / Fusión Latina",
-      "title": "After Dark: Samba Café & Chineke! Orchestra",
-      "artist": "Chineke! Orchestra",
-      "description": "Una noche exclusiva que transforma el espacio con ritmos latinos y sesiones de vanguardia clásica en el corazón de Londres.",
-      "venue": "Southbank Centre, Queen Elizabeth Hall, Londres",
-      "displayDate": "Viernes 14 de Agosto de 2026",
-      "date": "2026-08-14",
-      "url": "https://www.southbankcentre.co.uk/whats-on/after-dark-samba-cafe-chineke-orchesta/"
-    },
     {
       "category": "Música / Concierto",
       "title": "Espectáculo Exclusivo de Rock y Cultura",
@@ -60,16 +40,6 @@
       "displayDate": "Martes 06 de Octubre de 2026 (19:00)",
       "date": "2026-10-06",
       "url": "https://www.wblive.co.uk/events"
-    },
-    {
-      "category": "Ballet / Danza",
-      "title": "Germán Cornejo’s Tango After Dark",
-      "artist": "Sadlers Wells",
-      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial para revisar detalles de la boletería.",
-      "venue": "Sadler's Wells Theatre, Londres",
-      "displayDate": "05 al 09 de Noviembre de 2026",
-      "date": "2026-11-05",
-      "url": "https://www.sadlerswells.com/whats-on/g-cornejo-tango-after-dark/"
     }
   ]
 }
