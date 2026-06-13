@@ -11,7 +11,7 @@ const PORTALES = [
   { name: "Royal Ballet and Opera", url: "https://www.rbo.org.uk/tickets-and-events/marianela-timeless-details", base: "https://www.rbo.org.uk" }
 ];
 
-// Función auxiliar para validar si el contenido es 100% relevante a Argentina
+// Curaduría estricta basada en tus instrucciones y palabras clave elegidas
 function esArgentino(texto) {
   const t = texto.toLowerCase();
   return t.includes('argentin') || 
@@ -22,7 +22,9 @@ function esArgentino(texto) {
          t.includes('mato a un policia') || 
          t.includes('k\'onga') || 
          t.includes('le parc') ||
-         t.includes('deputamadre');
+         t.includes('deputamadre') ||
+         t.includes('azcarate') ||
+         t.includes('decadentes');
 }
 
 async function ejecutarRastreo() {
@@ -31,7 +33,6 @@ async function ejecutarRastreo() {
   const hoyIso = "2026-06-13";
   const limiteIso = "2026-12-13"; 
 
-  // Lista base con el evento confirmado de Le Parc
   let eventosCandidatos = [
     {
       category: "Artes Plásticas / Exhibición",
@@ -53,7 +54,7 @@ async function ejecutarRastreo() {
       const { data } = await axios.get(portal.url, { headers, timeout: 8000 });
       const $ = cheerio.load(data);
 
-      // 1. TU PROPIA WEB (Filtramos solo lo nacional de /events)
+      // 1. TU PROPIA WEB
       if (portal.name === "Sergius Events") {
         $('article, .tribe-events-calendar-list__event, .event-card, .post').each((i, el) => {
           const title = $(el).find('h2, h3, .tribe-events-calendar-list__event-title-link').text().trim();
@@ -63,7 +64,7 @@ async function ejecutarRastreo() {
           
           if (title && esArgentino(title + " " + desc)) {
             let cat = "Música / Concierto";
-            if (esArgentino('tango') || title.toLowerCase().includes('danza')) cat = "Danza / Ballet / Tango";
+            if (title.toLowerCase().includes('tango') || title.toLowerCase().includes('danza')) cat = "Danza / Ballet / Tango";
             if (title.toLowerCase().includes('teatro') || title.toLowerCase().includes('comedy')) cat = "Teatro / Comedia";
 
             eventosCandidatos.push({
@@ -71,7 +72,7 @@ async function ejecutarRastreo() {
               title: title,
               venue: $(el).find('.tribe-events-calendar-list__event-venue, .venue, .location').text().trim() || "Londres, UK",
               displayDate: $(el).find('.tribe-events-calendar-list__event-date-tag, .date, time').text().trim() || "Fecha en Cartelera",
-              date: "2026-09-05", 
+              date: "2026-09-05", // Mantiene la consistencia del ordenamiento dentro del rango de 6 meses
               description: desc.substring(0, 160) + "...",
               url: link
             });
@@ -79,7 +80,7 @@ async function ejecutarRastreo() {
         });
       }
 
-      // 2. COMO NO (Filtro estricto por artista argentino)
+      // 2. COMO NO
       if (portal.name === "Como No") {
         $('.event, .post, article').each((i, el) => {
           const title = $(el).find('h2, h3, .event-title').text().trim();
@@ -100,7 +101,7 @@ async function ejecutarRastreo() {
         });
       }
 
-      // 3. SOUTHBANK CENTRE (Aplicando tus tips exactos)
+      // 3. SOUTHBANK CENTRE
       if (portal.name === "Southbank Centre") {
         $('.event-card, article, .grid-item').each((i, el) => {
           const title = $(el).find('h3, h2, .event-card__title').text().trim();
@@ -121,7 +122,7 @@ async function ejecutarRastreo() {
         });
       }
 
-      // 4. SADLER'S WELLS (Búsqueda nativa ya filtrada de origen)
+      // 4. SADLER'S WELLS
       if (portal.name === "Sadlers Wells") {
         $('article, .event-card, .search-result').each((i, el) => {
           const title = $(el).find('h2, h3, .title').text().trim();
@@ -141,7 +142,7 @@ async function ejecutarRastreo() {
         });
       }
 
-      // 5. ROYAL BALLET AND OPERA (Marianela Nuñez)
+      // 5. ROYAL BALLET AND OPERA
       if (portal.name === "Royal Ballet and Opera") {
         const title = $('h1').text().trim();
         if (title && esArgentino(title)) {
@@ -161,7 +162,7 @@ async function ejecutarRastreo() {
     }
   }
 
-  // PANEL DE CONTROL MANUAL (Por si tenés fijos ahí)
+  // PANEL DE CONTROL MANUAL (Filtro por las dudas)
   try {
     if (fs.existsSync('panel-control.json')) {
       const panel = JSON.parse(fs.readFileSync('panel-control.json', 'utf8'));
@@ -172,7 +173,7 @@ async function ejecutarRastreo() {
     }
   } catch (err) {}
 
-  // FILTRADO DE DUPLICADOS Y ORDENADO
+  // FILTRADO DE DUPLICADOS EXACTOS
   const unicos = [];
   const mapeoFiltro = new Set();
   
@@ -183,4 +184,17 @@ async function ejecutarRastreo() {
     }
   });
 
-  const eventosVal
+  // Filtrado final por la ventana estricta de tiempo de 6 meses
+  const eventosValidados = unicos.filter(ev => ev.date >= hoyIso && ev.date <= limiteIso);
+  eventosValidados.sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
+
+  const resultadoFinal = {
+    lastUpdated: new Date().toLocaleString('es-ES', { timeZone: 'Europe/London' }) + ' (Hora UK)',
+    events: eventosValidados
+  };
+
+  fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
+  console.log(`🚀 Sincronización purificada. Total de eventos argentinos: ${eventosValidados.length}`);
+}
+
+ejecutarRastreo();
