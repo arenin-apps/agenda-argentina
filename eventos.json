@@ -1,0 +1,2525 @@
+{
+  "lastUpdated": "13/6/2026, 9:31:15 (Hora UK)",
+  "events": [
+    {
+      "category": "Artes Plásticas / Exhibición",
+      "title": "Julio Le Parc: Obras Cinéticas e Inmersivas",
+      "artist": "Julio Le Parc",
+      "description": "Gran retrospectiva dedicada al pionero argentino del arte óptico y cinético. Un recorrido de instalaciones interactivas, móviles y juegos de luces.",
+      "venue": "Tate Modern, Bankside, Londres",
+      "displayDate": "11 de Junio al 11 de Diciembre de 2026",
+      "date": "2026-06-11",
+      "url": "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc"
+    },
+    {
+      "category": "Música / Concierto",
+      "title": "Fusion Piano: Piazzolla & Charly García",
+      "artist": "Julieta Iglesias",
+      "description": "Cruce íntimo en piano solista que une las partituras de Astor Piazzolla con la poesía del rock nacional de Charly García.",
+      "venue": "Hampstead Lounge & Jazz Club, Londres",
+      "displayDate": "Viernes 12 de Junio de 2026",
+      "date": "2026-06-12",
+      "url": "https://www.julietaiglesias.com/"
+    },
+    {
+      "category": "Música / Concierto",
+      "title": "Estelares en Londres - Gira 'Las Antorchas'",
+      "artist": "Estelares",
+      "description": "La mítica banda de rock canción liderada por Manuel Moretti se presenta por primera vez en el Reino Unido repasando sus himnos melódicos.",
+      "venue": "Oslo Hackney, Londres",
+      "displayDate": "Sábado 05 de Septiembre de 2026 (19:00)",
+      "date": "2026-09-05",
+      "url": "https://sergius.uk/event/estelares-en-londres-2026/"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Germán Cornejo's Tango After Dark",
+      "artist": "Germán Cornejo & Ballet de Tango",
+      "description": "Gran despliegue coreográfico que fusiona la sensualidad de los salones de Buenos Aires con música de Piazzolla interpretada por orquesta en vivo.",
+      "venue": "Sadler's Wells Theatre, Londres",
+      "displayDate": "05 al 09 de Noviembre de 2026",
+      "date": "2026-11-05",
+      "url": "https://www.sadlerswells.com/whats-on/g-cornejo-tango-after-dark/"
+    },
+    {
+      "category": "Embajada / Agenda Cultural",
+      "title": "We can't find that page",
+      "artist": "Selección Oficial",
+      "description": "It looks like you're trying to reach a page that was built by Mailchimp but is no longer active. Want to know more about us? Visit mailchimp.com...",
+      "venue": "📍 Consultar enlace oficial",
+      "displayDate": "Fechas en cartelera",
+      "date": "2026-07-01",
+      "url": "https://mailchi.mp/cancilleria/newsletter-embajada-argentina-ejemplo"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "What’s on",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Compañía de Danza Jesús Carmona - UnYdos",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/jesus-carmona-unydos/"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Get Tickets",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/jesus-carmona-unydos/#book"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "London Children's Ballet - Anne of Green Gables",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/london-childrens-ballet-anne-of-green-gables-2026/"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Get Tickets",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/london-childrens-ballet-anne-of-green-gables-2026/#book"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Esther Merino - En Tierra de Hombres",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/esther-merino-en-tierra-de-hombres/"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Get Tickets",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/esther-merino-en-tierra-de-hombres/#book"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Acosta Danza Yunior - Next Generation",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/acosta-danza-yunior-next-generation/"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Get Tickets",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/acosta-danza-yunior-next-generation/#book"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "The Dance Floor is Black: The Music Is Ours Weekend",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/the-dance-floor-is-black-the-music-is-ours-weekend/"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Head First Acrobats - Return of The GODZ",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/head-first-acrobats-return-of-godz/"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Get Tickets",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/head-first-acrobats-return-of-godz/#book"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Rambert - This is Rambert",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/rambert-this-is-rambert/"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Get Tickets",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/rambert-this-is-rambert/#book"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Rafaela Carrasco - Creaviva",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/rafaela-carrasco-creaviva/"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Get Tickets",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/rafaela-carrasco-creaviva/#book"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Culture Club",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/culture-club-2026/"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Gala Flamenca: Eva Yerbabuena, Manuel Liñán, El Farru, Juan Tomás de la Molía",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/gala-flamenca-2026/"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Get Tickets",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/gala-flamenca-2026/#book"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "El Perrete - Luz de Guía - Live set",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/el-perrete-luz-de-guia-live-set/"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Get Tickets",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/el-perrete-luz-de-guia-live-set/#book"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Creative Academy Graduate Showcase 2026",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/creative-academy-showcase/"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Get Tickets",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/creative-academy-showcase/#book"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Phoenix Dance Theatre - Interplay",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/phoenix-dance-theatre-interplay/"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Get Tickets",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/phoenix-dance-theatre-interplay/#book"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Event Archive",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/events-archive/"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Evento en Sadlers Wells",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.facebook.com/Sadlerswells"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://tickets.barbican.org.uk/basket"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "My account",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://tickets.barbican.org.uk/account"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Orders and returns",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://tickets.barbican.org.uk/account/orders"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Membership",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://tickets.barbican.org.uk/account/membership"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://tickets.barbican.org.uk/account/tickets"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Payment and credit",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://tickets.barbican.org.uk/account/payment-credit"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Account details",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://tickets.barbican.org.uk/account/details"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Art & design",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/art-design"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/library"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/cinema"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Take part",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/take-part"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Classical music",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/classical-music"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Talks & events",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/talks-events"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Contemporary music",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/contemporary-music"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Theatre & dance",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/theatre-dance"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Immersive",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/immersive"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Tours & public spaces",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/tours-public-spaces"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Box office & ticketing info",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/your-visit/general-info/box-office-ticketing-information"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Conservatory",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/visit-the-conservatory"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Accessible events",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/your-visit/accessibility/accessible-events"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Members' priority booking",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/series/members-priority-booking"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Join Young Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://tickets.barbican.org.uk/young-barbican"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Young Barbican discounts",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/join-support/young-barbican#discounted-tickets"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/series"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Register now",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://tickets.barbican.org.uk/register"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Reset password",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://tickets.barbican.org.uk/forgotten-password"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/1996-a-celebration-of-the-wildest-year-of-britains-wildest"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/backstage-tours"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2025/event/concrete-and-clay-archiving-the-barbican"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/sankofa-community-carnival-costume-making-workshops"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/architecture-tours"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/project-a-black-planet-the-art-and-culture-of-panafrica"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/in-other-worlds"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/family-film-club-discovery-festival-shorts-for-wee-ones"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/delcy-morelos-origo"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/parent-baby-screening-backrooms"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/spatial-no-problem"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/the-christophers"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/time-and-water"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/disclosure-day"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/cole-porter-high-society"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/koln-75"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/tuner"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/backrooms"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/cesaria-evora-orchestra"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/members-screening-enzo"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/flemish-film-classics-rosie-35mm-a-greek-tragedy"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/silent-film-music-film-rarities-and-the-films-of-edward"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.barbican.org.uk/whats-on/2026/event/earth-fire-voice-an-evening-with-leo-boix-and-manuel-iris"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Evento en Barbican",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Barbican, UK",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.facebook.com/BarbicanCentre"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/lisandro-aristimuno"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Lisandro%20Aristimu%C3%B1o&dates=20260609T180000Z/20260623T213000Z"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/eva-aylln-in-london"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Eva%20Ayll%C3%B3n&dates=20260731T180000Z/20260731T213000Z&location=Brixton%20Hill%2C%20London%2C%20England%2C%20SW2%201RJ%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/plastilina-mosh"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Plastilina%20Mosh&dates=20260902T180000Z/20260902T220000Z&location=20-22%20Highbury%20Corner%2C%20London%2C%20England%2C%20N5%201RD%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/grupo-canaveral-de-humberto-pabon"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Grupo%20Ca%C3%B1averal%20de%20Humberto%20Pab%C3%B3n&dates=20260910T180000Z/20260913T220000Z"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/binomio-de-oro-de-america-in-london"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Binomio%20de%20Oro%20de%20America&dates=20260926T183000Z/20260926T223000Z&location=Brixton%20Hill%2C%20London%2C%20England%2C%20SW2%201RJ%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/aterciopelados-in-london"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Aterciopelados&dates=20261004T180000Z/20261004T220000Z&location=Upper%20Street%2C%20London%2C%20England%2C%20N1%202UD%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/la-konga-in-london"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=La%20K%27onga&dates=20261006T180000Z/20261006T220000Z&location=Upper%20Street%2C%20London%2C%20England%2C%20N1%202UD%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/los-kjarkas"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Los%20Kjarkas&dates=20261015T180000Z/20261018T220000Z&location=1%20Calle%20de%20Utebo%2C%20Madrid%2C%20Comunidad%20de%20Madrid%2C%2028025%2C%20Spain"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/ricardo-montaner"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Ricardo%20Montaner&dates=20261017T180000Z/20261017T220000Z&location=Storey%26%2339%3Bs%20Gate%2C%20London%2C%20England%2C%20SW1H%209NH%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/aleks-syntek-in-london"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Aleks%20Syntek&dates=20261021T180000Z/20261021T220000Z&location=20-22%20Highbury%20Corner%2C%20London%2C%20England%2C%20N5%201RD%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/luchalibreworld-2025-k6szz"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Lucha%20Libre%20World&dates=20261030T190000Z/20261031T224500Z&location=5%20Old%20Ford%20Road%2C%20London%2C%20England%2C%20E2%209PJ%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/pipe-bueno-in-london"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Pipe%20Bueno&dates=20260515T180000Z/20260516T020000Z&location=501%20High%20Street%20North%2C%20London%2C%20E12%206TH%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/liss-pereira-latina-mente-in-london"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Liss%20Pereira%20%22Latina-Mente%22%20&dates=20260501T173000Z/20260501T220000Z&location=21-25%20Saint%20John%26%2339%3Bs%20Hill%2C%20London%2C%20England%2C%20SW11%201TT%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/los-autenticos-decadentes-in-london"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Los%20Aut%C3%A9nticos%20Decadentes&dates=20260424T180000Z/20260424T213000Z&location=Brixton%20Hill%2C%20London%2C%20England%2C%20SW2%201RJ%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/mykel-blanco-y-su-salsa-mayor-in-london"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Maykel%20Blanco%20y%20su%20Salsa%20Mayor%20in%20London&dates=20260315T190000Z/20260315T230000Z&location=Brixton%20Hill%2C%20London%2C%20England%2C%20SW2%201RJ%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/pibes-chorros-in-london"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Pibes%20Chorros%20in%20London&dates=20260219T190000Z/20260219T230000Z&location=20-22%20Highbury%20Corner%2C%20London%2C%20England%2C%20N5%201RD%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/matute-disco-stereo-tour-in-london"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Matute%20%22Disco%20Stereo%20Tour%22%20in%20London&dates=20260207T183000Z/20260207T220000Z&location=Brixton%20Hill%2C%20London%2C%20England%2C%20SW2%201RJ%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/los-diablitos-in-london"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Los%20Diablitos%20in%20London&dates=20251121T190000Z/20251121T230000Z&location=Brixton%20Hill%2C%20London%2C%20England%2C%20SW2%201RJ%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/gustavo-santaolalla-in-malmo"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Gustavo%20Santaolalla%20in%20Malm%C3%B6&dates=20251114T193000Z/20251114T233000Z&location=4%20Navigationsgatan%2C%20Malm%C3%B6%2C%20Sk%C3%A5ne%20l%C3%A4n%2C%20211%2020%2C%20Sweden"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/gustavo-santaolalla-in-london"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Gustavo%20Santaolalla%20in%20London&dates=20251112T193000Z/20251112T223000Z&location=Alexandra%20Palace%20Way%2C%20London%2C%20England%2C%20N22%207AY%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/gustavo-santaolalla-in-geneve"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Gustavo%20Santaolalla%20%C3%A0%20Gen%C3%A8ve&dates=20251106T193000Z/20251106T233000Z&location=10%20Rue%20de%20la%20R%C3%B4tisserie%2C%20Gen%C3%A8ve%2C%20GE%2C%201204%2C%20Switzerland"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/luchalibreworld-berlin"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Lucha%20Libre%20World%20-%20Berlin&dates=20251102T190000Z/20251102T230000Z&location=10%20M%C3%B6ckernstra%C3%9Fe%2C%20Berlin%2C%20BE%2C%2010963%2C%20Germany"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/luchalibreworld-2025"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Lucha%20Libre%20World%20-%20London&dates=20251031T190000Z/20251101T230000Z&location=5%20Old%20Ford%20Road%2C%20London%2C%20England%2C%20E2%209PJ%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/gustavo-santaolalla-in-barcelona"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Gustavo%20Santaolalla%20en%20Barcelona&dates=20251021T193000Z/20251021T223000Z&location=62%20Avinguda%20del%20Paral%C2%B7lel%2C%20Barcelona%2C%20CT%2C%2008001%2C%20Spain"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/kala-marka-in-london"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=K%E2%80%99ala%20Marka%20in%20London&dates=20251011T180000Z/20251011T213000Z&location=Upper%20Street%2C%20London%2C%20England%2C%20N1%202UD%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/sandra-mihanovich-in-london"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Sandra%20Mihanovich%20in%20London&dates=20251007T183000Z/20251007T220000Z&location=310%20Uxbridge%20Road%2C%20London%2C%20England%2C%20W12%207LJ%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/kevin-johansen-liniers-en-alicante"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Kevin%20Johansen%20%2B%20Liniers%20en%20Alicante&dates=20251002T180000Z/20251002T220000Z&location=1%20Avenida%20del%20Doctor%20Gadea%2C%20Alicante%20%28Alacant%29%2C%20VC%2C%2003003%2C%20Spain"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/sandra-mihanovich-en-barcelona"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Sandra%20Mihanovich%20en%20Barcelona&dates=20250924T183000Z/20250924T213000Z&location=88%20Carrer%20de%20Pamplona%2C%20Barcelona%2C%20CT%2C%2008018%2C%20Spain"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/kevin-johansen-liniers-in-stockholm"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Kevin%20Johansen%20%2B%20Liniers%20in%20Stockholm%20&dates=20250922T180000Z/20250922T223000Z&location=43-45%20Djurg%C3%A5rdssl%C3%A4tten%2C%20Stockholm%2C%20Stockholms%20l%C3%A4n%2C%20115%2021%2C%20Sweden"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/movimiento-original-in-london"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Movimiento%20Original%20in%20London&dates=20250829T180000Z/20250829T210000Z&location=1A%20Amhurst%20Road%2C%20London%20E8%201JB%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/fruko-y-su-tesos-en-madrid"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Fruko%20y%20sus%20Tesos%20en%20Madrid&dates=20250720T183000Z/20250720T213000Z&location=11%20Calle%20del%20Arenal%2C%20Madrid%2C%20MD%2C%2028013%2C%20Spain"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/alejandro-y-maria-laura-in-london"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Alejandro%20y%20Maria%20Laura%20in%20London&dates=20250713T180000Z/20250713T220000Z&location=96-98%20Pentonville%20Road%2C%20London%2C%20England%2C%20N1%209JB%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/chico-trujillo-in-london"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Chico%20Trujillo%20in%20London&dates=20250712T193000Z/20250713T010000Z&location=Brixton%20Hill%2C%20London%2C%20England%2C%20SW2%201RJ%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/grupo-revelao-in-london"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Grupo%20Revela%C3%A7%C3%A3o%20in%20London&dates=20250704T190000Z/20250705T010000Z&location=Brixton%20Hill%2C%20London%2C%20England%2C%20SW2%201RJ%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/al2-el-aldeano"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=AL2%20El%20Aldeano%20in%20London&dates=20250622T180000Z/20250622T220000Z&location=20-22%20Highbury%20Corner%2C%20London%2C%20England%2C%20N5%201RD%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/guayacan"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Guayac%C3%A1n%20Orquesta%20in%20London&dates=20250525T213000Z/20250526T020000Z&location=Town%20Hall%20Parade%2C%20London%20SW2%201RJ%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/el-polaco-in-london"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=El%20Polaco%20in%20London&dates=20250511T170000Z/20250511T220000Z&location=261%20Brixton%20Road%2C%20London%2C%20England%2C%20SW9%206LH%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/guayacan-fe5mk"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Guayacan%20Orquesta%20in%20Paris&dates=20250508T180000Z/20250508T223000Z&location=59%20Boulevard%20Macdonald%2C%20Paris%2C%20IDF%2C%2075019%2C%20France"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/binomio-de-oro-mallorca"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Binomio%20de%20Oro%20de%20America%20European%20Tour&dates=20250406T190000Z/20250430T220000Z"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/los-kjarkas-europe"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Los%20Kjarkas%20European%20Tour&dates=20250403T173000Z/20250426T183000Z"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.wblive.co.uk/events/manuel-garcia-panico"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Google Calendar",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "http://www.google.com/calendar/event?action=TEMPLATE&text=Manuel%20Garcia%20%27Panico%27&dates=20250219T193500Z/20250219T230000Z&location=310%20Uxbridge%20Road%2C%20London%2C%20England%2C%20W12%207LJ%2C%20United%20Kingdom"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Evento en Wigmore Hall",
+      "artist": "Wigmore Hall",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Wigmore Hall para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.facebook.com/wearewbliveuk"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Sign up for emails",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Royal Ballet and Opera para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Royal Ballet and Opera, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "#sign-up-form-/tickets-and-events"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "See dates",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Royal Ballet and Opera para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Royal Ballet and Opera, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.rbo.org.uk/tickets-and-events/festival/next-generation-festival-2026-dates"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "More info",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Royal Ballet and Opera para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Royal Ballet and Opera, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.rbo.org.uk/tickets-and-events/festival/next-generation-festival-2026-details"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "More info",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Royal Ballet and Opera para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Royal Ballet and Opera, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.rbo.org.uk/tickets-and-events/opera-on-the-terrace-details"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Evento en Royal Ballet and Opera",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Royal Ballet and Opera para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Royal Ballet and Opera, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.rbo.org.uk/tickets-and-events"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Evento en Royal Ballet and Opera",
+      "artist": "Elenco Oficial",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Royal Ballet and Opera para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Royal Ballet and Opera, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.facebook.com/royalballetandopera"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.facebook.com/deputamadreclubeuropa"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Molotov & Mala Rodríguez",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.casinodeparis.fr/fr/product/2251/casino_de_paris/molotov_la_mala_rodriguez"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Molotov & Mala Rodríguez",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/mltv25cph/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Molotov & Mala Rodríguez",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.ticketmaster.se/event/molotov--la-mala-rodriguez-biljetter/862095590"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Molotov & Mala Rodríguez",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/mltvmr26zrc/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Molotov & Mala Rodríguez",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/mltvmr26bln/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Molotov & Mala Rodríguez",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.ticketmaster.nl/event/1077175159"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Molotov & Mala Rodríguez",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/mltvmr26kln/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Molotov & Mala Rodríguez",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://concert-molotov-malarodriguez-lamadeleine.ticketlive.be/selection"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Molotov & Mala Rodríguez",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/mltvmr26ldn/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Molotov & Mala Rodríguez",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/mltvmr26ffm/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Molotov & Mala Rodríguez",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/mltvmr26rm/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Molotov & Mala Rodríguez",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/mltvmr26bcn/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Ke Personajes",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/kp26prs/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Ke Personajes",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://concert-kepersonajes-lamadeleine.ticketlive.be/selection"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Ke Personajes",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.ticketmaster.nl/event/1485153222"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Ke Personajes",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/kp26hh/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Ke Personajes",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.ticketone.it/event/milano-latin-festival-mind-live-theatre-21501820/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Ke Personajes",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/kp26rm/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Ke Personajes",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/kp26ffm/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Ke Personajes",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/kp26bln/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Ke Personajes",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/kp26ldn/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Ke Personajes",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/kp26mun/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Ke Personajes",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/kp26zrc/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Bandalos Chinos",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/bach26bln/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Bandalos Chinos",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/bach26cph/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Bandalos Chinos",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/bach26ldn/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Bandalos Chinos",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/bach26bcn/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Bandalos Chinos",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/bach26mln/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Bandalos Chinos",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/bach26zrc/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/3ballmty-madrid-09jul/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/3ballmty-barcelona-10Jul/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/3ballmty-amsterdam-11Jul/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/3ballmty-london-12jul/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/3ballmty-berlin-14jul/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/3ballmty-munich-15jul/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/3ballmty-milan-160726/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Elena Rose",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/elena26bln/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Elena Rose",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/elena26cph/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Elena Rose",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/elena26ldn/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Elena Rose",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/elena26mln/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Elena Rose",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/elena26prs/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Eva Ayllón",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/eva26mad/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Eva Ayllón",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/eva26bcn/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/jambao-barcelona-15ago/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticketfever.es/es/events/jambao-sala-mon-madrid-16-de-agosto-de-2026-tickets"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/jambao-bilbao-21ago/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/jambao-mallorca-22ago/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://billetterie.bataclan.fr/fr/product/938/bataclan/orishas"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Gondwana & Quique Neira",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/gondwana-madrid-06-octubre/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Gondwana & Quique Neira",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/gondwana-barcelona-07-octubre/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/tri26zrc/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.ticketone.it/event/el-tri-magazzini-generali-21679970/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/tri26mad/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/tri26cph/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/tri26bcn/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/tri26bln/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/tri26prs/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/tri26hh/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/tri26ldn/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/tri26ffm/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://ticket.deputamadreclub.eu/tri26mun/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Buy Tickets",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://deputamadreclub.eu/category/buy-tickets/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://deputamadreclub.eu/eva-ayllon-tour-espana-2026-entradas/"
+    },
+    {
+      "category": "Música / Rock & Pop",
+      "title": "Evento en De Puta Madre Club",
+      "artist": "Gira Oficial UK",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de De Puta Madre Club para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "📍 Ver sala en boletería",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://deputamadreclub.eu/damas-gratis-europa-tour-tickets/"
+    },
+    {
+      "category": "Deportes / Rugby",
+      "title": "Los Pumas - Fixture Nations Championship",
+      "artist": "Los Pumas (Selección Argentina)",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de England Rugby RFU para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Twickenham Stadium, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.eticketing.co.uk/rfu"
+    },
+    {
+      "category": "Deportes / Rugby",
+      "title": "Booking a Course",
+      "artist": "Los Pumas (Selección Argentina)",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de England Rugby RFU para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Twickenham Stadium, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.englandrugby.com/run/coaching/coach-resources/booking-course"
+    },
+    {
+      "category": "Deportes / Rugby",
+      "title": "Fixtures & Results",
+      "artist": "Los Pumas (Selección Argentina)",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de England Rugby RFU para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Twickenham Stadium, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.englandrugby.com/fixtures-and-results"
+    },
+    {
+      "category": "Deportes / Rugby",
+      "title": "Los Pumas - Fixture Nations Championship",
+      "artist": "Los Pumas (Selección Argentina)",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de England Rugby RFU para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Twickenham Stadium, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.englandrugbystore.com/en/?_s=bm-fi-ers-prtsite-newtopnavshoplink-Fixtures-jm"
+    },
+    {
+      "category": "Deportes / Rugby",
+      "title": "Los Pumas - Fixture Nations Championship",
+      "artist": "Los Pumas (Selección Argentina)",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de England Rugby RFU para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Twickenham Stadium, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.eticketing.co.uk/rfu/EDP/Event/Index/3352"
+    },
+    {
+      "category": "Deportes / Rugby",
+      "title": "View all fixtures",
+      "artist": "Los Pumas (Selección Argentina)",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de England Rugby RFU para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Twickenham Stadium, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.englandrugby.com/fixtures-and-results/search-results"
+    },
+    {
+      "category": "Deportes / Rugby",
+      "title": "Los Pumas - Fixture Nations Championship",
+      "artist": "Los Pumas (Selección Argentina)",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de England Rugby RFU para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Twickenham Stadium, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.englandrugby.com/fixtures-and-results/match-centre/nations-championship-2026-south-africa-vs-england"
+    },
+    {
+      "category": "Deportes / Rugby",
+      "title": "Los Pumas - Fixture Nations Championship",
+      "artist": "Los Pumas (Selección Argentina)",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de England Rugby RFU para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Twickenham Stadium, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.englandrugby.com/fixtures-and-results/match-centre-elite"
+    },
+    {
+      "category": "Deportes / Rugby",
+      "title": "BUY TICKETS",
+      "artist": "Los Pumas (Selección Argentina)",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de England Rugby RFU para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Twickenham Stadium, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.eticketing.co.uk/evertonfc/EDP/Event/Index/1387"
+    },
+    {
+      "category": "Deportes / Rugby",
+      "title": "Los Pumas - Fixture Nations Championship",
+      "artist": "Los Pumas (Selección Argentina)",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de England Rugby RFU para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Twickenham Stadium, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.apple.com/uk/macbook-neo/"
+    },
+    {
+      "category": "Deportes / Rugby",
+      "title": "Los Pumas - Fixture Nations Championship",
+      "artist": "Los Pumas (Selección Argentina)",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de England Rugby RFU para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Twickenham Stadium, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.eticketing.co.uk/rfu/EDP/Event/Index/3357"
+    },
+    {
+      "category": "Deportes / Rugby",
+      "title": "Los Pumas - Fixture Nations Championship",
+      "artist": "Los Pumas (Selección Argentina)",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de England Rugby RFU para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Twickenham Stadium, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.eticketing.co.uk/premiershiprugby/EDP/Event/Index/89"
+    },
+    {
+      "category": "Deportes / Rugby",
+      "title": "Book a pitch",
+      "artist": "Los Pumas (Selección Argentina)",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de England Rugby RFU para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Twickenham Stadium, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://rugby365.sports-booker.com/customer/"
+    },
+    {
+      "category": "Deportes / Rugby",
+      "title": "Los Pumas - Fixture Nations Championship",
+      "artist": "Los Pumas (Selección Argentina)",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de England Rugby RFU para revisar la disponibilidad, horarios y canales formales de reserva.",
+      "venue": "Twickenham Stadium, Londres",
+      "displayDate": "Consultar fecha del encuentro",
+      "date": "2026-06-20",
+      "url": "https://www.facebook.com/OfficialEnglandRugby/"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Especial sobre Argentina en TV",
+      "artist": "Emisión del Reino Unido",
+      "description": "Programa o transmisión relacionada con Argentina detectada en la televisión británica. Accedé al enlace para revisar horarios de emisión y canales disponibles (BBC, ITV, Channel 4, etc.).",
+      "venue": "📺 Consultar canal en guía de TV",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-06-20",
+      "url": "https://www.facebook.com/tvguidenews/"
+    }
+  ]
+}
