@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "13/6/2026, 9:59:01 (Hora UK)",
+  "lastUpdated": "13/6/2026, 11:30:01 (Hora UK)",
   "events": [
     {
-      "category": "Artes Plásticas / Exhibición",
-      "title": "Julio Le Parc: Obras Cinéticas e Inmersivas",
-      "artist": "Julio Le Parc",
-      "description": "Gran retrospectiva dedicada al pionero argentino del arte óptico y cinético. Un recorrido de instalaciones interactivas, móviles y juegos de luces.",
-      "venue": "Tate Modern, Bankside, Londres",
-      "displayDate": "11 de Junio al 11 de Diciembre de 2026",
-      "date": "2026-06-11",
-      "url": "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc"
+      "category": "Música / Rock & Pop",
+      "title": "El Mató a un Policía Motorizado",
+      "artist": "El Mató a un Policía Motorizado",
+      "description": "La aclamada banda argentina de indie rock, El Mató a un Policía Motorizado, llega a Londres para presentar su distintivo sonido que ha cautivado a públicos de toda Latinoamérica. Conocidos por sus letras poéticas y melodías envolventes, la banda promete una noche inolvidable en la escena musical del Reino Unido, reafirmando su lugar como uno de los pilares del rock alternativo argentino.",
+      "venue": "Electric Ballroom, Londres",
+      "displayDate": "Miércoles 5 de Agosto",
+      "date": "2026-08-05",
+      "url": "https://comono.co.uk/whats-on/"
     },
     {
       "category": "Música / Concierto",
@@ -22,6 +22,16 @@
       "url": "https://sergius.uk/event/estelares-en-londres-2026/"
     },
     {
+      "category": "Música / Rock & Pop",
+      "title": "La K'onga en Londres",
+      "artist": "La K'onga",
+      "description": "La K'onga, la aclamada sensación argentina del cuarteto, llega a Londres para un electrizante concierto. Disfruta de la energía contagiosa de uno de los grupos más populares de Argentina en el Islington Assembly Hall, una noche imperdible para los amantes de la música latina y los ritmos vibrantes del cuarteto. ¡Prepárate para bailar sin parar!",
+      "venue": "Islington Assembly Hall, Londres",
+      "displayDate": "Martes 6 de Octubre",
+      "date": "2026-10-06",
+      "url": "https://www.wblive.co.uk/events"
+    },
+    {
       "category": "Ballet / Danza",
       "title": "Germán Cornejo's Tango After Dark",
       "artist": "Germán Cornejo & Ballet de Tango",
@@ -30,76 +40,6 @@
       "displayDate": "05 al 09 de Noviembre de 2026",
       "date": "2026-11-05",
       "url": "https://www.sadlerswells.com/whats-on/g-cornejo-tango-after-dark/"
-    },
-    {
-      "category": "Embajada / Agenda Cultural",
-      "title": "We can't find that page",
-      "artist": "Selección Oficial",
-      "description": "It looks like you're trying to reach a page that was built by Mailchimp but is no longer active. Want to know more about us? Visit mailchimp.com...",
-      "venue": "📍 Consultar enlace oficial",
-      "displayDate": "Fechas en cartelera",
-      "date": "2026-07-01",
-      "url": "https://mailchi.mp/cancilleria/newsletter-embajada-argentina-ejemplo"
-    },
-    {
-      "category": "Ballet / Danza",
-      "title": "Espectáculo Argentino en Sadlers Wells",
-      "artist": "Elenco Oficial",
-      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
-      "venue": "Sadlers Wells, Londres",
-      "displayDate": "Consultar fecha en boletería",
-      "date": "2026-06-30",
-      "url": "https://www.sadlerswells.com/whats-on/page/2/?search=argent"
-    },
-    {
-      "category": "Ballet / Danza",
-      "title": "Espectáculo Argentino en Sadlers Wells",
-      "artist": "Elenco Oficial",
-      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
-      "venue": "Sadlers Wells, Londres",
-      "displayDate": "Consultar fecha en boletería",
-      "date": "2026-06-30",
-      "url": "https://www.sadlerswells.com/whats-on/page/3/?search=argent"
-    },
-    {
-      "category": "Ballet / Danza",
-      "title": "Espectáculo Argentino en Sadlers Wells",
-      "artist": "Elenco Oficial",
-      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
-      "venue": "Sadlers Wells, Londres",
-      "displayDate": "Consultar fecha en boletería",
-      "date": "2026-06-30",
-      "url": "https://www.sadlerswells.com/whats-on/page/4/?search=argent"
-    },
-    {
-      "category": "Ballet / Danza",
-      "title": "Espectáculo Argentino en Sadlers Wells",
-      "artist": "Elenco Oficial",
-      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
-      "venue": "Sadlers Wells, Londres",
-      "displayDate": "Consultar fecha en boletería",
-      "date": "2026-06-30",
-      "url": "https://www.sadlerswells.com/whats-on/page/5/?search=argent"
-    },
-    {
-      "category": "Ballet / Danza",
-      "title": "Espectáculo Argentino en Sadlers Wells",
-      "artist": "Elenco Oficial",
-      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva.",
-      "venue": "Sadlers Wells, Londres",
-      "displayDate": "Consultar fecha en boletería",
-      "date": "2026-06-30",
-      "url": "https://www.sadlerswells.com/whats-on/page/6/?search=argent"
-    },
-    {
-      "category": "Deportes / Rugby",
-      "title": "Argentina",
-      "artist": "Los Pumas (Selección Argentina)",
-      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de England Rugby RFU para revisar la disponibilidad, horarios y canales formales de reserva.",
-      "venue": "Twickenham Stadium, Londres",
-      "displayDate": "Consultar fecha en boletería",
-      "date": "2026-06-30",
-      "url": "https://www.englandrugby.com/fixtures-and-results/search-results"
     }
   ]
 }
