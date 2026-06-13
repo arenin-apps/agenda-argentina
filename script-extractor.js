@@ -61,7 +61,7 @@ async function procesarListaConIa(listaEventosBrutos) {
     Lista de entrada:
     ${JSON.stringify(listaEventosBrutos, null, 2)}
 
-    Devuelve estrictamente un array JSON estructurado de esta forma, respetando la URL original:
+    Devuelve estrictamente un array JSON estructurado de esta forma:
     [
       {
         "category": "Música / Rock & Pop" o "Música / Clásica" o "Ballet / Danza" o "Deportes / Rugby" o "Televisión / Transmisión" o "Cultura / Agenda",
@@ -71,7 +71,7 @@ async function procesarListaConIa(listaEventosBrutos) {
         "venue": "Nombre del recinto y ciudad (ej: Twickenham Stadium, Londres). Si es de TV Guide, pon '📺 Consultar canal en guía de TV'.",
         "displayDate": "Fecha legible en español (ej: Sábado 20 de Junio)",
         "date": "YYYY-MM-DD",
-        "url": "Mantén la URL provista en la entrada correspondiente"
+        "url": "Mantén la URL provista en la entrada"
       }
     ]
     REGLA: Devuelve SOLO el array JSON []. Sin bloques markdown \`\`\`json ni texto introductorio.
@@ -83,22 +83,18 @@ async function procesarListaConIa(listaEventosBrutos) {
     }, { headers: { 'Content-Type': 'application/json' }, timeout: 25000 });
 
     let textoIa = respuesta.data.candidates[0].content.parts[0].text.trim();
-    
-    // Limpieza de emergencia por si la IA ignora la regla e inyecta bloques markdown
     if (textoIa.includes('```')) {
-      textoIa = textoIa.replace(/
-```json|```/g, '').trim();
+      textoIa = textoIa.replace(/```json|```/g, '').trim();
     }
-    
     return JSON.parse(textoIa);
   } catch (e) {
-    console.log("⚠️ Error en llamada en lote de la IA:", e.message);
+    console.log("⚠️ Error en procesamiento Gemini:", e.message);
     return [];
   }
 }
 
 async function ejecutarRastreo() {
-  console.log("⚡ Lanzando motor híbrido corregido en lote...");
+  console.log("⚡ Lanzando motor en lote con bucles controlados síncronos...");
   
   let eventosFinales = [
     {
@@ -134,22 +130,24 @@ async function ejecutarRastreo() {
   ];
 
   let bolsaEventosBrutos = [];
-  // CORREGIDO: Nombre de variable unificado y sin espacios ilegales
   let urlsProcesadasGlobal = new Set();
 
+  // FASE 1: Recolección síncrona limpia sin asincronía rota
   for (const portal of PORTALES) {
     try {
       console.log(`📡 Raspando enlaces en: ${portal.name}...`);
       const response = await axios.get(portal.url, { 
         headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
-        timeout: 6000
+        timeout: 7000
       });
       
       const $ = cheerio.load(response.data);
 
-      $('a').each((i, el) => {
+      // Usamos un bucle nativo controlado en lugar del .each() conflictivo
+      const enlacesAs = $('a').toArray();
+      for (const el of enlacesAs) {
         let href = $(el).attr('href');
-        if (!href) return;
+        if (!href) continue;
         if (href.startsWith('/')) href = portal.base + href;
 
         const textoEnlace = $(el).text().trim();
@@ -158,60 +156,5 @@ async function ejecutarRastreo() {
 
         if (esLinkProfundoValido(href, portal.base) && esArgentino) {
           let urlLimpia = limpiarYOptimizarUrl(href);
-          if (urlsProcesadasGlobal.has(urlLimpia)) return;
-          urlsProcesadasGlobal.add(urlLimpia);
-
-          let tituloBruto = textoEnlace.length > 5 && textoEnlace.length < 120 ? textoEnlace : `Show en ${portal.name}`;
-          
-          bolsaEventosBrutos.push({
-            portal: portal.name,
-            tituloBruto: tituloBruto,
-            url: urlLimpia
-          });
-        }
-      });
-    } catch (error) {
-      console.log(`✕ Conexión omitida en ${portal.name}`);
-    }
-  }
-
-  console.log(`📦 Colección terminada. Enviando lote consolidado de ${bolsaEventosBrutos.length} eventos a Gemini...`);
-
-  if (bolsaEventosBrutos.length > 0) {
-    const eventosMasticadosPorIa = await procesarListaConIa(bolsaEventosBrutos);
-    
-    if (eventosMasticadosPorIa && eventosMasticadosPorIa.length > 0) {
-      for (let ev of eventosMasticadosPorIa) {
-        try {
-          if (fs.existsSync('panel-control.json')) {
-            const panel = JSON.parse(fs.readFileSync('panel-control.json', 'utf8'));
-            const urlsManualesAnulacion = panel.urls_individuales_extra || [];
-            const dominioEv = obtenerDominio(ev.url);
-            for (const urlManual of urlsManualesAnulacion) {
-              if (obtenerDominio(urlManual) === dominioEv) {
-                ev.url = urlManual;
-                break;
-              }
-            }
-          }
-        } catch (err) {}
-
-        eventosFinales.push(ev);
-      }
-    }
-  }
-
-  eventosFinales.sort((a, b) => new Date(a.date) - new Date(b.date));
-  const hoyIso = new Date().toISOString().split('T')[0];
-  eventosFinales = eventosFinales.filter(ev => ev.date >= hoyIso);
-
-  const resultadoFinal = {
-    lastUpdated: new Date().toLocaleString('es-ES', { timeZone: 'Europe/London' }) + ' (Hora UK)',
-    events: eventosFinales
-  };
-
-  fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log(`🚀 Sincronización exitosa. Total eventos en JSON: ${eventosFinales.length}`);
-}
-
-ejecutarRastreo();
+          if (urlsProcesadasGlobal.has(urlLimpia)) continue;
+          urlsProcesadasGlobal.add(urlL
