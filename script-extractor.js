@@ -15,13 +15,12 @@ function esCulturaRioplatense(texto) {
   if (!texto) return false;
   const t = texto.toLowerCase();
   
-  // Si habla de cine/películas, verificamos contextos de Argentina o Buenos Aires
-  const tienePalabrasDeCine = t.includes('cine') || t.includes('film') || t.includes('movie') || t.includes('pelicula') || t.includes('festival') || t.includes('director');
-  const esContextoArgentino = t.includes('argentin') || t.includes('buenos aires') || t.includes('tango');
-  
-  if (tienePalabrasDeCine && esContextoArgentino) return true;
+  // Condición especial para atrapar cine argentino de forma segura
+  const tieneCine = t.includes('cine') || t.includes('film') || t.includes('movie') || t.includes('pelicula') || t.includes('festival');
+  const esDeAca = t.includes('argentin') || t.includes('buenos aires');
+  if (tieneCine && esDeAca) return true;
 
-  // Filtros originales de artistas, recintos y eventos clave musicales/teatrales
+  // Filtros originales confirmados
   return t.includes('argentin') || 
          t.includes('tango') || 
          t.includes('piazzolla') || 
@@ -62,7 +61,6 @@ async function ejecutarRastreo() {
       const { data } = await axios.get(portal.url, { headers, timeout: 10000 });
       const $ = cheerio.load(data);
 
-      // SELECTOR UNIVERSAL DE TARJETAS (Mantiene tu lógica original que funcionaba)
       $('article, .tribe-events-calendar-list__event, .event-card, .post, .event, .grid-item, .search-result').each((i, el) => {
         const title = $(el).find('h2, h3, h4, .title, .event-card__title, a').first().text().trim();
         
@@ -74,7 +72,7 @@ async function ejecutarRastreo() {
         const textoCompleto = (title + " " + description + " " + $(el).text()).toLowerCase();
 
         if (title && title.length > 3 && esCulturaRioplatense(textoCompleto)) {
-          // Clasificación dinámica de categorías incluyendo CINE
+          // Asignación de categorías sin errores de ejecución
           let categoria = "Música / Concierto";
           if (textoCompleto.includes('cine') || textoCompleto.includes('film') || textoCompleto.includes('movie') || textoCompleto.includes('pelicula')) {
             categoria = "Cine / Película";
@@ -92,11 +90,49 @@ async function ejecutarRastreo() {
             title: title,
             venue: $(el).find('.venue, .location, .tribe-events-calendar-list__event-venue').text().trim() || (portal.name === "Southbank Centre" ? "Southbank Centre, Londres" : "Londres, UK"),
             displayDate: displayDate,
-            date: "2026-09-15", // Tu fecha pivote original para el renderizado de WordPress
+            date: "2026-09-15", 
             description: description.substring(0, 160),
             url: link
           });
         }
       });
 
-    } catch
+    } catch (error) {
+      console.log(`✕ Alerta en ${portal.name}: ${error.message}`);
+    }
+  }
+
+  try {
+    if (fs.existsSync('panel-control.json')) {
+      const panel = JSON.parse(fs.readFileSync('panel-control.json', 'utf8'));
+      const eventosManuales = panel.eventos_manuales_fijos || panel.eventos_manuales || [];
+      eventosManuales.forEach(m => {
+        eventosCandidatos.push(m);
+      });
+    }
+  } catch (err) {}
+
+  const unicos = [];
+  const titulosVistos = new Set();
+  
+  eventosCandidatos.forEach(ev => {
+    const normalizado = ev.title.toLowerCase().trim();
+    if (!titulosVistos.has(normalizado)) {
+      titulosVistos.add(normalizado);
+      unicos.push(ev);
+    }
+  });
+
+  const eventosValidados = unicos.filter(ev => ev.date >= hoyIso && ev.date <= limiteIso);
+  eventosValidados.sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
+
+  const resultadoFinal = {
+    lastUpdated: new Date().toLocaleString('es-ES', { timeZone: 'Europe/London' }) + ' (Hora UK)',
+    events: eventosValidados
+  };
+
+  fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
+  console.log(`🚀 Sincronización limpia completada. Total guardado: ${eventosValidados.length}`);
+}
+
+ejecutarRastreo();
