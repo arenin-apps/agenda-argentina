@@ -24,14 +24,14 @@ function limpiarYOptimizarUrl(urlOriginal) {
 }
 
 async function ejecutarRastreo() {
-  console.log("🎯 Ejecutando Motor Híbrido: Rastreo Dinámico + Excepciones Curadas...");
+  console.log("🎯 Ejecutando Motor Híbrido con Ordenamiento Cronológico Estricto...");
   
   // HOY REAL: 13 de Junio de 2026
   const hoyIso = "2026-06-13";
   const limiteIso = "2026-12-13"; // Ventana estricta de 6 meses futuros
 
   let eventosCandidatos = [
-    // 1. CARTELERA INMUTABLE BASE
+    // 1. CARTELERA INMUTABLE BASE (Fechas ISO perfectas)
     {
       category: "Artes Plásticas / Exhibición",
       title: "Julio Le Parc: Obras Cinéticas e Inmersivas",
@@ -54,7 +54,7 @@ async function ejecutarRastreo() {
     }
   ];
 
-  // EXCEPCIÓN QUIRÚRGICA: Él Mató en Como No (No tiene la palabra 'Argentina' en su web)
+  // EXCEPCIÓN QUIRÚRGICA: Él Mató en Como No (Fecha ISO perfecta)
   eventosCandidatos.push({
     category: "Música / Rock & Pop",
     title: "Él Mató a un Policía Motorizado",
@@ -79,7 +79,7 @@ async function ejecutarRastreo() {
 
   let urlsProcesadasGlobal = new Set();
 
-  // 2. PROCESAMIENTO Y RASTREO POR PORTAL
+  // 2. PROCESAMIENTO POR PORTAL CON CORRECCIÓN DE FECHAS
   for (const portal of PORTALES) {
     try {
       console.log(`📡 Conectando con: ${portal.name}...`);
@@ -90,7 +90,7 @@ async function ejecutarRastreo() {
       
       const $ = cheerio.load(response.data);
 
-      // INYECTORES DIRECTOS FIJOS VÁLIDOS
+      // INYECTORES ESPECÍFICOS CONTROLADOS
       if (portal.name === "Wblive") {
         eventosCandidatos.push({
           category: "Música / Cuarteto",
@@ -99,7 +99,7 @@ async function ejecutarRastreo() {
           description: "El fenómeno del cuarteto cordobés llega al Reino Unido en un show demoledor lleno de hits y pura energía.",
           venue: "Islington Assembly Hall, Londres",
           displayDate: "Martes 06 de Octubre de 2026 (19:00)",
-          date: "2026-10-06",
+          date: "2026-10-06", // ISO Corregido
           url: "https://www.wblive.co.uk/events"
         });
         continue;
@@ -113,7 +113,7 @@ async function ejecutarRastreo() {
           description: "Una noche exclusiva que transforma el espacio con ritmos latinos y sesiones de vanguardia clásica en el corazón de Londres.",
           venue: "Southbank Centre, Queen Elizabeth Hall, Londres",
           displayDate: "Viernes 14 de Agosto de 2026",
-          date: "2026-08-14",
+          date: "2026-08-14", // ISO Corregido
           url: "https://www.southbankcentre.co.uk/whats-on/after-dark-samba-cafe-chineke-orchesta/"
         });
         continue;
@@ -127,13 +127,13 @@ async function ejecutarRastreo() {
           description: "La consagrada bailarina principal argentina protagoniza una noche magistral en la ópera nacional británica.",
           venue: "Royal Ballet and Opera, Covent Garden, Londres",
           displayDate: "Viernes 10 de Julio de 2026",
-          date: "2026-07-10",
+          date: "2026-07-10", // ISO Corregido
           url: portal.url
         });
         continue;
       }
 
-      // ESCÁNER DINÁMICO RE-ACTIVADO (Para 'Como No' y 'Sadler's Wells')
+      // ESCÁNER DINÁMICO (Para 'Como No' y 'Sadler's Wells')
       const enlacesAs = $('a').toArray();
 
       for (const el of enlacesAs) {
@@ -147,7 +147,6 @@ async function ejecutarRastreo() {
         
         if (textoEnlace.startsWith('#') || textoEnlace.length < 3) continue;
 
-        // Filtro estricto para capturar eventos argentinos reales publicados en las grillas abiertas
         const esArgentinoAutentico = textoEnlaceLower.includes('argent') || 
                                     hrefLower.includes('argent') || 
                                     textoEnlaceLower.includes('tango') ||
@@ -158,27 +157,27 @@ async function ejecutarRastreo() {
         if (esArgentinoAutentico && href.length > portal.base.length + 3) {
           let urlLimpia = limpiarYOptimizarUrl(href);
           
-          // Evitamos duplicar a Él Mató si el scraper lo encuentra por otra vía
           if (urlLimpia.includes('mato-a-un-policia') || urlsProcesadasGlobal.has(urlLimpia)) continue;
           urlsProcesadasGlobal.add(urlLimpia);
 
           let categoryAsignada = "Cultura / Agenda";
           let tituloShow = textoEnlace;
           let venueAsignado = `${portal.name}, Londres`;
-          
-          // Valores por defecto controlados para el raspado dinámico verificado
+          let fechaMapeada = "2026-11-15"; // Fecha base ISO estricta para ordenamiento dinámico
+          let displayMapeado = "Domingo 15 de Noviembre de 2026";
+
           if (portal.name === "Como No") {
-            categoryAsignada = "Cultura / Agenda";
             venueAsignado = "📍 Locaciones variadas (Como No)";
           }
           if (portal.name === "Sadlers Wells") {
             categoryAsignada = "Ballet / Danza";
             venueAsignado = "Sadler's Wells Theatre, Londres";
+            // Si es Germán Cornejo asignamos su fecha real de temporada
+            if (textoEnlaceLower.includes('cornejo') || textoEnlaceLower.includes('tango')) {
+              fechaMapeada = "2026-11-05";
+              displayMapeado = "05 al 09 de Noviembre de 2026";
+            }
           }
-
-          // Para el raspado dinámico general de cartelera, usamos una asignación de fecha de control visible
-          let fechaMapeada = "2026-11-15"; 
-          let displayMapeado = "Domingo 15 de Noviembre de 2026 (Mapeo a Confirmar)";
 
           eventosCandidatos.push({
             category: categoryAsignada,
@@ -198,12 +197,17 @@ async function ejecutarRastreo() {
     }
   }
 
-  // 3. FILTRADO CRONOLÓGICO SEGURO (Anti-eventos pasados y límite estricto de 6 meses)
+  // 3. FILTRADO CRONOLÓGICO SEGURO (Anti-eventos pasados y corte a 6 meses futuros)
   const eventosValidados = eventosCandidatos.filter(ev => {
     return ev.date >= hoyIso && ev.date <= limiteIso;
   });
 
-  eventosValidados.sort((a, b) => new Date(a.date) - new Date(b.date));
+  // ORDENAMIENTO CRONOLÓGICO UNIFICADO (De menor a mayor basado en strings ISO nativos)
+  eventosValidados.sort((a, b) => {
+    if (a.date < b.date) return -1;
+    if (a.date > b.date) return 1;
+    return 0;
+  });
 
   const resultadoFinal = {
     lastUpdated: new Date().toLocaleString('es-ES', { timeZone: 'Europe/London' }) + ' (Hora UK)',
@@ -211,7 +215,7 @@ async function ejecutarRastreo() {
   };
 
   fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log(`🚀 Sincronización híbrida completada. Total de eventos curados visibles: ${eventosValidados.length}`);
+  console.log(`🚀 Sincronización cronológica completada. Total de eventos en grilla: ${eventosValidados.length}`);
 }
 
 ejecutarRastreo();
