@@ -48,7 +48,6 @@ function obtenerDominio(url) {
   } catch (e) { return ""; }
 }
 
-// PROCESADOR EN LOTE: Una sola llamada masiva para toda la lista
 async function procesarListaConIa(listaEventosBrutos) {
   if (!GEMINI_API_KEY || listaEventosBrutos.length === 0) return [];
 
@@ -56,17 +55,17 @@ async function procesarListaConIa(listaEventosBrutos) {
   
   const promptOrden = `
     Analiza la siguiente lista de eventos culturales y deportivos extraídos de portales del Reino Unido.
-    Para cada elemento, debes limpiar el título, traducir o redactar una descripción atractiva en español de un párrafo, deducir la fecha exacta en formato legible (displayDate) y formato calendario YYYY-MM-DD (asume año 2026).
+    Para cada elemento, debes limpiar el título, redactar una descripción atractiva en español de un párrafo, deducir la fecha exacta en formato legible (displayDate) y formato calendario YYYY-MM-DD (asume año 2026).
     También extrae el nombre limpio del artista o equipo argentino involucrado.
 
     Lista de entrada:
     ${JSON.stringify(listaEventosBrutos, null, 2)}
 
-    Devuelve estrictamente un array JSON estructurado de esta forma, respetando el índice del enlace (url):
+    Devuelve estrictamente un array JSON estructurado de esta forma, respetando la URL original:
     [
       {
         "category": "Música / Rock & Pop" o "Música / Clásica" o "Ballet / Danza" o "Deportes / Rugby" o "Televisión / Transmisión" o "Cultura / Agenda",
-        "title": "Título limpio y vendedor en español o mantener original si es marca",
+        "title": "Título limpio y vendedor en español",
         "artist": "Nombre del artista o selección argentina",
         "description": "Descripción informativa en español sobre la participación argentina.",
         "venue": "Nombre del recinto y ciudad (ej: Twickenham Stadium, Londres). Si es de TV Guide, pon '📺 Consultar canal en guía de TV'.",
@@ -75,7 +74,7 @@ async function procesarListaConIa(listaEventosBrutos) {
         "url": "Mantén la URL provista en la entrada correspondiente"
       }
     ]
-    REGLA: Devuelve SOLO el array JSON []. Sin bloques markdown \`\`\`json ni texto extra.
+    REGLA: Devuelve SOLO el array JSON []. Sin bloques markdown \`\`\`json ni texto introductorio.
   `;
 
   try {
@@ -83,18 +82,24 @@ async function procesarListaConIa(listaEventosBrutos) {
       contents: [{ parts: [{ text: promptOrden }] }]
     }, { headers: { 'Content-Type': 'application/json' }, timeout: 25000 });
 
-    const textoIa = respuesta.data.candidates[0].content.parts[0].text.trim();
+    let textoIa = respuesta.data.candidates[0].content.parts[0].text.trim();
+    
+    // Limpieza de emergencia por si la IA ignora la regla e inyecta bloques markdown
+    if (textoIa.includes('```')) {
+      textoIa = textoIa.replace(/
+```json|```/g, '').trim();
+    }
+    
     return JSON.parse(textoIa);
   } catch (e) {
-    console.log("⚠️ Error en llamada en lote:", e.message);
+    console.log("⚠️ Error en llamada en lote de la IA:", e.message);
     return [];
   }
 }
 
 async function ejecutarRastreo() {
-  console.log("⚡ Lanzando motor híbrido en lote a alta velocidad...");
+  console.log("⚡ Lanzando motor híbrido corregido en lote...");
   
-  // Eventos fijos curados base (Garantizados)
   let eventosFinales = [
     {
       category: "Artes Plásticas / Exhibición",
@@ -104,7 +109,7 @@ async function ejecutarRastreo() {
       venue: "Tate Modern, Bankside, Londres",
       displayDate: "11 de Junio al 11 de Diciembre de 2026",
       date: "2026-06-11",
-      url: "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc"
+      url: "[https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc](https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc)"
     },
     {
       category: "Música / Concierto",
@@ -114,7 +119,7 @@ async function ejecutarRastreo() {
       venue: "Oslo Hackney, Londres",
       displayDate: "Sábado 05 de Septiembre de 2026 (19:00)",
       date: "2026-09-05",
-      url: "https://sergius.uk/event/estelares-en-londres-2026/"
+      url: "[https://sergius.uk/event/estelares-en-londres-2026/](https://sergius.uk/event/estelares-en-londres-2026/)"
     },
     {
       category: "Ballet / Danza",
@@ -124,14 +129,14 @@ async function ejecutarRastreo() {
       venue: "Sadler's Wells Theatre, Londres",
       displayDate: "05 al 09 de Noviembre de 2026",
       date: "2026-11-05",
-      url: "https://www.sadlerswells.com/whats-on/g-cornejo-tango-after-dark/"
+      url: "[https://www.sadlerswells.com/whats-on/g-cornejo-tango-after-dark/](https://www.sadlerswells.com/whats-on/g-cornejo-tango-after-dark/)"
     }
   ];
 
   let bolsaEventosBrutos = [];
-  let urlsProcesadas Global = new Set();
+  // CORREGIDO: Nombre de variable unificado y sin espacios ilegales
+  let urlsProcesadasGlobal = new Set();
 
-  // FASE 1: Recolección masiva instantánea (Velocidad pura)
   for (const portal of PORTALES) {
     try {
       console.log(`📡 Raspando enlaces en: ${portal.name}...`);
@@ -166,19 +171,17 @@ async function ejecutarRastreo() {
         }
       });
     } catch (error) {
-      console.log(`✕ Conexión fallida u omitida en ${portal.name}`);
+      console.log(`✕ Conexión omitida en ${portal.name}`);
     }
   }
 
-  console.log(`📦 Bolsa llena. Detectados ${bolsaEventosBrutos.length} enlaces argentinos. Procesando lote con IA...`);
+  console.log(`📦 Colección terminada. Enviando lote consolidado de ${bolsaEventosBrutos.length} eventos a Gemini...`);
 
-  // FASE 2: Una sola llamada masiva inteligente
   if (bolsaEventosBrutos.length > 0) {
     const eventosMasticadosPorIa = await procesarListaConIa(bolsaEventosBrutos);
     
     if (eventosMasticadosPorIa && eventosMasticadosPorIa.length > 0) {
       for (let ev of eventosMasticadosPorIa) {
-        // Inyectar overrides de Sergio si aplican
         try {
           if (fs.existsSync('panel-control.json')) {
             const panel = JSON.parse(fs.readFileSync('panel-control.json', 'utf8'));
@@ -198,7 +201,6 @@ async function ejecutarRastreo() {
     }
   }
 
-  // FASE 3: Ordenar y guardar
   eventosFinales.sort((a, b) => new Date(a.date) - new Date(b.date));
   const hoyIso = new Date().toISOString().split('T')[0];
   eventosFinales = eventosFinales.filter(ev => ev.date >= hoyIso);
@@ -209,7 +211,7 @@ async function ejecutarRastreo() {
   };
 
   fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log(`🚀 Base de datos sincronizada en bloque con éxito. Total en grilla: ${eventosFinales.length}`);
+  console.log(`🚀 Sincronización exitosa. Total eventos en JSON: ${eventosFinales.length}`);
 }
 
 ejecutarRastreo();
