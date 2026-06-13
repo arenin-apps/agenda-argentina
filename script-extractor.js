@@ -4,7 +4,6 @@ const cheerio = require('cheerio');
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
-// Volvemos a los buscadores ultra-precisos de raíz "argent"
 const PORTALES = [
   { name: "Sadlers Wells", url: "https://www.sadlerswells.com/whats-on/?search=argent", base: "https://www.sadlerswells.com" },
   { name: "Southbank Centre", url: "https://www.southbankcentre.co.uk/?s=argent", base: "https://www.southbankcentre.co.uk" },
@@ -49,39 +48,53 @@ function obtenerDominio(url) {
   } catch (e) { return ""; }
 }
 
-// PROCESADOR DE FECHAS Y DESCRIPCIONES CON IA (Formato ultra ligero)
-async function procesarShowConIa(tituloBruto, contextoPortal) {
-  if (!GEMINI_API_KEY) return { displayDate: "Consultar fecha", date: "2026-07-10", desc: "" };
+// PROCESADOR EN LOTE: Una sola llamada masiva para toda la lista
+async function procesarListaConIa(listaEventosBrutos) {
+  if (!GEMINI_API_KEY || listaEventosBrutos.length === 0) return [];
 
   const urlApi = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
   
   const promptOrden = `
-    Analiza este título de evento: "${tituloBruto}" extraído del portal cultural "${contextoPortal}" en el Reino Unido.
-    Tu tarea es devolver estrictamente un objeto JSON con:
-    1. "displayDate": La fecha legible en español (ej: Sábado 25 de Julio). Si el título no dice la fecha, pon "Consultar cartelera".
-    2. "date": La fecha real en formato estricto YYYY-MM-DD. Si no la deduce, usa "2026-07-15". Asume año 2026.
-    3. "desc": Una descripción vendedora e informativa de un párrafo corto en español sobre el show.
-    4. "artist": Nombre limpio del artista o banda argentina.
+    Analiza la siguiente lista de eventos culturales y deportivos extraídos de portales del Reino Unido.
+    Para cada elemento, debes limpiar el título, traducir o redactar una descripción atractiva en español de un párrafo, deducir la fecha exacta en formato legible (displayDate) y formato calendario YYYY-MM-DD (asume año 2026).
+    También extrae el nombre limpio del artista o equipo argentino involucrado.
 
-    Responde SOLO el objeto JSON {}, sin bloques markdown \`\`\`json ni texto extra.
+    Lista de entrada:
+    ${JSON.stringify(listaEventosBrutos, null, 2)}
+
+    Devuelve estrictamente un array JSON estructurado de esta forma, respetando el índice del enlace (url):
+    [
+      {
+        "category": "Música / Rock & Pop" o "Música / Clásica" o "Ballet / Danza" o "Deportes / Rugby" o "Televisión / Transmisión" o "Cultura / Agenda",
+        "title": "Título limpio y vendedor en español o mantener original si es marca",
+        "artist": "Nombre del artista o selección argentina",
+        "description": "Descripción informativa en español sobre la participación argentina.",
+        "venue": "Nombre del recinto y ciudad (ej: Twickenham Stadium, Londres). Si es de TV Guide, pon '📺 Consultar canal en guía de TV'.",
+        "displayDate": "Fecha legible en español (ej: Sábado 20 de Junio)",
+        "date": "YYYY-MM-DD",
+        "url": "Mantén la URL provista en la entrada correspondiente"
+      }
+    ]
+    REGLA: Devuelve SOLO el array JSON []. Sin bloques markdown \`\`\`json ni texto extra.
   `;
 
   try {
     const respuesta = await axios.post(urlApi, {
       contents: [{ parts: [{ text: promptOrden }] }]
-    }, { headers: { 'Content-Type': 'application/json' }, timeout: 7000 });
+    }, { headers: { 'Content-Type': 'application/json' }, timeout: 25000 });
 
     const textoIa = respuesta.data.candidates[0].content.parts[0].text.trim();
     return JSON.parse(textoIa);
   } catch (e) {
-    return { displayDate: "Consultar fecha", date: "2026-07-15", desc: "", artist: contextoPortal };
+    console.log("⚠️ Error en llamada en lote:", e.message);
+    return [];
   }
 }
 
 async function ejecutarRastreo() {
-  console.log("⚡ Lanzando motor híbrido: Búsqueda masiva por enlaces + formateo por IA...");
+  console.log("⚡ Lanzando motor híbrido en lote a alta velocidad...");
   
-  // Eventos fijos curados
+  // Eventos fijos curados base (Garantizados)
   let eventosFinales = [
     {
       category: "Artes Plásticas / Exhibición",
@@ -115,106 +128,77 @@ async function ejecutarRastreo() {
     }
   ];
 
-  let urlsManualesAnulacion = [];
-  try {
-    if (fs.existsSync('panel-control.json')) {
-      const panel = JSON.parse(fs.readFileSync('panel-control.json', 'utf8'));
-      urlsManualesAnulacion = panel.urls_individuales_extra || [];
-    }
-  } catch (err) {}
+  let bolsaEventosBrutos = [];
+  let urlsProcesadas Global = new Set();
 
+  // FASE 1: Recolección masiva instantánea (Velocidad pura)
   for (const portal of PORTALES) {
     try {
-      console.log(`📡 Rastreando enlaces en: ${portal.name}...`);
+      console.log(`📡 Raspando enlaces en: ${portal.name}...`);
       const response = await axios.get(portal.url, { 
         headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
-        timeout: 8000
+        timeout: 6000
       });
       
       const $ = cheerio.load(response.data);
-      let urlsProcesadasEnEstePortal = new Set();
 
-      // Recorremos todos los enlaces del buscador de la ticketera
-      await new Promise(resolve => {
-        let links = $('a');
-        let index = 0;
+      $('a').each((i, el) => {
+        let href = $(el).attr('href');
+        if (!href) return;
+        if (href.startsWith('/')) href = portal.base + href;
 
-        async function procesarSiguienteLink() {
-          if (index >= links.length) return resolve();
-          let el = links[index++];
+        const textoEnlace = $(el).text().trim();
+        const textoEnlaceLower = textoEnlace.toLowerCase();
+        const esArgentino = textoEnlaceLower.includes('argent') || href.toLowerCase().includes('argent');
+
+        if (esLinkProfundoValido(href, portal.base) && esArgentino) {
+          let urlLimpia = limpiarYOptimizarUrl(href);
+          if (urlsProcesadasGlobal.has(urlLimpia)) return;
+          urlsProcesadasGlobal.add(urlLimpia);
+
+          let tituloBruto = textoEnlace.length > 5 && textoEnlace.length < 120 ? textoEnlace : `Show en ${portal.name}`;
           
-          let href = $(el).attr('href');
-          if (!href) return procesarSiguienteLink();
-          if (href.startsWith('/')) href = portal.base + href;
-
-          const textoEnlace = $(el).text().trim();
-          const textoEnlaceLower = textoEnlace.toLowerCase();
-          
-          // La regla masiva original: coincidencia por término universal "argent"
-          const esArgentino = textoEnlaceLower.includes('argent') || href.toLowerCase().includes('argent');
-
-          if (esLinkProfundoValido(href, portal.base) && esArgentino) {
-            let urlLimpia = limpiarYOptimizarUrl(href);
-            if (urlsProcesadasEnEstePortal.has(urlLimpia)) return procesarSiguienteLink();
-            urlsProcesadasEnEstePortal.add(urlLimpia);
-
-            let tituloShow = textoEnlace.length > 8 && textoEnlace.length < 90 ? textoEnlace : `Show Argentino en ${portal.name}`;
-            
-            // Llamamos a la IA de forma súper veloz solo para embellecer y extraer la fecha de este título
-            console.log(`  🧠 IA procesando detalles para: "${tituloShow.substring(0,30)}..."`);
-            const detallesIa = await procesarShowConIa(tituloShow, portal.name);
-
-            let categoryAsignada = "Cultura / Agenda";
-            let venueAsignado = `${portal.name}, Londres`;
-            let descAsignada = detallesIa.desc || `Función programada en ${portal.name}. Revisá la web oficial de reserva para más detalles.`;
-
-            if (portal.name === "The Nickel") { categoryAsignada = "Cine / Proyección"; venueAsignado = "The Nickel Cinema, Londres"; }
-            if (portal.name === "Wigmore Hall") categoryAsignada = "Música / Clásica"; 
-            if (portal.name === "De Puta Madre Club") { categoryAsignada = "Música / Rock & Pop"; venueAsignado = "📍 Ver sala en boletería"; }
-            if (portal.name === "Sadlers Wells" || portal.name === "Royal Ballet and Opera") categoryAsignada = "Ballet / Danza";
-            
-            if (portal.name === "England Rugby RFU" || portal.name === "Nations Championship") {
-              categoryAsignada = "Deportes / Rugby";
-              venueAsignado = portal.name === "England Rugby RFU" ? "Twickenham Stadium, Londres" : "📍 Ver Sede asignada";
-              tituloShow = "Los Pumas - Match Internacional";
-            }
-
-            if (portal.name === "TV Guide UK") {
-              categoryAsignada = "Televisión / Transmisión";
-              venueAsignado = "📺 En Guía de TV Británica";
-              tituloShow = detallesIa.artist !== "TV Guide UK" ? `Especial: ${detallesIa.artist}` : "Especial sobre Argentina en TV";
-            }
-
-            const dominioPortal = obtenerDominio(portal.base);
-            for (const urlManual of urlsManualesAnulacion) {
-              if (obtenerDominio(urlManual) === dominioPortal) {
-                urlLimpia = urlManual;
-                break;
-              }
-            }
-
-            eventosFinales.push({
-              category: categoryAsignada,
-              title: detallesIa.title || tituloShow,
-              artist: detallesIa.artist || portal.name,
-              description: descAsignada,
-              venue: venueAsignado,
-              displayDate: detallesIa.displayDate,
-              date: detallesIa.date,
-              url: urlLimpia
-            });
-          }
-          await procesarSiguienteLink();
+          bolsaEventosBrutos.push({
+            portal: portal.name,
+            tituloBruto: tituloBruto,
+            url: urlLimpia
+          });
         }
-        procesarSiguienteLink();
       });
-
     } catch (error) {
-      console.log(`✕ Portal ${portal.name} omitido.`);
+      console.log(`✕ Conexión fallida u omitida en ${portal.name}`);
     }
   }
 
-  // Ordenar y limpiar expirados
+  console.log(`📦 Bolsa llena. Detectados ${bolsaEventosBrutos.length} enlaces argentinos. Procesando lote con IA...`);
+
+  // FASE 2: Una sola llamada masiva inteligente
+  if (bolsaEventosBrutos.length > 0) {
+    const eventosMasticadosPorIa = await procesarListaConIa(bolsaEventosBrutos);
+    
+    if (eventosMasticadosPorIa && eventosMasticadosPorIa.length > 0) {
+      for (let ev of eventosMasticadosPorIa) {
+        // Inyectar overrides de Sergio si aplican
+        try {
+          if (fs.existsSync('panel-control.json')) {
+            const panel = JSON.parse(fs.readFileSync('panel-control.json', 'utf8'));
+            const urlsManualesAnulacion = panel.urls_individuales_extra || [];
+            const dominioEv = obtenerDominio(ev.url);
+            for (const urlManual of urlsManualesAnulacion) {
+              if (obtenerDominio(urlManual) === dominioEv) {
+                ev.url = urlManual;
+                break;
+              }
+            }
+          }
+        } catch (err) {}
+
+        eventosFinales.push(ev);
+      }
+    }
+  }
+
+  // FASE 3: Ordenar y guardar
   eventosFinales.sort((a, b) => new Date(a.date) - new Date(b.date));
   const hoyIso = new Date().toISOString().split('T')[0];
   eventosFinales = eventosFinales.filter(ev => ev.date >= hoyIso);
@@ -225,7 +209,7 @@ async function ejecutarRastreo() {
   };
 
   fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log("🚀 ¡Hecho! Combinación masiva completada con éxito.");
+  console.log(`🚀 Base de datos sincronizada en bloque con éxito. Total en grilla: ${eventosFinales.length}`);
 }
 
 ejecutarRastreo();
