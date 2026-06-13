@@ -2,12 +2,13 @@ const fs = require('fs');
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-// CONFIGURACIÓN DE PORTALES: Agregamos las URLs internas exactas para forzar la captura
+// CONFIGURACIÓN DE PORTALES: Ajustamos la URL específica para Royal Ballet and Opera
 const PORTALES = [
-  { name: "Royal Ballet and Opera", url: "https://www.rbo.org.uk/tickets-and-events/marianela-timeless-details", base: "https://www.rbo.org.uk" }, // URL Directa
-  { name: "De Puta Madre Club", url: "https://deputamadreclub.eu/events/", base: "https://deputamadreclub.eu" }, // URL Directa
-  { name: "Como No", url: "https://comono.co.uk/whats-on/", base: "https://comono.co.uk" }, // URL Directa
-  { name: "Wblive", url: "https://wblive.co.uk", base: "https://wblive.co.uk" }, // URL Directa
+  { name: "Royal Ballet and Opera", url: "https://www.rbo.org.uk/search/argentina", base: "https://www.rbo.org.uk" }, // CORREGIDO: Búsqueda estricta con "argentina"
+  { name: "Royal Ballet and Opera - Marianela", url: "https://www.rbo.org.uk/tickets-and-events/marianela-timeless-details", base: "https://www.rbo.org.uk" }, // Mantener link directo asegurado
+  { name: "De Puta Madre Club", url: "https://deputamadreclub.eu/events/", base: "https://deputamadreclub.eu" }, 
+  { name: "Como No", url: "https://comono.co.uk/whats-on/", base: "https://comono.co.uk" }, 
+  { name: "Wblive", url: "https://wblive.co.uk", base: "https://wblive.co.uk" }, 
   { name: "Sadlers Wells", url: "https://www.sadlerswells.com/whats-on/?search=argent", base: "https://www.sadlerswells.com" },
   { name: "Southbank Centre", url: "https://www.southbankcentre.co.uk/?s=argent", base: "https://www.southbankcentre.co.uk" },
   { name: "Barbican", url: "https://www.barbican.org.uk/whats-on?search=argent", base: "https://www.barbican.org.uk" },
@@ -29,9 +30,9 @@ function limpiarYOptimizarUrl(urlOriginal) {
 }
 
 async function ejecutarRastreo() {
-  console.log("⚡ Lanzando escáner masivo con enlaces profundos directos...");
+  console.log("⚡ Lanzando escáner masivo con optimización para Royal Ballet (Búsqueda: 'argentina')...");
   
-  // Rango dinámico automatizado de 6 meses (Basado en Junio 2026)
+  // Rango dinámico automatizado de 6 meses
   const fechaHoy = new Date();
   const hoyIso = fechaHoy.toISOString().split('T')[0];
   
@@ -86,8 +87,8 @@ async function ejecutarRastreo() {
       
       const $ = cheerio.load(response.data);
 
-      // Si el portal es el link directo de Marianela, lo inyectamos de forma quirúrgica e inmediata
-      if (portal.name === "Royal Ballet and Opera" && portal.url.includes('marianela')) {
+      // Inyección controlada para el link directo de Marianela
+      if (portal.name.includes("Marianela")) {
         eventosFinales.push({
           category: "Ballet / Danza",
           title: "Marianela: Timeless Details - Royal Ballet",
@@ -111,10 +112,12 @@ async function ejecutarRastreo() {
         const textoEnlace = $(el).text().trim();
         const textoEnlaceLower = textoEnlace.toLowerCase();
         
-        // Flexibilizamos al máximo para capturar los shows de tus marcas aliadas de forma directa
+        // Validación adaptada: acepta tanto raíces "argent" como la palabra completa capturada del buscador de RBO
         const esValido = textoEnlaceLower.includes('argent') || 
                           href.toLowerCase().includes('argent') || 
                           textoEnlaceLower.includes('tango') ||
+                          textoEnlaceLower.includes('nunez') ||
+                          portal.name.includes("Royal Ballet") ||
                           portal.name === "De Puta Madre Club" ||
                           portal.name === "Como No" ||
                           portal.name === "Wblive";
@@ -126,18 +129,19 @@ async function ejecutarRastreo() {
 
           let tituloShow = textoEnlace.length > 5 && textoEnlace.length < 130 ? textoEnlace : `Espectáculo en ${portal.name}`;
           let categoryAsignada = "Cultura / Agenda";
-          let artistAsignado = portal.name;
-          let venueAsignado = `${portal.name}, Londres`;
+          let artistAsignado = portal.name.replace(" - Marianela", "");
+          let venueAsignado = `${artistAsignado}, Londres`;
           let descAsignada = `Sincronización automática de cartelera. Ingresá al enlace oficial para revisar la disponibilidad de tickets y horarios definitivos en el Reino Unido.`;
 
           if (portal.name === "The Nickel") { categoryAsignada = "Cine / Proyección"; tituloShow = "Ciclo de Cine Argentino"; venueAsignado = "The Nickel Cinema, Londres"; }
           if (portal.name === "De Puta Madre Club") { categoryAsignada = "Música / Rock & Pop"; artistAsignado = "Gira Oficial UK"; venueAsignado = "📍 Ver sala en boletería"; if(tituloShow.includes('Espectáculo')) tituloShow = "Concierto Rock Argentino"; }
           if (portal.name === "Como No") { categoryAsignada = "Cultura / Agenda"; artistAsignado = "Como No Productions"; venueAsignado = "📍 Locaciones variadas"; if(tituloShow.includes('Espectáculo')) tituloShow = "Festival Latinoamericano"; }
           if (portal.name === "Wblive") { categoryAsignada = "Música / Concierto"; tituloShow = "Agenda de Shows en Vivo"; venueAsignado = "📍 Ver recinto en boletería"; }
+          if (portal.name.includes("Royal Ballet")) { categoryAsignada = "Ballet / Danza"; venueAsignado = "Royal Ballet and Opera, Londres"; }
           if (portal.name === "Sadlers Wells") { categoryAsignada = "Ballet / Danza"; venueAsignado = "Sadler's Wells Theatre, Londres"; }
           if (portal.name === "England Rugby RFU") { categoryAsignada = "Deportes / Rugby"; artistAsignado = "Los Pumas"; venueAsignado = "Twickenham Stadium, Londres"; tituloShow = "Los Pumas - Match Internacional"; }
 
-          // Escalona de forma prolija en la grilla futura dentro de los 6 meses
+          // Distribución cronológica dentro de la ventana de 6 meses
           let fechaEstimada = new Date();
           fechaEstimada.setDate(fechaEstimada.getDate() + (contadorDiasAuxilio % 150)); 
           contadorDiasAuxilio += 5;
@@ -163,7 +167,7 @@ async function ejecutarRastreo() {
     }
   }
 
-  // Ordenar y aplicar filtro de ventana de 6 meses estricto
+  // Filtrado final de ventana cronológica activa
   eventosFinales.sort((a, b) => new Date(a.date) - new Date(b.date));
   eventosFinales = eventosFinales.filter(ev => ev.date >= hoyIso && ev.date <= limiteIso);
 
@@ -173,7 +177,7 @@ async function ejecutarRastreo() {
   };
 
   fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log(`🚀 Sincronización exitosa. Grilla activa con ${eventosFinales.length} eventos reales.`);
+  console.log(`🚀 Sincronización exitosa. Grilla activa con ${eventosFinales.length} eventos.`);
 }
 
 ejecutarRastreo();
