@@ -1,6 +1,14 @@
 {
-  "lastUpdated": "13/6/2026, 16:39:44 (Hora UK)",
+  "lastUpdated": "13/6/2026, 17:14:56 (Hora UK)",
   "events": [
+    {
+      "category": "Danza / Ballet",
+      "title": "Marianela – TimelessMarianela – TimelessMarianela – TimelessCast and\nCreatives",
+      "venue": "Royal Opera House, Covent Garden",
+      "displayDate": "Temporada 2026",
+      "date": "2026-07-20",
+      "url": "https://www.rbo.org.uk/tickets-and-events/marianela-timeless-details"
+    },
     {
       "category": "Música / Concierto",
       "title": "Espectáculo Exclusivo de Rock y Cultura",
@@ -13,33 +21,39 @@
     },
     {
       "category": "Música / Concierto",
-      "title": "Estelares en Londres - Gira 'Las Antorchas'",
-      "artist": "Estelares",
-      "description": "La mítica banda de rock canción liderada por Manuel Moretti se presenta por primera vez en el Reino Unido repasando sus himnos melódicos.",
-      "venue": "Oslo Hackney, Londres",
-      "displayDate": "Sábado 05 de Septiembre de 2026 (19:00)",
+      "title": "Estelares en Londres 2026",
+      "venue": "Oslo Hackney\t\n\t\n\t\t1A Amhurst Road, London, London, United Kingdom",
+      "displayDate": "September 5 @ 7:00 pm - 10:30 pm",
       "date": "2026-09-05",
+      "description": "La espera terminó. Estelares, una de las bandas más emblemáticas del rock argentino, llega por primera vez a Londres para un concierto histórico en Oslo Hackney...",
       "url": "https://sergius.uk/event/estelares-en-londres-2026/"
     },
     {
-      "category": "Música / Rock & Pop",
-      "title": "Él Mató a un Policía Motorizado",
-      "artist": "Él Mató a un Policía Motorizado",
-      "description": "La influyente banda de rock indie argentino regresa a los escenarios británicos en un concierto imperdible de la mano de Como No.",
-      "venue": "📍 Consultar recinto en boletería oficial (Como No)",
-      "displayDate": "Sábado 12 de Septiembre de 2026",
-      "date": "2026-09-12",
-      "url": "https://comono.co.uk/artists/el-mato-a-un-policia-motorizado/"
+      "category": "Música / Concierto",
+      "title": "Alejandra Azcárate – “Lo que se permite, se repite”",
+      "venue": "The Clapham Grand\t\n\t\n\t\t21-25 St. John's Hill, Clapham Junction, London, United Kingdom",
+      "displayDate": "October 4 @ 7:00 pm - 10:00 pm",
+      "date": "2026-09-05",
+      "description": "Alejandra Azcárate en Londres: \"Lo que se permite, se repite\" | Comedia en Español...",
+      "url": "https://sergius.uk/event/alejandra-azcarate-lo-que-se-permite-se-repite/"
     },
     {
-      "category": "Música / Cuarteto",
-      "title": "La K'onga en Londres",
-      "artist": "La K'onga",
-      "description": "El fenómeno del cuarteto cordobés llega al Reino Unido en un show demoledor lleno de hits y pura energía.",
-      "venue": "Islington Assembly Hall, Londres",
-      "displayDate": "Martes 06 de Octubre de 2026 (19:00)",
-      "date": "2026-10-06",
-      "url": "https://www.wblive.co.uk/events"
+      "category": "Música / Concierto",
+      "title": "El Profesor Briceño en Londres presentando “Bueno y Sano”",
+      "venue": "229 London\t\n\t\n\t\t229 Great Portland Street, London, London, United Kingdom",
+      "displayDate": "October 27 @ 7:00 pm - 10:00 pm",
+      "date": "2026-09-05",
+      "description": "El Profesor Briceño llega a Londres con “Bueno y Sano”, un show de comedia sobre redes sociales, vidas perfectas y la imposibilidad de ser bueno hoy. Compra tus...",
+      "url": "https://sergius.uk/event/el-profesor-briceno-en-londres-presentando-bueno-y-sano/"
+    },
+    {
+      "category": "Música / Concierto",
+      "title": "David Suárez en Dublin presentando  “Humor Blanco”",
+      "venue": "The Laughter Lounge\t\n\t\n\t\t4-8 Eden Quay, Dublin, Ireland",
+      "displayDate": "December 7 @ 7:00 pm - 10:00 pm",
+      "date": "2026-09-05",
+      "description": "¡Entradas ya a la venta! David Suárez regresa con su show de humor negro más incómodo y polémico. Disfruta de una hora de stand-up salvaje sobre sexo, juicios y...",
+      "url": "https://sergius.uk/event/david-suarez-en-dublin-presentando-humor-blanco/"
     }
   ]
 }
