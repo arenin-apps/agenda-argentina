@@ -29,6 +29,7 @@ function limpiarYOptimizarUrl(urlOriginal) {
     urlPura = urlPura.replace('/exhibition/', '/');
   }
 
+  // Dejar pasar parámetros esenciales de búsqueda para evitar que se rompa el rastreo interno
   if (urlPura.includes('?')) {
     const partes = urlPura.split('?');
     if (!partes[1].includes('s=') && !partes[1].includes('search=') && !partes[1].includes('q=')) {
@@ -41,7 +42,7 @@ function limpiarYOptimizarUrl(urlOriginal) {
 function esLinkProfundoValido(href, baseUrL) {
   if (!href) return false;
   const link = href.toLowerCase().trim();
-  if (link === '/' || link === baseUrL.toLowerCase() || link.includes('?s=') || link.includes('?search=')) {
+  if (link === '/' || link === baseUrL.toLowerCase()) {
     return false;
   }
   return TEXTOS_TICKET_VALIDOS.some(texto => link.includes(texto));
@@ -59,9 +60,9 @@ function obtenerDominio(url) {
 
 // 2. PROCESO PRINCIPAL COMBINADO HÍBRIDO
 async function ejecutarRastreo() {
-  console.log("Iniciando escaneo global: Filtrado estricto por término universal 'argent'...");
+  console.log("Iniciando escaneo global: Corrección de URLs y filtrado universal 'argent'...");
   
-  // Lista inicial inmutable de alta prioridad (Tus producciones curadas)
+  // Lista inicial inmutable de alta prioridad
   let eventosFinales = [
     {
       category: "Artes Plásticas / Exhibición",
@@ -98,7 +99,6 @@ async function ejecutarRastreo() {
   let urlsManualesAnulacion = [];
   let urlMailchimp = "";
 
-  // CARGAR TU PANEL DE CONTROL ESCONDIDO (panel-control.json)
   try {
     if (fs.existsSync('panel-control.json')) {
       const panel = JSON.parse(fs.readFileSync('panel-control.json', 'utf8'));
@@ -109,7 +109,7 @@ async function ejecutarRastreo() {
     console.log("Rastreo puro activo.");
   }
 
-  // SECCIÓN A: RASTREAR EL NEWSLETTER MENSUAL DE MAILCHIMP
+  // SECCIÓN A: NEWSLETTER MAILCHIMP
   if (urlMailchimp && urlMailchimp.includes('mailchi.mp')) {
     try {
       console.log(`📡 Analizando boletín de la Embajada Argentina...`);
@@ -144,7 +144,7 @@ async function ejecutarRastreo() {
     }
   }
 
-  // SECCIÓN B: RASTREO TRADICIONAL MULTI-SHOW CON FILTRO ÚNICO "ARGENT"
+  // SECCIÓN B: RASTREO MULTI-SHOW
   for (const portal of PORTALES) {
     try {
       console.log(`Rastreando portal oficial: ${portal.name}...`);
@@ -165,7 +165,6 @@ async function ejecutarRastreo() {
         const textoEnlace = $(el).text().trim();
         const textoEnlaceLower = textoEnlace.toLowerCase();
         
-        // REGLA DE ORO: Matchear única y exclusivamente la raíz "argent"
         const esArgentino = textoEnlaceLower.includes('argent') || href.toLowerCase().includes('argent');
 
         if (esLinkProfundoValido(href, portal.base) && esArgentino) {
@@ -174,7 +173,6 @@ async function ejecutarRastreo() {
           if (urlsProcesadasEnEstePortal.has(urlLimpia)) return;
           urlsProcesadasEnEstePortal.add(urlLimpia);
 
-          // --- SISTEMA DE ANULACIÓN CRÍTICO (OVERRIDE) ---
           for (const urlManual of urlsManualesAnulacion) {
             if (obtenerDominio(urlManual) === dominioPortal) {
               urlLimpia = urlManual;
@@ -184,7 +182,6 @@ async function ejecutarRastreo() {
 
           let tituloShow = textoEnlace.length > 8 && textoEnlace.length < 90 ? textoEnlace : `Evento Argentino en ${portal.name}`;
           
-          // Clasificación estética de las celdas según el origen
           let categoryAsignada = "Cultura / Agenda";
           let artistAsignado = portal.name;
           let venueAsignado = `${portal.name}, UK`;
@@ -218,7 +215,7 @@ async function ejecutarRastreo() {
             venue: venueAsignado,
             displayDate: portal.name === "TV Guide UK" ? "Ver horario de emisión" : "Consultar fecha en boletería",
             date: "2026-07-10", 
-            url: urlLinter || urlLimpia
+            url: urlLimpia // CORREGIDO: Se inyecta la variable limpia real de manera directa
           });
         }
       });
@@ -228,7 +225,7 @@ async function ejecutarRastreo() {
     }
   }
 
-  // SECCIÓN C: INYECTAR URLS MANUALES SUELTAS
+  // SECCIÓN C: URLS MANUALES
   for (const urlManual of urlsManualesAnulacion) {
     const dominioManual = urlManual;
     const perteneceAPortalFijo = PORTALES.some(p => obtenerDominio(p.base) === obtenerDominio(dominioManual));
@@ -247,14 +244,13 @@ async function ejecutarRastreo() {
     }
   }
 
-  // 3. GENERAR ARCHIVO COMPILADO FINAL
   const resultadoFinal = {
     lastUpdated: new Date().toLocaleString('es-ES', { timeZone: 'Europe/London' }) + ' (Hora UK)',
     events: eventosFinales
   };
 
   fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log("¡Hecho! Archivo eventos.json actualizado con el filtro simplificado 'argent'.");
+  console.log("¡Hecho! Archivo eventos.json regenerado de forma limpia y sin errores de variables.");
 }
 
 ejecutarRastreo();
