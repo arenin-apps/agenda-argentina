@@ -2,7 +2,7 @@ const fs = require('fs');
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-// Volvemos a encender TODAS las fuentes con rutas de alto volumen
+// Cartelera oficial de portales en el Reino Unido (Se elimina TV Guide de forma definitiva)
 const PORTALES = [
   { name: "Sadlers Wells", url: "https://www.sadlerswells.com/whats-on/?search=argent", base: "https://www.sadlerswells.com" },
   { name: "Southbank Centre", url: "https://www.southbankcentre.co.uk/?s=argent", base: "https://www.southbankcentre.co.uk" },
@@ -13,8 +13,7 @@ const PORTALES = [
   { name: "Wigmore Hall", url: "https://www.wigmore-hall.org.uk/whats-on?search=argent", base: "https://www.wigmore-hall.org.uk" },
   { name: "Royal Ballet and Opera", url: "https://www.rbo.org.uk/whats-on?search=argent", base: "https://www.rbo.org.uk" },
   { name: "De Puta Madre Club", url: "https://deputamadreclub.eu/events/?s=argent", base: "https://deputamadreclub.eu" },
-  { name: "England Rugby RFU", url: "https://www.englandrugby.com/fixtures-results", base: "https://www.englandrugby.com" },
-  { name: "TV Guide UK", url: "https://www.tvguide.co.uk/search?q=argent", base: "https://www.tvguide.co.uk" }
+  { name: "England Rugby RFU", url: "https://www.englandrugby.com/fixtures-results", base: "https://www.englandrugby.com" }
 ];
 
 function limpiarYOptimizarUrl(urlOriginal) {
@@ -29,18 +28,10 @@ function limpiarYOptimizarUrl(urlOriginal) {
   return urlPura;
 }
 
-function obtenerDominio(url) {
-  if (!url) return "";
-  try {
-    const p = url.replace('https://', '').replace('http://', '').replace('www.', '');
-    return p.split('/')[0].toLowerCase();
-  } catch (e) { return ""; }
-}
-
 async function ejecutarRastreo() {
-  console.log("⚡ Lanzando súper-motor de alto volumen (Ventana de 6 meses activa)...");
+  console.log("⚡ Lanzando motor purificado (Búsqueda estricta de eventos en vivo - Ventana de 6 meses)...");
   
-  // Fechas dinámicas calculadas en tiempo de ejecución
+  // Cálculo de la ventana de tiempo dinámica
   const fechaHoy = new Date();
   const hoyIso = fechaHoy.toISOString().split('T')[0];
   
@@ -48,9 +39,9 @@ async function ejecutarRastreo() {
   fechaLimite.setMonth(fechaLimite.getMonth() + 6);
   const limiteIso = fechaLimite.toISOString().split('T')[0];
 
-  console.log(`📅 Buscando eventos programados entre: ${hoyIso} y ${limiteIso}`);
+  console.log(`📅 Filtrando eventos programados entre: ${hoyIso} y ${limiteIso}`);
 
-  // 1. EVENTOS BASE PROFESIONALES ASEGURADOS
+  // 1. EVENTOS BASE PROFESIONALES CONFIRMADOS
   let eventosFinales = [
     {
       category: "Artes Plásticas / Exhibición",
@@ -80,120 +71,4 @@ async function ejecutarRastreo() {
       venue: "Sadler's Wells Theatre, Londres",
       displayDate: "05 al 09 de Noviembre de 2026",
       date: "2026-11-05",
-      url: "https://www.sadlerswells.com/whats-on/g-cornejo-tango-after-dark/"
-    }
-  ];
-
-  // 2. INYECCIÓN DESDE EL PANEL DE CONTROL MANUAL
-  try {
-    if (fs.existsSync('panel-control.json')) {
-      const panel = JSON.parse(fs.readFileSync('panel-control.json', 'utf8'));
-      if (panel.eventos_manuales_fijos && panel.eventos_manuales_fijos.length > 0) {
-        eventosFinales = eventosFinales.concat(panel.eventos_manuales_fijos);
-      }
-    }
-  } catch (err) {}
-
-  let urlsProcesadasGlobal = new Set();
-  let contadorDiasAuxilio = 1; // Para escalonar las fechas estimadas en la grilla
-
-  // 3. EXTRACCIÓN MASIVA EN PORTALES
-  for (const portal of PORTALES) {
-    try {
-      console.log(`📡 Escaneando de forma masiva: ${portal.name}...`);
-      const response = await axios.get(portal.url, { 
-        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
-        timeout: 7000
-      });
-      
-      const $ = cheerio.load(response.data);
-
-      $('a').each((i, el) => {
-        let href = $(el).attr('href');
-        if (!href) return;
-        if (href.startsWith('/')) href = portal.base + href;
-
-        const textoEnlace = $(el).text().trim();
-        const textoEnlaceLower = textoEnlace.toLowerCase();
-        
-        // Criterio amplio de coincidencia adentro del buscador oficial
-        const esArgentino = textoEnlaceLower.includes('argent') || 
-                            href.toLowerCase().includes('argent') || 
-                            textoEnlaceLower.includes('marianela') ||
-                            textoEnlaceLower.includes('tango') ||
-                            portal.name === "TV Guide UK" ||
-                            portal.name === "De Puta Madre Club";
-
-        if (esArgentino && href.length > portal.base.length + 3) {
-          let urlLimpia = limpiarYOptimizarUrl(href);
-          if (urlsProcesadasGlobal.has(urlLimpia)) return;
-          urlsProcesadasGlobal.add(urlLimpia);
-
-          let tituloShow = textoEnlace.length > 5 && textoEnlace.length < 130 ? textoEnlace : `Función Argentina en ${portal.name}`;
-          
-          let categoryAsignada = "Cultura / Agenda";
-          let artistAsignado = portal.name;
-          let venueAsignado = `${portal.name}, Londres`;
-          let descAsignada = `Sincronización automática de cartelera. Ingresá al enlace oficial de ${portal.name} para revisar la disponibilidad, horarios y canales de reserva en el Reino Unido.`;
-
-          // Clasificación por portales
-          if (portal.name === "The Nickel") { categoryAsignada = "Cine / Proyección"; tituloShow = "Ciclo de Cine Argentino"; venueAsignado = "The Nickel Cinema, Londres"; }
-          if (portal.name === "Wigmore Hall") { categoryAsignada = "Música / Clásica"; venueAsignado = "Wigmore Hall, Londres"; }
-          if (portal.name === "De Puta Madre Club") { categoryAsignada = "Música / Rock & Pop"; artistAsignado = "Gira Oficial UK"; venueAsignado = "📍 Ver sala en boletería"; }
-          if (portal.name === "Sadlers Wells" || portal.name === "Royal Ballet and Opera") { categoryAsignada = "Ballet / Danza"; venueAsignado = `${portal.name}, Londres`; }
-          if (portal.name === "England Rugby RFU") { categoryAsignada = "Deportes / Rugby"; artistAsignado = "Los Pumas"; venueAsignado = "Twickenham Stadium, Londres"; tituloShow = "Los Pumas - Match Internacional"; }
-
-          if (portal.name === "TV Guide UK") {
-            categoryAsignada = "Televisión / Transmisión";
-            artistAsignado = "Televisión Británica";
-            venueAsignado = "📺 En Guía de TV Británica";
-            descAsignada = "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.";
-            if (tituloShow.includes('Función Argentina')) tituloShow = "Especial sobre Argentina en TV";
-          }
-
-          // ASIGNACIÓN DE FECHA AUTOMÁTICA DENTRO DEL RANGO DE 6 MESES
-          // Escalona los eventos encontrados sumando días a la fecha de hoy para que se distribuyan prolijamente en la grilla futura
-          let fechaEstimada = new Date();
-          fechaEstimada.setDate(fechaEstimada.getDate() + (contadorDiasAuxilio % 150)); 
-          contadorDiasAuxilio += 3; // Salto de días para espaciar la cartelera
-          
-          let dateIsoCalculada = fechaEstimada.toISOString().split('T')[0];
-          
-          // Formato display amigable
-          let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-          let displayCalculado = `${fechaEstimada.getDate()} de ${meses[fechaEstimada.getMonth()]} de 2026`;
-
-          eventosFinales.push({
-            category: categoryAsignada,
-            title: tituloShow,
-            artist: artistAsignado,
-            description: descAsignada,
-            venue: venueAsignado,
-            displayDate: portal.name === "TV Guide UK" ? "Ver horario de emisión" : displayCalculado,
-            date: dateIsoCalculada, 
-            url: urlLimpia
-          });
-        }
-      });
-    } catch (error) {
-      console.log(`✕ Portal ${portal.name} omitido temporalmente.`);
-    }
-  }
-
-  // 4. FILTRADO ESTRICTO CRONOLÓGICO DE LA VENTANA (HOY A 6 MESES)
-  eventosFinales.sort((a, b) => new Date(a.date) - new Date(b.date));
-  
-  eventosFinales = eventosFinales.filter(ev => {
-    return ev.date >= hoyIso && ev.date <= limiteIso;
-  });
-
-  const resultadoFinal = {
-    lastUpdated: new Date().toLocaleString('es-ES', { timeZone: 'Europe/London' }) + ' (Hora UK)',
-    events: eventosFinales
-  };
-
-  fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log(`🚀 Sincronización masiva completada. Total inyectados en la grilla activa: ${eventosFinales.length}`);
-}
-
-ejecutarRastreo();
+      url: "
