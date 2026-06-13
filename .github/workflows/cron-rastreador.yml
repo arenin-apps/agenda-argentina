@@ -1,38 +1,36 @@
-name: Sincronizador Automático de Agenda Argentina UK
+name: Rastreador de Eventos Argentinos
 
 on:
   schedule:
-    # Se ejecuta automáticamente a las 07:00 y a las 17:00 (Hora de Londres / BST)
-    # Traducido a UTC (servidor): 06:00 y 16:00
-    - cron: '0 6,16 * * *'
-  workflow_dispatch: # Te permite activar el rastreo manualmente con un botón
+    - cron: '0 */6 * * *' # Corre automáticamente cada 6 horas
+  workflow_dispatch: # Te permite darle al botón manual cuando quieras
 
 jobs:
   rastrear-eventos:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Clonar repositorio de la app
-        uses: actions/checkout@v4
+    - name: Clonar Repositorio
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
-      - name: Configurar entorno de Node.js moderno
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24 # Actualizado a la versión requerida por el servidor
+    - name: Configurar Node.js 24
+      uses: actions/setup-node@v4
+      with:
+        node-version: 24
 
-      - name: Instalar dependencias de rastreo web
-        run: |
-          npm install axios cheerio
+    - name: Instalar Dependencias Limpias
+      run: |
+        npm init -y
+        npm install axios cheerio fs
 
-      - name: Ejecutar script de extracción en portales oficiales
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} 
-        run: |
-          node script-extractor.js
+    - name: Ejecutar Motor de Extracción Real
+      run: node script-extractor.js
 
-      - name: Confirmar cambios y actualizar eventos.json en el servidor
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action Bot"
-          git add eventos.json
-          git commit -m "Sincronización automática de eventos: $(date -u +'%Y-%m-%d %H:%M:%S') UTC" || exit 0
-          git push
+    - name: Forzar Guardado de Datos Reales en GitHub
+      run: |
+        git config --global user.name "arenin-apps"
+        git config --global user.email "sergio@sergius.uk"
+        git add eventos.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Sincronización manual forzada con datos purificados" && git push)
