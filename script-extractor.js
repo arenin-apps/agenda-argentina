@@ -14,6 +14,14 @@ const PORTALES = [
 function esCulturaRioplatense(texto) {
   if (!texto) return false;
   const t = texto.toLowerCase();
+  
+  // Si habla de cine/películas, verificamos contextos de Argentina o Buenos Aires
+  const tienePalabrasDeCine = t.includes('cine') || t.includes('film') || t.includes('movie') || t.includes('pelicula') || t.includes('festival') || t.includes('director');
+  const esContextoArgentino = t.includes('argentin') || t.includes('buenos aires') || t.includes('tango');
+  
+  if (tienePalabrasDeCine && esContextoArgentino) return true;
+
+  // Filtros originales de artistas, recintos y eventos clave musicales/teatrales
   return t.includes('argentin') || 
          t.includes('tango') || 
          t.includes('piazzolla') || 
@@ -54,84 +62,41 @@ async function ejecutarRastreo() {
       const { data } = await axios.get(portal.url, { headers, timeout: 10000 });
       const $ = cheerio.load(data);
 
-      // SELECTOR UNIVERSAL DE TARJETAS (Busca contenedores comunes de eventos)
+      // SELECTOR UNIVERSAL DE TARJETAS (Mantiene tu lógica original que funcionaba)
       $('article, .tribe-events-calendar-list__event, .event-card, .post, .event, .grid-item, .search-result').each((i, el) => {
-        // Extraer el título buscando en cualquier etiqueta de encabezado común
         const title = $(el).find('h2, h3, h4, .title, .event-card__title, a').first().text().trim();
         
-        // Extraer enlace seguro
         let link = $(el).find('a').first().attr('href') || '';
         if (link && !link.startsWith('http')) link = portal.base + link;
         if (!link) link = portal.url;
 
-        // Extraer descripción y texto interno completo para el filtro
         const description = $(el).find('.description, .excerpt, p').first().text().trim() || "";
         const textoCompleto = (title + " " + description + " " + $(el).text()).toLowerCase();
 
         if (title && title.length > 3 && esCulturaRioplatense(textoCompleto)) {
-          // Clasificación dinámica de categorías
+          // Clasificación dinámica de categorías incluyendo CINE
           let categoria = "Música / Concierto";
-          if (textoCompleto.includes('tango') || textoCompleto.includes('ballet') || textoCompleto.includes('danza')) {
+          if (textoCompleto.includes('cine') || textoCompleto.includes('film') || textoCompleto.includes('movie') || textoCompleto.includes('pelicula')) {
+            categoria = "Cine / Película";
+          } else if (textoCompleto.includes('tango') || textoCompleto.includes('ballet') || textoCompleto.includes('danza')) {
             categoria = "Danza / Ballet / Tango";
           } else if (textoCompleto.includes('teatro') || textoCompleto.includes('comedy') || textoCompleto.includes('monos') || textoCompleto.includes('azcarate')) {
             categoria = "Teatro / Comedia";
           }
 
-          // Extraer fecha visible textualmente
           const rawDate = $(el).find('.date, .event-date, time, .tribe-events-calendar-list__event-date-tag').text().trim();
           const displayDate = rawDate || "Fecha en Cartelera (Consultar Link)";
 
           eventosCandidatos.push({
             category: categoria,
             title: title,
-            venue: $(el).find('.venue, .location, .tribe-events-calendar-list__event-venue').text().trim() || "Londres, UK",
+            venue: $(el).find('.venue, .location, .tribe-events-calendar-list__event-venue').text().trim() || (portal.name === "Southbank Centre" ? "Southbank Centre, Londres" : "Londres, UK"),
             displayDate: displayDate,
-            date: "2026-09-15", // Fecha pivote para el rango de renderizado de WordPress
+            date: "2026-09-15", // Tu fecha pivote original para el renderizado de WordPress
             description: description.substring(0, 160),
             url: link
           });
         }
       });
 
-    } catch (error) {
-      console.log(`✕ Alerta en ${portal.name}: ${error.message}`);
-    }
-  }
-
-  // COMPLEMENTO MANUAL DEL PANEL DE CONTROL
-  try {
-    if (fs.existsSync('panel-control.json')) {
-      const panel = JSON.parse(fs.readFileSync('panel-control.json', 'utf8'));
-      const eventosManuales = panel.eventos_manuales_fijos || panel.eventos_manuales || [];
-      eventosManuales.forEach(m => {
-        eventosCandidatos.push(m);
-      });
-    }
-  } catch (err) {}
-
-  // ELIMINAR DUPLICADOS POR TÍTULO
-  const unicos = [];
-  const titulosVistos = new Set();
-  
-  eventosCandidatos.forEach(ev => {
-    const normalizado = ev.title.toLowerCase().trim();
-    if (!titulosVistos.has(normalizado)) {
-      titulosVistos.add(normalizado);
-      unicos.push(ev);
-    }
-  });
-
-  // Filtrado de seguridad cronológico e impresión final limpia
-  const eventosValidados = unicos.filter(ev => ev.date >= hoyIso && ev.date <= limiteIso);
-  eventosValidados.sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
-
-  const resultadoFinal = {
-    lastUpdated: new Date().toLocaleString('es-ES', { timeZone: 'Europe/London' }) + ' (Hora UK)',
-    events: eventosValidados
-  };
-
-  fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log(`🚀 Sincronización limpia completada. Total guardado: ${eventosValidados.length}`);
-}
-
-ejecutarRastreo();
+    } catch
