@@ -2,9 +2,9 @@ const fs = require('fs');
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-// Cargamos la llave de la "caja fuerte" de GitHub
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
+// Portales base que el robot va a visitar para raspar el texto bruto
 const PORTALES = [
   { name: "Sadlers Wells", url: "https://www.sadlerswells.com/whats-on/", base: "https://www.sadlerswells.com" },
   { name: "Southbank Centre", url: "https://www.southbankcentre.co.uk/whats-on", base: "https://www.southbankcentre.co.uk" },
@@ -26,57 +26,59 @@ function obtenerDominio(url) {
   } catch (e) { return ""; }
 }
 
-// 1. LLAMADA DIRECTA AL CEREBRO DE GEMINI IA
 async function consultarGeminiIA(bloqueTextoContenido) {
   if (!GEMINI_API_KEY) {
-    console.log("❌ Error: No se detectó la GEMINI_API_KEY en las variables de GitHub.");
+    console.log("❌ Error: Falta GEMINI_API_KEY en GitHub Secrets.");
     return [];
   }
 
   const urlApi = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
   
+  // INSTRUCCIONES ULTRA FILTRADAS: Foco exclusivo en la raíz "Argent"
   const promptOrden = `
-    Actúa como un extractor de datos profesional. Te voy a pasar un texto raspado de una ticketera o web del Reino Unido.
-    Tu objetivo es analizar los eventos y filtrar ÚNICAMENTE aquellos que estén directamente relacionados con Argentina (artistas argentinos, bandas de rock, bailarines como Marianela Núñez, tango, folklore, la selección argentina de rugby Los Pumas, o programas/documentales sobre Argentina en la televisión). Discard everything else.
+    Eres un extractor de datos quirúrgico. Tu ÚNICA misión es analizar el texto provisto y rescatar eventos que tengan relación directa y explícita con ARGENTINA.
+    
+    CRITERIO DE BÚSQUEDA EXCLUSIVO:
+    Busca términos como: Argentina, Argentine, Argentinian, Argentino, Argentina's, etc. 
+    IGNORA por completo los nombres de los recintos o marcas británicas (como Wigmore Hall, Barbican, Sadlers Wells, etc.) a menos que dentro de su descripción se mencione que el artista, el show, la película o el equipo es de origen ARGENTINO (ej: Martha Argerich, Daniel Barenboim, Marianela Núñez, Los Pumas, bandas de rock argentino, shows de tango, etc.). Si el evento no tiene procedencia argentina, deséchalo de inmediato.
 
-    Para cada evento argentino que encuentres, debes extraer y estructurar la información estrictamente en este formato JSON (un array de objetos):
+    Para cada coincidencia real encontrada, genera estrictamente este formato JSON:
     [
       {
         "category": "Música / Rock & Pop" o "Música / Clásica" o "Ballet / Danza" o "Deportes / Rugby" o "Televisión / Transmisión" o "Cultura / Agenda",
         "title": "Título real del show o partido",
-        "artist": "Nombre del artista, banda o equipo principal",
-        "description": "Una descripción atractiva de un párrafo resumido en español sobre el evento.",
-        "venue": "Nombre del lugar o estadio y ciudad (ej: Twickenham Stadium, Londres o Wigmore Hall, Londres). Si es TV, pon '📺 Consultar canal en guía de TV'.",
-        "displayDate": "La fecha legible tal cual aparece (ej: Sábado 15 de Noviembre), traducida al español si es posible.",
-        "date": "La fecha real en formato YYYY-MM-DD para poder ordenarla cronológicamente (dedúcela del año actual 2026).",
-        "url": "La URL del evento o compra si viene en el texto, de lo contrario deja la URL base del sitio."
+        "artist": "Nombre del artista argentino, banda o selección involucrada",
+        "description": "Un resumen atractivo de un párrafo en español explicando la participación argentina.",
+        "venue": "Lugar o estadio donde se realiza y la ciudad (ej: Twickenham Stadium, Londres). Si es televisión, escribe '📺 Consultar canal en guía de TV'.",
+        "displayDate": "La fecha legible traducida al español (ej: Domingo 14 de Junio).",
+        "date": "La fecha en formato YYYY-MM-DD (dedúcela analizando el texto basado en el año actual 2026).",
+        "url": "La URL específica del evento si aparece en el texto, de lo contrario deja la URL del portal."
       }
     ]
 
-    REGLA CRÍTICA: Devuelve EXCLUSIVAMENTE el array JSON limpio, sin bloques de código de markdown (\`\`\`json), sin textos introductorios ni explicaciones. Si no encuentras ningún evento relacionado con Argentina en el texto, devuelve exactamente un array vacío: []
+    REGLA INQUEBRANTABLE: Devuelve SOLO el JSON limpio. Sin bloques de markdown (\`\`\`json), sin textos extras. Si no hay nada de Argentina, devuelve un array vacío: []
     
-    Aquí está el texto a analizar:
+    Texto a analizar:
     ${bloqueTextoContenido}
   `;
 
   try {
     const respuesta = await axios.post(urlApi, {
       contents: [{ parts: [{ text: promptOrden }] }]
-    }, { headers: { 'Content-Type': 'application/json' }, timeout: 12000 });
+    }, { headers: { 'Content-Type': 'application/json' }, timeout: 15000 });
 
     const textoLimpioIa = respuesta.data.candidates[0].content.parts[0].text.trim();
     return JSON.parse(textoLimpioIa);
   } catch (error) {
-    console.log("⚠️ Falla en la consulta o parsing de Gemini IA:", error.message);
+    console.log("⚠️ Error en digestión de Gemini:", error.message);
     return [];
   }
 }
 
-// 2. PROCESO PRINCIPAL COMBINADO
 async function ejecutarRastreo() {
-  console.log("🧠 Iniciando Sincronizador Inteligente con Inteligencia Artificial Gemini...");
+  console.log("🧠 Iniciando Sincronizador de Inteligencia Artificial enfocado en origen Argentino...");
   
-  // Tus eventos base inmutables y producciones directas curadas
+  // Lista inicial inmutable de alta prioridad (Tus eventos base curados)
   let eventosFinales = [
     {
       category: "Artes Plásticas / Exhibición",
@@ -116,12 +118,11 @@ async function ejecutarRastreo() {
       const panel = JSON.parse(fs.readFileSync('panel-control.json', 'utf8'));
       urlsManualesAnulacion = panel.urls_individuales_extra || [];
     }
-  } catch (err) { /* Ignorar si no hay panel */ }
+  } catch (err) { /* Continuar sin anulaciones manuales */ }
 
-  // RASTREO EXTRACCIÓN Y PROCESAMIENTO CON IA
   for (const portal of PORTALES) {
     try {
-      console.log(`📡 Extrayendo contenido bruto de: ${portal.name}...`);
+      console.log(`📡 Extrayendo texto plano para análisis en: ${portal.name}...`);
       const response = await axios.get(portal.url, { 
         headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
         timeout: 9000
@@ -129,47 +130,43 @@ async function ejecutarRastreo() {
       
       const $ = cheerio.load(response.data);
       
-      // Removemos scripts y estilos del HTML para dejar solo texto legible y enlaces
-      $('script, style, nav, footer').remove();
-      const textoPaginaCompleto = $('body').text().replace(/\s+/g, ' ').substring(0, 45000); // Límite seguro de tokens
+      // Limpieza profunda del árbol HTML para optimizar el contexto enviado a la IA
+      $('script, style, nav, footer, iframe, header').remove();
+      const textoLimpioPagina = $('body').text().replace(/\s+/g, ' ').trim().substring(0, 45000);
 
-      console.log(`🤖 Enviando contenido a Gemini para análisis de contexto en ${portal.name}...`);
-      const eventosDetectadosPorIa = await consultarGeminiIA(textoPaginaCompleto);
-      
-      if (eventosDetectadosPorIa && eventosDetectadosPorIa.length > 0) {
-        console.log(`🎯 ¡Gemini detectó ${eventosDetectadosPorIa.length} eventos argentinos válidos en ${portal.name}!`);
+      // Solo llamamos a la IA si el texto bruto al menos menciona la raíz "argent" o derivados para ahorrar cuota
+      if (/argent|puma|tango/i.test(textoLimpioPagina)) {
+        console.log(`🧠 [Match de Raíz Detectado] Enviando bloque a Gemini para filtrado fino en ${portal.name}...`);
+        const hallazgosIa = await consultarGeminiIA(textoLimpioPagina);
         
-        for (let ev of eventosDetectadosPorIa) {
-          // Si el evento no traía link profundo válido, le asignamos la URL base del portal
-          if (!ev.url || ev.url === "http" || ev.url === portal.base) {
-            ev.url = portal.url;
-          }
-
-          // --- SISTEMA DE ANULACIÓN CRÍTICO (OVERRIDE) ---
-          const dominioPortal = obtenerDominio(portal.base);
-          for (const urlManual of urlsManualesAnulacion) {
-            if (obtenerDominio(urlManual) === dominioPortal) {
-              console.log(`🎯 Anulación activa: Reemplazando por link manual preciso de Sergio: ${urlManual}`);
-              ev.url = urlManual;
-              break;
+        if (hallazgosIa && hallazgosIa.length > 0) {
+          for (let ev of hallazgosIa) {
+            if (!ev.url || ev.url === "http" || ev.url === portal.base) {
+              ev.url = portal.url;
             }
-          }
 
-          eventosFinales.push(ev);
+            // Aplicar Overrides del panel si coinciden dominios
+            const dominioPortal = obtenerDominio(portal.base);
+            for (const urlManual of urlsManualesAnulacion) {
+              if (obtenerDominio(urlManual) === dominioPortal) {
+                ev.url = urlManual;
+                break;
+              }
+            }
+            eventosFinales.push(ev);
+          }
         }
       } else {
-        console.log(`✓ ${portal.name} analizado. No se hallaron coincidencias argentinas relevantes hoy.`);
+        console.log(`✓ ${portal.name} analizado de forma automatizada: Sin palabras clave de origen detectadas.`);
       }
 
     } catch (error) {
-      console.log(`✕ No se pudo escanear el portal ${portal.name}:`, error.message);
+      console.log(`✕ Portal ${portal.name} omitido en esta pasada:`, error.message);
     }
   }
 
-  // ORDENAR LOS EVENTOS POR FECHA CRONOLÓGICA (Los más cercanos primero)
+  // Ordenar cronológicamente e indexar
   eventosFinales.sort((a, b) => new Date(a.date) - new Date(b.date));
-
-  // FILTRAR EVENTOS VIEJOS: Elimina automáticamente de la lista los eventos de días anteriores
   const hoyIso = new Date().toISOString().split('T')[0];
   eventosFinales = eventosFinales.filter(ev => ev.date >= hoyIso);
 
@@ -179,7 +176,3 @@ async function ejecutarRastreo() {
   };
 
   fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log("🚀 ¡Proceso completado! Base de datos de eventos.json armada con Inteligencia Artificial.");
-}
-
-ejecutarRastreo();
