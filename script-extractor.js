@@ -2,7 +2,7 @@ const fs = require('fs');
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-// Portales oficiales monitoreados automáticamente (¡Ahora con TV Guide de UK!)
+// Portales oficiales monitoreados automáticamente con la raíz exacta
 const PORTALES = [
   { name: "Sadlers Wells", url: "https://www.sadlerswells.com/whats-on/?search=argent", base: "https://www.sadlerswells.com" },
   { name: "Southbank Centre", url: "https://www.southbankcentre.co.uk/?s=argent", base: "https://www.southbankcentre.co.uk" },
@@ -15,7 +15,7 @@ const PORTALES = [
   { name: "De Puta Madre Club", url: "https://deputamadreclub.eu/", base: "https://deputamadreclub.eu" },
   { name: "England Rugby RFU", url: "https://www.englandrugby.com/", base: "https://www.englandrugby.com" },
   { name: "Nations Championship", url: "https://nationschampionshiprugby.com/en", base: "https://nationschampionshiprugby.com" },
-  { name: "TV Guide UK", url: "https://www.tvguide.co.uk/search?q=argentina", base: "https://www.tvguide.co.uk" } // NUEVA COBERTURA DE TV
+  { name: "TV Guide UK", url: "https://www.tvguide.co.uk/search?q=argent", base: "https://www.tvguide.co.uk" }
 ];
 
 const TEXTOS_TICKET_VALIDOS = ['book', 'ticket', 'buy', 'reserva', 'entradas', 'event', 'whats-on/', 'tate-modern', 'movie', 'events/', 'tickets-and-events/', 'product/', 'fixtures', 'matches', 'fixtures-results/', 'tv-listings'];
@@ -59,9 +59,9 @@ function obtenerDominio(url) {
 
 // 2. PROCESO PRINCIPAL COMBINADO HÍBRIDO
 async function ejecutarRastreo() {
-  console.log("Iniciando escaneo global híbrido: Arte, Deportes, Conciertos y Guía de TV Británica...");
+  console.log("Iniciando escaneo global: Filtrado estricto por término universal 'argent'...");
   
-  // Lista inicial inmutable de alta prioridad
+  // Lista inicial inmutable de alta prioridad (Tus producciones curadas)
   let eventosFinales = [
     {
       category: "Artes Plásticas / Exhibición",
@@ -72,16 +72,6 @@ async function ejecutarRastreo() {
       displayDate: "11 de Junio al 11 de Diciembre de 2026",
       date: "2026-06-11",
       url: "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc"
-    },
-    {
-      category: "Música / Concierto",
-      title: "Fusion Piano: Piazzolla & Charly García",
-      artist: "Julieta Iglesias",
-      description: "Cruce íntimo en piano solista que une las partituras de Astor Piazzolla con la poesía del rock nacional de Charly García.",
-      venue: "Hampstead Lounge & Jazz Club, Londres",
-      displayDate: "Viernes 12 de Junio de 2026",
-      date: "2026-06-12",
-      url: "https://www.julietaiglesias.com/"
     },
     {
       category: "Música / Concierto",
@@ -154,7 +144,7 @@ async function ejecutarRastreo() {
     }
   }
 
-  // SECCIÓN B: RASTREO TRADICIONAL MULTI-SHOW CON OVERRIDE ACTIVO
+  // SECCIÓN B: RASTREO TRADICIONAL MULTI-SHOW CON FILTRO ÚNICO "ARGENT"
   for (const portal of PORTALES) {
     try {
       console.log(`Rastreando portal oficial: ${portal.name}...`);
@@ -175,13 +165,10 @@ async function ejecutarRastreo() {
         const textoEnlace = $(el).text().trim();
         const textoEnlaceLower = textoEnlace.toLowerCase();
         
-        // Filtros cruzados ampliados (Arte, Danza, Rugby y TV)
-        const esArgentino = textoEnlaceLower.includes('argent') || 
-                            textoEnlaceLower.includes('pumas') || 
-                            textoEnlaceLower.includes('marianela') || 
-                            textoEnlaceLower.includes('tango');
+        // REGLA DE ORO: Matchear única y exclusivamente la raíz "argent"
+        const esArgentino = textoEnlaceLower.includes('argent') || href.toLowerCase().includes('argent');
 
-        if (esLinkProfundoValido(href, portal.base) || ((portal.name === "England Rugby RFU" || portal.name === "Nations Championship" || portal.name === "TV Guide UK") && esArgentino)) {
+        if (esLinkProfundoValido(href, portal.base) && esArgentino) {
           let urlLimpia = limpiarYOptimizarUrl(href);
           
           if (urlsProcesadasEnEstePortal.has(urlLimpia)) return;
@@ -195,7 +182,7 @@ async function ejecutarRastreo() {
             }
           }
 
-          let tituloShow = textoEnlace.length > 8 && textoEnlace.length < 90 ? textoEnlace : `Evento en ${portal.name}`;
+          let tituloShow = textoEnlace.length > 8 && textoEnlace.length < 90 ? textoEnlace : `Evento Argentino en ${portal.name}`;
           
           // Clasificación estética de las celdas según el origen
           let categoryAsignada = "Cultura / Agenda";
@@ -212,16 +199,15 @@ async function ejecutarRastreo() {
             categoryAsignada = "Deportes / Rugby";
             artistAsignado = "Los Pumas (Selección Argentina)";
             venueAsignado = portal.name === "England Rugby RFU" ? "Twickenham Stadium, Londres" : "📍 Ver Sede asignada en fixture";
-            if (tituloShow.includes("Evento en")) tituloShow = "Los Pumas - Fixture Nations Championship";
+            if (tituloShow.includes("Evento Argentino")) tituloShow = "Los Pumas - Match Internacional";
           }
 
-          // Reglas específicas para la Guía de TV Británica
           if (portal.name === "TV Guide UK") {
             categoryAsignada = "Televisión / Transmisión";
             artistAsignado = "Emisión del Reino Unido";
             venueAsignado = "📺 Consultar canal en guía de TV";
-            descAsignada = "Programa o transmisión relacionada con Argentina detectada en la televisión británica. Accedé al enlace para revisar horarios de emisión y canales disponibles (BBC, ITV, Channel 4, etc.).";
-            if (tituloShow.includes("Evento en") || tituloShow.length < 15) tituloShow = "Especial sobre Argentina en TV";
+            descAsignada = "Contenido relacionado con Argentina detectado en la programación de la televisión británica. Accedé al enlace para revisar horarios de emisión y canales disponibles.";
+            if (tituloShow.includes("Evento Argentino") || tituloShow.length < 15) tituloShow = "Especial sobre Argentina en TV";
           }
 
           eventosFinales.push({
@@ -230,9 +216,9 @@ async function ejecutarRastreo() {
             artist: artistAsignado,
             description: descAsignada,
             venue: venueAsignado,
-            displayDate: portal.name === "TV Guide UK" ? "Ver horario de emisión" : "Consultar fecha del encuentro",
-            date: "2026-06-20", 
-            url: urlLimpia
+            displayDate: portal.name === "TV Guide UK" ? "Ver horario de emisión" : "Consultar fecha en boletería",
+            date: "2026-07-10", 
+            url: urlLinter || urlLimpia
           });
         }
       });
@@ -242,7 +228,7 @@ async function ejecutarRastreo() {
     }
   }
 
-  // SECCIÓN C: INYECTAR URLS MANUALES SUELTAS QUE NO PERTENECEN A LOS PORTALES FIJOS
+  // SECCIÓN C: INYECTAR URLS MANUALES SUELTAS
   for (const urlManual of urlsManualesAnulacion) {
     const dominioManual = urlManual;
     const perteneceAPortalFijo = PORTALES.some(p => obtenerDominio(p.base) === obtenerDominio(dominioManual));
@@ -268,7 +254,7 @@ async function ejecutarRastreo() {
   };
 
   fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log("¡Hecho! Archivo eventos.json actualizado incluyendo Guía de TV.");
+  console.log("¡Hecho! Archivo eventos.json actualizado con el filtro simplificado 'argent'.");
 }
 
 ejecutarRastreo();
