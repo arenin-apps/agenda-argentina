@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "13/6/2026, 12:48:38 (Hora UK)",
+  "lastUpdated": "13/6/2026, 12:54:37 (Hora UK)",
   "events": [
     {
       "category": "Cultura / Agenda",
@@ -242,6 +242,16 @@
       "url": "https://wblive.co.uk/about-us"
     },
     {
+      "category": "Música / Rock & Pop",
+      "title": "Conciertos y Giras de Rock Argentino",
+      "artist": "De Puta Madre Club",
+      "description": "Ciclo exclusivo de conciertos y producciones oficiales de las bandas más destacadas de la escena del rock y pop argentino presentándose en el Reino Unido.",
+      "venue": "📍 Consultar recintos asignados en Londres",
+      "displayDate": "Fechas de temporada 2026",
+      "date": "2026-07-20",
+      "url": "https://deputamadreclub.eu/events/"
+    },
+    {
       "category": "Ballet / Danza",
       "title": "Espectáculo en Royal Ballet and Opera",
       "artist": "Royal Ballet and Opera",
@@ -390,6 +400,16 @@
       "displayDate": "12 de Agosto de 2026",
       "date": "2026-08-12",
       "url": "https://wblive.co.uk/events/eva-aylln-in-london"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Agenda de Conciertos y Eventos en Vivo",
+      "artist": "Wblive",
+      "description": "Cartelera de espectáculos, música en directo y presentaciones culturales con artistas destacados de origen argentino en el Reino Unido.",
+      "venue": "📍 Ver sala en boletería oficial",
+      "displayDate": "Consultar funciones de temporada",
+      "date": "2026-08-15",
+      "url": "https://wblive.co.uk"
     },
     {
       "category": "Ballet / Danza",
@@ -700,6 +720,16 @@
       "displayDate": "1 de Octubre de 2026",
       "date": "2026-10-01",
       "url": "https://www.sadlerswells.com/whats-on/page/2/?search=argent"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Festival de Música y Cultura Latinoamericana - Agenda Argentina",
+      "artist": "Como No Productions",
+      "description": "El festival de cultura latina de referencia en el Reino Unido, destacando espectáculos de folklore, tango, vanguardia y artistas argentinos de renombre.",
+      "venue": "📍 Locaciones variadas (Londres)",
+      "displayDate": "Revisar grilla de programación",
+      "date": "2026-10-05",
+      "url": "https://comono.co.uk/whats-on/"
     },
     {
       "category": "Cultura / Agenda",
