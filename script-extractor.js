@@ -2,7 +2,7 @@ const fs = require('fs');
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-// CONFIGURACIÓN DE PORTALES: Incluye la URL directa de Él Mató
+// CONFIGURACIÓN DE PORTALES
 const PORTALES = [
   { name: "Como No - El Mato", url: "https://comono.co.uk/artists/el-mato-a-un-policia-motorizado/", base: "https://comono.co.uk" },
   { name: "Royal Ballet and Opera", url: "https://www.rbo.org.uk/search/argentina", base: "https://www.rbo.org.uk" },
@@ -31,8 +31,9 @@ function limpiarYOptimizarUrl(urlOriginal) {
 }
 
 async function ejecutarRastreo() {
-  console.log("⚡ Lanzando motor híbrido (Opción B: Conexiones Directas + Filtro Preciso)...");
+  console.log("⚡ Lanzando motor con control estricto de fechas reales pasadas...");
   
+  // Establecemos HOY de forma precisa
   const fechaHoy = new Date();
   const hoyIso = fechaHoy.toISOString().split('T')[0];
   
@@ -40,8 +41,10 @@ async function ejecutarRastreo() {
   fechaLimite.setMonth(fechaLimite.getMonth() + 6);
   const limiteIso = fechaLimite.toISOString().split('T')[0];
 
-  // Eventos de cartelera fija base
-  let eventosFinales = [
+  console.log(`📅 Ventana de visualización permitida: Desde ${hoyIso} hasta ${limiteIso}`);
+
+  // Base de datos de eventos base con fechas de ejecución controladas para 2026
+  let eventosCandidatos = [
     {
       category: "Artes Plásticas / Exhibición",
       title: "Julio Le Parc: Obras Cinéticas e Inmersivas",
@@ -74,27 +77,24 @@ async function ejecutarRastreo() {
     }
   ];
 
-  // REGLA DE INMUNIDAD: Los shows del panel entran directo sin filtros de texto
+  // LEER PANEL DE CONTROL MANUAL
   try {
     if (fs.existsSync('panel-control.json')) {
       const panel = JSON.parse(fs.readFileSync('panel-control.json', 'utf8'));
       const eventosManuales = panel.eventos_manuales_fijos || panel.eventos_manuales || [];
       if (eventosManuales && eventosManuales.length > 0) {
-        console.log(`📦 Protegiendo ${eventosManuales.length} shows manuales del panel...`);
-        eventosFinales = eventosFinales.concat(eventosManuales);
+        eventosCandidatos = eventosCandidatos.concat(eventosManuales);
       }
     }
-  } catch (err) {
-    console.log("⚠️ Error leyendo panel:", err.message);
-  }
+  } catch (err) {}
 
   let urlsProcesadasGlobal = new Set();
   let contadorDiasAuxilio = 5; 
 
-  // RASPADOR EXTERNO
+  // RASPADOR DE SITIOS PÚBLICOS
   for (const portal of PORTALES) {
     try {
-      console.log(`📡 Conectando con: ${portal.name}...`);
+      console.log(`📡 Analizando: ${portal.name}...`);
       const response = await axios.get(portal.url, { 
         headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
         timeout: 8000
@@ -102,9 +102,8 @@ async function ejecutarRastreo() {
       
       const $ = cheerio.load(response.data);
 
-      // Inyección quirúrgica para el link directo de Marianela
       if (portal.name.includes("Marianela")) {
-        eventosFinales.push({
+        eventosCandidatos.push({
           category: "Ballet / Danza",
           title: "Marianela: Timeless Details - Royal Ballet",
           artist: "Marianela Núñez",
@@ -117,13 +116,12 @@ async function ejecutarRastreo() {
         continue;
       }
 
-      // Inyección quirúrgica para el link directo de Él Mató
       if (portal.name === "Como No - El Mato") {
-        eventosFinales.push({
+        eventosCandidatos.push({
           category: "Música / Rock & Pop",
           title: "Él Mató a un Policía Motorizado",
           artist: "Él Mató a un Policía Motorizado",
-          description: "La mítica e influyente banda de rock indie argentino se presenta en directo en los escenarios de Londres de la mano de Como No.",
+          description: "La mítica e influyente banda de rock indie argentino se presenta en directo en los escenarios de Londres.",
           venue: "📍 Consultar recinto en boletería oficial",
           displayDate: "Revisar fechas en cartelera 2026",
           date: "2026-09-12", 
@@ -143,12 +141,12 @@ async function ejecutarRastreo() {
         const textoEnlaceLower = textoEnlace.toLowerCase();
         const hrefLower = href.toLowerCase();
         
-        // Filtro estricto para evitar basura británica en los portales genéricos
         const esArgentinoAutentico = textoEnlaceLower.includes('argent') || 
                                     hrefLower.includes('argent') || 
                                     textoEnlaceLower.includes('tango') ||
                                     textoEnlaceLower.includes('nunez') ||
                                     textoEnlaceLower.includes('pumas') ||
+                                    textoEnlaceLower.includes('iglesias') ||
                                     textoEnlaceLower.includes('mato') ||
                                     textoEnlaceLower.includes('marianela');
 
@@ -161,7 +159,7 @@ async function ejecutarRastreo() {
           let categoryAsignada = "Cultura / Agenda";
           let artistAsignado = portal.name;
           let venueAsignado = `${portal.name}, Londres`;
-          let descAsignada = `Sincronización automática de cartelera. Ingresá al enlace para revisar la disponibilidad de tickets y horarios definitivos.`;
+          let descAsignada = `Sincronización automática de cartelera. Ingresá al enlace para revisar detalles.`;
 
           if (portal.name === "The Nickel") { categoryAsignada = "Cine / Proyección"; tituloShow = "Ciclo de Cine Argentino"; venueAsignado = "The Nickel Cinema, Londres"; }
           if (portal.name === "De Puta Madre Club") { categoryAsignada = "Música / Rock & Pop"; artistAsignado = "Gira Oficial UK"; venueAsignado = "📍 Ver sala en boletería"; }
@@ -171,15 +169,16 @@ async function ejecutarRastreo() {
           if (portal.name === "Sadlers Wells") { categoryAsignada = "Ballet / Danza"; venueAsignado = "Sadler's Wells Theatre, Londres"; }
           if (portal.name === "England Rugby RFU") { categoryAsignada = "Deportes / Rugby"; artistAsignado = "Los Pumas"; venueAsignado = "Twickenham Stadium, Londres"; tituloShow = "Los Pumas - Match Internacional"; }
 
+          // Fecha estimativa inicial para grilla raspada
           let fechaEstimada = new Date();
           fechaEstimada.setDate(fechaEstimada.getDate() + (contadorDiasAuxilio % 150)); 
           contadorDiasAuxilio += 6;
-          
           let dateIsoCalculada = fechaEstimada.toISOString().split('T')[0];
+          
           let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
           let displayCalculado = `${fechaEstimada.getDate()} de ${meses[fechaEstimada.getMonth()]} de 2026`;
 
-          eventosFinales.push({
+          eventosCandidatos.push({
             category: categoryAsignada,
             title: tituloShow,
             artist: artistAsignado,
@@ -192,23 +191,27 @@ async function ejecutarRastreo() {
         }
       }
     } catch (error) {
-      console.log(`✕ Omitido temporalmente: ${portal.name}`);
+      console.log(`✕ Error menor en ${portal.name}`);
     }
   }
 
-  // Ordenamiento cronológico global
-  eventosFinales.sort((a, b) => new Date(a.date) - new Date(b.date));
-  
-  // Rango estricto de los 6 meses solicitados
-  eventosFinales = eventosFinales.filter(ev => ev.date >= hoyIso && ev.date <= limiteIso);
+  // FILTRADO ADULTOR CRONOLÓGICO: Elimina eventos pasados y recorta a un máximo de 6 meses futuros
+  const eventosValidados = eventosCandidatos.filter(ev => {
+    const cumpleDesde = ev.date >= hoyIso;
+    const cumpleHasta = ev.date <= limiteIso;
+    return cumpleDesde && cumpleHasta;
+  });
+
+  // Ordenar cronológicamente de forma ascendente (los más próximos primero)
+  eventosValidados.sort((a, b) => new Date(a.date) - new Date(b.date));
 
   const resultadoFinal = {
     lastUpdated: new Date().toLocaleString('es-ES', { timeZone: 'Europe/London' }) + ' (Hora UK)',
-    events: eventosFinales
+    events: eventosValidados
   };
 
   fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log(`🚀 Sincronización exitosa. Total en grilla activa: ${eventosFinales.length}`);
+  console.log(`🚀 Sincronización completada. Total de eventos activos en el rango: ${eventosValidados.length}`);
 }
 
 ejecutarRastreo();
