@@ -1,15 +1,65 @@
 {
-  "lastUpdated": "13/6/2026, 11:30:01 (Hora UK)",
+  "lastUpdated": "13/6/2026, 11:36:16 (Hora UK)",
   "events": [
     {
-      "category": "Música / Rock & Pop",
-      "title": "El Mató a un Policía Motorizado",
-      "artist": "El Mató a un Policía Motorizado",
-      "description": "La aclamada banda argentina de indie rock, El Mató a un Policía Motorizado, llega a Londres para presentar su distintivo sonido que ha cautivado a públicos de toda Latinoamérica. Conocidos por sus letras poéticas y melodías envolventes, la banda promete una noche inolvidable en la escena musical del Reino Unido, reafirmando su lugar como uno de los pilares del rock alternativo argentino.",
-      "venue": "Electric Ballroom, Londres",
-      "displayDate": "Miércoles 5 de Agosto",
-      "date": "2026-08-05",
-      "url": "https://comono.co.uk/whats-on/"
+      "category": "Ballet / Danza",
+      "title": "Show Argentino en Sadlers Wells",
+      "artist": "Artistas Argentinos",
+      "description": "Sumérgete en la pasión y el vibrante espíritu de Argentina con este espectáculo cultural. Prepárate para una noche inolvidable en Sadlers Wells, donde la magia del tango, el folclore y la música tradicional te transportarán directamente a Buenos Aires, celebrando la rica herencia artística del país con actuaciones cautivadoras y emocionantes.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar cartelera",
+      "date": "2026-07-15",
+      "url": "https://www.sadlerswells.com/whats-on/page/2/?search=argent"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Show Argentino en Sadlers Wells",
+      "artist": "Artistas Varios de Argentina",
+      "description": "Prepárate para una noche inolvidable que te transportará directamente a la vibrante cultura de Argentina. Sadler's Wells presenta un espectacular 'Show Argentino', una celebración de la pasión, el ritmo y la tradición de este fascinante país. Disfruta de la elegancia del tango, la energía del folklore y la riqueza musical que caracteriza a Argentina, todo en un evento diseñado para cautivar tus sentidos y ofrecerte una experiencia cultural auténtica y emocionante.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar cartelera",
+      "date": "2026-07-15",
+      "url": "https://www.sadlerswells.com/whats-on/page/3/?search=argent"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Show Argentino en Sadlers Wells",
+      "artist": "Artistas Argentinos",
+      "description": "Prepárate para una noche inolvidable en Sadlers Wells, donde la pasión y el vibrante espíritu de Argentina cobran vida. Este 'Show Argentino' te invita a un viaje cultural único, a través de la música, el baile y las tradiciones que hacen de este país una potencia artística mundial. ¡No te pierdas esta celebración de la cultura argentina en el corazón de Londres!",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar cartelera",
+      "date": "2026-07-15",
+      "url": "https://www.sadlerswells.com/whats-on/page/4/?search=argent"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Show Argentino en Sadlers Wells",
+      "artist": "Artistas Argentinos",
+      "description": "Sumérgete en la vibrante cultura argentina con un espectáculo inolvidable en el prestigioso Sadlers Wells. Prepárate para una noche llena de pasión, ritmo y arte, donde la esencia de Argentina cobrará vida a través de música cautivadora y danzas evocadoras que te transportarán directamente a Buenos Aires.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar cartelera",
+      "date": "2026-07-15",
+      "url": "https://www.sadlerswells.com/whats-on/page/5/?search=argent"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Show Argentino en Sadlers Wells",
+      "artist": "Varios artistas argentinos",
+      "description": "Prepárate para una noche inolvidable que te transportará al corazón de Argentina sin salir de Londres. Este \"Show Argentino\" en el prestigioso Sadlers Wells ofrece una inmersión cultural vibrante, celebrando la rica herencia del país a través de la pasión del tango, la energía del folclore y la dulzura de sus melodías tradicionales. Una experiencia artística única que promete deleitar.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "Consultar cartelera",
+      "date": "2026-07-15",
+      "url": "https://www.sadlerswells.com/whats-on/page/6/?search=argent"
+    },
+    {
+      "category": "Deportes / Rugby",
+      "title": "Los Pumas - Match Internacional",
+      "artist": "Los Pumas (Selección Argentina de Rugby)",
+      "description": "No te pierdas la oportunidad de ver a Los Pumas, la formidable Selección Argentina de Rugby, en acción. Prepárate para un despliegue de pasión, técnica y fuerza mientras se enfrentan a un desafiante oponente en un encuentro que promete ser inolvidable. Vive la emoción del rugby internacional de la mano de uno de los equipos más emblemáticos del hemisferio sur, en un evento imperdible para aficionados y nuevos seguidores.",
+      "venue": "Twickenham Stadium, Londres",
+      "displayDate": "Consultar cartelera",
+      "date": "2026-07-15",
+      "url": "https://www.englandrugby.com/fixtures-and-results/search-results"
     },
     {
       "category": "Música / Concierto",
@@ -20,16 +70,6 @@
       "displayDate": "Sábado 05 de Septiembre de 2026 (19:00)",
       "date": "2026-09-05",
       "url": "https://sergius.uk/event/estelares-en-londres-2026/"
-    },
-    {
-      "category": "Música / Rock & Pop",
-      "title": "La K'onga en Londres",
-      "artist": "La K'onga",
-      "description": "La K'onga, la aclamada sensación argentina del cuarteto, llega a Londres para un electrizante concierto. Disfruta de la energía contagiosa de uno de los grupos más populares de Argentina en el Islington Assembly Hall, una noche imperdible para los amantes de la música latina y los ritmos vibrantes del cuarteto. ¡Prepárate para bailar sin parar!",
-      "venue": "Islington Assembly Hall, Londres",
-      "displayDate": "Martes 6 de Octubre",
-      "date": "2026-10-06",
-      "url": "https://www.wblive.co.uk/events"
     },
     {
       "category": "Ballet / Danza",
