@@ -1,8 +1,35 @@
 {
-  "newsletter_mailchimp_url": "https://mailchi.mp/cancilleria/newsletter-embajada-argentina-ejemplo",
-  "urls_individuales_extra": [
-    "https://thenickel.co.uk/movie/carne",
-    "https://thenickel.co.uk/movie/embrujada"
-  ],
-  "nota": "Pegá arriba el link de Mailchimp o sumá links directos entre comillas separados por comas."
+  "newsletter_mailchimp_url": "",
+  "eventos_manuales_fijos": [
+    {
+      "category": "Música / Concierto",
+      "title": "Gira de Rock Argentino - De Puta Madre Club",
+      "artist": "Artistas en Gira",
+      "description": "Ciclo de conciertos y giras oficiales de las principales bandas del rock y pop argentino presentándose en las salas más destacadas del Reino Unido.",
+      "venue": "📍 Consultar sala en boletería (Londres)",
+      "displayDate": "Próximamente en cartelera",
+      "date": "2026-07-20",
+      "url": "https://deputamadreclub.eu/events/"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Recital de Piano de Martha Argerich",
+      "artist": "Martha Argerich",
+      "description": "La legendaria pianista argentina regresa a los escenarios británicos interpretando un repertorio magistral de música clásica.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fechas de temporada",
+      "date": "2026-08-15",
+      "url": "https://www.wigmore-hall.org.uk/"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Festival de Música Latinoamericana - Como No",
+      "artist": "Grilla de Artistas",
+      "description": "El festival de música y cultura latina más importante del Reino Unido, con fuerte presencia de artistas, folklore y vanguardia argentina.",
+      "venue": "📍 Locaciones variadas (Londres)",
+      "displayDate": "Revisar grilla oficial",
+      "date": "2026-09-10",
+      "url": "https://comono.co.uk/whats-on/"
+    }
+  ]
 }
