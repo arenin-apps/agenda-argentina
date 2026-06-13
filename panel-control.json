@@ -1,5 +1,16 @@
 {
   "newsletter_mailchimp_url": "",
   "urls_individuales_extra": [],
-  "eventos_manuales_fijos": []
+  "eventos_manuales_fijos": [
+    {
+      "category": "Música / Concierto",
+      "title": "Espectáculo Exclusivo de Rock y Cultura",
+      "artist": "WB Live",
+      "description": "Presentación especial en vivo organizada por WB Live. Revisá la cartelera de la ticketera oficial para confirmar los horarios definitivos y la disponibilidad de ubicaciones.",
+      "venue": "📍 Consultar recinto en boletería oficial (WB Live)",
+      "displayDate": "Revisar funciones de temporada 2026",
+      "date": "2026-08-25",
+      "url": "https://www.wblive.co.uk/events"
+    }
+  ]
 }
