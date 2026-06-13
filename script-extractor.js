@@ -2,7 +2,7 @@ const fs = require('fs');
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-// CONFIGURACIÓN DE PORTALES
+// CONFIGURACIÓN DE PORTALES: Ajustamos Sadler's Wells con el parámetro correcto
 const PORTALES = [
   { name: "Como No - El Mato", url: "https://comono.co.uk/artists/el-mato-a-un-policia-motorizado/", base: "https://comono.co.uk" },
   { name: "Royal Ballet and Opera", url: "https://www.rbo.org.uk/search/argentina", base: "https://www.rbo.org.uk" },
@@ -10,7 +10,7 @@ const PORTALES = [
   { name: "De Puta Madre Club", url: "https://deputamadreclub.eu/events/", base: "https://deputamadreclub.eu" }, 
   { name: "Como No", url: "https://comono.co.uk/whats-on/", base: "https://comono.co.uk" }, 
   { name: "Wblive", url: "https://wblive.co.uk", base: "https://wblive.co.uk" }, 
-  { name: "Sadlers Wells", url: "https://www.sadlerswells.com/whats-on/?search=argent", base: "https://www.sadlerswells.com" },
+  { name: "Sadlers Wells", url: "https://www.sadlerswells.com/whats-on/?event-search=argentin", base: "https://www.sadlerswells.com" }, // CORREGIDO: Filtro de búsqueda estricto
   { name: "Southbank Centre", url: "https://www.southbankcentre.co.uk/?s=argent", base: "https://www.southbankcentre.co.uk" },
   { name: "Barbican", url: "https://www.barbican.org.uk/whats-on?search=argent", base: "https://www.barbican.org.uk" },
   { name: "BFI Player", url: "https://player.bfi.org.uk/search?q=argent", base: "https://player.bfi.org.uk" },
@@ -23,7 +23,7 @@ function limpiarYOptimizarUrl(urlOriginal) {
   let urlPura = urlOriginal.trim();
   if (urlPura.includes('?')) {
     const partes = urlPura.split('?');
-    if (!partes[1].includes('s=') && !partes[1].includes('search=') && !partes[1].includes('q=')) {
+    if (!partes[1].includes('s=') && !partes[1].includes('search=') && !partes[1].includes('q=') && !partes[1].includes('event-search=')) {
       urlPura = partes[0];
     }
   }
@@ -31,9 +31,8 @@ function limpiarYOptimizarUrl(urlOriginal) {
 }
 
 async function ejecutarRastreo() {
-  console.log("⚡ Lanzando motor con control estricto de fechas reales pasadas...");
+  console.log("⚡ Lanzando motor híbrido con optimización quirúrgica para Sadler's Wells...");
   
-  // Establecemos HOY de forma precisa
   const fechaHoy = new Date();
   const hoyIso = fechaHoy.toISOString().split('T')[0];
   
@@ -41,15 +40,13 @@ async function ejecutarRastreo() {
   fechaLimite.setMonth(fechaLimite.getMonth() + 6);
   const limiteIso = fechaLimite.toISOString().split('T')[0];
 
-  console.log(`📅 Ventana de visualización permitida: Desde ${hoyIso} hasta ${limiteIso}`);
-
-  // Base de datos de eventos base con fechas de ejecución controladas para 2026
+  // Eventos de cartelera fija base
   let eventosCandidatos = [
     {
       category: "Artes Plásticas / Exhibición",
       title: "Julio Le Parc: Obras Cinéticas e Inmersivas",
       artist: "Julio Le Parc",
-      description: "Gran retrospectiva dedicada al pionero argentino del arte óptico y cinético. Un recorrido de instalaciones interactivas, móviles y juegos de luces.",
+      description: "Gran retrospectiva dedicada al pionero argentino del arte óptico y cinético. Un recorrido de installations interactivas, móviles y juegos de luces.",
       venue: "Tate Modern, Bankside, Londres",
       displayDate: "11 de Junio al 11 de Diciembre de 2026",
       date: "2026-06-11",
@@ -91,10 +88,10 @@ async function ejecutarRastreo() {
   let urlsProcesadasGlobal = new Set();
   let contadorDiasAuxilio = 5; 
 
-  // RASPADOR DE SITIOS PÚBLICOS
+  // RASPADOR EXTERNO
   for (const portal of PORTALES) {
     try {
-      console.log(`📡 Analizando: ${portal.name}...`);
+      console.log(`📡 Escaneando portal: ${portal.name}...`);
       const response = await axios.get(portal.url, { 
         headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
         timeout: 8000
@@ -141,6 +138,7 @@ async function ejecutarRastreo() {
         const textoEnlaceLower = textoEnlace.toLowerCase();
         const hrefLower = href.toLowerCase();
         
+        // Filtro de control interno para los listados de enlaces
         const esArgentinoAutentico = textoEnlaceLower.includes('argent') || 
                                     hrefLower.includes('argent') || 
                                     textoEnlaceLower.includes('tango') ||
@@ -159,7 +157,7 @@ async function ejecutarRastreo() {
           let categoryAsignada = "Cultura / Agenda";
           let artistAsignado = portal.name;
           let venueAsignado = `${portal.name}, Londres`;
-          let descAsignada = `Sincronización automática de cartelera. Ingresá al enlace para revisar detalles.`;
+          let descAsignada = `Sincronización automática de cartelera. Ingresá al enlace oficial para revisar detalles de la boletería.`;
 
           if (portal.name === "The Nickel") { categoryAsignada = "Cine / Proyección"; tituloShow = "Ciclo de Cine Argentino"; venueAsignado = "The Nickel Cinema, Londres"; }
           if (portal.name === "De Puta Madre Club") { categoryAsignada = "Música / Rock & Pop"; artistAsignado = "Gira Oficial UK"; venueAsignado = "📍 Ver sala en boletería"; }
@@ -169,7 +167,6 @@ async function ejecutarRastreo() {
           if (portal.name === "Sadlers Wells") { categoryAsignada = "Ballet / Danza"; venueAsignado = "Sadler's Wells Theatre, Londres"; }
           if (portal.name === "England Rugby RFU") { categoryAsignada = "Deportes / Rugby"; artistAsignado = "Los Pumas"; venueAsignado = "Twickenham Stadium, Londres"; tituloShow = "Los Pumas - Match Internacional"; }
 
-          // Fecha estimativa inicial para grilla raspada
           let fechaEstimada = new Date();
           fechaEstimada.setDate(fechaEstimada.getDate() + (contadorDiasAuxilio % 150)); 
           contadorDiasAuxilio += 6;
@@ -191,18 +188,15 @@ async function ejecutarRastreo() {
         }
       }
     } catch (error) {
-      console.log(`✕ Error menor en ${portal.name}`);
+      console.log(`✕ Error menor en la lectura de ${portal.name}`);
     }
   }
 
-  // FILTRADO ADULTOR CRONOLÓGICO: Elimina eventos pasados y recorta a un máximo de 6 meses futuros
+  // Filtrado estricto cronológico: descarta pasados y limita a un futuro de 6 meses
   const eventosValidados = eventosCandidatos.filter(ev => {
-    const cumpleDesde = ev.date >= hoyIso;
-    const cumpleHasta = ev.date <= limiteIso;
-    return cumpleDesde && cumpleHasta;
+    return ev.date >= hoyIso && ev.date <= limiteIso;
   });
 
-  // Ordenar cronológicamente de forma ascendente (los más próximos primero)
   eventosValidados.sort((a, b) => new Date(a.date) - new Date(b.date));
 
   const resultadoFinal = {
@@ -211,7 +205,7 @@ async function ejecutarRastreo() {
   };
 
   fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log(`🚀 Sincronización completada. Total de eventos activos en el rango: ${eventosValidados.length}`);
+  console.log(`🚀 Sincronización completada. Total de eventos activos: ${eventosValidados.length}`);
 }
 
 ejecutarRastreo();
