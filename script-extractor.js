@@ -2,15 +2,14 @@ const fs = require('fs');
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-// CONFIGURACIÓN DE PORTALES: Ajustamos Sadler's Wells con el parámetro correcto
+// CONFIGURACIÓN DE PORTALES: Ajustado Como No a su cartelera general
 const PORTALES = [
-  { name: "Como No - El Mato", url: "https://comono.co.uk/artists/el-mato-a-un-policia-motorizado/", base: "https://comono.co.uk" },
+  { name: "Como No", url: "https://comono.co.uk/whats-on/", base: "https://comono.co.uk" }, 
   { name: "Royal Ballet and Opera", url: "https://www.rbo.org.uk/search/argentina", base: "https://www.rbo.org.uk" },
   { name: "Royal Ballet and Opera - Marianela", url: "https://www.rbo.org.uk/tickets-and-events/marianela-timeless-details", base: "https://www.rbo.org.uk" },
-  { name: "De Puta Madre Club", url: "https://deputamadreclub.eu/events/", base: "https://deputamadreclub.eu" }, 
-  { name: "Como No", url: "https://comono.co.uk/whats-on/", base: "https://comono.co.uk" }, 
-  { name: "Wblive", url: "https://wblive.co.uk", base: "https://wblive.co.uk" }, 
-  { name: "Sadlers Wells", url: "https://www.sadlerswells.com/whats-on/?event-search=argentin", base: "https://www.sadlerswells.com" }, // CORREGIDO: Filtro de búsqueda estricto
+  { name: "De Puta Madre Club", url: "https://deputamadreclub.eu/?s=argenti", base: "https://deputamadreclub.eu" }, 
+  { name: "Wblive", url: "https://www.wblive.co.uk/events", base: "https://www.wblive.co.uk" }, 
+  { name: "Sadlers Wells", url: "https://www.sadlerswells.com/whats-on/?event-search=argentin", base: "https://www.sadlerswells.com" },
   { name: "Southbank Centre", url: "https://www.southbankcentre.co.uk/?s=argent", base: "https://www.southbankcentre.co.uk" },
   { name: "Barbican", url: "https://www.barbican.org.uk/whats-on?search=argent", base: "https://www.barbican.org.uk" },
   { name: "BFI Player", url: "https://player.bfi.org.uk/search?q=argent", base: "https://player.bfi.org.uk" },
@@ -31,8 +30,9 @@ function limpiarYOptimizarUrl(urlOriginal) {
 }
 
 async function ejecutarRastreo() {
-  console.log("⚡ Lanzando motor híbrido con optimización quirúrgica para Sadler's Wells...");
+  console.log("⚡ Lanzando motor híbrido con la excepción oculta de Él Mató en Como No...");
   
+  // HOY ABSOLUTO: 13 de Junio de 2026
   const fechaHoy = new Date();
   const hoyIso = fechaHoy.toISOString().split('T')[0];
   
@@ -46,7 +46,7 @@ async function ejecutarRastreo() {
       category: "Artes Plásticas / Exhibición",
       title: "Julio Le Parc: Obras Cinéticas e Inmersivas",
       artist: "Julio Le Parc",
-      description: "Gran retrospectiva dedicada al pionero argentino del arte óptico y cinético. Un recorrido de installations interactivas, móviles y juegos de luces.",
+      description: "Gran retrospectiva dedicada al pionero argentino del arte óptico y cinético. Un recorrido de instalaciones interactivas, móviles y juegos de luces.",
       venue: "Tate Modern, Bankside, Londres",
       displayDate: "11 de Junio al 11 de Diciembre de 2026",
       date: "2026-06-11",
@@ -74,6 +74,18 @@ async function ejecutarRastreo() {
     }
   ];
 
+  // EXCEPCIÓN INTEGRADA: Inyección quirúrgica del show de Él Mató (Se valida fecha abajo)
+  eventosCandidatos.push({
+    category: "Música / Rock & Pop",
+    title: "Él Mató a un Policía Motorizado",
+    artist: "Él Mató a un Policía Motorizado",
+    description: "La mítica e influyente banda de rock indie argentino se presenta en directo en los escenarios de Londres de la mano de Como No Productions.",
+    venue: "📍 Consultar recinto en boletería oficial",
+    displayDate: "Sábado 12 de Septiembre de 2026",
+    date: "2026-09-12", // Futuro válido
+    url: "https://comono.co.uk/artists/el-mato-a-un-policia-motorizado/"
+  });
+
   // LEER PANEL DE CONTROL MANUAL
   try {
     if (fs.existsSync('panel-control.json')) {
@@ -91,7 +103,7 @@ async function ejecutarRastreo() {
   // RASPADOR EXTERNO
   for (const portal of PORTALES) {
     try {
-      console.log(`📡 Escaneando portal: ${portal.name}...`);
+      console.log(`📡 Escaneando: ${portal.name}...`);
       const response = await axios.get(portal.url, { 
         headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
         timeout: 8000
@@ -113,20 +125,6 @@ async function ejecutarRastreo() {
         continue;
       }
 
-      if (portal.name === "Como No - El Mato") {
-        eventosCandidatos.push({
-          category: "Música / Rock & Pop",
-          title: "Él Mató a un Policía Motorizado",
-          artist: "Él Mató a un Policía Motorizado",
-          description: "La mítica e influyente banda de rock indie argentino se presenta en directo en los escenarios de Londres.",
-          venue: "📍 Consultar recinto en boletería oficial",
-          displayDate: "Revisar fechas en cartelera 2026",
-          date: "2026-09-12", 
-          url: portal.url
-        });
-        continue;
-      }
-
       const enlacesAs = $('a').toArray();
 
       for (const el of enlacesAs) {
@@ -138,14 +136,12 @@ async function ejecutarRastreo() {
         const textoEnlaceLower = textoEnlace.toLowerCase();
         const hrefLower = href.toLowerCase();
         
-        // Filtro de control interno para los listados de enlaces
         const esArgentinoAutentico = textoEnlaceLower.includes('argent') || 
                                     hrefLower.includes('argent') || 
                                     textoEnlaceLower.includes('tango') ||
                                     textoEnlaceLower.includes('nunez') ||
                                     textoEnlaceLower.includes('pumas') ||
                                     textoEnlaceLower.includes('iglesias') ||
-                                    textoEnlaceLower.includes('mato') ||
                                     textoEnlaceLower.includes('marianela');
 
         if (esArgentinoAutentico && href.length > portal.base.length + 3) {
@@ -153,7 +149,7 @@ async function ejecutarRastreo() {
           if (urlsProcesadasGlobal.has(urlLimpia)) continue;
           urlsProcesadasGlobal.add(urlLimpia);
 
-          let tituloShow = textoEnlace.length > 5 && textoEnlace.length < 130 ? textoEnlace : `Show Argentino en ${portal.name}`;
+          let tituloShow = textoEnlace.length > 5 && textoEnlace.length < 130 ? textoEnlace : `Espectáculo en ${portal.name}`;
           let categoryAsignada = "Cultura / Agenda";
           let artistAsignado = portal.name;
           let venueAsignado = `${portal.name}, Londres`;
@@ -192,11 +188,12 @@ async function ejecutarRastreo() {
     }
   }
 
-  // Filtrado estricto cronológico: descarta pasados y limita a un futuro de 6 meses
+  // VALIDACIÓN CRONOLÓGICA ABSOLUTA: Bloquea eventos pasados y recorta a la ventana estricta de 6 meses
   const eventosValidados = eventosCandidatos.filter(ev => {
     return ev.date >= hoyIso && ev.date <= limiteIso;
   });
 
+  // Ordenamiento final (Más cercanos primero)
   eventosValidados.sort((a, b) => new Date(a.date) - new Date(b.date));
 
   const resultadoFinal = {
@@ -205,7 +202,7 @@ async function ejecutarRastreo() {
   };
 
   fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log(`🚀 Sincronización completada. Total de eventos activos: ${eventosValidados.length}`);
+  console.log(`🚀 Sincronización exitosa. Grilla purificada con ${eventosValidados.length} eventos en rango.`);
 }
 
 ejecutarRastreo();
