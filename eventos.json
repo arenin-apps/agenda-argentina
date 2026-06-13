@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "13/6/2026, 14:05:57 (Hora UK)",
+  "lastUpdated": "13/6/2026, 14:23:31 (Hora UK)",
   "events": [
     {
       "category": "Música / Concierto",
       "title": "#cumbiaargentina",
       "artist": "Wblive",
-      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial para revisar detalles de la boletería.",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial para revisar detalles.",
       "venue": "📍 Ver recinto en boletería",
       "displayDate": "18 de Junio de 2026",
       "date": "2026-06-18",
@@ -15,7 +15,7 @@
       "category": "Ballet / Danza",
       "title": "Germán Cornejo’s Tango After Dark",
       "artist": "Sadlers Wells",
-      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial para revisar detalles de la boletería.",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial para revisar detalles.",
       "venue": "Sadler's Wells Theatre, Londres",
       "displayDate": "24 de Junio de 2026",
       "date": "2026-06-24",
@@ -25,7 +25,7 @@
       "category": "Cine / Proyección",
       "title": "Ciclo de Cine Argentino",
       "artist": "The Nickel",
-      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial para revisar detalles de la boletería.",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial para revisar detalles.",
       "venue": "The Nickel Cinema, Londres",
       "displayDate": "30 de Junio de 2026",
       "date": "2026-06-30",
@@ -35,7 +35,7 @@
       "category": "Cine / Proyección",
       "title": "Ciclo de Cine Argentino",
       "artist": "The Nickel",
-      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial para revisar detalles de la boletería.",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial para revisar detalles.",
       "venue": "The Nickel Cinema, Londres",
       "displayDate": "6 de Julio de 2026",
       "date": "2026-07-06",
@@ -52,26 +52,6 @@
       "url": "https://www.rbo.org.uk/tickets-and-events/marianela-timeless-details"
     },
     {
-      "category": "Música / Rock & Pop",
-      "title": "Conciertos y Giras de Rock Argentino",
-      "artist": "De Puta Madre Club",
-      "description": "Ciclo exclusivo de conciertos y producciones oficiales de las bandas más destacadas de la escena del rock y pop argentino presentándose en el Reino Unido.",
-      "venue": "📍 Consultar recintos asignados en Londres",
-      "displayDate": "Fechas de temporada 2026",
-      "date": "2026-07-20",
-      "url": "https://deputamadreclub.eu/events/"
-    },
-    {
-      "category": "Cultura / Agenda",
-      "title": "Agenda de Conciertos y Eventos en Vivo",
-      "artist": "Wblive",
-      "description": "Cartelera de espectáculos, música en directo y presentaciones culturales con artistas destacados de origen argentino en el Reino Unido.",
-      "venue": "📍 Ver sala en boletería oficial",
-      "displayDate": "Consultar funciones de temporada",
-      "date": "2026-08-15",
-      "url": "https://wblive.co.uk"
-    },
-    {
       "category": "Música / Concierto",
       "title": "Estelares en Londres - Gira 'Las Antorchas'",
       "artist": "Estelares",
@@ -85,21 +65,11 @@
       "category": "Música / Rock & Pop",
       "title": "Él Mató a un Policía Motorizado",
       "artist": "Él Mató a un Policía Motorizado",
-      "description": "La mítica e influyente banda de rock indie argentino se presenta en directo en los escenarios de Londres de la mano de Como No Productions.",
-      "venue": "📍 Consultar recinto en boletería oficial",
+      "description": "La mítica banda de rock indie argentino se presenta en Londres de la mano de Como No Productions.",
+      "venue": "📍 Consultar sala en boletería (Como No)",
       "displayDate": "Sábado 12 de Septiembre de 2026",
       "date": "2026-09-12",
       "url": "https://comono.co.uk/artists/el-mato-a-un-policia-motorizado/"
-    },
-    {
-      "category": "Cultura / Agenda",
-      "title": "Festival de Música y Cultura Latinoamericana - Agenda Argentina",
-      "artist": "Como No Productions",
-      "description": "El festival de cultura latina de referencia en el Reino Unido, destacando espectáculos de folklore, tango, vanguardia y artistas argentinos de renombre.",
-      "venue": "📍 Locaciones variadas (Londres)",
-      "displayDate": "Revisar grilla de programación",
-      "date": "2026-10-05",
-      "url": "https://comono.co.uk/whats-on/"
     },
     {
       "category": "Ballet / Danza",
