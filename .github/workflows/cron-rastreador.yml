@@ -5,7 +5,7 @@ on:
     # Se ejecuta automáticamente a las 07:00 y a las 17:00 (Hora de Londres / BST)
     # Traducido a UTC (servidor): 06:00 y 16:00
     - cron: '0 6,16 * * *'
-  workflow_dispatch: # Te permite activar el rastreo manualmente con un botón si tenés una urgencia
+  workflow_dispatch: # Te permite activar el rastreo manualmente con un botón
 
 jobs:
   rastrear-eventos:
@@ -14,10 +14,10 @@ jobs:
       - name: Clonar repositorio de la app
         uses: actions/checkout@v4
 
-      - name: Configurar entorno de Node.js
+      - name: Configurar entorno de Node.js moderno
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24 # Actualizado a la versión requerida por el servidor
 
       - name: Instalar dependencias de rastreo web
         run: |
