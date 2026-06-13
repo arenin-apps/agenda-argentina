@@ -3,33 +3,54 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 
 const PORTALES = [
-  { name: "Sergius Events", url: "https://sergius.uk/events/", base: "https://sergius.uk" },
-  { name: "The Nickel", url: "https://thenickel.uk/whats-on/", base: "https://thenickel.uk" },
-  { name: "Como No", url: "https://comono.co.uk/whats-on/", base: "https://comono.co.uk" }, 
-  { name: "Wblive", url: "https://www.wblive.co.uk/events", base: "https://www.wblive.co.uk" }, 
-  { name: "Southbank Centre", url: "https://www.southbankcentre.co.uk/whats-on/", base: "https://www.southbankcentre.co.uk" },
-  { name: "Sadlers Wells", url: "https://www.sadlerswells.com/whats-on/?event-search=argentin", base: "https://www.sadlerswells.com" },
-  { name: "Royal Ballet and Opera", url: "https://www.rbo.org.uk/tickets-and-events/marianela-timeless-details", base: "https://www.rbo.org.uk" }
+  { 
+    name: "The Nickel", 
+    url: "https://thenickel.co.uk/?s=argentin", // ¡URL y dominio .co.uk corregidos con tu término exacto!
+    base: "https://thenickel.co.uk",
+    terminos: ["argentin"] 
+  },
+  { 
+    name: "Southbank Centre", 
+    url: "https://www.southbankcentre.co.uk/whats-on/?event-search=argentin", // URL corregida anteriormente con tu instrucción
+    base: "https://www.southbankcentre.co.uk",
+    terminos: ["argentin", "le parc", "piazzolla", "tango"] 
+  },
+  { 
+    name: "Sergius Events", 
+    url: "https://sergius.uk/events/", 
+    base: "https://sergius.uk",
+    terminos: ["estelares", "deputamadre", "teatro", "comedy", "azcarate", "martin", "somos monos"] 
+  },
+  { 
+    name: "Como No", 
+    url: "https://comono.co.uk/whats-on/", 
+    base: "https://comono.co.uk",
+    terminos: ["argentin", "mato a un policia", "tango", "piazzolla"] 
+  },
+  { 
+    name: "Wblive", 
+    url: "https://www.wblive.co.uk/events", 
+    base: "https://www.wblive.co.uk",
+    terminos: ["k'onga", "konga", "argentin", "rock"] 
+  },
+  { 
+    name: "Sadlers Wells", 
+    url: "https://www.sadlerswells.com/whats-on/?event-search=argentin", 
+    base: "https://www.sadlerswells.com",
+    terminos: ["argentin", "tango", "danza", "ballet"] 
+  },
+  { 
+    name: "Royal Ballet and Opera", 
+    url: "https://www.rbo.org.uk/tickets-and-events/marianela-timeless-details", 
+    base: "https://www.rbo.org.uk",
+    terminos: ["marianela", "ballet", "timeless"] 
+  }
 ];
 
-function esCulturaRioplatense(texto) {
+function validarPorPortal(texto, terminosPortal) {
   if (!texto) return false;
   const t = texto.toLowerCase();
-  
-  // Captura de palabras clave para cine, shows locales y artistas argentinos
-  const tieneCine = t.includes('cine') || t.includes('film') || t.includes('movie') || t.includes('pelicula') || t.includes('festival') || t.includes('nickel');
-  const esDeAca = t.includes('argentin') || t.includes('buenos aires') || t.includes('tango') || t.includes('lisandro') || t.includes('aristimuño') || t.includes('azcarate') || t.includes('decadentes');
-  if (tieneCine && esDeAca) return true;
-
-  return t.includes('argentin') || 
-         t.includes('tango') || 
-         t.includes('piazzolla') || 
-         t.includes('marianela') || 
-         t.includes('estelares') || 
-         t.includes('mato a un policia') || 
-         t.includes('k\'onga') || 
-         t.includes('le parc') ||
-         t.includes('deputamadre');
+  return terminosPortal.some(termino => t.includes(termino.toLowerCase()));
 }
 
 function deducirFechaIso(textoInfo) {
@@ -40,11 +61,11 @@ function deducirFechaIso(textoInfo) {
   if (t.includes('october') || t.includes('octubre')) return '2026-10-06';
   if (t.includes('november') || t.includes('noviembre')) return '2026-11-15';
   if (t.includes('december') || t.includes('diciembre')) return '2026-12-05';
-  return '2026-09-20';
+  return '2026-09-20'; 
 }
 
 async function ejecutarRastreo() {
-  console.log("🎯 Iniciando Extracción Específica por Portal...");
+  console.log("🚀 Ejecutando Extracción Quirúrgica con rutas de búsqueda reales...");
   
   const hoyIso = "2026-06-13";
   const limiteIso = "2026-12-13"; 
@@ -65,144 +86,52 @@ async function ejecutarRastreo() {
 
   for (const portal of PORTALES) {
     try {
-      console.log(`📡 Escaneando: ${portal.name}...`);
+      console.log(`📡 Escaneando canal filtrado: ${portal.name}...`);
       const { data } = await axios.get(portal.url, { headers, timeout: 10000 });
       const $ = cheerio.load(data);
 
-      // 1. TU PROPIA WEB (Mapeo de eventos locales de productoras como Deputamadre)
-      if (portal.name === "Sergius Events") {
-        $('.tribe-events-calendar-list__event, article.post').each((i, el) => {
-          const title = $(el).find('.tribe-events-calendar-list__event-title-link, h2 a, h3 a').first().text().trim();
-          let link = $(el).find('a').first().attr('href') || '';
-          if (link && !link.startsWith('http')) link = portal.base + link;
-          const desc = $(el).find('.tribe-events-calendar-list__event-description, p').first().text().trim();
+      $('article, .tribe-events-calendar-list__event, .event-card, .post, .event, .grid-item, .search-result, .movie-card, .showtime-item, .card, .result').each((i, el) => {
+        const title = $(el).find('h2, h3, h4, .title, .event-card__title, .movie-title, .tribe-events-calendar-list__event-title-link, a').first().text().trim();
+        
+        let link = $(el).find('a').first().attr('href') || '';
+        if (link && !link.startsWith('http')) link = portal.base + link;
+        if (!link) link = portal.url;
 
-          if (title && esCulturaRioplatense(title + " " + desc)) {
-            let cat = "Música / Concierto";
-            if (title.toLowerCase().includes('teatro') || title.toLowerCase().includes('comedy')) cat = "Teatro / Comedia";
-            
-            eventosCandidatos.push({
-              category: cat,
-              title: title,
-              venue: $(el).find('.tribe-events-calendar-list__event-venue, .venue').text().trim() || "Londres, UK",
-              displayDate: $(el).find('.tribe-events-calendar-list__event-date-tag, time').text().trim() || "Consultar Fecha",
-              date: deducirFechaIso(title + " " + desc),
-              description: desc.substring(0, 160),
-              url: link
-            });
+        const description = $(el).find('.description, .excerpt, .tribe-events-calendar-list__event-description, p, .card__description').first().text().trim() || "";
+        const textoCompleto = (title + " " + description + " " + $(el).text()).toLowerCase();
+
+        if (title && title.length > 3 && validarPorPortal(textoCompleto, portal.terminos)) {
+          
+          let categoria = "Música / Concierto";
+          if (portal.name === "The Nickel" || textoCompleto.includes('cine') || textoCompleto.includes('film') || textoCompleto.includes('movie') || textoCompleto.includes('pelicula') || textoCompleto.includes('cinema')) {
+            categoria = "Cine / Película";
+          } else if (textoCompleto.includes('tango') || textoCompleto.includes('ballet') || textoCompleto.includes('danza')) {
+            categoria = "Danza / Ballet / Tango";
+          } else if (textoCompleto.includes('teatro') || textoCompleto.includes('comedy') || textoCompleto.includes('monos') || textoCompleto.includes('azcarate')) {
+            categoria = "Teatro / Comedia";
           }
-        });
-      }
 
-      // 2. THE NICKEL (Extracción individual de películas de su cartelera)
-      if (portal.name === "The Nickel") {
-        $('.movie-card, .event-card, article').each((i, el) => {
-          const title = $(el).find('.movie-title, h3, h2').first().text().trim();
-          let link = $(el).find('a').first().attr('href') || '';
-          if (link && !link.startsWith('http')) link = portal.base + link;
-          const desc = $(el).find('p, .excerpt').text().trim();
+          const rawDate = $(el).find('.date, .event-date, time, .tribe-events-calendar-list__event-date-tag, .showtime, .movie-date, .event-card__date, .card__date').text().trim();
+          const displayDate = rawDate || "Fecha en Cartelera (Consultar Link)";
+          const dateCalculada = deducirFechaIso(displayDate + " " + textoCompleto);
 
-          if (title && esCulturaRioplatense(title + " " + desc)) {
-            eventosCandidatos.push({
-              category: "Cine / Película",
-              title: title,
-              venue: "The Nickel Cinema, Londres",
-              displayDate: $(el).find('.showtime, .date, time').text().trim() || "Cartelera Mensual",
-              date: deducirFechaIso(title + " " + desc),
-              description: desc.substring(0, 160),
-              url: link
-            });
-          }
-        });
-      }
-
-      // 3. COMO NO
-      if (portal.name === "Como No") {
-        $('.event, article').each((i, el) => {
-          const title = $(el).find('h2, h3, .event-title').first().text().trim();
-          let link = $(el).find('a').first().attr('href') || '';
-          if (link && !link.startsWith('http')) link = portal.base + link;
-
-          if (title && esCulturaRioplatense(title)) {
-            eventosCandidatos.push({
-              category: "Música / Concierto",
-              title: title,
-              venue: "Recinto por confirmar (Como No)",
-              displayDate: $(el).find('.date, .event-date').text().trim() || "Próximamente 2026",
-              date: deducirFechaIso(title),
-              description: "",
-              url: link
-            });
-          }
-        });
-      }
-
-      // 4. SOUTHBANK CENTRE
-      if (portal.name === "Southbank Centre") {
-        $('.event-card, .grid-item').each((i, el) => {
-          const title = $(el).find('.event-card__title, h3').first().text().trim();
-          let link = $(el).find('a').first().attr('href') || '';
-          if (link && !link.startsWith('http')) link = portal.base + link;
-          const info = $(el).text();
-
-          if (title && esCulturaRioplatense(title + " " + info)) {
-            let cat = info.toLowerCase().includes('film') || info.toLowerCase().includes('cinema') ? "Cine / Película" : "Música / Concierto";
-            eventosCandidatos.push({
-              category: cat,
-              title: title,
-              venue: "Southbank Centre, Londres",
-              displayDate: $(el).find('.event-card__date, time').text().trim() || "Consultar Boletería",
-              date: deducirFechaIso(title + " " + info),
-              description: "",
-              url: link
-            });
-          }
-        });
-      }
-
-      // 5. SADLER'S WELLS
-      if (portal.name === "Sadlers Wells") {
-        $('.search-result, .event-card, article').each((i, el) => {
-          const title = $(el).find('.title, h2, h3').first().text().trim();
-          let link = $(el).find('a').first().attr('href') || '';
-          if (link && !link.startsWith('http')) link = portal.base + link;
-
-          if (title && esCulturaRioplatense(title)) {
-            eventosCandidatos.push({
-              category: "Danza / Ballet / Tango",
-              title: title,
-              venue: "Sadler's Wells Theatre, Londres",
-              displayDate: $(el).find('.date, .event-dates').text().trim() || "Temporada 2026",
-              date: deducirFechaIso(title),
-              description: "",
-              url: link
-            });
-          }
-        });
-      }
-
-      // 6. ROYAL BALLET AND OPERA
-      if (portal.name === "Royal Ballet and Opera") {
-        const title = $('h1').first().text().trim();
-        if (title && esCulturaRioplatense(title)) {
           eventosCandidatos.push({
-            category: "Danza / Ballet / Tango",
+            category: categoria,
             title: title,
-            venue: "Royal Opera House, Covent Garden",
-            displayDate: $(".event-dates, .dates").text().trim() || "Temporada de Verano 2026",
-            date: "2026-07-20",
-            description: "Espectáculo con la bailarina principal argentina Marianela Nuñez.",
-            url: portal.url
+            venue: $(el).find('.venue, .location, .tribe-events-calendar-list__event-venue').text().trim() || (portal.name === "The Nickel" ? "The Nickel Cinema, Londres" : "Londres, UK"),
+            displayDate: displayDate,
+            date: dateCalculada, 
+            description: description.substring(0, 160),
+            url: link
           });
         }
-      }
+      });
 
     } catch (error) {
       console.log(`✕ Alerta en ${portal.name}: ${error.message}`);
     }
   }
 
-  // COMPLEMENTO MANUAL DEL PANEL DE CONTROL
   try {
     if (fs.existsSync('panel-control.json')) {
       const panel = JSON.parse(fs.readFileSync('panel-control.json', 'utf8'));
@@ -213,7 +142,6 @@ async function ejecutarRastreo() {
     }
   } catch (err) {}
 
-  // ELIMINAR DUPLICADOS
   const unicos = [];
   const titulosVistos = new Set();
   
