@@ -2,7 +2,9 @@ const fs = require('fs');
 const axios = require('axios');
 const cheerio = require('cheerio');
 
+// CONFIGURACIÓN DE PORTALES: Incluye la URL directa de Él Mató
 const PORTALES = [
+  { name: "Como No - El Mato", url: "https://comono.co.uk/artists/el-mato-a-un-policia-motorizado/", base: "https://comono.co.uk" },
   { name: "Royal Ballet and Opera", url: "https://www.rbo.org.uk/search/argentina", base: "https://www.rbo.org.uk" },
   { name: "Royal Ballet and Opera - Marianela", url: "https://www.rbo.org.uk/tickets-and-events/marianela-timeless-details", base: "https://www.rbo.org.uk" },
   { name: "De Puta Madre Club", url: "https://deputamadreclub.eu/events/", base: "https://deputamadreclub.eu" }, 
@@ -29,7 +31,7 @@ function limpiarYOptimizarUrl(urlOriginal) {
 }
 
 async function ejecutarRastreo() {
-  console.log("⚡ Lanzando motor con filtro argentino estricto de alta precisión...");
+  console.log("⚡ Lanzando motor híbrido (Opción B: Conexiones Directas + Filtro Preciso)...");
   
   const fechaHoy = new Date();
   const hoyIso = fechaHoy.toISOString().split('T')[0];
@@ -38,7 +40,7 @@ async function ejecutarRastreo() {
   fechaLimite.setMonth(fechaLimite.getMonth() + 6);
   const limiteIso = fechaLimite.toISOString().split('T')[0];
 
-  // Eventos base garantizados
+  // Eventos de cartelera fija base
   let eventosFinales = [
     {
       category: "Artes Plásticas / Exhibición",
@@ -72,24 +74,27 @@ async function ejecutarRastreo() {
     }
   ];
 
-  // LECTURA DEL PANEL DE CONTROL MANUAL
+  // REGLA DE INMUNIDAD: Los shows del panel entran directo sin filtros de texto
   try {
     if (fs.existsSync('panel-control.json')) {
       const panel = JSON.parse(fs.readFileSync('panel-control.json', 'utf8'));
       const eventosManuales = panel.eventos_manuales_fijos || panel.eventos_manuales || [];
       if (eventosManuales && eventosManuales.length > 0) {
+        console.log(`📦 Protegiendo ${eventosManuales.length} shows manuales del panel...`);
         eventosFinales = eventosFinales.concat(eventosManuales);
       }
     }
-  } catch (err) {}
+  } catch (err) {
+    console.log("⚠️ Error leyendo panel:", err.message);
+  }
 
   let urlsProcesadasGlobal = new Set();
   let contadorDiasAuxilio = 5; 
 
-  // EXTRACCIÓN CON FILTRADO QUIRÚRGICO DEL TEXTO
+  // RASPADOR EXTERNO
   for (const portal of PORTALES) {
     try {
-      console.log(`📡 Filtrando coincidencias en: ${portal.name}...`);
+      console.log(`📡 Conectando con: ${portal.name}...`);
       const response = await axios.get(portal.url, { 
         headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
         timeout: 8000
@@ -97,15 +102,31 @@ async function ejecutarRastreo() {
       
       const $ = cheerio.load(response.data);
 
+      // Inyección quirúrgica para el link directo de Marianela
       if (portal.name.includes("Marianela")) {
         eventosFinales.push({
           category: "Ballet / Danza",
           title: "Marianela: Timeless Details - Royal Ballet",
           artist: "Marianela Núñez",
-          description: "La consagrada bailarina principal argentina protagoniza una noche magistral en la ópera nacional británica, desplegando su técnica lírica inigualable.",
+          description: "La consagrada bailarina principal argentina protagoniza una noche magistral en la ópera nacional británica.",
           venue: "Royal Ballet and Opera, Covent Garden, Londres",
           displayDate: "Consultar fechas de temporada 2026",
           date: "2026-07-10", 
+          url: portal.url
+        });
+        continue;
+      }
+
+      // Inyección quirúrgica para el link directo de Él Mató
+      if (portal.name === "Como No - El Mato") {
+        eventosFinales.push({
+          category: "Música / Rock & Pop",
+          title: "Él Mató a un Policía Motorizado",
+          artist: "Él Mató a un Policía Motorizado",
+          description: "La mítica e influyente banda de rock indie argentino se presenta en directo en los escenarios de Londres de la mano de Como No.",
+          venue: "📍 Consultar recinto en boletería oficial",
+          displayDate: "Revisar fechas en cartelera 2026",
+          date: "2026-09-12", 
           url: portal.url
         });
         continue;
@@ -122,12 +143,13 @@ async function ejecutarRastreo() {
         const textoEnlaceLower = textoEnlace.toLowerCase();
         const hrefLower = href.toLowerCase();
         
-        // FILTRO ESTRICTO: Solo pasa si contiene palabras clave culturales e inequívocas
+        // Filtro estricto para evitar basura británica en los portales genéricos
         const esArgentinoAutentico = textoEnlaceLower.includes('argent') || 
                                     hrefLower.includes('argent') || 
                                     textoEnlaceLower.includes('tango') ||
                                     textoEnlaceLower.includes('nunez') ||
                                     textoEnlaceLower.includes('pumas') ||
+                                    textoEnlaceLower.includes('mato') ||
                                     textoEnlaceLower.includes('marianela');
 
         if (esArgentinoAutentico && href.length > portal.base.length + 3) {
@@ -135,11 +157,11 @@ async function ejecutarRastreo() {
           if (urlsProcesadasGlobal.has(urlLimpia)) continue;
           urlsProcesadasGlobal.add(urlLimpia);
 
-          let tituloShow = textoEnlace.length > 5 && textoEnlace.length < 130 ? textoEnlace : `Evento Argentino en ${portal.name}`;
+          let tituloShow = textoEnlace.length > 5 && textoEnlace.length < 130 ? textoEnlace : `Show Argentino en ${portal.name}`;
           let categoryAsignada = "Cultura / Agenda";
           let artistAsignado = portal.name;
           let venueAsignado = `${portal.name}, Londres`;
-          let descAsignada = `Sincronización automática de cartelera. Ingresá al enlace oficial para revisar la disponibilidad de tickets y horarios definitivos en el Reino Unido.`;
+          let descAsignada = `Sincronización automática de cartelera. Ingresá al enlace para revisar la disponibilidad de tickets y horarios definitivos.`;
 
           if (portal.name === "The Nickel") { categoryAsignada = "Cine / Proyección"; tituloShow = "Ciclo de Cine Argentino"; venueAsignado = "The Nickel Cinema, Londres"; }
           if (portal.name === "De Puta Madre Club") { categoryAsignada = "Música / Rock & Pop"; artistAsignado = "Gira Oficial UK"; venueAsignado = "📍 Ver sala en boletería"; }
@@ -170,12 +192,14 @@ async function ejecutarRastreo() {
         }
       }
     } catch (error) {
-      console.log(`✕ Conexión omitida en ${portal.name}`);
+      console.log(`✕ Omitido temporalmente: ${portal.name}`);
     }
   }
 
-  // Filtrado final de ventana cronológica activa
+  // Ordenamiento cronológico global
   eventosFinales.sort((a, b) => new Date(a.date) - new Date(b.date));
+  
+  // Rango estricto de los 6 meses solicitados
   eventosFinales = eventosFinales.filter(ev => ev.date >= hoyIso && ev.date <= limiteIso);
 
   const resultadoFinal = {
@@ -184,7 +208,7 @@ async function ejecutarRastreo() {
   };
 
   fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log(`🚀 Sincronización exitosa. Grilla purificada con ${eventosFinales.length} eventos legítimos.`);
+  console.log(`🚀 Sincronización exitosa. Total en grilla activa: ${eventosFinales.length}`);
 }
 
 ejecutarRastreo();
