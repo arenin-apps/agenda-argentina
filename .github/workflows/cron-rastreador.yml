@@ -2,8 +2,8 @@ name: Rastreador de Eventos Argentinos
 
 on:
   schedule:
-    - cron: '0 */6 * * *' # Corre automáticamente cada 6 horas
-  workflow_dispatch: # Te permite darle al botón manual cuando quieras
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Permite ejecución manual
 
 jobs:
   rastrear-eventos:
@@ -12,25 +12,24 @@ jobs:
     steps:
     - name: Clonar Repositorio
       uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
 
-    - name: Configurar Node.js 24
+    - name: Configurar Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: 24
+        node-version: 20
 
-    - name: Instalar Dependencias Limpias
+    - name: Eliminar bloqueos e instalar librerías
       run: |
+        rm -rf node_modules package-lock.json
         npm init -y
         npm install axios cheerio fs
 
-    - name: Ejecutar Motor de Extracción Real
+    - name: Ejecutar Extractor Real
       run: node script-extractor.js
 
-    - name: Forzar Guardado de Datos Reales en GitHub
+    - name: Forzar subida de datos reales
       run: |
-        git config --global user.name "arenin-apps"
-        git config --global user.email "sergio@sergius.uk"
+        git config --global user.name "actions-user"
+        git config --global user.email "actions@github.com"
         git add eventos.json
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Sincronización manual forzada con datos purificados" && git push)
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Actualización masiva forzada de eventos" && git push)
