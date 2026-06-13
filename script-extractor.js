@@ -2,7 +2,7 @@ const fs = require('fs');
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-// Portales oficiales con sus rutas optimizadas de búsqueda masiva
+// Portales oficiales con las rutas internas reales de cartelera (¡Corregidas!)
 const PORTALES = [
   { name: "Sadlers Wells", url: "https://www.sadlerswells.com/whats-on/?search=argent", base: "https://www.sadlerswells.com" },
   { name: "Southbank Centre", url: "https://www.southbankcentre.co.uk/?s=argent", base: "https://www.southbankcentre.co.uk" },
@@ -10,15 +10,15 @@ const PORTALES = [
   { name: "Barbican", url: "https://www.barbican.org.uk/whats-on?search=argent", base: "https://www.barbican.org.uk" },
   { name: "BFI Player", url: "https://player.bfi.org.uk/search?q=argent", base: "https://player.bfi.org.uk" },
   { name: "The Nickel", url: "https://thenickel.co.uk", base: "https://thenickel.co.uk" },
-  { name: "Wigmore Hall", url: "https://www.wblive.co.uk/events", base: "https://www.wblive.co.uk" },
-  { name: "Royal Ballet and Opera", url: "https://www.rbo.org.uk/tickets-and-events", base: "https://www.rbo.org.uk" },
-  { name: "De Puta Madre Club", url: "https://deputamadreclub.eu/", base: "https://deputamadreclub.eu" },
+  { name: "Wigmore Hall", url: "https://www.wigmore-hall.org.uk/whats-on", base: "https://www.wigmore-hall.org.uk" }, // CORREGIDO
+  { name: "Royal Ballet and Opera", url: "https://www.rbo.org.uk/whats-on", base: "https://www.rbo.org.uk" }, // CORREGIDO
+  { name: "De Puta Madre Club", url: "https://deputamadreclub.eu/events/", base: "https://deputamadreclub.eu" }, // CORREGIDO
   { name: "England Rugby RFU", url: "https://www.englandrugby.com/", base: "https://www.englandrugby.com" },
   { name: "Nations Championship", url: "https://nationschampionshiprugby.com/en", base: "https://nationschampionshiprugby.com" },
   { name: "TV Guide UK", url: "https://www.tvguide.co.uk/search?q=argent", base: "https://www.tvguide.co.uk" }
 ];
 
-const TEXTOS_TICKET_VALIDOS = ['book', 'ticket', 'buy', 'reserva', 'entradas', 'event', 'whats-on/', 'tate-modern', 'movie', 'events/', 'tickets-and-events/', 'product/', 'fixtures', 'matches', 'fixtures-results/', 'tv-listings'];
+const TEXTOS_TICKET_VALIDOS = ['book', 'ticket', 'buy', 'reserva', 'entradas', 'event', 'whats-on/', 'tate-modern', 'movie', 'events/', 'tickets-and-events/', 'product/', 'fixtures', 'matches', 'fixtures-results/', 'tv-listings', 'show', 'programme'];
 
 function limpiarYOptimizarUrl(urlOriginal) {
   if (!urlOriginal) return null;
@@ -36,7 +36,7 @@ function esLinkProfundoValido(href, baseUrL) {
   if (!href) return false;
   const link = href.toLowerCase().trim();
   if (link === '/' || link === baseUrL.toLowerCase()) return false;
-  return TEXTOS_TICKET_VALIDOS.some(texto => link.includes(texto));
+  return true; // Abrimos el criterio de enlaces para no dejar afuera ninguna estructura interna nueva
 }
 
 function obtenerDominio(url) {
@@ -48,7 +48,7 @@ function obtenerDominio(url) {
 }
 
 async function ejecutarRastreo() {
-  console.log("⚡ Iniciando motor masivo de alto rendimiento por enlaces...");
+  console.log("⚡ Sincronizando grilla masiva con URLs internas corregidas...");
   
   // Eventos fijos curados base (Garantizados siempre visibles)
   let eventosFinales = [
@@ -56,7 +56,7 @@ async function ejecutarRastreo() {
       category: "Artes Plásticas / Exhibición",
       title: "Julio Le Parc: Obras Cinéticas e Inmersivas",
       artist: "Julio Le Parc",
-      description: "Gran retrospectiva dedicada al pionero argentino del arte óptico y cinético. Un recorrido de instalaciones interactivas, móviles y juegos de luces.",
+      description: "Gran retrospectiva dedicada al pioneer argentino del arte óptico y cinético. Un recorrido de instalaciones interactivas, móviles y juegos de luces.",
       venue: "Tate Modern, Bankside, Londres",
       displayDate: "11 de Junio al 11 de Diciembre de 2026",
       date: "2026-06-11",
@@ -98,8 +98,8 @@ async function ejecutarRastreo() {
     try {
       console.log(`📡 Buscando coincidencias en: ${portal.name}...`);
       const response = await axios.get(portal.url, { 
-        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
-        timeout: 6000
+        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
+        timeout: 8000
       });
       
       const $ = cheerio.load(response.data);
@@ -112,20 +112,20 @@ async function ejecutarRastreo() {
         const textoEnlace = $(el).text().trim();
         const textoEnlaceLower = textoEnlace.toLowerCase();
         
-        // Criterio universal de coincidencia por la raíz "argent"
-        const esArgentino = textoEnlaceLower.includes('argent') || href.toLowerCase().includes('argent');
+        // Criterio universal ampliado para capturar texto o enlaces con la raíz "argent"
+        const esArgentino = textoEnlaceLower.includes('argent') || href.toLowerCase().includes('argent') || textoEnlaceLower.includes('marianela');
 
         if (esLinkProfundoValido(href, portal.base) && esArgentino) {
           let urlLimpia = limpiarYOptimizarUrl(href);
           if (urlsProcesadasGlobal.has(urlLimpia)) return;
           urlsProcesadasGlobal.add(urlLimpia);
 
-          let tituloShow = textoEnlace.length > 5 && textoEnlace.length < 120 ? textoEnlace : `Espectáculo Argentino`;
+          let tituloShow = textoEnlace.length > 5 && textoEnlace.length < 130 ? textoEnlace : `Función Cultural`;
           
           let categoryAsignada = "Cultura / Agenda";
           let artistAsignado = portal.name;
           let venueAsignado = `${portal.name}, Reino Unido`;
-          let descAsignada = `Sincronización automática de cartelera. Ingresá al enlace oficial de ${portal.name} para revisar la disponibilidad, horarios y canales formales de reserva en el Reino Unido.`;
+          let descAsignada = `Sincronización automática de cartelera. Ingresá al enlace oficial de ${portal.name} para revisar la disponibilidad, horarios y canales de reserva en el Reino Unido.`;
 
           if (portal.name === "The Nickel") { categoryAsignada = "Cine / Proyección"; tituloShow = "Ciclo de Cine Argentino"; venueAsignado = "The Nickel Cinema, Londres"; }
           if (portal.name === "Wigmore Hall") { categoryAsignada = "Música / Clásica"; venueAsignado = "Wigmore Hall, Londres"; }
@@ -143,13 +143,10 @@ async function ejecutarRastreo() {
             categoryAsignada = "Televisión / Transmisión";
             artistAsignado = "Televisión Británica";
             venueAsignado = "📺 En Guía de TV Británica";
-            descAsignada = "Contenido relacionado con Argentina detectado en la programación de la televisión del Reino Unido. Accedé al enlace para revisar canales y horarios de emisión.";
-            if (tituloShow.toLowerCase().includes('show en') || tituloShow === "Espectáculo Argentino") {
-              tituloShow = "Especial sobre Argentina en TV";
-            }
+            descAsignada = "Contenido relacionado con Argentina detectado en la programación de la televisión del Reino Unido. Accedé al enlace para revisar canales y horarios.";
+            if (tituloShow === "Función Cultural") tituloShow = "Especial sobre Argentina en TV";
           }
 
-          // Aplicación de anulaciones manuales si coinciden los dominios
           const dominioPortal = obtenerDominio(portal.base);
           for (const urlManual of urlsManualesAnulacion) {
             if (obtenerDominio(urlManual) === dominioPortal) {
@@ -165,7 +162,7 @@ async function ejecutarRastreo() {
             description: descAsignada,
             venue: venueAsignado,
             displayDate: portal.name === "TV Guide UK" ? "Ver horario de emisión" : "Consultar fecha en cartelera",
-            date: "2026-06-28", // Indexación inmediata para mantener la vigencia en la grilla activa
+            date: "2026-06-28", 
             url: urlLimpia
           });
         }
@@ -175,7 +172,6 @@ async function ejecutarRastreo() {
     }
   }
 
-  // Ordenar cronológicamente y guardar el archivo compilado final
   eventosFinales.sort((a, b) => new Date(a.date) - new Date(b.date));
   const hoyIso = new Date().toISOString().split('T')[0];
   eventosFinales = eventosFinales.filter(ev => ev.date >= hoyIso);
@@ -186,7 +182,7 @@ async function ejecutarRastreo() {
   };
 
   fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log(`🚀 Sincronización exitosa. Total de eventos inyectados de forma masiva: ${eventosFinales.length}`);
+  console.log(`🚀 Sincronización exitosa. Total de eventos inyectados: ${eventosFinales.length}`);
 }
 
 ejecutarRastreo();
