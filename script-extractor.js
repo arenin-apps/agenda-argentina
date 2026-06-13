@@ -20,7 +20,6 @@ const PORTALES = [
 
 const TEXTOS_TICKET_VALIDOS = ['book', 'ticket', 'buy', 'reserva', 'entradas', 'event', 'whats-on/', 'tate-modern', 'movie', 'events/', 'tickets-and-events/', 'product/', 'fixtures', 'matches', 'fixtures-results/', 'tv-listings'];
 
-// 1. FUNCIÓN DE LIMPIEZA QUIRÚRGICA DE ENLACES
 function limpiarYOptimizarUrl(urlOriginal) {
   if (!urlOriginal) return null;
   let urlPura = urlOriginal.trim();
@@ -29,7 +28,6 @@ function limpiarYOptimizarUrl(urlOriginal) {
     urlPura = urlPura.replace('/exhibition/', '/');
   }
 
-  // Dejar pasar parámetros esenciales de búsqueda para evitar que se rompa el rastreo interno
   if (urlPura.includes('?')) {
     const partes = urlPura.split('?');
     if (!partes[1].includes('s=') && !partes[1].includes('search=') && !partes[1].includes('q=')) {
@@ -58,11 +56,9 @@ function obtenerDominio(url) {
   }
 }
 
-// 2. PROCESO PRINCIPAL COMBINADO HÍBRIDO
 async function ejecutarRastreo() {
-  console.log("Iniciando escaneo global: Corrección de URLs y filtrado universal 'argent'...");
+  console.log("Iniciando escaneo global optimizado...");
   
-  // Lista inicial inmutable de alta prioridad
   let eventosFinales = [
     {
       category: "Artes Plásticas / Exhibición",
@@ -106,10 +102,10 @@ async function ejecutarRastreo() {
       urlsManualesAnulacion = panel.urls_individuales_extra || [];
     }
   } catch (err) {
-    console.log("Rastreo puro activo.");
+    console.log("Rastreo directo sin panel.");
   }
 
-  // SECCIÓN A: NEWSLETTER MAILCHIMP
+  // SECCIÓN A: BOLETÍN DE LA EMBAJADA
   if (urlMailchimp && urlMailchimp.includes('mailchi.mp')) {
     try {
       console.log(`📡 Analizando boletín de la Embajada Argentina...`);
@@ -144,7 +140,7 @@ async function ejecutarRastreo() {
     }
   }
 
-  // SECCIÓN B: RASTREO MULTI-SHOW
+  // SECCIÓN B: EXTRACCIÓN AUTOMÁTICA EN PORTALES
   for (const portal of PORTALES) {
     try {
       console.log(`Rastreando portal oficial: ${portal.name}...`);
@@ -180,7 +176,7 @@ async function ejecutarRastreo() {
             }
           }
 
-          let tituloShow = textoEnlace.length > 8 && textoEnlace.length < 90 ? textoEnlace : `Evento Argentino en ${portal.name}`;
+          let tituloShow = textoEnlace.length > 8 && textoEnlace.length < 90 ? textoEnlace : `Espectáculo Argentino en ${portal.name}`;
           
           let categoryAsignada = "Cultura / Agenda";
           let artistAsignado = portal.name;
@@ -196,15 +192,15 @@ async function ejecutarRastreo() {
             categoryAsignada = "Deportes / Rugby";
             artistAsignado = "Los Pumas (Selección Argentina)";
             venueAsignado = portal.name === "England Rugby RFU" ? "Twickenham Stadium, Londres" : "📍 Ver Sede asignada en fixture";
-            if (tituloShow.includes("Evento Argentino")) tituloShow = "Los Pumas - Match Internacional";
+            if (tituloShow.includes("Espectáculo Argentino")) tituloShow = "Los Pumas - Match Internacional";
           }
 
           if (portal.name === "TV Guide UK") {
             categoryAsignada = "Televisión / Transmisión";
             artistAsignado = "Emisión del Reino Unido";
             venueAsignado = "📺 Consultar canal en guía de TV";
-            descAsignada = "Contenido relacionado con Argentina detectado en la programación de la televisión británica. Accedé al enlace para revisar horarios de emisión y canales disponibles.";
-            if (tituloShow.includes("Evento Argentino") || tituloShow.length < 15) tituloShow = "Especial sobre Argentina en TV";
+            descAsignada = "Contenido relacionado con Argentina de la televisión británica. Accedé al enlace para revisar horarios de emisión y canales.";
+            if (tituloShow.includes("Espectáculo Argentino") || tituloShow.length < 15) tituloShow = "Especial sobre Argentina en TV";
           }
 
           eventosFinales.push({
@@ -214,8 +210,8 @@ async function ejecutarRastreo() {
             description: descAsignada,
             venue: venueAsignado,
             displayDate: portal.name === "TV Guide UK" ? "Ver horario de emisión" : "Consultar fecha en boletería",
-            date: "2026-07-10", 
-            url: urlLimpia // CORREGIDO: Se inyecta la variable limpia real de manera directa
+            date: "2026-06-30", // Fecha base segura para indexación inmediata en grilla activa
+            url: urlLimpia // ENLACE CORREGIDO
           });
         }
       });
@@ -225,7 +221,7 @@ async function ejecutarRastreo() {
     }
   }
 
-  // SECCIÓN C: URLS MANUALES
+  // SECCIÓN C: URLS MANUALES EXTRA
   for (const urlManual of urlsManualesAnulacion) {
     const dominioManual = urlManual;
     const perteneceAPortalFijo = PORTALES.some(p => obtenerDominio(p.base) === obtenerDominio(dominioManual));
@@ -235,10 +231,10 @@ async function ejecutarRastreo() {
         category: "Cultura / Destacado",
         title: "Espectáculo Argentino Sincronizado",
         artist: "Función Especial",
-        description: "Evento mapeado a través del Panel de Control. Accedé al enlace oficial de reserva para ver la grilla, precios y locación exacta.",
+        description: "Evento mapped a través del Panel de Control. Accedé al enlace oficial de reserva para ver la grilla, precios y locación exacta.",
         venue: "📍 Ver locación en ticketera",
         displayDate: "Consultar fechas",
-        date: "2026-06-30",
+        date: "2026-06-25",
         url: limpiarYOptimizarUrl(urlManual)
       });
     }
@@ -250,7 +246,7 @@ async function ejecutarRastreo() {
   };
 
   fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log("¡Hecho! Archivo eventos.json regenerado de forma limpia y sin errores de variables.");
+  console.log("¡Sincronización final completada sin errores de variables!");
 }
 
 ejecutarRastreo();
