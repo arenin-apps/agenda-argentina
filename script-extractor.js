@@ -2,8 +2,7 @@ const fs = require('fs');
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-
+// Portales oficiales con sus rutas optimizadas de búsqueda masiva
 const PORTALES = [
   { name: "Sadlers Wells", url: "https://www.sadlerswells.com/whats-on/?search=argent", base: "https://www.sadlerswells.com" },
   { name: "Southbank Centre", url: "https://www.southbankcentre.co.uk/?s=argent", base: "https://www.southbankcentre.co.uk" },
@@ -48,54 +47,10 @@ function obtenerDominio(url) {
   } catch (e) { return ""; }
 }
 
-async function procesarListaConIa(listaEventosBrutos) {
-  if (!GEMINI_API_KEY || listaEventosBrutos.length === 0) return [];
-
-  const urlApi = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
-  
-  const promptOrden = `
-    Analiza la siguiente lista de eventos culturales y deportivos extraídos de portales del Reino Unido.
-    Para cada elemento, debes limpiar el título, redactar una descripción atractiva en español de un párrafo, deducir la fecha exacta en formato legible (displayDate) y formato calendario YYYY-MM-DD (asume año 2026).
-    También extrae el nombre limpio del artista o equipo argentino involucrado.
-
-    Lista de entrada:
-    ${JSON.stringify(listaEventosBrutos, null, 2)}
-
-    Devuelve estrictamente un array JSON estructurado de esta forma:
-    [
-      {
-        "category": "Música / Rock & Pop" o "Música / Clásica" o "Ballet / Danza" o "Deportes / Rugby" o "Televisión / Transmisión" o "Cultura / Agenda",
-        "title": "Título limpio y vendedor en español",
-        "artist": "Nombre del artista o selección argentina",
-        "description": "Descripción informativa en español sobre la participación argentina.",
-        "venue": "Nombre del recinto y ciudad (ej: Twickenham Stadium, Londres). Si es de TV Guide, pon '📺 Consultar canal en guía de TV'.",
-        "displayDate": "Fecha legible en español (ej: Sábado 20 de Junio)",
-        "date": "YYYY-MM-DD",
-        "url": "Mantén la URL provista en la entrada"
-      }
-    ]
-    REGLA: Devuelve SOLO el array JSON []. Sin bloques markdown \`\`\`json ni texto introductorio.
-  `;
-
-  try {
-    const respuesta = await axios.post(urlApi, {
-      contents: [{ parts: [{ text: promptOrden }] }]
-    }, { headers: { 'Content-Type': 'application/json' }, timeout: 25000 });
-
-    let textoIa = respuesta.data.candidates[0].content.parts[0].text.trim();
-    if (textoIa.includes('```')) {
-      textoIa = textoIa.replace(/```json|```/g, '').trim();
-    }
-    return JSON.parse(textoIa);
-  } catch (e) {
-    console.log("⚠️ Error en procesamiento Gemini:", e.message);
-    return [];
-  }
-}
-
 async function ejecutarRastreo() {
-  console.log("⚡ Lanzando motor en lote con bucles controlados síncronos...");
+  console.log("⚡ Iniciando motor masivo de alto rendimiento por enlaces...");
   
+  // Eventos fijos curados base (Garantizados siempre visibles)
   let eventosFinales = [
     {
       category: "Artes Plásticas / Exhibición",
@@ -105,7 +60,7 @@ async function ejecutarRastreo() {
       venue: "Tate Modern, Bankside, Londres",
       displayDate: "11 de Junio al 11 de Diciembre de 2026",
       date: "2026-06-11",
-      url: "[https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc](https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc)"
+      url: "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc"
     },
     {
       category: "Música / Concierto",
@@ -115,7 +70,7 @@ async function ejecutarRastreo() {
       venue: "Oslo Hackney, Londres",
       displayDate: "Sábado 05 de Septiembre de 2026 (19:00)",
       date: "2026-09-05",
-      url: "[https://sergius.uk/event/estelares-en-londres-2026/](https://sergius.uk/event/estelares-en-londres-2026/)"
+      url: "https://sergius.uk/event/estelares-en-londres-2026/"
     },
     {
       category: "Ballet / Danza",
@@ -125,36 +80,113 @@ async function ejecutarRastreo() {
       venue: "Sadler's Wells Theatre, Londres",
       displayDate: "05 al 09 de Noviembre de 2026",
       date: "2026-11-05",
-      url: "[https://www.sadlerswells.com/whats-on/g-cornejo-tango-after-dark/](https://www.sadlerswells.com/whats-on/g-cornejo-tango-after-dark/)"
+      url: "https://www.sadlerswells.com/whats-on/g-cornejo-tango-after-dark/"
     }
   ];
 
-  let bolsaEventosBrutos = [];
+  let urlsManualesAnulacion = [];
+  try {
+    if (fs.existsSync('panel-control.json')) {
+      const panel = JSON.parse(fs.readFileSync('panel-control.json', 'utf8'));
+      urlsManualesAnulacion = panel.urls_individuales_extra || [];
+    }
+  } catch (err) {}
+
   let urlsProcesadasGlobal = new Set();
 
-  // FASE 1: Recolección síncrona limpia sin asincronía rota
   for (const portal of PORTALES) {
     try {
-      console.log(`📡 Raspando enlaces en: ${portal.name}...`);
+      console.log(`📡 Buscando coincidencias en: ${portal.name}...`);
       const response = await axios.get(portal.url, { 
         headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
-        timeout: 7000
+        timeout: 6000
       });
       
       const $ = cheerio.load(response.data);
 
-      // Usamos un bucle nativo controlado en lugar del .each() conflictivo
-      const enlacesAs = $('a').toArray();
-      for (const el of enlacesAs) {
+      $('a').each((i, el) => {
         let href = $(el).attr('href');
-        if (!href) continue;
+        if (!href) return;
         if (href.startsWith('/')) href = portal.base + href;
 
         const textoEnlace = $(el).text().trim();
         const textoEnlaceLower = textoEnlace.toLowerCase();
+        
+        // Criterio universal de coincidencia por la raíz "argent"
         const esArgentino = textoEnlaceLower.includes('argent') || href.toLowerCase().includes('argent');
 
         if (esLinkProfundoValido(href, portal.base) && esArgentino) {
           let urlLimpia = limpiarYOptimizarUrl(href);
-          if (urlsProcesadasGlobal.has(urlLimpia)) continue;
-          urlsProcesadasGlobal.add(urlL
+          if (urlsProcesadasGlobal.has(urlLimpia)) return;
+          urlsProcesadasGlobal.add(urlLimpia);
+
+          let tituloShow = textoEnlace.length > 5 && textoEnlace.length < 120 ? textoEnlace : `Espectáculo Argentino`;
+          
+          let categoryAsignada = "Cultura / Agenda";
+          let artistAsignado = portal.name;
+          let venueAsignado = `${portal.name}, Reino Unido`;
+          let descAsignada = `Sincronización automática de cartelera. Ingresá al enlace oficial de ${portal.name} para revisar la disponibilidad, horarios y canales formales de reserva en el Reino Unido.`;
+
+          if (portal.name === "The Nickel") { categoryAsignada = "Cine / Proyección"; tituloShow = "Ciclo de Cine Argentino"; venueAsignado = "The Nickel Cinema, Londres"; }
+          if (portal.name === "Wigmore Hall") { categoryAsignada = "Música / Clásica"; venueAsignado = "Wigmore Hall, Londres"; }
+          if (portal.name === "De Puta Madre Club") { categoryAsignada = "Música / Rock & Pop"; artistAsignado = "Gira Oficial UK"; venueAsignado = "📍 Ver sala en boletería"; }
+          if (portal.name === "Sadlers Wells" || portal.name === "Royal Ballet and Opera") { categoryAsignada = "Ballet / Danza"; venueAsignado = `${portal.name}, Londres`; }
+          
+          if (portal.name === "England Rugby RFU" || portal.name === "Nations Championship") {
+            categoryAsignada = "Deportes / Rugby";
+            artistAsignado = "Los Pumas";
+            venueAsignado = portal.name === "England Rugby RFU" ? "Twickenham Stadium, Londres" : "📍 Ver Sede asignada";
+            tituloShow = "Los Pumas - Match Internacional";
+          }
+
+          if (portal.name === "TV Guide UK") {
+            categoryAsignada = "Televisión / Transmisión";
+            artistAsignado = "Televisión Británica";
+            venueAsignado = "📺 En Guía de TV Británica";
+            descAsignada = "Contenido relacionado con Argentina detectado en la programación de la televisión del Reino Unido. Accedé al enlace para revisar canales y horarios de emisión.";
+            if (tituloShow.toLowerCase().includes('show en') || tituloShow === "Espectáculo Argentino") {
+              tituloShow = "Especial sobre Argentina en TV";
+            }
+          }
+
+          // Aplicación de anulaciones manuales si coinciden los dominios
+          const dominioPortal = obtenerDominio(portal.base);
+          for (const urlManual of urlsManualesAnulacion) {
+            if (obtenerDominio(urlManual) === dominioPortal) {
+              urlLimpia = urlManual;
+              break;
+            }
+          }
+
+          eventosFinales.push({
+            category: categoryAsignada,
+            title: tituloShow,
+            artist: artistAsignado,
+            description: descAsignada,
+            venue: venueAsignado,
+            displayDate: portal.name === "TV Guide UK" ? "Ver horario de emisión" : "Consultar fecha en cartelera",
+            date: "2026-06-28", // Indexación inmediata para mantener la vigencia en la grilla activa
+            url: urlLimpia
+          });
+        }
+      });
+    } catch (error) {
+      console.log(`✕ Portal ${portal.name} omitido de forma segura.`);
+    }
+  }
+
+  // Ordenar cronológicamente y guardar el archivo compilado final
+  eventosFinales.sort((a, b) => new Date(a.date) - new Date(b.date));
+  const hoyIso = new Date().toISOString().split('T')[0];
+  eventosFinales = eventosFinales.filter(ev => ev.date >= hoyIso);
+
+  const resultadoFinal = {
+    lastUpdated: new Date().toLocaleString('es-ES', { timeZone: 'Europe/London' }) + ' (Hora UK)',
+    events: eventosFinales
+  };
+
+  fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
+  console.log(`🚀 Sincronización exitosa. Total de eventos inyectados de forma masiva: ${eventosFinales.length}`);
+}
+
+ejecutarRastreo();
