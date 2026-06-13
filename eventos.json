@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "13/6/2026, 11:49:10 (Hora UK)",
+  "lastUpdated": "13/6/2026, 11:58:19 (Hora UK)",
   "events": [
     {
       "category": "Ballet / Danza",
-      "title": "Espectáculo Argentino",
+      "title": "Función Cultural",
       "artist": "Sadlers Wells",
-      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva en el Reino Unido.",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales de reserva en el Reino Unido.",
       "venue": "Sadlers Wells, Londres",
       "displayDate": "Consultar fecha en cartelera",
       "date": "2026-06-28",
@@ -13,9 +13,9 @@
     },
     {
       "category": "Ballet / Danza",
-      "title": "Espectáculo Argentino",
+      "title": "Función Cultural",
       "artist": "Sadlers Wells",
-      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva en el Reino Unido.",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales de reserva en el Reino Unido.",
       "venue": "Sadlers Wells, Londres",
       "displayDate": "Consultar fecha en cartelera",
       "date": "2026-06-28",
@@ -23,9 +23,9 @@
     },
     {
       "category": "Ballet / Danza",
-      "title": "Espectáculo Argentino",
+      "title": "Función Cultural",
       "artist": "Sadlers Wells",
-      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva en el Reino Unido.",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales de reserva en el Reino Unido.",
       "venue": "Sadlers Wells, Londres",
       "displayDate": "Consultar fecha en cartelera",
       "date": "2026-06-28",
@@ -33,9 +33,9 @@
     },
     {
       "category": "Ballet / Danza",
-      "title": "Espectáculo Argentino",
+      "title": "Función Cultural",
       "artist": "Sadlers Wells",
-      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva en el Reino Unido.",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales de reserva en el Reino Unido.",
       "venue": "Sadlers Wells, Londres",
       "displayDate": "Consultar fecha en cartelera",
       "date": "2026-06-28",
@@ -43,19 +43,49 @@
     },
     {
       "category": "Ballet / Danza",
-      "title": "Espectáculo Argentino",
+      "title": "Función Cultural",
       "artist": "Sadlers Wells",
-      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales formales de reserva en el Reino Unido.",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales de reserva en el Reino Unido.",
       "venue": "Sadlers Wells, Londres",
       "displayDate": "Consultar fecha en cartelera",
       "date": "2026-06-28",
       "url": "https://www.sadlerswells.com/whats-on/page/6/?search=argent"
     },
     {
+      "category": "Cultura / Agenda",
+      "title": "Load More",
+      "artist": "Barbican",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Barbican para revisar la disponibilidad, horarios y canales de reserva en el Reino Unido.",
+      "venue": "Barbican, Reino Unido",
+      "displayDate": "Consultar fecha en cartelera",
+      "date": "2026-06-28",
+      "url": "?search=argent&page=1"
+    },
+    {
+      "category": "Cine / Proyección",
+      "title": "Ciclo de Cine Argentino",
+      "artist": "The Nickel",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de The Nickel para revisar la disponibilidad, horarios y canales de reserva en el Reino Unido.",
+      "venue": "The Nickel Cinema, Londres",
+      "displayDate": "Consultar fecha en cartelera",
+      "date": "2026-06-28",
+      "url": "https://thenickel.co.uk/movie/carne"
+    },
+    {
+      "category": "Cine / Proyección",
+      "title": "Ciclo de Cine Argentino",
+      "artist": "The Nickel",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de The Nickel para revisar la disponibilidad, horarios y canales de reserva en el Reino Unido.",
+      "venue": "The Nickel Cinema, Londres",
+      "displayDate": "Consultar fecha en cartelera",
+      "date": "2026-06-28",
+      "url": "https://thenickel.co.uk/movie/carne"
+    },
+    {
       "category": "Deportes / Rugby",
       "title": "Los Pumas - Match Internacional",
       "artist": "Los Pumas",
-      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de England Rugby RFU para revisar la disponibilidad, horarios y canales formales de reserva en el Reino Unido.",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de England Rugby RFU para revisar la disponibilidad, horarios y canales de reserva en el Reino Unido.",
       "venue": "Twickenham Stadium, Londres",
       "displayDate": "Consultar fecha en cartelera",
       "date": "2026-06-28",
