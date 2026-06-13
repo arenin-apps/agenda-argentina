@@ -1,6 +1,126 @@
 {
-  "lastUpdated": "13/6/2026, 12:12:26 (Hora UK)",
+  "lastUpdated": "13/6/2026, 12:18:49 (Hora UK)",
   "events": [
+    {
+      "category": "Ballet / Danza",
+      "title": "Función Argentina en Sadlers Wells",
+      "artist": "Sadlers Wells",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales de reserva en el Reino Unido.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "14 de Junio de 2026",
+      "date": "2026-06-14",
+      "url": "https://www.sadlerswells.com/whats-on/page/2/?search=argent"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Función Argentina en Sadlers Wells",
+      "artist": "Sadlers Wells",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales de reserva en el Reino Unido.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "17 de Junio de 2026",
+      "date": "2026-06-17",
+      "url": "https://www.sadlerswells.com/whats-on/page/3/?search=argent"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Función Argentina en Sadlers Wells",
+      "artist": "Sadlers Wells",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales de reserva en el Reino Unido.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "20 de Junio de 2026",
+      "date": "2026-06-20",
+      "url": "https://www.sadlerswells.com/whats-on/page/4/?search=argent"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Función Argentina en Sadlers Wells",
+      "artist": "Sadlers Wells",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales de reserva en el Reino Unido.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "23 de Junio de 2026",
+      "date": "2026-06-23",
+      "url": "https://www.sadlerswells.com/whats-on/page/5/?search=argent"
+    },
+    {
+      "category": "Ballet / Danza",
+      "title": "Función Argentina en Sadlers Wells",
+      "artist": "Sadlers Wells",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de Sadlers Wells para revisar la disponibilidad, horarios y canales de reserva en el Reino Unido.",
+      "venue": "Sadlers Wells, Londres",
+      "displayDate": "26 de Junio de 2026",
+      "date": "2026-06-26",
+      "url": "https://www.sadlerswells.com/whats-on/page/6/?search=argent"
+    },
+    {
+      "category": "Cine / Proyección",
+      "title": "Ciclo de Cine Argentino",
+      "artist": "The Nickel",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de The Nickel para revisar la disponibilidad, horarios y canales de reserva en el Reino Unido.",
+      "venue": "The Nickel Cinema, Londres",
+      "displayDate": "29 de Junio de 2026",
+      "date": "2026-06-29",
+      "url": "https://thenickel.co.uk/screening/447"
+    },
+    {
+      "category": "Cine / Proyección",
+      "title": "Ciclo de Cine Argentino",
+      "artist": "The Nickel",
+      "description": "Sincronización automática de cartelera. Ingresá al enlace oficial de The Nickel para revisar la disponibilidad, horarios y canales de reserva en el Reino Unido.",
+      "venue": "The Nickel Cinema, Londres",
+      "displayDate": "2 de Julio de 2026",
+      "date": "2026-07-02",
+      "url": "https://thenickel.co.uk/screening/448"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "TV Listings",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-07-05",
+      "url": "https://www.tvguide.co.uk/on-now"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "On Tonight",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-07-08",
+      "url": "https://www.tvguide.co.uk/on-tonight"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Now & Next",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-07-11",
+      "url": "https://www.tvguide.co.uk/now-and-next"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Especial sobre Argentina en TV",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-07-14",
+      "url": "https://www.tvguide.co.uk/new/tv"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "New Films",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-07-17",
+      "url": "https://www.tvguide.co.uk/new/films"
+    },
     {
       "category": "Música / Concierto",
       "title": "Gira de Rock Argentino - De Puta Madre Club",
@@ -10,6 +130,96 @@
       "displayDate": "Próximamente en cartelera",
       "date": "2026-07-20",
       "url": "https://deputamadreclub.eu/events/"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Especial sobre Argentina en TV",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-07-20",
+      "url": "https://www.tvguide.co.uk/sport"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Football on TV",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-07-23",
+      "url": "https://www.tvguide.co.uk/sport/football"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Especial sobre Argentina en TV",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-07-26",
+      "url": "https://www.tvguide.co.uk/drama"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Factual",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-07-29",
+      "url": "https://www.tvguide.co.uk/factual"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Daytime",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-08-01",
+      "url": "https://www.tvguide.co.uk/daytime"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Good Morning Britain",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-08-04",
+      "url": "https://www.tvguide.co.uk/shows/good-morning-britain"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Loose Women",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-08-07",
+      "url": "https://www.tvguide.co.uk/shows/loose-women"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "The Chase",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-08-10",
+      "url": "https://www.tvguide.co.uk/shows/the-chase"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "This Morning",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-08-13",
+      "url": "https://www.tvguide.co.uk/shows/this-morning"
     },
     {
       "category": "Música / Clásica",
@@ -22,6 +232,76 @@
       "url": "https://www.wigmore-hall.org.uk/"
     },
     {
+      "category": "Televisión / Transmisión",
+      "title": "Lorraine",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-08-16",
+      "url": "https://www.tvguide.co.uk/shows/lorraine"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Entertainment",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-08-19",
+      "url": "https://www.tvguide.co.uk/entertainment"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Especial sobre Argentina en TV",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-08-22",
+      "url": "https://www.tvguide.co.uk/soaps"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Coronation Street Listings",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-08-25",
+      "url": "https://www.tvguide.co.uk/shows/coronation-street"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Coronation Street Insider",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-08-28",
+      "url": "https://www.tvguide.co.uk/coronationstreet-insider/"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "EastEnders Listings",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-08-31",
+      "url": "https://www.tvguide.co.uk/shows/eastenders"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "EastEnders Insider",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-09-03",
+      "url": "https://www.tvguide.co.uk/eastenders-insider/"
+    },
+    {
       "category": "Música / Concierto",
       "title": "Estelares en Londres - Gira 'Las Antorchas'",
       "artist": "Estelares",
@@ -32,6 +312,26 @@
       "url": "https://sergius.uk/event/estelares-en-londres-2026/"
     },
     {
+      "category": "Televisión / Transmisión",
+      "title": "Emmerdale Listings",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-09-06",
+      "url": "https://www.tvguide.co.uk/shows/emmerdale"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Emmerdale Insider",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-09-09",
+      "url": "https://www.tvguide.co.uk/emmerdale-insider/"
+    },
+    {
       "category": "Cultura / Agenda",
       "title": "Festival de Música Latinoamericana - Como No",
       "artist": "Grilla de Artistas",
@@ -40,6 +340,176 @@
       "displayDate": "Revisar grilla oficial",
       "date": "2026-09-10",
       "url": "https://comono.co.uk/whats-on/"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Search TVSearch TV Guide",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-09-12",
+      "url": "https://www.tvguide.co.uk/search"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Especial sobre Argentina en TV",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-09-15",
+      "url": "https://www.tvguide.co.uk/sport/football/world-cup-2026"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Popular",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-09-18",
+      "url": "https://www.tvguide.co.uk/popular"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Especial sobre Argentina en TV",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-09-21",
+      "url": "https://www.tvguide.co.uk/bt-tv"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Freesat",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-09-24",
+      "url": "https://www.tvguide.co.uk/freesat"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Freeview",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-09-27",
+      "url": "https://www.tvguide.co.uk/freeview"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Especial sobre Argentina en TV",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-09-30",
+      "url": "https://www.tvguide.co.uk/sky"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "TalkTalk",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-10-03",
+      "url": "https://www.tvguide.co.uk/talktalk"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Virgin",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-10-06",
+      "url": "https://www.tvguide.co.uk/virgin"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "YouView",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-10-09",
+      "url": "https://www.tvguide.co.uk/youview"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "All Channels",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-10-12",
+      "url": "https://www.tvguide.co.uk/channel"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "About Us",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-10-15",
+      "url": "https://www.tvguide.co.uk/about-us"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Contact Us",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-10-18",
+      "url": "https://www.tvguide.co.uk/contact-us"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Privacy & Terms of Service",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-10-21",
+      "url": "https://www.tvguide.co.uk/privacy"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Copyright",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-10-24",
+      "url": "https://www.tvguide.co.uk/copyright"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Especial sobre Argentina en TV",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-10-27",
+      "url": "https://www.facebook.com/tvguidenews/"
+    },
+    {
+      "category": "Televisión / Transmisión",
+      "title": "Especial sobre Argentina en TV",
+      "artist": "Televisión Británica",
+      "description": "Contenido relacionado con Argentina detectado en la grilla de emisión de la televisión del Reino Unido.",
+      "venue": "📺 En Guía de TV Británica",
+      "displayDate": "Ver horario de emisión",
+      "date": "2026-10-30",
+      "url": "https://twitter.com/tvguideshows"
     },
     {
       "category": "Ballet / Danza",
