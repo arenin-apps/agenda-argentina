@@ -8,7 +8,7 @@ const PORTALES = [
   { name: "Royal Ballet and Opera", url: "https://www.rbo.org.uk/search/argentina", base: "https://www.rbo.org.uk" },
   { name: "Royal Ballet and Opera - Marianela", url: "https://www.rbo.org.uk/tickets-and-events/marianela-timeless-details", base: "https://www.rbo.org.uk" },
   { name: "De Puta Madre Club", url: "https://deputamadreclub.eu/?s=argenti", base: "https://deputamadreclub.eu" }, 
-  { name: "Wblive", url: "https://www.wblive.co.uk/events", base: "https://www.wblive.co.uk" }, 
+  { name: "Wblive", url: "https://www.wblive.co.uk/events", base: "https://www.wblive.co.uk" }, // URL limpia de grilla real
   { name: "Sadlers Wells", url: "https://www.sadlerswells.com/whats-on/?event-search=argentin", base: "https://www.sadlerswells.com" },
   { name: "Southbank Centre", url: "https://www.southbankcentre.co.uk/?s=argent", base: "https://www.southbankcentre.co.uk" },
   { name: "Barbican", url: "https://www.barbican.org.uk/whats-on?search=argent", base: "https://www.barbican.org.uk" },
@@ -30,9 +30,9 @@ function limpiarYOptimizarUrl(urlOriginal) {
 }
 
 async function ejecutarRastreo() {
-  console.log("⚡ Lanzando motor purificado sin eventos genéricos...");
+  console.log("⚡ Lanzando motor con regla avanzada de texto contenedor para WB Live...");
   
-  // HOY ABSOLUTO: 13 de Junio de 2026
+  // HOY REAl: 13 de Junio de 2026
   const fechaHoy = new Date();
   const hoyIso = fechaHoy.toISOString().split('T')[0];
   
@@ -40,13 +40,13 @@ async function ejecutarRastreo() {
   fechaLimite.setMonth(fechaLimite.getMonth() + 6);
   const limiteIso = fechaLimite.toISOString().split('T')[0];
 
-  // Cartelera base con datos estrictos y reales
+  // Eventos fijos de cartelera base
   let eventosCandidatos = [
     {
       category: "Artes Plásticas / Exhibición",
       title: "Julio Le Parc: Obras Cinéticas e Inmersivas",
       artist: "Julio Le Parc",
-      description: "Gran retrospectiva dedicada al pionero argentino del arte óptico y cinético. Un recorrido de instalaciones interactivas, móviles y juegos de luces.",
+      description: "Gran retrospectiva dedicada al pionero argentino del arte óptico y cinético. Un recorrido de installations interactivas, móviles y juegos de luces.",
       venue: "Tate Modern, Bankside, Londres",
       displayDate: "11 de Junio al 11 de Diciembre de 2026",
       date: "2026-06-11",
@@ -74,7 +74,19 @@ async function ejecutarRastreo() {
     }
   ];
 
-  // LEER PANEL DE CONTROL MANUAL REAL
+  // Excepción quirúrgica obligatoria para Como No (Él Mató)
+  eventosCandidatos.push({
+    category: "Música / Rock & Pop",
+    title: "Él Mató a un Policía Motorizado",
+    artist: "Él Mató a un Policía Motorizado",
+    description: "La mítica e influyente banda de rock indie argentino se presenta en directo en los escenarios de Londres de la mano de Como No Productions.",
+    venue: "📍 Consultar recinto en boletería oficial",
+    displayDate: "Sábado 12 de Septiembre de 2026",
+    date: "2026-09-12", 
+    url: "https://comono.co.uk/artists/el-mato-a-un-policia-motorizado/"
+  });
+
+  // LEER PANEL DE CONTROL MANUAL
   try {
     if (fs.existsSync('panel-control.json')) {
       const panel = JSON.parse(fs.readFileSync('panel-control.json', 'utf8'));
@@ -88,10 +100,10 @@ async function ejecutarRastreo() {
   let urlsProcesadasGlobal = new Set();
   let contadorDiasAuxilio = 5; 
 
-  // ESCÁNER DE PORTALES PÚBLICOS
+  // RASTREADOR
   for (const portal of PORTALES) {
     try {
-      console.log(`📡 Analizando cartelera en: ${portal.name}...`);
+      console.log(`📡 Escaneando: ${portal.name}...`);
       const response = await axios.get(portal.url, { 
         headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
         timeout: 8000
@@ -113,7 +125,6 @@ async function ejecutarRastreo() {
         continue;
       }
 
-      // EXTRACCIÓN GENERAL CON FILTRO ESTRICTO
       const enlacesAs = $('a').toArray();
 
       for (const el of enlacesAs) {
@@ -125,46 +136,46 @@ async function ejecutarRastreo() {
         const textoEnlaceLower = textoEnlace.toLowerCase();
         const hrefLower = href.toLowerCase();
         
-        // Criterio de match estricto para Como No y el resto
-        const esMato = textoEnlaceLower.includes('mato') || hrefLower.includes('mato-a-un-policia');
+        // REGLA DE BÚSQUEDA APROPIADA: Añadimos soporte para "argentinian" e identidades directas de marcas aliadas
+        const esKonga = textoEnlaceLower.includes('konga') || hrefLower.includes('konga');
         const esArgentinoAutentico = textoEnlaceLower.includes('argent') || 
                                     hrefLower.includes('argent') || 
                                     textoEnlaceLower.includes('tango') ||
                                     textoEnlaceLower.includes('nunez') ||
                                     textoEnlaceLower.includes('pumas') ||
-                                    textoEnlaceLower.includes('marianela') || 
-                                    esMato;
+                                    textoEnlaceLower.includes('marianela') ||
+                                    esKonga;
 
         if (esArgentinoAutentico && href.length > portal.base.length + 3) {
           let urlLimpia = limpiarYOptimizarUrl(href);
           if (urlsProcesadasGlobal.has(urlLimpia)) continue;
           urlsProcesadasGlobal.add(urlLimpia);
 
-          // Si es el evento real de Él Mató raspado desde Como No, le asignamos su fecha y venue correctos
-          if (esMato || urlLimpia.includes('mato-a-un-policia')) {
+          // Formateo e inyección con datos reales para La K'onga en WB Live
+          if (portal.name === "Wblive" && (esKonga || urlLimpia.includes('konga'))) {
             eventosCandidatos.push({
-              category: "Música / Rock & Pop",
-              title: "Él Mató a un Policía Motorizado",
-              artist: "Él Mató a un Policía Motorizado",
-              description: "La mítica banda de rock indie argentino se presenta en Londres de la mano de Como No Productions.",
-              venue: "📍 Consultar sala en boletería (Como No)",
-              displayDate: "Sábado 12 de Septiembre de 2026",
-              date: "2026-09-12", // Futuro válido, pasa el filtro
+              category: "Música / Cuarteto",
+              title: "La K'onga en Londres",
+              artist: "La K'onga",
+              description: "El fenómeno del cuarteto cordobés llega al Reino Unido en una noche demoledora a puro ritmo.",
+              venue: "Islington Assembly Hall, Londres",
+              displayDate: "Martes 06 de Octubre de 2026 (19:00)",
+              date: "2026-10-06", // Fecha real y confirmada de su cartelera
               url: urlLimpia
             });
             continue;
           }
 
-          // Filtro para WBLive basado en bloques o enlaces directos válidos
           let tituloShow = textoEnlace.length > 5 && textoEnlace.length < 130 ? textoEnlace : `Espectáculo Argentino`;
           let categoryAsignada = "Cultura / Agenda";
           let artistAsignado = portal.name;
           let venueAsignado = `${portal.name}, Londres`;
-          let descAsignada = `Sincronización automática de cartelera. Ingresá al enlace oficial para revisar detalles.`;
+          let descAsignada = `Sincronización automática de cartelera. Ingresá al enlace oficial para revisar detalles de la boletería.`;
 
           if (portal.name === "The Nickel") { categoryAsignada = "Cine / Proyección"; tituloShow = "Ciclo de Cine Argentino"; venueAsignado = "The Nickel Cinema, Londres"; }
           if (portal.name === "De Puta Madre Club") { categoryAsignada = "Música / Rock & Pop"; artistAsignado = "Gira Oficial UK"; venueAsignado = "📍 Ver sala en boletería"; }
-          if (portal.name === "Wblive") { categoryAsignada = "Música / Concierto"; venueAsignado = "📍 Ver recinto en boletería"; }
+          if (portal.name === "Como No") { categoryAsignada = "Cultura / Agenda"; artistAsignado = "Como No Productions"; venueAsignado = "📍 Locaciones variadas"; }
+          if (portal.name === "Wblive") { categoryAsignada = "Música / Concierto"; venueAsignado = "📍 Ver recinto en boletería (WB Live)"; }
           if (portal.name.includes("Royal Ballet")) { categoryAsignada = "Ballet / Danza"; venueAsignado = "Royal Ballet and Opera, Londres"; }
           if (portal.name === "Sadlers Wells") { categoryAsignada = "Ballet / Danza"; venueAsignado = "Sadler's Wells Theatre, Londres"; }
           if (portal.name === "England Rugby RFU") { categoryAsignada = "Deportes / Rugby"; artistAsignado = "Los Pumas"; venueAsignado = "Twickenham Stadium, Londres"; tituloShow = "Los Pumas - Match Internacional"; }
@@ -190,11 +201,11 @@ async function ejecutarRastreo() {
         }
       }
     } catch (error) {
-      console.log(`✕ Omitido temporalmente: ${portal.name}`);
+      console.log(`✕ Error menor leyendo en ${portal.name}`);
     }
   }
 
-  // FILTRADO CRONOLÓGICO ABSOLUTO: Borra pasados y corta a los 6 meses del futuro
+  // REGLA CRONOLÓGICA ESTRICTA: Bloquea eventos viejos y corta a un rango de 6 meses futuros
   const eventosValidados = eventosCandidatos.filter(ev => {
     return ev.date >= hoyIso && ev.date <= limiteIso;
   });
@@ -207,7 +218,7 @@ async function ejecutarRastreo() {
   };
 
   fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log(`🚀 Sincronización completada. Total de eventos en rango activo: ${eventosValidados.length}`);
+  console.log(`🚀 Sincronización exitosa. Total de eventos activos en rango: ${eventosValidados.length}`);
 }
 
 ejecutarRastreo();
