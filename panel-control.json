@@ -1,36 +1,5 @@
 {
   "newsletter_mailchimp_url": "",
   "urls_individuales_extra": [],
-  "eventos_manuales_fijos": [
-    {
-      "category": "Música / Rock & Pop",
-      "title": "Conciertos y Giras de Rock Argentino",
-      "artist": "De Puta Madre Club",
-      "description": "Ciclo exclusivo de conciertos y producciones oficiales de las bandas más destacadas de la escena del rock y pop argentino presentándose en el Reino Unido.",
-      "venue": "📍 Consultar recintos asignados en Londres",
-      "displayDate": "Fechas de temporada 2026",
-      "date": "2026-07-20",
-      "url": "https://deputamadreclub.eu/events/"
-    },
-    {
-      "category": "Cultura / Agenda",
-      "title": "Agenda de Conciertos y Eventos en Vivo",
-      "artist": "Wblive",
-      "description": "Cartelera de espectáculos, música en directo y presentaciones culturales con artistas destacados de origen argentino en el Reino Unido.",
-      "venue": "📍 Ver sala en boletería oficial",
-      "displayDate": "Consultar funciones de temporada",
-      "date": "2026-08-15",
-      "url": "https://wblive.co.uk"
-    },
-    {
-      "category": "Cultura / Agenda",
-      "title": "Festival de Música y Cultura Latinoamericana - Agenda Argentina",
-      "artist": "Como No Productions",
-      "description": "El festival de cultura latina de referencia en el Reino Unido, destacando espectáculos de folklore, tango, vanguardia y artistas argentinos de renombre.",
-      "venue": "📍 Locaciones variadas (Londres)",
-      "displayDate": "Revisar grilla de programación",
-      "date": "2026-10-05",
-      "url": "https://comono.co.uk/whats-on/"
-    }
-  ]
+  "eventos_manuales_fijos": []
 }
