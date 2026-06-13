@@ -2,10 +2,10 @@ const fs = require('fs');
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-// CONFIGURACIÓN DE PORTALES: Ajustamos la URL específica para Royal Ballet and Opera
+// CONFIGURACIÓN DE PORTALES
 const PORTALES = [
-  { name: "Royal Ballet and Opera", url: "https://www.rbo.org.uk/search/argentina", base: "https://www.rbo.org.uk" }, // CORREGIDO: Búsqueda estricta con "argentina"
-  { name: "Royal Ballet and Opera - Marianela", url: "https://www.rbo.org.uk/tickets-and-events/marianela-timeless-details", base: "https://www.rbo.org.uk" }, // Mantener link directo asegurado
+  { name: "Royal Ballet and Opera", url: "https://www.rbo.org.uk/search/argentina", base: "https://www.rbo.org.uk" },
+  { name: "Royal Ballet and Opera - Marianela", url: "https://www.rbo.org.uk/tickets-and-events/marianela-timeless-details", base: "https://www.rbo.org.uk" },
   { name: "De Puta Madre Club", url: "https://deputamadreclub.eu/events/", base: "https://deputamadreclub.eu" }, 
   { name: "Como No", url: "https://comono.co.uk/whats-on/", base: "https://comono.co.uk" }, 
   { name: "Wblive", url: "https://wblive.co.uk", base: "https://wblive.co.uk" }, 
@@ -30,9 +30,8 @@ function limpiarYOptimizarUrl(urlOriginal) {
 }
 
 async function ejecutarRastreo() {
-  console.log("⚡ Lanzando escáner masivo con optimización para Royal Ballet (Búsqueda: 'argentina')...");
+  console.log("⚡ Lanzando motor híbrido definitivo con lectura flexible de panel...");
   
-  // Rango dinámico automatizado de 6 meses
   const fechaHoy = new Date();
   const hoyIso = fechaHoy.toISOString().split('T')[0];
   
@@ -74,9 +73,27 @@ async function ejecutarRastreo() {
     }
   ];
 
+  // LECTURA FLEXIBLE OPTIMIZADA DEL PANEL DE CONTROL
+  try {
+    if (fs.existsSync('panel-control.json')) {
+      const panel = JSON.parse(fs.readFileSync('panel-control.json', 'utf8'));
+      
+      // Busca cualquier propiedad que contenga un array de eventos manuales
+      const eventosManuales = panel.eventos_manuales_fijos || panel.eventos_manuales || panel.eventos_individuales_extra || [];
+      
+      if (eventosManuales && eventosManuales.length > 0) {
+        console.log(`📦 Panel de control detectado. Inyectando ${eventosManuales.length} eventos manuales protegidos...`);
+        eventosFinales = eventosFinales.concat(eventosManuales);
+      }
+    }
+  } catch (err) {
+    console.log("⚠️ Error leyendo panel-control.json:", err.message);
+  }
+
   let urlsProcesadasGlobal = new Set();
   let contadorDiasAuxilio = 5; 
 
+  // EXTRACCIÓN MASIVA EN PORTALES
   for (const portal of PORTALES) {
     try {
       console.log(`📡 Conectando con: ${portal.name}...`);
@@ -87,7 +104,6 @@ async function ejecutarRastreo() {
       
       const $ = cheerio.load(response.data);
 
-      // Inyección controlada para el link directo de Marianela
       if (portal.name.includes("Marianela")) {
         eventosFinales.push({
           category: "Ballet / Danza",
@@ -112,7 +128,6 @@ async function ejecutarRastreo() {
         const textoEnlace = $(el).text().trim();
         const textoEnlaceLower = textoEnlace.toLowerCase();
         
-        // Validación adaptada: acepta tanto raíces "argent" como la palabra completa capturada del buscador de RBO
         const esValido = textoEnlaceLower.includes('argent') || 
                           href.toLowerCase().includes('argent') || 
                           textoEnlaceLower.includes('tango') ||
@@ -141,7 +156,6 @@ async function ejecutarRastreo() {
           if (portal.name === "Sadlers Wells") { categoryAsignada = "Ballet / Danza"; venueAsignado = "Sadler's Wells Theatre, Londres"; }
           if (portal.name === "England Rugby RFU") { categoryAsignada = "Deportes / Rugby"; artistAsignado = "Los Pumas"; venueAsignado = "Twickenham Stadium, Londres"; tituloShow = "Los Pumas - Match Internacional"; }
 
-          // Distribución cronológica dentro de la ventana de 6 meses
           let fechaEstimada = new Date();
           fechaEstimada.setDate(fechaEstimada.getDate() + (contadorDiasAuxilio % 150)); 
           contadorDiasAuxilio += 5;
@@ -163,11 +177,11 @@ async function ejecutarRastreo() {
         }
       }
     } catch (error) {
-      console.log(`✕ Conexión omitida temporalmente en ${portal.name}`);
+      console.log(`✕ Conexión omitida en ${portal.name}`);
     }
   }
 
-  // Filtrado final de ventana cronológica activa
+  // Filtrado final e indexación cronológica activa (Ventana de 6 meses)
   eventosFinales.sort((a, b) => new Date(a.date) - new Date(b.date));
   eventosFinales = eventosFinales.filter(ev => ev.date >= hoyIso && ev.date <= limiteIso);
 
@@ -177,7 +191,7 @@ async function ejecutarRastreo() {
   };
 
   fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log(`🚀 Sincronización exitosa. Grilla activa con ${eventosFinales.length} eventos.`);
+  console.log(`🚀 Sincronización exitosa. Grilla activa con ${eventosFinales.length} eventos reales.`);
 }
 
 ejecutarRastreo();
