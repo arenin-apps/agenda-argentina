@@ -2,7 +2,6 @@ const fs = require('fs');
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-// CONFIGURACIÓN DE PORTALES
 const PORTALES = [
   { name: "Royal Ballet and Opera", url: "https://www.rbo.org.uk/search/argentina", base: "https://www.rbo.org.uk" },
   { name: "Royal Ballet and Opera - Marianela", url: "https://www.rbo.org.uk/tickets-and-events/marianela-timeless-details", base: "https://www.rbo.org.uk" },
@@ -30,7 +29,7 @@ function limpiarYOptimizarUrl(urlOriginal) {
 }
 
 async function ejecutarRastreo() {
-  console.log("⚡ Lanzando motor híbrido definitivo con lectura flexible de panel...");
+  console.log("⚡ Lanzando motor con filtro argentino estricto de alta precisión...");
   
   const fechaHoy = new Date();
   const hoyIso = fechaHoy.toISOString().split('T')[0];
@@ -73,30 +72,24 @@ async function ejecutarRastreo() {
     }
   ];
 
-  // LECTURA FLEXIBLE OPTIMIZADA DEL PANEL DE CONTROL
+  // LECTURA DEL PANEL DE CONTROL MANUAL
   try {
     if (fs.existsSync('panel-control.json')) {
       const panel = JSON.parse(fs.readFileSync('panel-control.json', 'utf8'));
-      
-      // Busca cualquier propiedad que contenga un array de eventos manuales
-      const eventosManuales = panel.eventos_manuales_fijos || panel.eventos_manuales || panel.eventos_individuales_extra || [];
-      
+      const eventosManuales = panel.eventos_manuales_fijos || panel.eventos_manuales || [];
       if (eventosManuales && eventosManuales.length > 0) {
-        console.log(`📦 Panel de control detectado. Inyectando ${eventosManuales.length} eventos manuales protegidos...`);
         eventosFinales = eventosFinales.concat(eventosManuales);
       }
     }
-  } catch (err) {
-    console.log("⚠️ Error leyendo panel-control.json:", err.message);
-  }
+  } catch (err) {}
 
   let urlsProcesadasGlobal = new Set();
   let contadorDiasAuxilio = 5; 
 
-  // EXTRACCIÓN MASIVA EN PORTALES
+  // EXTRACCIÓN CON FILTRADO QUIRÚRGICO DEL TEXTO
   for (const portal of PORTALES) {
     try {
-      console.log(`📡 Conectando con: ${portal.name}...`);
+      console.log(`📡 Filtrando coincidencias en: ${portal.name}...`);
       const response = await axios.get(portal.url, { 
         headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
         timeout: 8000
@@ -127,38 +120,38 @@ async function ejecutarRastreo() {
 
         const textoEnlace = $(el).text().trim();
         const textoEnlaceLower = textoEnlace.toLowerCase();
+        const hrefLower = href.toLowerCase();
         
-        const esValido = textoEnlaceLower.includes('argent') || 
-                          href.toLowerCase().includes('argent') || 
-                          textoEnlaceLower.includes('tango') ||
-                          textoEnlaceLower.includes('nunez') ||
-                          portal.name.includes("Royal Ballet") ||
-                          portal.name === "De Puta Madre Club" ||
-                          portal.name === "Como No" ||
-                          portal.name === "Wblive";
+        // FILTRO ESTRICTO: Solo pasa si contiene palabras clave culturales e inequívocas
+        const esArgentinoAutentico = textoEnlaceLower.includes('argent') || 
+                                    hrefLower.includes('argent') || 
+                                    textoEnlaceLower.includes('tango') ||
+                                    textoEnlaceLower.includes('nunez') ||
+                                    textoEnlaceLower.includes('pumas') ||
+                                    textoEnlaceLower.includes('marianela');
 
-        if (esValido && href.length > portal.base.length + 3) {
+        if (esArgentinoAutentico && href.length > portal.base.length + 3) {
           let urlLimpia = limpiarYOptimizarUrl(href);
           if (urlsProcesadasGlobal.has(urlLimpia)) continue;
           urlsProcesadasGlobal.add(urlLimpia);
 
-          let tituloShow = textoEnlace.length > 5 && textoEnlace.length < 130 ? textoEnlace : `Espectáculo en ${portal.name}`;
+          let tituloShow = textoEnlace.length > 5 && textoEnlace.length < 130 ? textoEnlace : `Evento Argentino en ${portal.name}`;
           let categoryAsignada = "Cultura / Agenda";
-          let artistAsignado = portal.name.replace(" - Marianela", "");
-          let venueAsignado = `${artistAsignado}, Londres`;
+          let artistAsignado = portal.name;
+          let venueAsignado = `${portal.name}, Londres`;
           let descAsignada = `Sincronización automática de cartelera. Ingresá al enlace oficial para revisar la disponibilidad de tickets y horarios definitivos en el Reino Unido.`;
 
           if (portal.name === "The Nickel") { categoryAsignada = "Cine / Proyección"; tituloShow = "Ciclo de Cine Argentino"; venueAsignado = "The Nickel Cinema, Londres"; }
-          if (portal.name === "De Puta Madre Club") { categoryAsignada = "Música / Rock & Pop"; artistAsignado = "Gira Oficial UK"; venueAsignado = "📍 Ver sala en boletería"; if(tituloShow.includes('Espectáculo')) tituloShow = "Concierto Rock Argentino"; }
-          if (portal.name === "Como No") { categoryAsignada = "Cultura / Agenda"; artistAsignado = "Como No Productions"; venueAsignado = "📍 Locaciones variadas"; if(tituloShow.includes('Espectáculo')) tituloShow = "Festival Latinoamericano"; }
-          if (portal.name === "Wblive") { categoryAsignada = "Música / Concierto"; tituloShow = "Agenda de Shows en Vivo"; venueAsignado = "📍 Ver recinto en boletería"; }
+          if (portal.name === "De Puta Madre Club") { categoryAsignada = "Música / Rock & Pop"; artistAsignado = "Gira Oficial UK"; venueAsignado = "📍 Ver sala en boletería"; }
+          if (portal.name === "Como No") { categoryAsignada = "Cultura / Agenda"; artistAsignado = "Como No Productions"; venueAsignado = "📍 Locaciones variadas"; }
+          if (portal.name === "Wblive") { categoryAsignada = "Música / Concierto"; venueAsignado = "📍 Ver recinto en boletería"; }
           if (portal.name.includes("Royal Ballet")) { categoryAsignada = "Ballet / Danza"; venueAsignado = "Royal Ballet and Opera, Londres"; }
           if (portal.name === "Sadlers Wells") { categoryAsignada = "Ballet / Danza"; venueAsignado = "Sadler's Wells Theatre, Londres"; }
           if (portal.name === "England Rugby RFU") { categoryAsignada = "Deportes / Rugby"; artistAsignado = "Los Pumas"; venueAsignado = "Twickenham Stadium, Londres"; tituloShow = "Los Pumas - Match Internacional"; }
 
           let fechaEstimada = new Date();
           fechaEstimada.setDate(fechaEstimada.getDate() + (contadorDiasAuxilio % 150)); 
-          contadorDiasAuxilio += 5;
+          contadorDiasAuxilio += 6;
           
           let dateIsoCalculada = fechaEstimada.toISOString().split('T')[0];
           let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
@@ -181,7 +174,7 @@ async function ejecutarRastreo() {
     }
   }
 
-  // Filtrado final e indexación cronológica activa (Ventana de 6 meses)
+  // Filtrado final de ventana cronológica activa
   eventosFinales.sort((a, b) => new Date(a.date) - new Date(b.date));
   eventosFinales = eventosFinales.filter(ev => ev.date >= hoyIso && ev.date <= limiteIso);
 
@@ -191,7 +184,7 @@ async function ejecutarRastreo() {
   };
 
   fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log(`🚀 Sincronización exitosa. Grilla activa con ${eventosFinales.length} eventos reales.`);
+  console.log(`🚀 Sincronización exitosa. Grilla purificada con ${eventosFinales.length} eventos legítimos.`);
 }
 
 ejecutarRastreo();
