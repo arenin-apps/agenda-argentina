@@ -1,6 +1,26 @@
 {
-  "lastUpdated": "13/6/2026, 12:06:31 (Hora UK)",
+  "lastUpdated": "13/6/2026, 12:12:26 (Hora UK)",
   "events": [
+    {
+      "category": "Música / Concierto",
+      "title": "Gira de Rock Argentino - De Puta Madre Club",
+      "artist": "Artistas en Gira",
+      "description": "Ciclo de conciertos y giras oficiales de las principales bandas del rock y pop argentino presentándose en las salas más destacadas del Reino Unido.",
+      "venue": "📍 Consultar sala en boletería (Londres)",
+      "displayDate": "Próximamente en cartelera",
+      "date": "2026-07-20",
+      "url": "https://deputamadreclub.eu/events/"
+    },
+    {
+      "category": "Música / Clásica",
+      "title": "Recital de Piano de Martha Argerich",
+      "artist": "Martha Argerich",
+      "description": "La legendaria pianista argentina regresa a los escenarios británicos interpretando un repertorio magistral de música clásica.",
+      "venue": "Wigmore Hall, Londres",
+      "displayDate": "Consultar fechas de temporada",
+      "date": "2026-08-15",
+      "url": "https://www.wigmore-hall.org.uk/"
+    },
     {
       "category": "Música / Concierto",
       "title": "Estelares en Londres - Gira 'Las Antorchas'",
@@ -9,7 +29,17 @@
       "venue": "Oslo Hackney, Londres",
       "displayDate": "Sábado 05 de Septiembre de 2026 (19:00)",
       "date": "2026-09-05",
-      "url": "[https://sergius.uk/event/estelares-en-londres-2026/](https://sergius.uk/event/estelares-en-londres-2026/)"
+      "url": "https://sergius.uk/event/estelares-en-londres-2026/"
+    },
+    {
+      "category": "Cultura / Agenda",
+      "title": "Festival de Música Latinoamericana - Como No",
+      "artist": "Grilla de Artistas",
+      "description": "El festival de música y cultura latina más importante del Reino Unido, con fuerte presencia de artistas, folklore y vanguardia argentina.",
+      "venue": "📍 Locaciones variadas (Londres)",
+      "displayDate": "Revisar grilla oficial",
+      "date": "2026-09-10",
+      "url": "https://comono.co.uk/whats-on/"
     },
     {
       "category": "Ballet / Danza",
@@ -19,7 +49,7 @@
       "venue": "Sadler's Wells Theatre, Londres",
       "displayDate": "05 al 09 de Noviembre de 2026",
       "date": "2026-11-05",
-      "url": "[https://www.sadlerswells.com/whats-on/g-cornejo-tango-after-dark/](https://www.sadlerswells.com/whats-on/g-cornejo-tango-after-dark/)"
+      "url": "https://www.sadlerswells.com/whats-on/g-cornejo-tango-after-dark/"
     }
   ]
 }
