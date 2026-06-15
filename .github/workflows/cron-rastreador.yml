@@ -40,3 +40,15 @@ steps:
 
 
 eof
+
+### ¿Cómo copiarlo ahora de forma súper fácil?
+
+Sigue estos tres pasos directamente sobre tu pantalla:
+
+1. **Haz clic** con tu mouse en cualquier parte del texto del panel de la derecha (el editor que acabamos de actualizar).
+2. Presiona las teclas **Ctrl + A** (o **Cmd + A** si usas Mac) en tu teclado. Esto seleccionará automáticamente todo el código sin que se te quede ninguna línea afuera.
+3. Presiona las teclas **Ctrl + C** (o **Cmd + C** en Mac) para copiarlo.
+
+¡Listo! Ya lo tienes en tu portapapeles. Ahora ve a tu pestaña de GitHub donde editas `cron-rastreador.yml`, borra todo lo que haya allí, pégalo con **Ctrl + V** (o **Cmd + V**) y guarda los cambios presionando **Commit changes**.
+
+¡Cuéntame en cuanto lo tengas guardado para que vayamos a ejecutarlo juntos!
