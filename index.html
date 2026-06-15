@@ -152,12 +152,13 @@
       { id: "src-livenation", name: "Live Nation", url: "https://www.livenation.co.uk/", queryHint: "Giras de artistas argentinos en salas británicas.", category: "Música" }
     ];
 
-    // Listado de respaldo de la temporada activa (15 Jun - 15 Dic 2026)
+    // Listado de respaldo de la temporada activa (15 Jun - 15 Dic 2026) con "endDate" para control dinámico de expiración
     const fallbackEvents = [
       {
         id: "evt-tate-leparc",
         title: "Julio Le Parc: Light. Colour. Action.",
         date: "2026-06-15",
+        endDate: "2027-05-03", // Evento de larga duración
         dateLabel: "11 DE JUNIO 2026 AL 3 DE MAYO 2027",
         venue: "Tate Modern (The George Economou Gallery)",
         city: "Londres",
@@ -169,9 +170,235 @@
         source: "Tate Modern"
       },
       {
+        id: "evt-blanco-levitating",
+        title: "A Levitating Territory: Exhibición de Majo Caporaletti & Vicky Polak",
+        date: "2026-06-16",
+        endDate: "2026-06-21",
+        dateLabel: "16 AL 21 DE JUNIO 2026",
+        venue: "Filet (103 Murray Grove)",
+        city: "Londres",
+        region: "Inglaterra",
+        price: "Entrada Libre",
+        link: "https://www.blancogallery.com/",
+        description: "Prestigiosa muestra curada por Adela Blanco que reúne a la pintora argentina Majo Caporaletti y a la fotógrafa argentina Vicky Polak.",
+        category: "Artes Plásticas",
+        source: "Blanco Gallery"
+      },
+      {
+        id: "evt-wc-algeria",
+        title: "Mundial FIFA 2026: Argentina vs Argelia (En Vivo)",
+        date: "2026-06-17", // Un solo día, expira el 18 de Junio
+        dateLabel: "MIÉRCOLES, 17 DE JUNIO 2026 - 02:00 AM BST",
+        venue: "ITV1 / ITVX / STV (Transmisión en directo en UK)",
+        city: "Nacional (UK)",
+        region: "Inglaterra",
+        price: "Gratuito",
+        link: "https://www.itv.com/itvx",
+        description: "El debut absoluto de los campeones del mundo defensores (Argentina) en el Mundial 2026 desde Kansas City.",
+        category: "TV / Deportes",
+        source: "TV Guide UK"
+      },
+      {
+        id: "evt-colapinto-interview",
+        title: "Franco Colapinto in Argentina (Entrevista Especial)",
+        date: "2026-06-17",
+        dateLabel: "MIÉRCOLES, 17 DE JUNIO 2026 - 21:00 BST",
+        venue: "Sky Sports F1 (Transmisión Especial)",
+        city: "Nacional (UK)",
+        region: "Inglaterra",
+        price: "Suscripción Sky",
+        link: "https://www.tvguide.co.uk/schedule/5fbb1e1e-2ae4-52af-ab6e-a430c7a13e18/franco-colapinto-in-argentina",
+        description: "Cobertura en profundidad del regreso del piloto argentino estrella de F1 a su tierra natal.",
+        category: "TV / Deportes",
+        source: "TV Guide UK"
+      },
+      {
+        id: "evt-blanco-talk",
+        title: "Charla de Artistas: Vicky Polak & Adela Blanco",
+        date: "2026-06-20",
+        dateLabel: "SÁBADO, 20 DE JUNIO 2026 - 12:00 BST",
+        venue: "Filet (103 Murray Grove)",
+        city: "Londres",
+        region: "Inglaterra",
+        price: "Gratuito",
+        link: "https://www.blancogallery.com/",
+        description: "Conversación íntima y recorrido guiado con la artista visual argentina Vicky Polak y la curadora Adela Blanco.",
+        category: "Artes Plásticas",
+        source: "Blanco Gallery"
+      },
+      {
+        id: "evt-wc-austria",
+        title: "Mundial FIFA 2026: Argentina vs Austria (En Vivo)",
+        date: "2026-06-22",
+        dateLabel: "LUNES, 22 DE JUNIO 2026 - 18:00 BST",
+        venue: "BBC One / BBC iPlayer",
+        city: "Nacional (UK)",
+        region: "Inglaterra",
+        price: "Gratuito",
+        link: "https://www.bbc.co.uk/iplayer",
+        description: "Segundo encuentro clave de la Selección Argentina en la fase de grupos del Mundial.",
+        category: "TV / Deportes",
+        source: "TV Guide UK"
+      },
+      {
+        id: "evt-nickel-carne",
+        title: "Carne (1968, Dir. Armando Bó) - The Cult of Bó & Sarli",
+        date: "2026-06-25",
+        dateLabel: "JUEVES, 25 DE JUNIO 2026 - 18:30 BST",
+        venue: "The Nickel Cinema (Clerkenwell)",
+        city: "Londres",
+        region: "Inglaterra",
+        price: "£11.50",
+        link: "https://argentinefilmfestivallondon.substack.com/",
+        description: "La obra mítica del cine de explotación argentino protagonizada por la icónica Isabel Sarli.",
+        category: "Cine",
+        source: "Argentine Film Festival London"
+      },
+      {
+        id: "evt-wc-jordan",
+        title: "Mundial FIFA 2026: Jordania vs Argentina (En Vivo)",
+        date: "2026-06-28",
+        dateLabel: "DOMINGO, 28 DE JUNIO 2026 - 02:00 AM BST",
+        venue: "BBC One / BBC iPlayer",
+        city: "Nacional (UK)",
+        region: "Inglaterra",
+        price: "Gratuito",
+        link: "https://www.bbc.co.uk/iplayer",
+        description: "Tercer y último partido definitorio del Grupo J. La Albiceleste busca sellar su pase.",
+        category: "TV / Deportes",
+        source: "TV Guide UK"
+      },
+      {
+        id: "evt-f1-austria",
+        title: "Fórmula 1: Gran Premio de Austria (En Vivo)",
+        date: "2026-06-28",
+        dateLabel: "DOMINGO, 28 DE JUNIO 2026 - 14:00 BST",
+        venue: "Sky Sports F1",
+        city: "Nacional (UK)",
+        region: "Inglaterra",
+        price: "Suscripción",
+        link: "https://www.skysports.com/f1",
+        description: "El piloto sensación de Argentina, Franco Colapinto, disputa la ronda europea al mando de su monoplaza Alpine.",
+        category: "TV / Deportes",
+        source: "TV Guide UK"
+      },
+      {
+        id: "evt-aas-portugheis",
+        title: "Rhapsodic Dances: Alberto Portugheis (Piano en Vivo)",
+        date: "2026-07-05",
+        dateLabel: "DOMINGO, 5 DE JULIO 2026 - 15:00 BST",
+        venue: "St Cuthbert's Church (Kensington)",
+        city: "Londres",
+        region: "Inglaterra",
+        price: "£15",
+        link: "https://angloargentinesociety.org.uk/events/",
+        description: "El pianista argentino Alberto Portugheis interpreta obras de Gershwin, Piazzolla y Chopin.",
+        category: "Música",
+        source: "Anglo Argentine Society"
+      },
+      {
+        id: "evt-f1-silverstone",
+        title: "Fórmula 1: Gran Premio de Gran Bretaña en Silverstone",
+        date: "2026-07-05",
+        dateLabel: "DOMINGO, 5 DE JULIO 2026 - 15:00 BST",
+        venue: "Channel 4 & Sky Sports F1",
+        city: "Nacional (UK)",
+        region: "Inglaterra",
+        price: "Gratuito por Channel 4",
+        link: "https://www.channel4.com/",
+        description: "La mítica carrera en Silverstone donde Franco Colapinto jugará de local.",
+        category: "TV / Deportes",
+        source: "TV Guide UK"
+      },
+      {
+        id: "evt-bfi-horseplay",
+        title: "Horseplay (2022, Dir. Marco Berger)",
+        date: "2026-08-12",
+        dateLabel: "DISPONIBLE PARA STREAMING EN AGOSTO 2026",
+        venue: "BFI Player (Suscripción)",
+        city: "Nacional (UK)",
+        region: "Inglaterra",
+        price: "Suscripción BFI Player",
+        link: "https://player.bfi.org.uk/subscription/film/watch-horseplay-2022-online",
+        description: "Disfruta de la cautivadora obra del aclamado director de cine argentino Marco Berger.",
+        category: "Cine",
+        source: "BFI Player"
+      },
+      {
+        id: "evt-bfi-argentine-question",
+        title: "The Argentine Question (1942, Archivo Histórico BFI)",
+        date: "2026-08-30",
+        dateLabel: "DISPONIBLE GRATIS ONLINE",
+        venue: "BFI Player (Free Section)",
+        city: "Nacional (UK)",
+        region: "Inglaterra",
+        price: "Gratuito",
+        link: "https://player.bfi.org.uk/free/film/watch-the-argentine-question-1942-online",
+        description: "Increíble cortometraje documento histórico que retrata a la Argentina durante la Segunda Guerra Mundial.",
+        category: "Cine",
+        source: "BFI Player"
+      },
+      {
+        id: "evt-bandalos-chinos",
+        title: "Bandalos Chinos - Tour Europa 2026 en Londres",
+        date: "2026-09-22",
+        dateLabel: "MARTES, 22 DE SEPTIEMBRE 2026 - 19:30 BST",
+        venue: "The Garage",
+        city: "Londres",
+        region: "Inglaterra",
+        price: "Desde £25",
+        link: "https://ticket.deputamadreclub.eu/",
+        description: "La banda de indie pop más importante de la escena argentina actual regresa a Londres.",
+        category: "Música",
+        source: "De Puta Madre Club"
+      },
+      {
+        id: "evt-ke-personajes",
+        title: "Ke Personajes en Vivo por primera vez en Londres",
+        date: "2026-10-04",
+        dateLabel: "DOMINGO, 4 DE OCTUBRE 2026 - 19:00 BST",
+        venue: "Electric Ballroom (Camden)",
+        city: "Londres",
+        region: "Inglaterra",
+        price: "Desde £35",
+        link: "https://ticket.deputamadreclub.eu/",
+        description: "El fenómeno arrollador de la cumbia argentina liderado por Emanuel Noir llega a Londres.",
+        category: "Música",
+        source: "De Puta Madre Club"
+      },
+      {
+        id: "evt-gala-dinner",
+        title: "AAS & APARU Annual Ambassador's Gala Dinner 2026",
+        date: "2026-10-16",
+        dateLabel: "VIERNES, 16 DE OCTUBRE 2026 - 19:00 BST",
+        venue: "The Caledonian Club (Belgravia)",
+        city: "Londres",
+        region: "Inglaterra",
+        price: "Requiere Entrada",
+        link: "https://angloargentinesociety.org.uk/events/",
+        description: "El evento de gala y beneficencia más prestigioso co-organizado por la Anglo Argentine Society y APARU.",
+        category: "Comunidad",
+        source: "Anglo Argentine Society"
+      },
+      {
+        id: "evt-borges-lecture",
+        title: "Annual Borges Lecture: Prof. Patricia Novillo-Corvalán",
+        date: "2026-11-04",
+        dateLabel: "MIÉRCOLES, 4 DE NOVIEMBRE 2026 - 18:30 BST",
+        venue: "Residencia del Embajador Argentino (Belgravia)",
+        city: "Londres",
+        region: "Inglaterra",
+        price: "Donación Sugerida £15",
+        link: "https://angloargentinesociety.org.uk/events/",
+        description: "Conferencia académica anual dedicada al legado de Jorge Luis Borges, liderada por Patricia Novillo-Corvalán.",
+        category: "Comunidad",
+        source: "Anglo Argentine Society"
+      },
+      {
         id: "evt-rugby-nations-finals",
         title: "Nations Championship 2026: Los Pumas (Argentina) en Twickenham",
         date: "2026-11-27",
+        endDate: "2026-11-29",
         dateLabel: "VIERNES 27 AL DOMINGO 29 DE NOVIEMBRE 2026",
         venue: "Allianz Stadium, Twickenham",
         city: "Londres",
@@ -205,6 +432,9 @@
       const [filterCategory, setFilterCategory] = React.useState('Todos');
       const [filterSource, setFilterSource] = React.useState('Todos');
       const [searchQuery, setSearchQuery] = React.useState('');
+      
+      // Control de expiración dinámica de eventos pasados
+      const [hidePastEvents, setHidePastEvents] = React.useState(true);
 
       // IA Extractor States (Manual)
       const [rawText, setRawText] = React.useState('');
@@ -276,11 +506,18 @@
       }, [isPlayingLogs]);
 
       const filteredEvents = events.filter(evt => {
-        const eventDate = new Date(evt.date);
-        const minDate = new Date("2026-06-15");
-        const maxDate = new Date("2026-12-15");
-        
-        const isWithinSixMonths = eventDate >= minDate && eventDate <= maxDate;
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        // Parseo seguro de fecha de inicio y finalización del evento (evitando desajustes de zona horaria)
+        const eventDate = new Date(evt.date + "T00:00:00");
+        const eventEndDate = evt.endDate ? new Date(evt.endDate + "T00:00:00") : eventDate;
+
+        // Si el control está encendido y el evento ya finalizó (ayer o antes), se oculta automáticamente
+        if (hidePastEvents && eventEndDate < today) {
+          return false;
+        }
+
         const matchesCategory = filterCategory === 'Todos' || evt.category.toLowerCase().includes(filterCategory.toLowerCase());
         const matchesSource = filterSource === 'Todos' || evt.source.toLowerCase().includes(filterSource.toLowerCase());
 
@@ -289,7 +526,7 @@
           evt.venue.toLowerCase().includes(searchQuery.toLowerCase()) ||
           evt.description.toLowerCase().includes(searchQuery.toLowerCase());
 
-        return isWithinSixMonths && matchesCategory && matchesSource && matchesSearch;
+        return matchesCategory && matchesSource && matchesSearch;
       });
 
       const handleSimulateExtraction = (e) => {
@@ -308,6 +545,7 @@
             setExtractedEvent({
               title: "Nations Championship 2026: Los Pumas (Argentina) en Twickenham",
               date: "2026-11-27",
+              endDate: "2026-11-29",
               dateLabel: "VIERNES 27 AL DOMINGO 29 DE NOVIEMBRE 2026",
               venue: "Allianz Stadium, Twickenham",
               city: "Londres",
@@ -366,7 +604,7 @@
                       AUTOMÁTICO 2026
                     </span>
                   </div>
-                  <p className="text-xs text-slate-400">Agenda Cultural & Deportiva Unificada • Actualizada hoy vía Gemini AI</p>
+                  <p className="text-xs text-slate-400">Agenda Cultural & Deportiva Unificada • Filtro Dinámico de Expiración</p>
                 </div>
               </div>
 
@@ -428,7 +666,7 @@
               <div className="flex items-center space-x-2 text-sky-200">
                 <Info className="h-4 w-4 text-sky-400 shrink-0" />
                 <span>
-                  <strong>Base de Datos Automatizada:</strong> Los eventos se capturan de forma diaria e inteligente. Ventana temporal activa: <strong>15 Jun - 15 Dic, 2026</strong>.
+                  <strong>Control Inteligente de Fechas:</strong> Los eventos que ya ocurrieron se ocultan automáticamente para mantener tu cartelera limpia y organizada.
                 </span>
               </div>
               <div className="bg-sky-500/10 border border-sky-500/30 text-sky-300 px-3 py-1 rounded-full font-mono text-[11px] self-start md:self-auto">
@@ -446,7 +684,7 @@
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
                     
                     {/* Search Input Box */}
-                    <div className="lg:col-span-4 relative">
+                    <div className="lg:col-span-3 relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <Search className="h-5 w-5 text-slate-400" />
                       </div>
@@ -483,7 +721,7 @@
                     </div>
 
                     {/* Sources Dropdown Selector */}
-                    <div className="lg:col-span-4">
+                    <div className="lg:col-span-3">
                       <div className="flex flex-col">
                         <span className="text-xs text-slate-400 font-medium mb-1.5">Canal / Origen:</span>
                         <select
@@ -499,30 +737,49 @@
                       </div>
                     </div>
 
+                    {/* INTERRUPTOR: OCULTAR EVENTOS PASADOS */}
+                    <div className="lg:col-span-2">
+                      <div className="flex items-center space-x-2 lg:mt-6 bg-slate-950/80 p-2 rounded-xl border border-slate-800/80">
+                        <input
+                          type="checkbox"
+                          id="hidePastEvents"
+                          checked={hidePastEvents}
+                          onChange={(e) => setHidePastEvents(e.target.checked)}
+                          className="h-4 w-4 rounded border-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-950 bg-slate-900 cursor-pointer"
+                        />
+                        <label 
+                          htmlFor="hidePastEvents" 
+                          className="text-xs text-slate-300 font-medium cursor-pointer select-none"
+                        >
+                          Ocultar finalizados
+                        </label>
+                      </div>
+                    </div>
+
                   </div>
 
                   {/* Filtering summary stats */}
                   <div className="mt-4 pt-4 border-t border-slate-800/60 flex justify-between items-center text-xs text-slate-400">
                     <div>
-                      Encontrados <span className="text-sky-400 font-bold">{filteredEvents.length}</span> eventos culturales activos en el Reino Unido.
+                      Mostrando <span className="text-sky-400 font-bold">{filteredEvents.length}</span> eventos culturales activos en el Reino Unido.
                     </div>
                     {isLoadingEvents && (
                       <div className="flex items-center space-x-1.5 text-sky-400">
                         <RefreshCw className="h-3.5 w-3.5 animate-spin" />
-                        <span>Leyendo eventos de la base de datos...</span>
+                        <span>Sincronizando cartelera...</span>
                       </div>
                     )}
                   </div>
                 </div>
 
-                {/* Event Listing Grid */}
+                {/* Event Grid Listing */}
                 <div className="space-y-6">
                   {filteredEvents.length === 0 ? (
                     <div className="text-center py-16 bg-slate-900/40 rounded-2xl border border-dashed border-slate-800">
                       <Calendar className="h-12 w-12 text-slate-600 mx-auto mb-3" />
                       <p className="text-slate-400 font-medium">No se encontraron eventos activos en este período.</p>
                       <p className="text-xs text-slate-500 max-w-md mx-auto mt-1">
-                        La base de datos dinámica se actualiza de forma diaria mediante inteligencia artificial sobre los canales autorizados de difusión.
+                        Si buscas un espectáculo que ya se realizó, puedes desmarcar el interruptor de <strong>\"Ocultar finalizados\"</strong> en el panel de búsqueda.
                       </p>
                     </div>
                   ) : (
@@ -556,7 +813,7 @@
                                   className="inline-flex items-center hover:underline focus:outline-none rounded-lg py-0.5"
                                 >
                                   {evt.title}
-                                  <ExternalLink className="h-4 w-4 ml-2 shrink-0 text-sky-500/60 group-hover:text-sky-400 transition-colors" />
+                                  <ExternalLink className="h-4.5 w-4.5 ml-2 shrink-0 text-sky-500/60 group-hover:text-sky-400 transition-colors" />
                                 </a>
                               </h3>
 
@@ -609,6 +866,7 @@
               </div>
             )}
 
+            {/* PESTAÑA 2: LISTADO DE FUENTES DE RASTREO */}
             {activeTab === 'canales' && (
               <div>
                 <div className="mb-6">
@@ -653,6 +911,7 @@
               </div>
             )}
 
+            {/* PESTAÑA 3: ASISTENTE EXTRACTOR IA */}
             {activeTab === 'extractor' && (
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                 <div className="lg:col-span-7 space-y-6">
@@ -767,6 +1026,7 @@
               </div>
             )}
 
+            {/* PESTAÑA 4: CONSOLA DE PIPELINE AUTOMÁTICO */}
             {activeTab === 'terminal' && (
               <div className="space-y-6">
                 <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
