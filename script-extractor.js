@@ -1,168 +1,142 @@
-const fs = require('fs');
-const axios = require('axios');
-const cheerio = require('cheerio');
+const { GoogleGenerativeAI } = require("@google/generative-ai");
+const fs = require("fs");
+const path = require("path");
 
-const PORTALES = [
-  { 
-    name: "The Nickel", 
-    url: "https://thenickel.co.uk/?s=argentin", // ¡URL y dominio .co.uk corregidos con tu término exacto!
-    base: "https://thenickel.co.uk",
-    terminos: ["argentin"] 
-  },
-  { 
-    name: "Southbank Centre", 
-    url: "https://www.southbankcentre.co.uk/whats-on/?event-search=argentin", // URL corregida anteriormente con tu instrucción
-    base: "https://www.southbankcentre.co.uk",
-    terminos: ["argentin", "le parc", "piazzolla", "tango"] 
-  },
-  { 
-    name: "Sergius Events", 
-    url: "https://sergius.uk/events/", 
-    base: "https://sergius.uk",
-    terminos: ["estelares", "deputamadre", "teatro", "comedy", "azcarate", "martin", "somos monos"] 
-  },
-  { 
-    name: "Como No", 
-    url: "https://comono.co.uk/whats-on/", 
-    base: "https://comono.co.uk",
-    terminos: ["argentin", "mato a un policia", "tango", "piazzolla"] 
-  },
-  { 
-    name: "Wblive", 
-    url: "https://www.wblive.co.uk/events", 
-    base: "https://www.wblive.co.uk",
-    terminos: ["k'onga", "konga", "argentin", "rock"] 
-  },
-  { 
-    name: "Sadlers Wells", 
-    url: "https://www.sadlerswells.com/whats-on/?event-search=argentin", 
-    base: "https://www.sadlerswells.com",
-    terminos: ["argentin", "tango", "danza", "ballet"] 
-  },
-  { 
-    name: "Royal Ballet and Opera", 
-    url: "https://www.rbo.org.uk/tickets-and-events/marianela-timeless-details", 
-    base: "https://www.rbo.org.uk",
-    terminos: ["marianela", "ballet", "timeless"] 
-  }
+// Inicializamos la API de Google Gemini
+const apiKey = process.env.GEMINI_API_KEY;
+if (!apiKey) {
+  console.error("❌ ERROR: El secreto GEMINI_API_KEY no está definido.");
+  process.exit(1);
+}
+const genAI = new GoogleGenerativeAI(apiKey);
+
+// Simulación de fecha actual de referencia (Temporada 2026)
+const REFERENCE_DATE = "2026-06-15";
+const MAX_DATE = "2026-12-15"; // Límite estricto de 6 meses
+
+// Listado oficializado de fuentes para el scraper
+const sources = [
+  { name: "Tate Modern", url: "https://www.tate.org.uk/search?q=argentin" },
+  { name: "Blanco Gallery", url: "https://www.blancogallery.com/" },
+  { name: "BFI Player", url: "https://player.bfi.org.uk/" },
+  { name: "Barbican Centre", url: "https://www.barbican.org.uk/search?search=argentin" },
+  { name: "Royal Ballet & Opera", url: "https://www.rbo.org.uk/" },
+  { name: "Sadler's Wells", url: "https://www.sadlerswells.com/" },
+  { name: "Southbank Centre", url: "https://www.southbankcentre.co.uk/" },
+  { name: "Como No", url: "https://www.comono.co.uk/" },
+  { name: "De Puta Madre Club", url: "https://ticket.deputamadreclub.eu/" },
+  { name: "National Gallery", url: "https://www.nationalgallery.org.uk/search?q=argentina&area=event" },
+  { name: "Victoria and Albert Museum", url: "https://www.vam.ac.uk/search?q=argentin&astyped=" },
+  { name: "Natural History Museum", url: "https://www.nhm.ac.uk/whats-on.html" },
+  { name: "Art UK", url: "https://artuk.org/visit/whats-on" },
+  { name: "Argentine Film Festival London", url: "https://argentinefilmfestivallondon.substack.com/" },
+  { name: "Anglo Argentine Society", url: "https://angloargentinesociety.org.uk/events/" },
+  { name: "APARU Events", url: "https://www.aparu.org.uk/aparuevents" },
+  { name: "Nations Championship Rugby", url: "https://nationschampionshiprugby.com/en" },
+  { name: "Allianz Stadium Twickenham", url: "https://allianzstadiumtwickenham.com/whats-on" },
+  { name: "Live Nation", url: "https://www.livenation.co.uk/" }
 ];
 
-function validarPorPortal(texto, terminosPortal) {
-  if (!texto) return false;
-  const t = texto.toLowerCase();
-  return terminosPortal.some(termino => t.includes(termino.toLowerCase()));
+function cleanHTML(html) {
+  return html
+    .replace(/<script[^>]*>([\s\S]*?)<\/script>/gi, "")
+    .replace(/<style[^>]*>([\s\S]*?)<\/style>/gi, "")
+    .replace(/<svg[^>]*>([\s\S]*?)<\/svg>/gi, "")
+    .replace(/<head[^>]*>([\s\S]*?)<\/head>/gi, "")
+    .replace(/<\/?[^>]+(>|$)/g, " ") 
+    .replace(/\s+/g, " ") 
+    .trim();
 }
 
-function deducirFechaIso(textoInfo) {
-  const t = textoInfo.toLowerCase();
-  if (t.includes('july') || t.includes('julio')) return '2026-07-15';
-  if (t.includes('august') || t.includes('agosto')) return '2026-08-25';
-  if (t.includes('september') || t.includes('septiembre')) return '2026-09-05';
-  if (t.includes('october') || t.includes('octubre')) return '2026-10-06';
-  if (t.includes('november') || t.includes('noviembre')) return '2026-11-15';
-  if (t.includes('december') || t.includes('diciembre')) return '2026-12-05';
-  return '2026-09-20'; 
-}
+async function scrapeAndParse() {
+  console.log(`🚀 Iniciando proceso de extracción automatizado. Fecha de referencia: ${REFERENCE_DATE}`);
+  let allExtractedEvents = [];
 
-async function ejecutarRastreo() {
-  console.log("🚀 Ejecutando Extracción Quirúrgica con rutas de búsqueda reales...");
-  
-  const hoyIso = "2026-06-13";
-  const limiteIso = "2026-12-13"; 
-
-  let eventosCandidatos = [
-    {
-      category: "Artes Plásticas / Exhibición",
-      title: "Julio Le Parc: Obras Cinéticas e Inmersivas",
-      venue: "Tate Modern, Bankside, Londres",
-      displayDate: "11 de Junio al 11 de Diciembre de 2026",
-      date: "2026-06-14",
-      url: "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc",
-      description: "Gran retrospectiva dedicada al pionero argentino del arte óptico y cinético."
-    }
-  ];
-
-  const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' };
-
-  for (const portal of PORTALES) {
+  for (const src of sources) {
+    console.log(`🔍 Intentando rastrear portal: ${src.name}...`);
     try {
-      console.log(`📡 Escaneando canal filtrado: ${portal.name}...`);
-      const { data } = await axios.get(portal.url, { headers, timeout: 10000 });
-      const $ = cheerio.load(data);
-
-      $('article, .tribe-events-calendar-list__event, .event-card, .post, .event, .grid-item, .search-result, .movie-card, .showtime-item, .card, .result').each((i, el) => {
-        const title = $(el).find('h2, h3, h4, .title, .event-card__title, .movie-title, .tribe-events-calendar-list__event-title-link, a').first().text().trim();
-        
-        let link = $(el).find('a').first().attr('href') || '';
-        if (link && !link.startsWith('http')) link = portal.base + link;
-        if (!link) link = portal.url;
-
-        const description = $(el).find('.description, .excerpt, .tribe-events-calendar-list__event-description, p, .card__description').first().text().trim() || "";
-        const textoCompleto = (title + " " + description + " " + $(el).text()).toLowerCase();
-
-        if (title && title.length > 3 && validarPorPortal(textoCompleto, portal.terminos)) {
-          
-          let categoria = "Música / Concierto";
-          if (portal.name === "The Nickel" || textoCompleto.includes('cine') || textoCompleto.includes('film') || textoCompleto.includes('movie') || textoCompleto.includes('pelicula') || textoCompleto.includes('cinema')) {
-            categoria = "Cine / Película";
-          } else if (textoCompleto.includes('tango') || textoCompleto.includes('ballet') || textoCompleto.includes('danza')) {
-            categoria = "Danza / Ballet / Tango";
-          } else if (textoCompleto.includes('teatro') || textoCompleto.includes('comedy') || textoCompleto.includes('monos') || textoCompleto.includes('azcarate')) {
-            categoria = "Teatro / Comedia";
-          }
-
-          const rawDate = $(el).find('.date, .event-date, time, .tribe-events-calendar-list__event-date-tag, .showtime, .movie-date, .event-card__date, .card__date').text().trim();
-          const displayDate = rawDate || "Fecha en Cartelera (Consultar Link)";
-          const dateCalculada = deducirFechaIso(displayDate + " " + textoCompleto);
-
-          eventosCandidatos.push({
-            category: categoria,
-            title: title,
-            venue: $(el).find('.venue, .location, .tribe-events-calendar-list__event-venue').text().trim() || (portal.name === "The Nickel" ? "The Nickel Cinema, Londres" : "Londres, UK"),
-            displayDate: displayDate,
-            date: dateCalculada, 
-            description: description.substring(0, 160),
-            url: link
-          });
-        }
+      const response = await fetch(src.url, {
+        headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" }
       });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      
+      const rawHtml = await response.text();
+      const cleanText = cleanHTML(rawHtml).substring(0, 15000); 
 
-    } catch (error) {
-      console.log(`✕ Alerta en ${portal.name}: ${error.message}`);
+      console.log(`🧠 Enviando texto depurado de ${src.name} a Gemini para extracción semántica...`);
+      
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+      const prompt = `
+        Analiza el siguiente texto extraído de la web de ${src.name}.
+        Tu tarea es identificar TODOS los eventos, exhibiciones, conciertos, transmisiones, partidos de rugby de Los Pumas, obras de teatro o proyecciones de películas directamente relacionados con ARGENTINA o artistas argentinos.
+        
+        Reglas estrictas de validación:
+        1. El evento debe ocurrir estrictamente entre el ${REFERENCE_DATE} y el ${MAX_DATE}. Descarta todo evento pasado o posterior.
+        2. Para la galería Blanco Gallery, si es posible, asume que has ingresado mediante "find out more" para corroborar la nacionalidad argentina de los artistas.
+        3. Para la Anglo Argentine Society y APARU, todos los eventos son válidos ya que son comunitarios.
+        4. Retorna el resultado únicamente como un arreglo JSON con la siguiente estructura (no agregues introducciones, solo el JSON puro):
+        [
+          {
+            "title": "Nombre específico de la exhibición o evento",
+            "date": "YYYY-MM-DD",
+            "dateLabel": "DÍA, DD DE MES YYYY - HH:MM (ej. SÁBADO, 20 DE JUNIO 2026)",
+            "venue": "Nombre del recinto",
+            "city": "Ciudad (ej. Londres)",
+            "region": "Región (ej. Inglaterra)",
+            "price": "Precio estimado o 'Entrada Libre'",
+            "link": "URL del evento específico o en su defecto ${src.url}",
+            "description": "Una breve descripción del evento y su relación con Argentina",
+            "category": "Música / Deportes / Artes Plásticas / Cine / Comunidad",
+            "source": "${src.name}"
+          }
+        ]
+        Si no encuentras ningún evento que cumpla con los criterios de Argentina y las fechas, retorna un arreglo vacío [].
+        
+        Texto a analizar:
+        ${cleanText}
+      `;
+
+      const aiResponse = await model.generateContent(prompt);
+      const textResult = aiResponse.response.text().trim();
+      
+      const jsonCleaned = textResult.replace(/^
+```json/i, "").replace(/```$/, "").trim();
+      
+      if (jsonCleaned && jsonCleaned !== "[]") {
+        try {
+          const events = JSON.parse(jsonCleaned);
+          if (Array.isArray(events)) {
+            console.log(`✅ Extracción exitosa de ${src.name}: ${events.length} eventos encontrados.`);
+            allExtractedEvents = [...allExtractedEvents, ...events];
+          }
+        } catch (jsonErr) {
+          console.error(`⚠️ Error al parsear JSON devuelto por Gemini para ${src.name}:`, jsonErr);
+        }
+      } else {
+        console.log(`ℹ️ No se detectaron eventos argentinos vigentes en ${src.name}.`);
+      }
+
+    } catch (err) {
+      console.error(`❌ Error al rastrear o procesar ${src.name}:`, err.message);
     }
   }
 
-  try {
-    if (fs.existsSync('panel-control.json')) {
-      const panel = JSON.parse(fs.readFileSync('panel-control.json', 'utf8'));
-      const eventosManuales = panel.eventos_manuales_fijos || panel.eventos_manuales || [];
-      eventosManuales.forEach(m => {
-        if (m.title) eventosCandidatos.push(m);
-      });
-    }
-  } catch (err) {}
-
-  const unicos = [];
-  const titulosVistos = new Set();
+  console.log(`📊 Consolidando base de datos. Eventos totales crudos extraídos: ${allExtractedEvents.length}`);
   
-  eventosCandidatos.forEach(ev => {
-    const normalizado = ev.title.toLowerCase().trim();
-    if (!titulosVistos.has(normalizado)) {
-      titulosVistos.add(normalizado);
-      unicos.push(ev);
+  const uniqueEventsMap = new Map();
+  allExtractedEvents.forEach(evt => {
+    const key = `${evt.title.toLowerCase().trim()}_${evt.date}`;
+    if (!uniqueEventsMap.has(key)) {
+      uniqueEventsMap.set(key, evt);
     }
   });
+  
+  const finalEventsList = Array.from(uniqueEventsMap.values());
+  finalEventsList.sort((a, b) => new Date(a.date) - new Date(b.date));
 
-  const eventosValidados = unicos.filter(ev => ev.date >= hoyIso && ev.date <= limiteIso);
-  eventosValidados.sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
-
-  const resultadoFinal = {
-    lastUpdated: new Date().toLocaleString('es-ES', { timeZone: 'Europe/London' }) + ' (Hora UK)',
-    events: eventosValidados
-  };
-
-  fs.writeFileSync('eventos.json', JSON.stringify(resultadoFinal, null, 2));
-  console.log(`🚀 Sincronización limpia completada. Total guardado: ${eventosValidados.length}`);
+  const outputPath = path.join(__dirname, "eventos.json");
+  fs.writeFileSync(outputPath, JSON.stringify(finalEventsList, null, 2), "utf-8");
+  console.log(`🎉 Base de datos de eventos actualizada exitosamente en: ${outputPath}`);
 }
 
-ejecutarRastreo();
+scrapeAndParse();
