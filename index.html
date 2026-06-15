@@ -37,7 +37,7 @@
 
   <!-- Código React (Transpilado por Babel en el navegador) -->
   <script type="text/babel">
-    // Componentes de Iconos SVG nativos de React para evitar el error #130 de Lucide CDN
+    // Iconos de control y diseño
     const Calendar = (props) => (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
         <path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>
@@ -128,7 +128,24 @@
       </svg>
     );
 
-    // Listado unificado de portales de búsqueda
+    const Settings = (props) => (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/>
+      </svg>
+    );
+
+    const Lock = (props) => (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      </svg>
+    );
+
+    const Unlock = (props) => (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/>
+      </svg>
+    );
+
     const sources = [
       { id: "src-tate", name: "Tate Modern", url: "https://www.tate.org.uk/search?q=argentin", queryHint: "Busca 'argentin' para arte cinético, retrospectivas e instalaciones.", category: "Museos & Galerías" },
       { id: "src-blanco", name: "Blanco Gallery", url: "https://www.blancogallery.com/", queryHint: "Ingresa a cada muestra usando 'find out more' para comprobar la nacionalidad de los artistas.", category: "Museos & Galerías" },
@@ -432,26 +449,53 @@
       const [filterCategory, setFilterCategory] = React.useState('Todos');
       const [filterSource, setFilterSource] = React.useState('Todos');
       const [searchQuery, setSearchQuery] = React.useState('');
-      
-      // Control de expiración de eventos pasados
       const [hidePastEvents, setHidePastEvents] = React.useState(true);
 
-      // IA Extractor States (Manual)
-      const [rawText, setRawText] = React.useState('');
-      const [extractedEvent, setExtractedEvent] = React.useState(null);
-      const [isExtracting, setIsExtracting] = React.useState(false);
-      const [extractError, setExtractError] = React.useState('');
+      // Lock Screen & Passcode States
+      const [isLocked, setIsLocked] = React.useState(true);
+      const [passcode, setPasscode] = React.useState('');
+      const [passcodeError, setPasscodeError] = React.useState('');
+      const [isAdminUnlocked, setIsAdminUnlocked] = React.useState(false);
+      const [isLockModalOpen, setIsLockModalOpen] = React.useState(false);
 
-      // Simulación de Consola
+      // Admin & Credentials Configs (stored in local storage)
+      const [geminiKey, setGeminiKey] = React.useState(localStorage.getItem('admin_gemini_key') || '');
+      const [ghToken, setGhToken] = React.useState(localStorage.getItem('admin_gh_token') || '');
+      const [ghRepo, setGhRepo] = React.useState(localStorage.getItem('admin_gh_repo') || 'arenin-apps/agenda-argentina');
+
+      // AI Input Manual Form Extraction States
+      const [feedInput, setFeedInput] = React.useState('');
+      const [isFeedExtracting, setIsFeedExtracting] = React.useState(false);
+      const [feedError, setFeedError] = React.useState('');
+      
+      // Real-Time Editor Form States
+      const [editEvent, setEditEvent] = React.useState({
+        title: '',
+        date: '',
+        endDate: '',
+        dateLabel: '',
+        venue: '',
+        city: 'Londres',
+        region: 'Inglaterra',
+        price: 'Entrada Libre',
+        link: '',
+        description: '',
+        category: 'Comunidad',
+        source: 'Añadido Manual'
+      });
+      const [isEditorVisible, setIsEditorVisible] = React.useState(false);
+      const [syncSuccessMessage, setSyncSuccessMessage] = React.useState('');
+      const [isSyncing, setIsSyncing] = React.useState(false);
+
+      // Console Simulation States
       const [isPlayingLogs, setIsPlayingLogs] = React.useState(true);
       const [activeLogs, setActiveLogs] = React.useState([]);
 
       React.useEffect(() => {
         setIsLoadingEvents(true);
-        // Intentamos cargar la base de datos de eventos autogenerada por el bot de GitHub
         fetch('./eventos.json')
           .then(response => {
-            if (!response.ok) throw new Error("No se halló la base de datos dinámica. Cargando respaldo...");
+            if (!response.ok) throw new Error("Cargando respaldo...");
             return response.json();
           })
           .then(data => {
@@ -461,7 +505,6 @@
           })
           .catch(err => {
             console.warn(err.message);
-            // Fallback a los eventos de respaldo iniciales
             setEvents(fallbackEvents);
           })
           .finally(() => {
@@ -469,7 +512,6 @@
           });
       }, []);
 
-      // Secuencia de logs para simulación en pestaña "Terminal"
       const logsSequence = [
         "📅 [15/06/2026 00:00:01] Workflow 'Daily Argentina Cultural Scraper' activado por cron diario.",
         "⚙️ [15/06/2026 00:00:02] Levantando contenedor ubuntu-latest con Node.js v20.",
@@ -485,8 +527,8 @@
         "🧹 [Filtro Expiración] Omitiendo de forma estricta espectáculos antiguos de 2023.",
         "🧠 [AI Parser] Enviando el código HTML depurado a Gemini 1.5 Flash para estructuración JSON...",
         "💾 [Parser] Verificando duplicados y colisiones de fechas de conciertos.",
-        "✅ [Git] Guardando resultados en 'eventos.json' y ejecutando Push automático en main.",
-        "🚀 [Deploy] Cambio publicado. WordPress reflejará los datos en tiempo real."
+        "✅ [Git] Guardando resultados en 'eventos.json' y push automático en main.",
+        "🚀 [Deploy] Cambio publicado en GitHub Pages con éxito."
       ];
 
       React.useEffect(() => {
@@ -509,11 +551,9 @@
         const today = new Date();
         today.setHours(0, 0, 0, 0);
 
-        // Parseo seguro de fechas sin desfases
         const eventDate = new Date(evt.date + "T00:00:00");
         const eventEndDate = evt.endDate ? new Date(evt.endDate + "T00:00:00") : eventDate;
 
-        // Si "Ocultar finalizados" está activo, no mostramos eventos anteriores a hoy
         if (hidePastEvents && eventEndDate < today) {
           return false;
         }
@@ -529,60 +569,220 @@
         return matchesCategory && matchesSource && matchesSearch;
       });
 
-      const handleSimulateExtraction = (e) => {
+      // Unlock Passcode Handler
+      const handleUnlock = (e) => {
         e.preventDefault();
-        if (!rawText.trim()) {
-          setExtractError('Ingresa texto o URL para simular la extracción.');
-          return;
+        if (passcode === '1986') {
+          setIsAdminUnlocked(true);
+          setIsLockModalOpen(false);
+          setActiveTab('admin-panel');
+          setPasscodeError('');
+        } else {
+          setPasscodeError('Código de acceso incorrecto. Inténtalo de nuevo.');
         }
-        setIsExtracting(true);
-        setExtractError('');
-        setExtractedEvent(null);
-
-        setTimeout(() => {
-          const lowerText = rawText.toLowerCase();
-          if (lowerText.includes('rugby') || lowerText.includes('pumas') || lowerText.includes('twickenham')) {
-            setExtractedEvent({
-              title: "Nations Championship 2026: Los Pumas (Argentina) en Twickenham",
-              date: "2026-11-27",
-              endDate: "2026-11-29",
-              dateLabel: "VIERNES 27 AL DOMINGO 29 DE NOVIEMBRE 2026",
-              venue: "Allianz Stadium, Twickenham",
-              city: "Londres",
-              region: "Inglaterra",
-              price: "Sujeto a categoría",
-              link: "https://allianzstadiumtwickenham.com/nations-championship-finals-weekend",
-              description: "Partido internacional correspondiente al Finals Weekend de la Copa de Naciones.",
-              category: "TV / Deportes",
-              source: "Allianz Stadium Twickenham"
-            });
-          } else {
-            setExtractedEvent({
-              title: "Nuevo Evento Cultural Detectado",
-              date: "2026-11-12",
-              dateLabel: "LUNES, 12 DE NOVIEMBRE 2026 - 19:00 GMT",
-              venue: "Londres",
-              city: "Londres",
-              region: "Inglaterra",
-              price: "Entrada Libre",
-              link: "https://www.google.com/search?q=argentina+uk+events",
-              description: "La IA de Gemini procesó exitosamente el fragmento crudo y estructuró este evento.",
-              category: "Comunidad",
-              source: "Art UK"
-            });
-          }
-          setIsExtracting(false);
-        }, 1500);
       };
 
-      const insertExtractedEvent = () => {
-        if (extractedEvent) {
-          const uniqueId = `evt-extracted-${Date.now()}`;
-          setEvents([{ ...extractedEvent, id: uniqueId }, ...events]);
-          setExtractedEvent(null);
-          setRawText('');
-          setActiveTab('agenda');
+      // Save credentials helper
+      const saveAdminConfig = (key, value) => {
+        localStorage.setItem(key, value);
+        if (key === 'admin_gemini_key') setGeminiKey(value);
+        if (key === 'admin_gh_token') setGhToken(value);
+        if (key === 'admin_gh_repo') setGhRepo(value);
+      };
+
+      // Real-time AI Parser using Visitor's Gemini API Key
+      const handleAIFeedExtraction = async (e) => {
+        e.preventDefault();
+        if (!feedInput.trim()) {
+          setFeedError('Por favor ingresa una URL o texto crudo.');
+          return;
         }
+
+        setIsFeedExtracting(true);
+        setFeedError('');
+        setSyncSuccessMessage('');
+
+        if (geminiKey) {
+          // LLAMADA REAL A LA API DE GEMINI DIRECTAMENTE DESDE EL NAVEGADOR
+          try {
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiKey}`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                contents: [{
+                  parts: [{
+                    text: `Analiza este fragmento o URL. Extrae la información de forma precisa y estructurada de acuerdo a las reglas. Si hay fechas en texto, asume la temporada del año 2026.
+                    Retorna estrictamente un objeto JSON (sin delimitadores markdown, sin explicaciones, solo el JSON puro) con este formato exacto:
+                    {
+                      "title": "Nombre del evento",
+                      "date": "YYYY-MM-DD",
+                      "endDate": "YYYY-MM-DD (dejar en blanco si es de un solo día)",
+                      "dateLabel": "SÁBADO, 20 DE JUNIO 2026 - 19:00 BST",
+                      "venue": "Nombre del recinto/teatro",
+                      "city": "Ciudad",
+                      "region": "Región",
+                      "price": "Precio estimado o Entrada Libre",
+                      "link": "URL del evento",
+                      "description": "Explicación breve de la relación cultural/deportiva con Argentina",
+                      "category": "Artes Plásticas / Cine / Música / TV / Deportes / Comunidad",
+                      "source": "Nombre del portal original"
+                    }
+                    
+                    Texto/URL a procesar:
+                    ${feedInput}`
+                  }]
+                }]
+              })
+            });
+
+            if (!response.ok) throw new Error("Fallo de conexión o API Key inválida.");
+            const data = await response.json();
+            const aiText = data.candidates[0].content.parts[0].text.trim();
+            
+            // Limpieza robusta del JSON de Gemini
+            let cleanJson = aiText.replace(/^```json/i, "").replace(/```$/, "").trim();
+            const parsed = JSON.parse(cleanJson);
+            
+            setEditEvent(parsed);
+            setIsEditorVisible(true);
+          } catch (err) {
+            setFeedError(`Fallo de Extracción Real: ${err.message}. Cargando simulación local...`);
+            triggerMockExtraction();
+          } finally {
+            setIsFeedExtracting(false);
+          }
+        } else {
+          // Simulador en caso de que no tengan Gemini Key
+          setTimeout(() => {
+            triggerMockExtraction();
+            setIsFeedExtracting(false);
+          }, 1500);
+        }
+      };
+
+      const triggerMockExtraction = () => {
+        const lower = feedInput.toLowerCase();
+        let mockEvent = {
+          title: 'Nuevo Evento Detectado',
+          date: '2026-11-12',
+          endDate: '',
+          dateLabel: 'SÁBADO, 14 DE NOVIEMBRE 2026 - 20:00 BST',
+          venue: 'O2 Forum Kentish Town',
+          city: 'Londres',
+          region: 'Inglaterra',
+          price: 'Desde £22.50',
+          link: feedInput.startsWith('http') ? feedInput : 'https://www.livenation.co.uk/',
+          description: 'Se ha analizado semánticamente tu URL. La Inteligencia Artificial estructuró con precisión este evento de un gran show argentino.',
+          category: 'Música',
+          source: 'Detección Manual'
+        };
+
+        if (lower.includes('rugby') || lower.includes('pumas')) {
+          mockEvent.title = "Los Pumas vs Inglaterra (Test Match)";
+          mockEvent.category = "TV / Deportes";
+          mockEvent.venue = "Allianz Stadium Twickenham";
+          mockEvent.date = "2026-11-21";
+          mockEvent.dateLabel = "SÁBADO, 21 DE NOVIEMBRE 2026 - 15:00 BST";
+          mockEvent.price = "Sujeto a categoría";
+        } else if (lower.includes('tango') || lower.includes('dance')) {
+          mockEvent.title = "Gala de Tango: Estrellas de Buenos Aires";
+          mockEvent.category = "Música";
+          mockEvent.venue = "Sadler's Wells Theatre";
+          mockEvent.date = "2026-10-18";
+          mockEvent.dateLabel = "DOMINGO, 18 DE OCTUBRE 2026 - 19:30 BST";
+          mockEvent.price = "Desde £15";
+        }
+
+        setEditEvent(mockEvent);
+        setIsEditorVisible(true);
+      };
+
+      // Direct commit to eventos.json via GitHub REST API
+      const handlePublishToGitHub = async () => {
+        if (!ghToken) {
+          setFeedError('Falta tu Token de Acceso de GitHub para poder guardar en vivo.');
+          return;
+        }
+        setIsSyncing(true);
+        setSyncSuccessMessage('');
+        setFeedError('');
+
+        try {
+          const fileUrl = `https://api.github.com/repos/${ghRepo}/contents/eventos.json`;
+          
+          // 1. Obtener la base de datos actual para actualizarla sin borrar nada
+          let currentFileSha = '';
+          let currentContent = [];
+
+          const getRes = await fetch(fileUrl, {
+            headers: {
+              'Authorization': `token ${ghToken}`,
+              'Accept': 'application/vnd.github.v3+json'
+            }
+          });
+
+          if (getRes.ok) {
+            const fileData = await getRes.json();
+            currentFileSha = fileData.sha;
+            // Decode base64 to string safely (using custom utf-8 decoder to avoid corruption)
+            const decodedStr = decodeURIComponent(atob(fileData.content).split('').map(c => {
+              return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+            currentContent = JSON.parse(decodedStr);
+          } else {
+            console.log("No eventos.json found in repository, creating new database.");
+          }
+
+          // 2. Insertar y unificar el nuevo evento
+          const updatedList = [editEvent, ...currentContent];
+          
+          // Ordenar cronológicamente
+          updatedList.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+          // 3. Codificar a Base64 de forma segura con UTF-8
+          const stringified = JSON.stringify(updatedList, null, 2);
+          const encodedContent = btoa(encodeURIComponent(stringified).replace(/%([0-9A-F]{2})/g, (match, p1) => {
+            return String.fromCharCode('0x' + p1);
+          }));
+
+          // 4. Hacer commit/push de la actualización de forma directa
+          const putRes = await fetch(fileUrl, {
+            method: 'PUT',
+            headers: {
+              'Authorization': `token ${ghToken}`,
+              'Accept': 'application/vnd.github.v3+json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              message: `🤖 [Admin] Añadido evento: ${editEvent.title}`,
+              content: encodedContent,
+              sha: currentFileSha || undefined
+            })
+          });
+
+          if (!putRes.ok) {
+            const errData = await putRes.json();
+            throw new Error(errData.message || 'Error al guardar.');
+          }
+
+          setSyncSuccessMessage(`¡Espectacular! Evento sincronizado y guardado con éxito directamente en tu base de datos de GitHub.`);
+          setEvents(updatedList); // Actualizamos la vista local
+          setIsEditorVisible(false);
+          setFeedInput('');
+        } catch (err) {
+          setFeedError(`Error de Sincronización Directa: ${err.message}`);
+        } finally {
+          setIsSyncing(false);
+        }
+      };
+
+      const handleAddLocalOnly = () => {
+        const uniqueId = `evt-manual-${Date.now()}`;
+        setEvents([{ ...editEvent, id: uniqueId }, ...events]);
+        setIsEditorVisible(false);
+        setFeedInput('');
+        setSyncSuccessMessage('Evento inyectado en la sesión activa con éxito (sólo local).');
+        setActiveTab('agenda');
       };
 
       const categories = ['Todos', 'Artes Plásticas', 'Cine', 'Música', 'TV / Deportes', 'Comunidad'];
@@ -634,18 +834,6 @@
                 </button>
 
                 <button
-                  onClick={() => setActiveTab('extractor')}
-                  className={`px-3 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
-                    activeTab === 'extractor' ? 'bg-slate-800 text-white border border-slate-700' : 'text-slate-400 hover:bg-slate-900'
-                  }`}
-                >
-                  <div className="flex items-center space-x-1.5">
-                    <Sparkles className="h-4 w-4 text-amber-400" />
-                    <span>Extractor IA</span>
-                  </div>
-                </button>
-
-                <button
                   onClick={() => setActiveTab('terminal')}
                   className={`px-3 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
                     activeTab === 'terminal' ? 'bg-slate-800 text-white border border-slate-700' : 'text-slate-400 hover:bg-slate-900'
@@ -656,6 +844,20 @@
                     <span>Consola Bot</span>
                   </div>
                 </button>
+
+                {isAdminUnlocked && (
+                  <button
+                    onClick={() => setActiveTab('admin-panel')}
+                    className={`px-3 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
+                      activeTab === 'admin-panel' ? 'bg-emerald-500 text-slate-950 font-bold border border-emerald-400' : 'text-emerald-400 hover:bg-slate-900'
+                    }`}
+                  >
+                    <div className="flex items-center space-x-1.5">
+                      <Unlock className="h-4 w-4" />
+                      <span>Panel Admin</span>
+                    </div>
+                  </button>
+                )}
               </nav>
             </div>
           </header>
@@ -666,7 +868,7 @@
               <div className="flex items-center space-x-2 text-sky-200">
                 <Info className="h-4 w-4 text-sky-400 shrink-0" />
                 <span>
-                  <strong>Control Inteligente de Fechas:</strong> Los eventos que ya ocurrieron se ocultan automáticamente para mantener tu cartelera limpia y organizada.
+                  <strong>Control Inteligente de Fechas:</strong> Los eventos que ya ocurrieron se ocultan automáticamente de la lista para mantener tu cartelera limpia.
                 </span>
               </div>
               <div className="bg-sky-500/10 border border-sky-500/30 text-sky-300 px-3 py-1 rounded-full font-mono text-[11px] self-start md:self-auto">
@@ -677,6 +879,7 @@
 
           <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             
+            {/* TAB 1: CARTELERA DE EVENTOS */}
             {activeTab === 'agenda' && (
               <div>
                 {/* Filtering Box Container */}
@@ -859,7 +1062,7 @@
               </div>
             )}
 
-            {/* PESTAÑA 2: LISTADO DE FUENTES DE RASTREO */}
+            {/* TAB 2: LISTADO DE FUENTES DE RASTREO */}
             {activeTab === 'canales' && (
               <div>
                 <div className="mb-6">
@@ -904,122 +1107,7 @@
               </div>
             )}
 
-            {/* PESTAÑA 3: ASISTENTE EXTRACTOR IA */}
-            {activeTab === 'extractor' && (
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                <div className="lg:col-span-7 space-y-6">
-                  <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
-                    <div className="flex items-center space-x-2 text-amber-400 mb-4">
-                      <Sparkles className="h-6 w-6" />
-                      <h2 className="text-xl font-bold text-white">Prueba de Extracción Manual con Gemini</h2>
-                    </div>
-                    <p className="text-xs text-slate-400 mb-4 leading-relaxed">
-                      ¿Quieres probar cómo el robot estructurador interpreta el contenido en crudo de tus fuentes? Pega un fragmento de texto abajo para ver cómo la API estructura los datos de forma exacta.
-                    </p>
-
-                    <form onSubmit={handleSimulateExtraction} className="space-y-4">
-                      <div>
-                        <label className="block text-xs font-semibold text-slate-300 mb-2">
-                          Fragmento de texto crudo o Detalles de Evento:
-                        </label>
-                        <textarea
-                          rows={5}
-                          value={rawText}
-                          onChange={(e) => setRawText(e.target.value)}
-                          placeholder="Ej: Los Pumas jugarán en el Allianz Stadium de Twickenham contra un rival del hemisferio norte el 27 de noviembre de 2026..."
-                          className="block w-full p-3 bg-slate-950 border border-slate-800 rounded-xl focus:ring-2 focus:ring-sky-500 text-slate-100 placeholder-slate-600 text-sm font-mono"
-                        />
-                      </div>
-
-                      {extractError && (
-                        <div className="text-red-400 text-xs font-bold">
-                          ⚠️ {extractError}
-                        </div>
-                      )}
-
-                      <div className="flex items-center justify-between pt-2">
-                        <span className="text-[10px] text-slate-500 italic">
-                          Model: Gemini 1.5 Flash API
-                        </span>
-                        <button
-                          type="submit"
-                          disabled={isExtracting}
-                          className="px-5 py-2.5 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 disabled:from-slate-800 disabled:to-slate-850 text-slate-950 disabled:text-slate-600 font-bold rounded-xl text-xs sm:text-sm tracking-wide shadow-lg transition-all flex items-center space-x-2"
-                        >
-                          {isExtracting ? (
-                            <>
-                              <RefreshCw className="h-4 w-4 animate-spin" />
-                              <span>Analizando...</span>
-                            </>
-                          ) : (
-                            <>
-                              <Sparkles className="h-4 w-4" />
-                              <span>Estructurar con IA</span>
-                            </>
-                          )}
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-
-                  <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-5">
-                    <h3 className="text-sm font-bold text-white mb-2 flex items-center space-x-2">
-                      <Search className="h-4 w-4 text-sky-400" />
-                      <span>Tip Técnico: Google Dorking para Enlaces Profundos</span>
-                    </h3>
-                    <p className="text-xs text-slate-400 leading-relaxed">
-                      Para hallar espectáculos específicos dentro del catálogo de televisión británico en TV Guide de forma automatizada, Gemini ejecuta búsquedas externas mediante operadores avanzados como:
-                    </p>
-                    <div className="bg-slate-950 p-3 rounded-lg border border-slate-850 font-mono text-[11px] text-sky-300 mt-3 select-all">
-                      site:tvguide.co.uk "Colapinto" OR "Argentina"
-                    </div>
-                  </div>
-                </div>
-
-                <div className="lg:col-span-5">
-                  <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl sticky top-24 min-h-[300px] flex flex-col justify-between">
-                    <div>
-                      <h3 className="text-sm font-bold text-white mb-4 flex items-center space-x-2">
-                        <FileCode className="h-4 w-4 text-slate-400" />
-                        <span>Previsualización JSON Estructurado</span>
-                      </h3>
-
-                      {extractedEvent ? (
-                        <div className="space-y-4">
-                          <div className="bg-slate-950 p-4 rounded-xl border border-slate-800/80 text-xs font-mono text-emerald-400 overflow-x-auto max-h-[250px]">
-                            <pre>{JSON.stringify(extractedEvent, null, 2)}</pre>
-                          </div>
-
-                          <div className="bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 p-3 rounded-lg text-xs flex items-start space-x-2">
-                            <CheckCircle className="h-4 w-4 shrink-0 mt-0.5" />
-                            <span>
-                              <strong>¡IA Lista!</strong> El objeto JSON ha sido validado contra el esquema oficial. Listo para inyectarse de forma temporal en tu cartelera.
-                            </span>
-                          </div>
-                        </div>
-                      ) : (
-                        <div className="text-center py-12 text-slate-500">
-                          <Sparkles className="h-10 w-10 mx-auto mb-3 opacity-30" />
-                          <p className="text-xs">Usa el formulario para simular una extracción de texto con Inteligencia Artificial.</p>
-                        </div>
-                      )}
-                    </div>
-
-                    {extractedEvent && (
-                      <button
-                        onClick={insertExtractedEvent}
-                        className="w-full mt-4 py-3 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-extrabold text-xs sm:text-sm rounded-xl tracking-wider shadow-lg transition-all flex items-center justify-center space-x-2"
-                      >
-                        <Plus className="h-4 w-4" />
-                        <span>Inyectar Evento en Cartelera Interactiva</span>
-                      </button>
-                    )}
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* PESTAÑA 4: CONSOLA DE PIPELINE AUTOMÁTICO */}
+            {/* TAB 3: CONSOLA DE PIPELINE AUTOMÁTICO */}
             {activeTab === 'terminal' && (
               <div className="space-y-6">
                 <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
@@ -1088,27 +1176,364 @@ async function scanAndParse() {
               </div>
             )}
 
+            {/* TAB 4: PANEL DE CONTROL SECRETO (ADMINISTRADOR) */}
+            {activeTab === 'admin-panel' && isAdminUnlocked && (
+              <div className="space-y-8 animate-fade-in">
+                
+                {/* Credentials & Access configuration card */}
+                <div className="bg-slate-900 border-2 border-emerald-500/30 rounded-2xl p-6 shadow-xl">
+                  <h2 className="text-xl font-bold text-emerald-400 mb-4 flex items-center space-x-2">
+                    <Settings className="h-5 w-5" />
+                    <span>Configuración de Credenciales de Sincronización</span>
+                  </h2>
+                  <p className="text-xs text-slate-400 mb-4">
+                    Tus credenciales se guardan de forma 100% segura en el localStorage de tu propio navegador. Nadie más tiene acceso a ellas.
+                  </p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-300 mb-1.5">Gemini API Key (Para Extracción Real):</label>
+                      <input
+                        type="password"
+                        value={geminiKey}
+                        onChange={(e) => saveAdminConfig('admin_gemini_key', e.target.value)}
+                        placeholder="AIzaSy..."
+                        className="block w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-xl focus:ring-2 focus:ring-emerald-500 text-slate-200 text-xs font-mono"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-300 mb-1.5">GitHub Personal Access Token (PAT):</label>
+                      <input
+                        type="password"
+                        value={ghToken}
+                        onChange={(e) => saveAdminConfig('admin_gh_token', e.target.value)}
+                        placeholder="ghp_..."
+                        className="block w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-xl focus:ring-2 focus:ring-emerald-500 text-slate-200 text-xs font-mono"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-300 mb-1.5">Repositorio GitHub (owner/repo):</label>
+                      <input
+                        type="text"
+                        value={ghRepo}
+                        onChange={(e) => saveAdminConfig('admin_gh_repo', e.target.value)}
+                        placeholder="arenin-apps/agenda-argentina"
+                        className="block w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-xl focus:ring-2 focus:ring-emerald-500 text-slate-200 text-xs font-mono"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Master input URL feed extraction card */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                  <div className="lg:col-span-6 space-y-6">
+                    <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+                      <h3 className="text-lg font-bold text-white mb-2 flex items-center space-x-2">
+                        <Sparkles className="h-5 w-5 text-emerald-400" />
+                        <span>Analizar & Alimentar Evento</span>
+                      </h3>
+                      <p className="text-xs text-slate-400 mb-4 leading-relaxed">
+                        Pega la URL de la web donde encontraste el evento, o escribe una descripción libre (lugar, precio, fecha, etc.). La Inteligencia Artificial analizará la información, completará los parámetros automáticamente y los cargará en la plantilla.
+                      </p>
+
+                      <form onSubmit={handleAIFeedExtraction} className="space-y-4">
+                        <textarea
+                          rows={4}
+                          value={feedInput}
+                          onChange={(e) => setFeedInput(e.target.value)}
+                          placeholder="Ej: Banda de Turistas en vivo en The Garage el 22 de Octubre de 2026. Entradas desde £18. Puertas a las 19:30."
+                          className="block w-full p-3 bg-slate-950 border border-slate-800 rounded-xl focus:ring-2 focus:ring-emerald-500 text-slate-100 placeholder-slate-600 text-xs font-mono"
+                        />
+
+                        {feedError && (
+                          <div className="p-3 bg-red-950/40 border border-red-500/20 text-red-400 text-xs font-semibold rounded-lg">
+                            ⚠️ {feedError}
+                          </div>
+                        )}
+
+                        {syncSuccessMessage && (
+                          <div className="p-3 bg-emerald-950/40 border border-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-lg">
+                            ✅ {syncSuccessMessage}
+                          </div>
+                        )}
+
+                        <div className="flex items-center justify-between">
+                          <span className="text-[10px] text-slate-500">
+                            {geminiKey ? "Integrado con tu clave API de Gemini" : "Modo simulación (sin API Key)"}
+                          </span>
+                          <button
+                            type="submit"
+                            disabled={isFeedExtracting}
+                            className="px-5 py-2 bg-emerald-500 hover:bg-emerald-600 disabled:bg-slate-800 text-slate-950 disabled:text-slate-500 font-bold rounded-xl text-xs tracking-wider transition-all flex items-center space-x-1.5"
+                          >
+                            {isFeedExtracting ? (
+                              <>
+                                <RefreshCw className="h-3.5 w-3.5 animate-spin" />
+                                <span>Analizando...</span>
+                              </>
+                            ) : (
+                              <>
+                                <Sparkles className="h-3.5 w-3.5" />
+                                <span>Analizar con IA</span>
+                              </>
+                            )}
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+                  {/* Real-time editor Form */}
+                  <div className="lg:col-span-6">
+                    {isEditorVisible ? (
+                      <div className="bg-slate-900 border-2 border-emerald-500/20 rounded-2xl p-6 shadow-xl space-y-4">
+                        <h3 className="text-base font-bold text-white flex items-center space-x-2">
+                          <FileCode className="h-4 w-4 text-emerald-400" />
+                          <span>Paso 2: Revisión & Guardado del Evento Estructurado</span>
+                        </h3>
+                        <p className="text-xs text-slate-400 leading-relaxed">
+                          Edita cualquier campo si es necesario para asegurar la máxima fidelidad y formato.
+                        </p>
+
+                        <div className="grid grid-cols-2 gap-3 text-xs">
+                          <div className="col-span-2">
+                            <label className="block text-slate-400 mb-1">Nombre del Evento:</label>
+                            <input
+                              type="text"
+                              value={editEvent.title}
+                              onChange={(e) => setEditEvent({...editEvent, title: e.target.value})}
+                              className="w-full px-3 py-1.5 bg-slate-950 border border-slate-800 rounded-lg text-slate-200"
+                            />
+                          </div>
+
+                          <div>
+                            <label className="block text-slate-400 mb-1">Fecha de Inicio (YYYY-MM-DD):</label>
+                            <input
+                              type="text"
+                              value={editEvent.date}
+                              onChange={(e) => setEditEvent({...editEvent, date: e.target.value})}
+                              className="w-full px-3 py-1.5 bg-slate-950 border border-slate-800 rounded-lg text-slate-200"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-slate-400 mb-1">Fecha de Fin (Dejar vacío si no aplica):</label>
+                            <input
+                              type="text"
+                              value={editEvent.endDate}
+                              onChange={(e) => setEditEvent({...editEvent, endDate: e.target.value})}
+                              className="w-full px-3 py-1.5 bg-slate-950 border border-slate-800 rounded-lg text-slate-200 hover:border-slate-700"
+                            />
+                          </div>
+
+                          <div className="col-span-2">
+                            <label className="block text-slate-400 mb-1">Texto de Fecha (Mayúsculas):</label>
+                            <input
+                              type="text"
+                              value={editEvent.dateLabel}
+                              onChange={(e) => setEditEvent({...editEvent, dateLabel: e.target.value})}
+                              className="w-full px-3 py-1.5 bg-slate-950 border border-slate-800 rounded-lg text-slate-200"
+                            />
+                          </div>
+
+                          <div className="col-span-2">
+                            <label className="block text-slate-400 mb-1">Recinto (Venue):</label>
+                            <input
+                              type="text"
+                              value={editEvent.venue}
+                              onChange={(e) => setEditEvent({...editEvent, venue: e.target.value})}
+                              className="w-full px-3 py-1.5 bg-slate-950 border border-slate-800 rounded-lg text-slate-200"
+                            />
+                          </div>
+
+                          <div>
+                            <label className="block text-slate-400 mb-1">Ciudad:</label>
+                            <input
+                              type="text"
+                              value={editEvent.city}
+                              onChange={(e) => setEditEvent({...editEvent, city: e.target.value})}
+                              className="w-full px-3 py-1.5 bg-slate-950 border border-slate-800 rounded-lg text-slate-200"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-slate-400 mb-1">Precio:</label>
+                            <input
+                              type="text"
+                              value={editEvent.price}
+                              onChange={(e) => setEditEvent({...editEvent, price: e.target.value})}
+                              className="w-full px-3 py-1.5 bg-slate-950 border border-slate-800 rounded-lg text-slate-200"
+                            />
+                          </div>
+
+                          <div className="col-span-2">
+                            <label className="block text-slate-400 mb-1">Enlace Oficial de Boletos:</label>
+                            <input
+                              type="text"
+                              value={editEvent.link}
+                              onChange={(e) => setEditEvent({...editEvent, link: e.target.value})}
+                              className="w-full px-3 py-1.5 bg-slate-950 border border-slate-800 rounded-lg text-slate-200"
+                            />
+                          </div>
+
+                          <div className="col-span-2">
+                            <label className="block text-slate-400 mb-1">Breve Descripción:</label>
+                            <textarea
+                              rows={2}
+                              value={editEvent.description}
+                              onChange={(e) => setEditEvent({...editEvent, description: e.target.value})}
+                              className="w-full p-2 bg-slate-950 border border-slate-800 rounded-lg text-slate-200"
+                            />
+                          </div>
+
+                          <div>
+                            <label className="block text-slate-400 mb-1">Categoría:</label>
+                            <select
+                              value={editEvent.category}
+                              onChange={(e) => setEditEvent({...editEvent, category: e.target.value})}
+                              className="w-full px-3 py-1.5 bg-slate-950 border border-slate-800 rounded-lg text-slate-200"
+                            >
+                              {categories.slice(1).map(cat => (
+                                <option key={cat} value={cat}>{cat}</option>
+                              ))}
+                            </select>
+                          </div>
+                          <div>
+                            <label className="block text-slate-400 mb-1">Fuente (Source Name):</label>
+                            <input
+                              type="text"
+                              value={editEvent.source}
+                              onChange={(e) => setEditEvent({...editEvent, source: e.target.value})}
+                              className="w-full px-3 py-1.5 bg-slate-950 border border-slate-800 rounded-lg text-slate-200"
+                            />
+                          </div>
+                        </div>
+
+                        {/* Sync Publish Buttons inside Panel Form */}
+                        <div className="pt-4 border-t border-slate-800 flex flex-col sm:flex-row gap-2 justify-end">
+                          <button
+                            onClick={handleAddLocalOnly}
+                            className="px-4 py-2 bg-slate-850 hover:bg-slate-800 text-slate-200 rounded-xl text-xs font-bold transition-all"
+                          >
+                            Inyectar sólo Local (Temporal)
+                          </button>
+                          
+                          <button
+                            onClick={handlePublishToGitHub}
+                            disabled={isSyncing}
+                            className="px-5 py-2 bg-emerald-500 hover:bg-emerald-600 disabled:bg-slate-800 text-slate-950 disabled:text-slate-500 font-bold rounded-xl text-xs tracking-wider transition-all flex items-center justify-center space-x-1"
+                          >
+                            {isSyncing ? (
+                              <>
+                                <RefreshCw className="h-3 w-3 animate-spin" />
+                                <span>Sincronizando GitHub...</span>
+                              </>
+                            ) : (
+                              <>
+                                <CheckCircle className="h-3.5 w-3.5" />
+                                <span>Publicar en GitHub (eventos.json)</span>
+                              </>
+                            )}
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="h-full border border-dashed border-slate-800 rounded-2xl flex flex-col items-center justify-center p-8 text-center text-slate-500">
+                        <Sparkles className="h-8 w-8 mb-2 text-slate-600 animate-pulse" />
+                        <p className="text-xs">Los detalles del evento estructurado aparecerán aquí una vez completado el paso 1.</p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+              </div>
+            )}
+
           </main>
 
           {/* FOOTER */}
           <footer className="bg-slate-950 border-t border-slate-900 py-12 mt-16 text-slate-500">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs space-y-4">
               <p>© 2026 - Agenda Cultural Argentina en UK. Proyecto libre y comunitario.</p>
-              <div className="flex justify-center space-x-6 text-[11px] font-mono">
-                <span>Rango de Simulación Activa: 15 Jun - 15 Dic 2026</span>
-                <span>•</span>
-                <span>Fuentes Autorizadas: {sources.length}</span>
+              
+              {/* Subtle administrative access toggle lock icon */}
+              <div className="flex justify-center items-center space-x-2 pt-2">
+                <button
+                  onClick={() => setIsLockModalOpen(true)}
+                  className="text-slate-700 hover:text-slate-500 transition-colors duration-200 focus:outline-none"
+                  title="Acceso de Administrador"
+                >
+                  <Lock className="h-4.5 w-4.5" />
+                </button>
               </div>
             </div>
           </footer>
+
+          {/* PASSCODE MODAL DIALOG */}
+          {isLockModalOpen && (
+            <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center bg-slate-950/90 backdrop-blur-sm p-4">
+              <div className="bg-slate-900 border border-slate-800 rounded-2xl max-w-sm w-full p-6 shadow-2xl relative">
+                <button 
+                  onClick={() => setIsLockModalOpen(false)}
+                  className="absolute top-4 right-4 text-slate-500 hover:text-white font-bold"
+                >
+                  ✕
+                </button>
+
+                <div className="text-center space-y-4">
+                  <div className="mx-auto w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+                    <Lock className="h-6 w-6" />
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-base font-bold text-white">Acceso al Panel de Control Secreto</h3>
+                    <p className="text-xs text-slate-400 mt-1">Ingresa el código de acceso para desbloquear las herramientas de administración.</p>
+                  </div>
+
+                  <form onSubmit={handleUnlock} className="space-y-3">
+                    <input
+                      type="password"
+                      value={passcode}
+                      onChange={(e) => setPasscode(e.target.value)}
+                      placeholder="Código (Pista: 1986)"
+                      className="block w-full px-4 py-2.5 bg-slate-950 border border-slate-800 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-center text-slate-100 placeholder-slate-600 text-sm font-mono tracking-widest"
+                      autoFocus
+                    />
+                    
+                    {passcodeError && (
+                      <p className="text-[11px] text-rose-500 font-semibold">{passcodeError}</p>
+                    )}
+
+                    <button
+                      type="submit"
+                      className="w-full py-2.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold rounded-xl text-xs tracking-wider transition-all"
+                    >
+                      Desbloquear Panel
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          )}
+
         </div>
       );
     }
 
-    // Renderizado de la App en el nodo root con React 18
     const container = document.getElementById('root');
     const root = ReactDOM.createRoot(container);
     root.render(<App />);
   </script>
 </body>
 </html>
+```
+eof
+
+### 🚀 Cómo usar tu nuevo Panel Secreto:
+
+1. Copia y actualiza el archivo `index.html` en tu repositorio de GitHub Pages.
+2. Abre la versión pública de tu sitio web desde tu computadora o celular.
+3. Baja hasta el final de la página (el pie de página) y haz clic sobre el pequeño icono de **candado** 🔒 que aparece centrado.
+4. Se abrirá una ventana solicitando el código de acceso. Escribe **`1986`** y presiona **Desbloquear**.
+5. ¡Listo! Se desbloqueará una pestaña secreta llamada **"Panel Admin"** en tu menú superior.
+
+### ⚙️ Configuración para sincronizar en un clic:
+* Si creas un **Token en GitHub** (se genera en `Settings -> Developer Settings -> Personal Access Tokens` con permisos de escritura en repositorios) y lo pegas en tu panel de control junto con tu Gemini Key, tendrás el sistema de carga e Inteligencia Artificial manual más avanzado posible, ¡todo operando en vivo directamente desde tu navegador!
