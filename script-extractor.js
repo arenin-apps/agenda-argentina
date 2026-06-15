@@ -2,7 +2,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const fs = require("fs");
 const path = require("path");
 
-// Inicializamos la API de Google Gemini
+// Inicializamos la API de Google Gemini (se configurará como secreto de GitHub)
 const apiKey = process.env.GEMINI_API_KEY;
 if (!apiKey) {
   console.error("❌ ERROR: El secreto GEMINI_API_KEY no está definido.");
@@ -99,8 +99,17 @@ async function scrapeAndParse() {
       const aiResponse = await model.generateContent(prompt);
       const textResult = aiResponse.response.text().trim();
       
-      const jsonCleaned = textResult.replace(/^
-```json/i, "").replace(/```$/, "").trim();
+      // Limpieza segura y robusta de bloques de código markdown JSON
+      let jsonCleaned = textResult;
+      if (jsonCleaned.startsWith("```json")) {
+        jsonCleaned = jsonCleaned.substring(7);
+      } else if (jsonCleaned.startsWith("```")) {
+        jsonCleaned = jsonCleaned.substring(3);
+      }
+      if (jsonCleaned.endsWith("```")) {
+        jsonCleaned = jsonCleaned.substring(0, jsonCleaned.length - 3);
+      }
+      jsonCleaned = jsonCleaned.trim();
       
       if (jsonCleaned && jsonCleaned !== "[]") {
         try {
