@@ -1,3 +1,17 @@
+name: Rastreador de Eventos Argentinos
+
+on:
+schedule:
+- cron: '0 0 * * *'
+workflow_dispatch:
+
+permissions:
+contents: write
+
+jobs:
+scrape-and-update:
+runs-on: ubuntu-latest
+
 steps:
 - name: Checkout Repository
   uses: actions/checkout@v4
@@ -7,23 +21,19 @@ steps:
   with:
     node-version: '20'
 
-# STREAMING_CHUNK: Instalando la SDK de Inteligencia Artificial de Google...
 - name: Install Project Dependencies
   run: |
     npm init -y
     npm install @google/generative-ai
 
-# Se ejecuta tu script extractor inyectando la API KEY que configuraste en los secretos del repositorio
 - name: Run Script Extractor with Gemini AI
   env:
     GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
   run: node script-extractor.js
 
-# STREAMING_CHUNK: Guardando los cambios de forma automática en el repositorio...
 - name: Commit and Push Updated Events Database
   run: |
     git config --global user.name "github-actions[bot]"
     git config --global user.email "github-actions[bot]@users.noreply.github.com"
     git add eventos.json
-    # Solo realiza el commit si el archivo eventos.json sufrió cambios reales respecto al día anterior
     git diff-index --quiet HEAD || (git commit -m "🤖 [Bot] Actualización automática de eventos de Argentina en UK" && git push)
