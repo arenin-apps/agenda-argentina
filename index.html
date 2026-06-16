@@ -182,7 +182,7 @@
       { id: "src-livenation", name: "Live Nation", url: "https://www.livenation.co.uk/", queryHint: "Giras de artistas argentinos en salas británicas.", category: "Música" }
     ];
 
-    // Listado de eventos de respaldo
+    // Listado de eventos de respaldo con la información real de El Mató a un Policía Motorizado
     const fallbackEvents = [
       {
         id: "evt-tate-leparc",
@@ -341,9 +341,24 @@
         source: "TV Guide UK"
       },
       {
+        id: "evt-el-mato-camden",
+        title: "Como No presenta: El Mató a un Policía Motorizado",
+        date: "2026-08-05",
+        dateLabel: "MIÉRCOLES, 5 DE AGOSTO 2026 - 19:00 BST",
+        venue: "Electric Ballroom (Camden)",
+        city: "Londres",
+        region: "Inglaterra",
+        price: "£30.00",
+        link: "https://electricballroom.co.uk/el-mato-a-un-policia-motorizado/",
+        description: "La legendaria banda platense de indie rock e indie pop regresa a Londres para su concierto más grande en el místico recinto de Camden.",
+        category: "Música",
+        source: "Como No"
+      },
+      {
         id: "evt-bfi-horseplay",
         title: "Horseplay (2022, Dir. Marco Berger)",
         date: "2026-08-12",
+        endDate: "2026-08-20",
         dateLabel: "DISPONIBLE PARA STREAMING EN AGOSTO 2026",
         venue: "BFI Player (Suscripción)",
         city: "Nacional (UK)",
@@ -550,7 +565,7 @@
         "🛰️ [Allianz Stadium] Capturado enlace del fin de semana de finales de la Copa de Naciones.",
         "🛰️ [APARU & AAS] Descargando todos los eventos comunitarios sin filtro restrictivo.",
         "🧹 [Filtro Expiración] Omitiendo de forma estricta espectáculos antiguos de 2023.",
-        "🧠 [AI Parser] Enviando el código HTML depurado a Gemini 1.5 Flash para estructuración JSON...",
+        "🧠 [AI Parser] Enviando el código HTML depurado a Gemini 3.5 Flash para estructuración JSON...",
         "💾 [Parser] Verificando duplicados y colisiones de fechas de conciertos.",
         "✅ [Git] Guardando resultados en 'eventos.json' and push automático en main.",
         "🚀 [Deploy] Cambio publicado en GitHub Pages con éxito."
@@ -626,7 +641,8 @@
 
         if (geminiKey) {
           try {
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiKey}`, {
+            // Actualización del modelo a Gemini 3.5 Flash para evitar el error 404 de depreciación de 1.5 en 2026
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=${geminiKey}`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
@@ -670,7 +686,7 @@
             setEditEvent(parsed);
             setIsEditorVisible(true);
           } catch (err) {
-            // Detección especial de Adblocker/bloqueo de red
+            // Detección especial de Adblocker/bloqueo de red y problemas de API
             const isNetworkBlock = err.message && (err.message.includes('Failed to fetch') || err.message.includes('fetch'));
             const detailMsg = isNetworkBlock 
               ? 'Error de Red / CORS (Es altamente probable que un bloqueador de publicidad o Adblocker en tu navegador esté bloqueando la conexión directa con Google. Prueba desactivándolo en esta página o usando ventana de incógnito).' 
@@ -707,8 +723,20 @@
           source: 'Detección Manual'
         };
 
-        // Heurística de alta fidelidad para el partido de Argentina vs Austria en Metropolis Vauxhall
-        if (lower.includes('argentina') && lower.includes('austria')) {
+        // Heurística de alta fidelidad corregida con los datos verdaderos de la gira por el Reino Unido
+        if (lower.includes('mato') || lower.includes('policia-motorizado')) {
+          mockEvent.title = "Como No presenta: El Mató a un Policía Motorizado";
+          mockEvent.date = "2026-08-05";
+          mockEvent.dateLabel = "MIÉRCOLES, 5 DE AGOSTO 2026 - 19:00 BST";
+          mockEvent.venue = "Electric Ballroom (Camden)";
+          mockEvent.city = "Londres";
+          mockEvent.region = "Inglaterra";
+          mockEvent.price = "£30.00";
+          mockEvent.link = "https://electricballroom.co.uk/el-mato-a-un-policia-motorizado/";
+          mockEvent.description = "Hailing from La Plata, Argentina, El Mató returns to London for their biggest show to date in one of Camden's most iconic rock venues.";
+          mockEvent.category = "Música";
+          mockEvent.source = "Como No";
+        } else if (lower.includes('argentina') && lower.includes('austria')) {
           mockEvent.title = "Mundial 2026: Argentina vs Austria (En Vivo en Vauxhall)";
           mockEvent.date = "2026-06-22";
           mockEvent.dateLabel = "LUNES, 22 DE JUNIO 2026 - 18:00 BST";
@@ -727,16 +755,6 @@
           mockEvent.description = "El debut absoluto de los campeones del mundo en pantalla gigante.";
           mockEvent.category = "TV / Deportes";
           mockEvent.source = "Arenin UK";
-        } else if (lower.includes('mato') || lower.includes('policia-motorizado')) {
-          mockEvent.title = "El Mató a un Policía Motorizado en Vivo";
-          mockEvent.date = "2026-09-03";
-          mockEvent.dateLabel = "JUEVES, 3 DE SEPTIEMBRE 2026 - 19:00 BST";
-          mockEvent.venue = "Electric Brixton";
-          mockEvent.city = "Londres";
-          mockEvent.price = "Desde £25";
-          mockEvent.description = "La icónica banda platense de indie rock, El Mató a un Policía Motorizado, regresa al Reino Unido para un concierto histórico en Electric Brixton de la mano de la productora Como No.";
-          mockEvent.category = "Música";
-          mockEvent.source = "Como No";
         } else if (lower.includes('rugby') || lower.includes('pumas')) {
           mockEvent.title = "Los Pumas vs Inglaterra (Test Match)";
           mockEvent.category = "TV / Deportes";
@@ -1258,7 +1276,7 @@
                     <span>Estructura de Extracción Automatizada (script-extractor.js)</span>
                   </h3>
                   <p className="text-xs text-slate-400 mb-4">
-                    El script de NodeJS utiliza la SDK oficial de Google Generative AI para conectarse con Gemini 1.5 Flash, reduciendo drásticamente la tasa de fallos por rediseños visuales de los sitios.
+                    El script de NodeJS utiliza la SDK oficial de Google Generative AI para conectarse con Gemini 3.5 Flash, reduciendo drásticamente la tasa de fallos por rediseños visuales de los sitios.
                   </p>
                   <div className="bg-slate-950 p-4 rounded-xl border border-slate-800 font-mono text-xs text-slate-400 overflow-x-auto">
                     <pre>{`const { GoogleGenAI } = require("@google/generative-ai");
@@ -1266,7 +1284,7 @@ const fs = require("fs");
 
 async function scanAndParse() {
   const sources = getSourcesList(); 
-  console.log("Rastreando y parseando con Gemini 1.5 Flash...");
+  console.log("Rastreando y parseando con Gemini 3.5 Flash...");
   
   // Limpieza de expiración dinámica estricta
   const currentDate = new Date("2026-06-15");
@@ -1381,7 +1399,7 @@ async function scanAndParse() {
 
                         <div className="flex items-center justify-between">
                           <span className="text-[10px] text-slate-500">
-                            {geminiKey ? "Integrado con tu clave API de Gemini" : "Modo simulación (sin API Key)"}
+                            {geminiKey ? "Integrado con tu clave API de Gemini 3.5" : "Modo simulación (sin API Key)"}
                           </span>
                           <button
                             type="submit"
@@ -1560,7 +1578,7 @@ async function scanAndParse() {
                     ) : (
                       <div className="h-full border border-dashed border-slate-800 rounded-2xl flex flex-col items-center justify-center p-8 text-center text-slate-500">
                         <Sparkles className="h-8 w-8 mb-2 text-slate-600 animate-pulse" />
-                        <p className="text-xs">Los detalles del evento de la IA aparecerán aquí una vez completado el paso 1.</p>
+                        <p className="text-xs">Los detalles del evento estructurado aparecerán aquí una vez completado el paso 1.</p>
                       </div>
                     )}
                   </div>
