@@ -182,7 +182,7 @@
       { id: "src-livenation", name: "Live Nation", url: "https://www.livenation.co.uk/", queryHint: "Giras de artistas argentinos en salas británicas.", category: "Música" }
     ];
 
-    // Listado de eventos actualizado de la temporada activa (15 Jun - 15 Dic 2026) con "endDate" para expiración automática
+    // Listado de eventos de respaldo
     const fallbackEvents = [
       {
         id: "evt-tate-leparc",
@@ -392,7 +392,7 @@
         region: "Inglaterra",
         price: "Desde £28",
         link: "https://www.livenation.co.uk/ca7riel-and-paco-amoroso-tickets-adp1554639",
-        description: "La dupla de trap, electrónica y música urbana experimental más picante de Argentina en el mítico O2 Academy Brixton.",
+        description: "La dupla de trap, electrónica y música urbana experimental más picante de Argentina en el místico O2 Academy Brixton.",
         category: "Música",
         source: "Live Nation"
       },
@@ -829,9 +829,9 @@
       return (
         <div className="min-h-screen bg-slate-950 text-slate-100 font-sans antialiased">
           
-          {/* HEADER SECTION - Rediseñado responsivo con Swipe en móviles */}
+          {/* HEADER SECTION - Optimizado con px-3 en móviles para un mejor aprovechamiento de pantalla */}
           <header className="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-50">
-            <div className="max-w-7xl mx-auto px-4 py-3 sm:py-0 sm:h-20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-0 sm:h-20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               
               {/* Marca y Logotipo responsivos */}
               <div className="flex items-center space-x-3">
@@ -924,13 +924,13 @@
             </div>
           </div>
 
-          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <main className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6">
             
             {/* TAB 1: CARTELERA DE EVENTOS */}
             {activeTab === 'agenda' && (
               <div>
                 {/* Filtering Box Container */}
-                <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-6 mb-8 shadow-xl">
+                <div className="bg-slate-900 border border-slate-800 rounded-2xl p-3 sm:p-6 mb-8 shadow-xl">
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
                     
                     {/* Search Input Box */}
@@ -1525,7 +1525,7 @@ async function scanAndParse() {
 
           {/* FOOTER */}
           <footer className="bg-slate-950 border-t border-slate-900 py-12 mt-16 text-slate-500">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs space-y-4">
+            <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 text-center text-xs space-y-4">
               <p>© 2026 - Agenda Cultural Argentina en UK. Proyecto libre y comunitario.</p>
               
               {/* Subtle administrative access toggle lock icon */}
@@ -1598,3 +1598,37 @@ async function scanAndParse() {
   </script>
 </body>
 </html>
+```
+eof
+
+---
+
+### 💻 ¿Cómo eliminar definitivamente los bordes blancos en tu WordPress?
+
+Para saltarte los márgenes de contenido que te impone el tema visual de WordPress, reemplaza el antiguo bloque HTML de WordPress con este nuevo código **"Breakout"**. Este código fuerza al contenedor oscuro a expandirse de extremo a extremo exactamente al **100% del ancho del dispositivo en celulares** y a conservar una visualización elegante con esquinas redondeadas en computadoras:
+
+```html
+<!-- Contenedor Breakout de Ancho Completo Absoluto -->
+<div class="agenda-breakout-container" style="position: relative; width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); left: 0; right: 0; overflow: hidden; padding-top: 420%; background-color: #030712; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);">
+  <iframe 
+    style="position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; border: none;" 
+    title="Agenda Cultural Argentina en UK" 
+    src="https://arenin-apps.github.io/agenda-argentina/" 
+    allowfullscreen="allowfullscreen">
+  </iframe>
+</div>
+
+<style>
+  /* En pantallas de computadoras, devolvemos la agenda a un formato estético centrado */
+  @media (min-width: 768px) {
+    .agenda-breakout-container {
+      width: 99% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      left: auto !important;
+      right: auto !important;
+      padding-top: 75% !important;
+      border-radius: 16px;
+    }
+  }
+</style>
