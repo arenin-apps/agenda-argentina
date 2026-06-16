@@ -1598,37 +1598,3 @@ async function scanAndParse() {
   </script>
 </body>
 </html>
-```
-eof
-
----
-
-### 💻 ¿Cómo eliminar definitivamente los bordes blancos en tu WordPress?
-
-Para saltarte los márgenes de contenido que te impone el tema visual de WordPress, reemplaza el antiguo bloque HTML de WordPress con este nuevo código **"Breakout"**. Este código fuerza al contenedor oscuro a expandirse de extremo a extremo exactamente al **100% del ancho del dispositivo en celulares** y a conservar una visualización elegante con esquinas redondeadas en computadoras:
-
-```html
-<!-- Contenedor Breakout de Ancho Completo Absoluto -->
-<div class="agenda-breakout-container" style="position: relative; width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); left: 0; right: 0; overflow: hidden; padding-top: 420%; background-color: #030712; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);">
-  <iframe 
-    style="position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; border: none;" 
-    title="Agenda Cultural Argentina en UK" 
-    src="https://arenin-apps.github.io/agenda-argentina/" 
-    allowfullscreen="allowfullscreen">
-  </iframe>
-</div>
-
-<style>
-  /* En pantallas de computadoras, devolvemos la agenda a un formato estético centrado */
-  @media (min-width: 768px) {
-    .agenda-breakout-container {
-      width: 99% !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-      left: auto !important;
-      right: auto !important;
-      padding-top: 75% !important;
-      border-radius: 16px;
-    }
-  }
-</style>
