@@ -867,29 +867,34 @@
                   </div>
                 </button>
 
-                <button
-                  onClick={() => setActiveTab('canales')}
-                  className={`px-3 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all shrink-0 ${
-                    activeTab === 'canales' ? 'bg-slate-800 text-white border border-slate-700' : 'text-slate-400 hover:bg-slate-900'
-                  }`}
-                >
-                  <div className="flex items-center space-x-1.5">
-                    <Share2 className="h-3.5 w-3.5 text-emerald-400" />
-                    <span>Canales ({sources.length})</span>
-                  </div>
-                </button>
+                {/* Secciones de administración ocultadas del visitante general, solo visibles tras el desbloqueo */}
+                {isAdminUnlocked && (
+                  <button
+                    onClick={() => setActiveTab('canales')}
+                    className={`px-3 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all shrink-0 ${
+                      activeTab === 'canales' ? 'bg-slate-800 text-white border border-slate-700' : 'text-slate-400 hover:bg-slate-900'
+                    }`}
+                  >
+                    <div className="flex items-center space-x-1.5">
+                      <Share2 className="h-3.5 w-3.5 text-emerald-400" />
+                      <span>Canales ({sources.length})</span>
+                    </div>
+                  </button>
+                )}
 
-                <button
-                  onClick={() => setActiveTab('terminal')}
-                  className={`px-3 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all shrink-0 ${
-                    activeTab === 'terminal' ? 'bg-slate-800 text-white border border-slate-700' : 'text-slate-400 hover:bg-slate-900'
-                  }`}
-                >
-                  <div className="flex items-center space-x-1.5">
-                    <Terminal className="h-3.5 w-3.5 text-indigo-400" />
-                    <span>Consola Bot</span>
-                  </div>
-                </button>
+                {isAdminUnlocked && (
+                  <button
+                    onClick={() => setActiveTab('terminal')}
+                    className={`px-3 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all shrink-0 ${
+                      activeTab === 'terminal' ? 'bg-slate-800 text-white border border-slate-700' : 'text-slate-400 hover:bg-slate-900'
+                    }`}
+                  >
+                    <div className="flex items-center space-x-1.5">
+                      <Terminal className="h-3.5 w-3.5 text-indigo-400" />
+                      <span>Consola Bot</span>
+                    </div>
+                  </button>
+                )}
 
                 {isAdminUnlocked && (
                   <button
@@ -1136,8 +1141,8 @@
               </div>
             )}
 
-            {/* TAB 2: LISTADO DE FUENTES DE RASTREO */}
-            {activeTab === 'canales' && (
+            {/* TAB 2: LISTADO DE FUENTES DE RASTREO (Solo accesible tras el desbloqueo del Admin) */}
+            {activeTab === 'canales' && isAdminUnlocked && (
               <div>
                 <div className="mb-6">
                   <h2 className="text-2xl font-extrabold text-white">Canales y Buscadores Integrados en el Scraper</h2>
@@ -1181,8 +1186,8 @@
               </div>
             )}
 
-            {/* TAB 3: CONSOLA DE PIPELINE AUTOMÁTICO */}
-            {activeTab === 'terminal' && (
+            {/* TAB 3: CONSOLA DE PIPELINE AUTOMÁTICO (Solo accesible tras el desbloqueo del Admin) */}
+            {activeTab === 'terminal' && isAdminUnlocked && (
               <div className="space-y-6">
                 <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
                   <div className="flex items-center justify-between mb-4">
@@ -1301,7 +1306,7 @@ async function scanAndParse() {
                 {/* Master input URL feed extraction card */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                   <div className="lg:col-span-6 space-y-6">
-                    <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+                    <div className="bg-slate-900 p-6 rounded-xl border border-slate-850">
                       <h3 className="text-lg font-bold text-white mb-2 flex items-center space-x-2">
                         <Sparkles className="h-5 w-5 text-emerald-400" />
                         <span>Analizar & Alimentar Evento</span>
@@ -1541,7 +1546,7 @@ async function scanAndParse() {
             </div>
           </footer>
 
-          {/* PASSCODE MODAL DIALOG */}
+          {/* PASSCODE MODAL DIALOG - Sin pistas visuales ni texto delator */}
           {isLockModalOpen && (
             <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center bg-slate-950/90 backdrop-blur-sm p-4">
               <div className="bg-slate-900 border border-slate-800 rounded-2xl max-w-sm w-full p-6 shadow-2xl relative">
