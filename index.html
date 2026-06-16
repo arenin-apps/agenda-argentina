@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agenda Cultural Argentina en UK - Automático 2026</title>
   
+  <!-- Tailwind CSS CDN para Estilos y Animaciones -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -22,6 +23,18 @@
     }
   </script>
 
+  <!-- Estilos CSS personalizados para mejorar el comportamiento responsivo en móviles -->
+  <style>
+    /* Ocultar barra de desplazamiento en contenedores deslizables en móviles */
+    .scrollbar-none::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-none {
+      -ms-overflow-style: none;  /* IE y Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+  </style>
+
   <!-- React 18 & ReactDOM 18 CDN -->
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
@@ -34,7 +47,9 @@
   <!-- Contenedor donde se montará la App -->
   <div id="root"></div>
 
+  <!-- Código React (Transpilado por Babel en el navegador) -->
   <script type="text/babel">
+    // Componentes de Iconos SVG nativos de React
     const Calendar = (props) => (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
         <path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>
@@ -143,6 +158,7 @@
       </svg>
     );
 
+    // Listado de fuentes autorizadas
     const sources = [
       { id: "src-tate", name: "Tate Modern", url: "https://www.tate.org.uk/search?q=argentin", queryHint: "Busca 'argentin' para arte cinético, retrospectivas e instalaciones.", category: "Museos & Galerías" },
       { id: "src-blanco", name: "Blanco Gallery", url: "https://www.blancogallery.com/", queryHint: "Ingresa a cada muestra usando 'find out more' para comprobar la nacionalidad de los artistas.", category: "Museos & Galerías" },
@@ -166,6 +182,7 @@
       { id: "src-livenation", name: "Live Nation", url: "https://www.livenation.co.uk/", queryHint: "Giras de artistas argentinos en salas británicas.", category: "Música" }
     ];
 
+    // Listado de eventos actualizado de la temporada activa (15 Jun - 15 Dic 2026) con "endDate" para expiración automática
     const fallbackEvents = [
       {
         id: "evt-tate-leparc",
@@ -352,30 +369,30 @@
         source: "BFI Player"
       },
       {
-        id: "evt-ca7riel-paco-manchester",
-        title: "Ca7riel & Paco Amoroso - Free Spirits World Tour (Manchester)",
+        id: "evt-ca7riel-manchester",
+        title: "Ca7riel & Paco Amoroso - Baño María Tour (Manchester)",
         date: "2026-08-31",
         dateLabel: "LUNES, 31 DE AGOSTO 2026 - 19:00 BST",
         venue: "O2 Apollo Manchester",
         city: "Manchester",
         region: "Inglaterra",
-        price: "Desde £47.35",
+        price: "Desde £28",
         link: "https://www.livenation.co.uk/ca7riel-and-paco-amoroso-tickets-adp1554639",
-        description: "La dupla más disruptiva e impredecible de la escena musical argentina actual presenta su gira mundial 'Free Spirits' en el O2 Apollo de Manchester.",
+        description: "La explosiva dupla de trap, electrónica y pop experimental argentino se presenta en Manchester.",
         category: "Música",
         source: "Live Nation"
       },
       {
-        id: "evt-ca7riel-paco-london",
-        title: "Ca7riel & Paco Amoroso - Free Spirits World Tour (Londres)",
+        id: "evt-ca7riel-london",
+        title: "Ca7riel & Paco Amoroso - Baño María Tour (Londres)",
         date: "2026-09-02",
         dateLabel: "MIÉRCOLES, 2 DE SEPTIEMBRE 2026 - 19:00 BST",
         venue: "O2 Academy Brixton",
         city: "Londres",
         region: "Inglaterra",
-        price: "Desde £50",
+        price: "Desde £28",
         link: "https://www.livenation.co.uk/ca7riel-and-paco-amoroso-tickets-adp1554639",
-        description: "El místico show de la dupla argentina que revolucionó el NPR Tiny Desk llega al legendario O2 Academy Brixton en Londres para presentar BAÑO MARÍA y FREE SPIRITS.",
+        description: "La dupla de trap, electrónica y música urbana experimental más picante de Argentina en el mítico O2 Academy Brixton.",
         category: "Música",
         source: "Live Nation"
       },
@@ -773,6 +790,7 @@
             console.log("No existente eventos.json preliminar.");
           }
 
+          // Unir el evento nuevo
           const merged = [...events];
           if (!merged.some(e => e.title === editEvent.title && e.date === editEvent.date)) {
             merged.unshift(editEvent);
@@ -811,57 +829,64 @@
       return (
         <div className="min-h-screen bg-slate-950 text-slate-100 font-sans antialiased">
           
-          {/* HEADER SECTION */}
-          <header className="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+          {/* HEADER SECTION - Rediseñado responsivo con Swipe en móviles */}
+          <header className="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-50">
+            <div className="max-w-7xl mx-auto px-4 py-3 sm:py-0 sm:h-20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              
+              {/* Marca y Logotipo responsivos */}
               <div className="flex items-center space-x-3">
-                <div className="bg-sky-500 p-2 rounded-xl text-slate-950 shadow-lg shadow-sky-500/20">
-                  <Compass className="h-6 w-6" />
+                <div className="bg-sky-500 p-2 rounded-xl text-slate-950 shadow-lg shadow-sky-500/20 shrink-0">
+                  <Compass className="h-5 w-5 sm:h-6 sm:w-6" />
                 </div>
-                <div>
-                  <div className="flex items-center space-x-2">
-                    <h1 className="font-extrabold text-lg sm:text-xl tracking-tight text-white">ARGENTINA EN UK</h1>
-                    <span className="bg-sky-500/10 text-sky-400 text-[10px] font-bold px-2 py-0.5 rounded-full border border-sky-500/20">
+                <div className="min-w-0">
+                  <div className="flex items-center flex-wrap gap-1.5">
+                    <h1 className="font-extrabold text-[15px] xs:text-base sm:text-lg md:text-xl tracking-tight text-white uppercase">
+                      Argentina en UK
+                    </h1>
+                    <span className="bg-sky-500/10 text-sky-400 text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded-full border border-sky-500/20 whitespace-nowrap">
                       AUTOMÁTICO 2026
                     </span>
                   </div>
-                  <p className="text-xs text-slate-400">Agenda Cultural & Deportiva Unificada • Filtro Dinámico de Expiración</p>
+                  <p className="text-[10px] sm:text-xs text-slate-400 truncate">
+                    Agenda Cultural & Deportiva • Filtro de Expiración
+                  </p>
                 </div>
               </div>
 
-              <nav className="flex items-center space-x-1 sm:space-x-2">
+              {/* Navegación horizontal swipeable en móviles (scrollbar oculto) */}
+              <nav className="flex items-center space-x-1 overflow-x-auto pb-1 sm:pb-0 scroll-smooth scrollbar-none shrink-0">
                 <button
                   onClick={() => setActiveTab('agenda')}
-                  className={`px-3 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
+                  className={`px-3 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all shrink-0 ${
                     activeTab === 'agenda' ? 'bg-slate-800 text-white border border-slate-700' : 'text-slate-400 hover:bg-slate-900'
                   }`}
                 >
                   <div className="flex items-center space-x-1.5">
-                    <Calendar className="h-4 w-4 text-sky-400" />
+                    <Calendar className="h-3.5 w-3.5 text-sky-400" />
                     <span>Próximos Eventos</span>
                   </div>
                 </button>
 
                 <button
                   onClick={() => setActiveTab('canales')}
-                  className={`px-3 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
+                  className={`px-3 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all shrink-0 ${
                     activeTab === 'canales' ? 'bg-slate-800 text-white border border-slate-700' : 'text-slate-400 hover:bg-slate-900'
                   }`}
                 >
                   <div className="flex items-center space-x-1.5">
-                    <Share2 className="h-4 w-4 text-emerald-400" />
+                    <Share2 className="h-3.5 w-3.5 text-emerald-400" />
                     <span>Canales ({sources.length})</span>
                   </div>
                 </button>
 
                 <button
                   onClick={() => setActiveTab('terminal')}
-                  className={`px-3 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
+                  className={`px-3 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all shrink-0 ${
                     activeTab === 'terminal' ? 'bg-slate-800 text-white border border-slate-700' : 'text-slate-400 hover:bg-slate-900'
                   }`}
                 >
                   <div className="flex items-center space-x-1.5">
-                    <Terminal className="h-4 w-4 text-indigo-400" />
+                    <Terminal className="h-3.5 w-3.5 text-indigo-400" />
                     <span>Consola Bot</span>
                   </div>
                 </button>
@@ -869,41 +894,41 @@
                 {isAdminUnlocked && (
                   <button
                     onClick={() => setActiveTab('admin-panel')}
-                    className={`px-3 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
-                      activeTab === 'admin-panel' ? 'bg-emerald-500 text-slate-950 font-bold border border-emerald-400' : 'text-emerald-400 hover:bg-slate-900'
+                    className={`px-3 py-2 rounded-lg text-xs font-bold tracking-wide transition-all shrink-0 ${
+                      activeTab === 'admin-panel' ? 'bg-emerald-500 text-slate-950 border border-emerald-400' : 'text-emerald-400 hover:bg-slate-900'
                     }`}
                   >
                     <div className="flex items-center space-x-1.5">
-                      <Unlock className="h-4 w-4" />
+                      <Unlock className="h-3.5 w-3.5 animate-pulse" />
                       <span>Panel Admin</span>
                     </div>
                   </button>
                 )}
               </nav>
+
             </div>
           </header>
 
           {/* INFORMATIONAL BANNER */}
           <div className="bg-gradient-to-r from-sky-950 via-slate-900 to-indigo-950 border-b border-sky-900/30 py-3 px-4">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-2 text-xs">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-2 text-[11px] sm:text-xs">
               <div className="flex items-center space-x-2 text-sky-200">
                 <Info className="h-4 w-4 text-sky-400 shrink-0" />
                 <span>
-                  <strong>Control Inteligente de Fechas:</strong> Los eventos que ya ocurrieron se ocultan automáticamente de la lista para mantener tu cartelera limpia.
+                  <strong>Control Inteligente de Fechas:</strong> Los espectáculos ya finalizados se ocultan de la grilla de manera automática.
                 </span>
               </div>
-              <div className="bg-sky-500/10 border border-sky-500/30 text-sky-300 px-3 py-1 rounded-full font-mono text-[11px] self-start md:self-auto">
-                Estado: Sincronizado
+              <div className="bg-sky-500/10 border border-sky-500/30 text-sky-300 px-3 py-0.5 rounded-full font-mono text-[10px] self-start md:self-auto">
+                Sincronizado
               </div>
             </div>
           </div>
 
-          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             
             {/* TAB 1: CARTELERA DE EVENTOS */}
             {activeTab === 'agenda' && (
               <div>
-                {}
                 {/* Filtering Box Container */}
                 <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-6 mb-8 shadow-xl">
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
@@ -997,7 +1022,6 @@
                   </div>
                 </div>
 
-                {}
                 {/* Event Grid Listing - Column Única Optimizada para Móviles */}
                 <div className="space-y-6">
                   {filteredEvents.length === 0 ? (
@@ -1020,7 +1044,7 @@
                                         evt.venue.toLowerCase().includes("streaming") ||
                                         evt.city.toLowerCase().includes("nacional");
 
-                      // Recinto limpio sin prefijos duplicados del canal organizador (De Puta Madre, AAS, etc. removidos de la dirección)
+                      // Recinto limpio sin prefijos duplicados del canal organizador
                       const locationName = evt.venue;
 
                       // Enlace dinámico robusto a Google Maps para locales físicos
@@ -1073,7 +1097,6 @@
                               </div>
                             </div>
 
-                            {}
                             {/* 4. Nombre Completo del Venue y enlace a Google Maps */}
                             <div className="flex items-start space-x-2.5 text-slate-300 text-xs sm:text-sm">
                               <MapPin className="h-5 w-5 text-rose-500 shrink-0 mt-0.5" />
@@ -1123,7 +1146,6 @@
                   </p>
                 </div>
 
-                {}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {sources.map((src) => (
                     <div key={src.id} className="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between">
@@ -1185,7 +1207,6 @@
                     Este panel simula la consola de logs del servidor ejecutando el script automático <span className="font-mono text-slate-300">script-extractor.js</span> todos los días a las 00:00 UTC en las fuentes indicadas. Si halla eventos nuevos, abre un Pull Request estructurado.
                   </p>
 
-                  {}
                   {/* CONSOLA DIGITAL */}
                   <div className="bg-slate-950 rounded-xl border border-slate-800 p-4 font-mono text-[11px] sm:text-xs text-slate-300 space-y-1.5 overflow-x-auto min-h-[300px]">
                     <div className="text-slate-500 pb-2 border-b border-slate-900 mb-2 flex items-center justify-between">
@@ -1233,7 +1254,6 @@ async function scanAndParse() {
             {activeTab === 'admin-panel' && isAdminUnlocked && (
               <div className="space-y-8 animate-fade-in">
                 
-                {}
                 {/* Credentials & Access configuration card */}
                 <div className="bg-slate-900 border-2 border-emerald-500/30 rounded-2xl p-6 shadow-xl">
                   <h2 className="text-xl font-bold text-emerald-400 mb-4 flex items-center space-x-2">
@@ -1278,7 +1298,6 @@ async function scanAndParse() {
                   </div>
                 </div>
 
-                {}
                 {/* Master input URL feed extraction card */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                   <div className="lg:col-span-6 space-y-6">
@@ -1338,7 +1357,6 @@ async function scanAndParse() {
                     </div>
                   </div>
 
-                  {}
                   {/* Real-time editor Form */}
                   <div className="lg:col-span-6">
                     {isEditorVisible ? (
@@ -1508,7 +1526,7 @@ async function scanAndParse() {
           {/* FOOTER */}
           <footer className="bg-slate-950 border-t border-slate-900 py-12 mt-16 text-slate-500">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs space-y-4">
-              <p>© 2026 - ARenIN - Agenda Cultural Agenda en UK. Proyecto libre y comunitario.</p>
+              <p>© 2026 - Agenda Cultural Argentina en UK. Proyecto libre y comunitario.</p>
               
               {/* Subtle administrative access toggle lock icon */}
               <div className="flex justify-center items-center space-x-2 pt-2">
@@ -1523,7 +1541,6 @@ async function scanAndParse() {
             </div>
           </footer>
 
-          {}
           {/* PASSCODE MODAL DIALOG */}
           {isLockModalOpen && (
             <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center bg-slate-950/90 backdrop-blur-sm p-4">
@@ -1550,7 +1567,7 @@ async function scanAndParse() {
                       type="password"
                       value={passcode}
                       onChange={(e) => setPasscode(e.target.value)}
-                      placeholder="Código"
+                      placeholder="Código de acceso"
                       className="block w-full px-4 py-2.5 bg-slate-950 border border-slate-800 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-center text-slate-100 placeholder-slate-600 text-sm font-mono tracking-widest"
                       autoFocus
                     />
@@ -1581,4 +1598,3 @@ async function scanAndParse() {
   </script>
 </body>
 </html>
-
