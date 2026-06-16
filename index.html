@@ -542,7 +542,7 @@
         "🛰️ [Tate Modern] Analizando 'argentin' -> Julio Le Parc detectado con éxito.",
         "🛰️ [Blanco Gallery] Ingresando en exhibiciones mediante 'find out more' -> Majo Caporaletti detectado.",
         "🛰️ [BFI Player] Aislando links profundos de Berger y proyecciones históricas.",
-        "🛰️ [TV Guide UK] Executando Google Dorking para extraer enlace de Colapinto.",
+        "🛰️ [TV Guide UK] Ejecutando Google Dorking para extraer enlace de Colapinto.",
         "🛰️ [Nations Championship] Descargando fixture de Los Pumas en Twickenham.",
         "🛰️ [Allianz Stadium] Capturado enlace del fin de semana de finales de la Copa de Naciones.",
         "🛰️ [APARU & AAS] Descargando todos los eventos comunitarios sin filtro restrictivo.",
@@ -653,7 +653,11 @@
               })
             });
 
-            if (!response.ok) throw new Error("Fallo de conexión o API Key inválida.");
+            if (!response.ok) {
+              const errData = await response.json().catch(() => ({}));
+              const errMsg = errData.error?.message || `HTTP Error ${response.status}`;
+              throw new Error(errMsg);
+            }
             const data = await response.json();
             const aiText = data.candidates[0].content.parts[0].text.trim();
             
@@ -663,7 +667,12 @@
             setEditEvent(parsed);
             setIsEditorVisible(true);
           } catch (err) {
-            setFeedError(`Fallo de Extracción Real: ${err.message}. Cargando simulación inteligente de alta precisión...`);
+            // Detección especial de Adblocker/bloqueo de red
+            const isNetworkBlock = err.message && (err.message.includes('Failed to fetch') || err.message.includes('fetch'));
+            const detailMsg = isNetworkBlock 
+              ? 'Error de Red / CORS (Es altamente probable que un bloqueador de publicidad o Adblocker en tu navegador esté bloqueando la conexión directa con Google. Prueba desactivándolo en esta página o usando ventana de incógnito).' 
+              : err.message;
+            setFeedError(`Fallo de Extracción Real (${err.name || 'Error'}): ${detailMsg}. Cargando simulación inteligente de alta precisión...`);
             triggerMockExtraction();
           } finally {
             setIsFeedExtracting(false);
@@ -715,6 +724,16 @@
           mockEvent.description = "El debut absoluto de los campeones del mundo en pantalla gigante.";
           mockEvent.category = "TV / Deportes";
           mockEvent.source = "Arenin UK";
+        } else if (lower.includes('mato') || lower.includes('policia-motorizado')) {
+          mockEvent.title = "El Mató a un Policía Motorizado en Vivo";
+          mockEvent.date = "2026-09-03";
+          mockEvent.dateLabel = "JUEVES, 3 DE SEPTIEMBRE 2026 - 19:00 BST";
+          mockEvent.venue = "Electric Brixton";
+          mockEvent.city = "Londres";
+          mockEvent.price = "Desde £25";
+          mockEvent.description = "La icónica banda platense de indie rock, El Mató a un Policía Motorizado, regresa al Reino Unido para un concierto histórico en Electric Brixton de la mano de la productora Como No.";
+          mockEvent.category = "Música";
+          mockEvent.source = "Como No";
         } else if (lower.includes('rugby') || lower.includes('pumas')) {
           mockEvent.title = "Los Pumas vs Inglaterra (Test Match)";
           mockEvent.category = "TV / Deportes";
@@ -854,7 +873,7 @@
               </div>
 
               {/* Navegación horizontal swipeable en móviles (scrollbar oculto) */}
-              <nav className="flex items-center space-x-1 overflow-x-auto pb-1 sm:pb-0 scroll-smooth scrollbar-none shrink-0">
+              <nav className="flex items-center space-x-1 overflow-x-auto pb-1 sm:pb-0 scroll-smooth scroll-smooth scrollbar-none shrink-0">
                 <button
                   onClick={() => setActiveTab('agenda')}
                   className={`px-3 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all shrink-0 ${
@@ -1517,7 +1536,7 @@ async function scanAndParse() {
                     ) : (
                       <div className="h-full border border-dashed border-slate-800 rounded-2xl flex flex-col items-center justify-center p-8 text-center text-slate-500">
                         <Sparkles className="h-8 w-8 mb-2 text-slate-600 animate-pulse" />
-                        <p className="text-xs">Los detalles del evento estructurado aparecerán aquí una vez completado el paso 1.</p>
+                        <p className="text-xs">Los detalles del evento de la IA aparecerán aquí una vez completado el paso 1.</p>
                       </div>
                     )}
                   </div>
