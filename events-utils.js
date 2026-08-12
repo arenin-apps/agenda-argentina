@@ -114,8 +114,18 @@ function normalizeText(str) {
     .trim();
 }
 
+// FIX 2: el título puede venir redactado de formas MUY distintas para el
+// mismo evento puntual (ej. "FRA VS ARG" vs "France vs Argentina (FRA vs
+// ARG)" vs "France vs Argentina" — mismo partido, mismo venue, misma
+// fecha exacta). Para eventos de una sola fecha, venue+fecha es una señal
+// mucho más confiable que el título. Si no hay venue, usamos título+fecha
+// como respaldo.
 function eventKey(evt) {
-  return `${normalizeText(evt.title)}_${normalizeText(evt.venue)}`;
+  const venue = normalizeText(evt.venue);
+  if (venue) {
+    return `venue:${venue}_${evt.date}`;
+  }
+  return `title:${normalizeText(evt.title)}_${evt.date}`;
 }
 
 // Combina eventos existentes con nuevos, descarta duplicados (mismo
