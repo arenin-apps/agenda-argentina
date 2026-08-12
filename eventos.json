@@ -13,32 +13,6 @@
     "source": "Tate Modern"
   },
   {
-    "title": "Soma",
-    "date": "2026-08-12",
-    "dateLabel": "MIÉRCOLES, 12 DE AGOSTO 2026",
-    "venue": "Blanco Gallery",
-    "city": "Londres",
-    "region": "Greater London",
-    "price": "Entrada Libre",
-    "link": "https://www.blancogallery.com/",
-    "description": "Exhibición curada por Adela Blanco que presenta obras de la artista argentina Nina González-Park junto a Celia Mora.",
-    "category": "Artes Plásticas",
-    "source": "Blanco Gallery"
-  },
-  {
-    "title": "Dreamscapes",
-    "date": "2026-08-12",
-    "dateLabel": "MIÉRCOLES, 12 DE AGOSTO 2026",
-    "venue": "Blanco Gallery",
-    "city": "Londres",
-    "region": "Greater London",
-    "price": "Entrada Libre",
-    "link": "https://www.blancogallery.com/",
-    "description": "Muestra de videos y proyecciones que incluye la participación del artista argentino Matías Ruarte.",
-    "category": "Cine",
-    "source": "Blanco Gallery"
-  },
-  {
     "title": "A Levitating Territory - Majo Caporaletti & Vicky Polak",
     "date": "2026-08-12",
     "dateLabel": "AGOSTO 2026",
@@ -52,31 +26,17 @@
     "source": "Blanco Gallery"
   },
   {
-    "title": "A Levitating Territory",
-    "date": "2026-08-28",
-    "dateLabel": "VIERNES, 28 DE AGOSTO 2026",
-    "venue": "Blanco Gallery",
-    "city": "Londres",
-    "region": "Greater London",
-    "price": "Entrada Libre",
-    "link": "https://www.blancogallery.com/",
-    "description": "Exhibición de arte contemporáneo curada por Adela Blanco que incluye obras de las artistas argentinas Majo Caporaletti y Vicky Polak.",
-    "category": "Artes Plásticas",
-    "source": "Blanco Gallery"
-  },
-  {
-    "title": "Finders Keepers",
-    "date": "2026-08-28",
-    "dateLabel": "JUEVES, 28 DE AGOSTO 2026",
-    "venue": "Blanco Gallery",
-    "city": "Londres",
-    "region": "Greater London",
-    "price": "Entrada Libre",
-    "link": "https://www.blancogallery.com/finderskeepers",
-    "dateRange": "28.08.26 to 20.09.26",
-    "description": "Exhibición curada por Adela Blanco que incluye a artistas argentinos/latinoamericanos en Blanco Gallery.",
-    "category": "Artes Plásticas",
-    "source": "Blanco Gallery"
+    "title": "Nine Queens",
+    "date": "2026-08-12",
+    "dateLabel": "MIÉRCOLES, 12 DE AGOSTO 2026 - 00:00",
+    "venue": "Curzon Home Cinema",
+    "city": "Online",
+    "region": "Reino Unido",
+    "price": "Consultar web",
+    "link": "https://homecinema.curzon.com/film/nine-queens/",
+    "description": "Proyección en streaming de la aclamada película argentina 'Nueve reinas' (2000), dirigida por Fabián Bielinsky.",
+    "category": "Cine",
+    "source": "Curzon Cinema"
   },
   {
     "title": "Finders Keepers - Charly Helyar, Eloïse Dethier-Eaton (Curated by Adela Blanco)",
@@ -209,32 +169,6 @@
     "source": "Extracción manual"
   },
   {
-    "title": "IRE VS ARG",
-    "date": "2026-11-06",
-    "dateLabel": "VIERNES, 06 DE NOVIEMBRE 2026 - 20:10",
-    "venue": "Aviva Stadium",
-    "city": "Dublin",
-    "region": "Irlanda",
-    "price": "Consultar web oficial",
-    "link": "https://nationschampionshiprugby.com/en",
-    "description": "Partido de rugby del torneo Nations Championship entre Irlanda y Los Pumas (Argentina), correspondiente a la Ronda 4.",
-    "category": "Deportes",
-    "source": "Nations Championship Rugby"
-  },
-  {
-    "title": "Ireland vs Argentina (IRE vs ARG)",
-    "date": "2026-11-06",
-    "dateLabel": "VIERNES, 06 DE NOVIEMBRE 2026 - 20:10",
-    "venue": "Aviva Stadium",
-    "city": "Dublín",
-    "region": "Leinster",
-    "price": "Consultar web oficial",
-    "link": "https://nationschampionshiprugby.com/en",
-    "description": "Partido de rugby de la Nations Championship entre las selecciones de Irlanda y Argentina (Los Pumas).",
-    "category": "Deportes",
-    "source": "Nations Championship Rugby"
-  },
-  {
     "title": "Ireland vs Argentina",
     "date": "2026-11-06",
     "dateLabel": "VIERNES, 06 DE NOVIEMBRE 2026 - 20:10",
@@ -261,45 +195,6 @@
     "source": "SRG (sergius.uk)"
   },
   {
-    "title": "ITA VS ARG",
-    "date": "2026-11-14",
-    "dateLabel": "SÁBADO, 14 DE NOVIEMBRE 2026 - 12:40",
-    "venue": "Stadio Luigi Ferraris",
-    "city": "Genova",
-    "region": "Italia",
-    "price": "Consultar web oficial",
-    "link": "https://nationschampionshiprugby.com/en",
-    "description": "Partido de rugby del torneo Nations Championship entre Italia y Los Pumas (Argentina), correspondiente a la Ronda 5.",
-    "category": "Deportes",
-    "source": "Nations Championship Rugby"
-  },
-  {
-    "title": "Italy vs Argentina (ITA vs ARG)",
-    "date": "2026-11-14",
-    "dateLabel": "SÁBADO, 14 DE NOVIEMBRE 2026 - 12:40",
-    "venue": "Stadio Luigi Ferraris",
-    "city": "Génova",
-    "region": "Liguria",
-    "price": "Consultar web oficial",
-    "link": "https://federugby.ticketone.it/catalog/event-detail/it/52800/90600336/italia-vs-argentina-championship-2026",
-    "description": "Partido de rugby de la Nations Championship entre las selecciones de Italia y Argentina (Los Pumas).",
-    "category": "Deportes",
-    "source": "Nations Championship Rugby"
-  },
-  {
-    "title": "Italia vs Argentina",
-    "date": "2026-11-14",
-    "dateLabel": "SÁBADO, 14 DE NOVIEMBRE 2026 - 12:40",
-    "venue": "Stadio Luigi Ferraris",
-    "city": "Genova",
-    "region": "Liguria",
-    "price": "Consultar web oficial",
-    "link": "https://federugby.ticketone.it/catalog/event-detail/it/52800/90600336/italia-vs-argentina-championship-2026",
-    "description": "Partido de la Nations Championship 2026 de la selección de rugby de Argentina (Los Pumas) contra Italia.",
-    "category": "Deportes",
-    "source": "Nations Championship Rugby"
-  },
-  {
     "title": "Italy vs Argentina",
     "date": "2026-11-14",
     "dateLabel": "SÁBADO, 14 DE NOVIEMBRE 2026 - 12:40",
@@ -309,32 +204,6 @@
     "price": "No especificado",
     "link": "https://federugby.ticketone.it/catalog/event-detail/it/52800/90600336/italia-vs-argentina-championship-2026",
     "description": "Partido de rugby de la selección argentina (Los Pumas) contra Italia en la Round 5 de la Northern Hemisphere Series.",
-    "category": "Deportes",
-    "source": "Nations Championship Rugby"
-  },
-  {
-    "title": "FRA VS ARG",
-    "date": "2026-11-21",
-    "dateLabel": "SÁBADO, 21 DE NOVIEMBRE 2026 - 21:10",
-    "venue": "Stade de France",
-    "city": "Paris",
-    "region": "Francia",
-    "price": "Consultar web oficial",
-    "link": "https://nationschampionshiprugby.com/en",
-    "description": "Partido de rugby del torneo Nations Championship entre Francia y Los Pumas (Argentina), correspondiente a la Ronda 6.",
-    "category": "Deportes",
-    "source": "Nations Championship Rugby"
-  },
-  {
-    "title": "France vs Argentina (FRA vs ARG)",
-    "date": "2026-11-21",
-    "dateLabel": "SÁBADO, 21 DE NOVIEMBRE 2026 - 21:10",
-    "venue": "Stade de France",
-    "city": "París",
-    "region": "Isla de Francia",
-    "price": "Consultar web oficial",
-    "link": "https://nationschampionshiprugby.com/en",
-    "description": "Partido de rugby de la Nations Championship entre las selecciones de Francia y Argentina (Los Pumas).",
     "category": "Deportes",
     "source": "Nations Championship Rugby"
   },
