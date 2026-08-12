@@ -28,7 +28,7 @@
     const Compass = (p) => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>);
     const Filter = (p) => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>);
 
-    const categories = ['Todos', 'Artes Plásticas', 'Cine', 'Música', 'TV / Deportes', 'Comunidad'];
+    const categories = ['Todos', 'Artes Plásticas', 'Cine', 'Música', 'Deportes', 'Comunidad'];
 
     // Convierte una fecha ISO a una etiqueta legible si el evento no
     // trae "dateLabel" propio (por robustez, no debería pasar nunca).
@@ -256,13 +256,7 @@
                           </div>
                         )}
 
-                        {evt.link && (
-                          <div className="pt-3 border-t border-slate-800/60">
-                            <a href={evt.link} target="_blank" rel="noopener noreferrer" className="text-sm text-sky-400 font-bold hover:underline inline-flex items-center gap-1.5">
-                              Ver entradas y precio <ExternalLink className="h-3.5 w-3.5" />
-                            </a>
-                          </div>
-                        )}
+
                       </div>
                     </div>
                   );
