@@ -125,5 +125,9 @@
     "name": "Radio Times - TV Guide",
     "url": "https://www.radiotimes.com/tv/tv-listings/",
     "useRenderProxy": true
+  },
+  {
+    "name": "The National Theatre",
+    "url": "https://www.nationaltheatre.org.uk/whats-on/"
   }
 ]
