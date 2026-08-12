@@ -160,5 +160,9 @@
     "name": "Art Fund",
     "url": "https://www.artfund.org/",
     "useRenderProxy": true
+  },
+  {
+    "name": "Art Rabbit",
+    "url": "https://www.artrabbit.com/search?query=argentin"
   }
 ]
