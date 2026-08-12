@@ -111,7 +111,11 @@ async function scrapeAndParse() {
 
       console.log(`🧠 Enviando texto depurado de ${src.name} a Gemini para extracción semántica...`);
 
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+      // FIX: gemini-1.5-flash fue dado de baja por Google (cualquier solicitud
+      // devuelve 404), lo cual hacía fallar SILENCIOSAMENTE cada una de las
+      // fuentes en el catch de más abajo. Se actualiza a gemini-3.5-flash,
+      // el mismo modelo vigente que ya usa el panel admin en index.html.
+      const model = genAI.getGenerativeModel({ model: "gemini-3.5-flash" });
       const prompt = `
         Analiza el siguiente texto extraído de la web de ${src.name}.
         Tu tarea es identificar TODOS los eventos, exhibiciones, conciertos, transmisiones, partidos de rugby de Los Pumas, obras de teatro o proyecciones de películas directamente relacionados con ARGENTINA o artistas argentinos.
