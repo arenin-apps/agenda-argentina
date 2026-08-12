@@ -151,5 +151,9 @@
     "name": "Victtoria and Albert Museum",
     "url": "https://www.vam.ac.uk/",
     "useRenderProxy": true
+  },
+  {
+    "name": "Culture 24",
+    "url": "https://www.culture24.org.uk/?s=argentin"
   }
 ]
