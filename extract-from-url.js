@@ -34,6 +34,7 @@ const genAI = new GoogleGenerativeAI(apiKey);
 const { REFERENCE_DATE, MAX_DATE } = getDateWindow();
 
 function buildPrompt(url, cleanText, existingTitlesAndDates) {
+  const hostname = new URL(url).hostname.replace(/^www\./, "");
   return `
     Analiza el siguiente texto extraído de: ${url}
     Puede ser un newsletter, boletín, o cualquier página con menciones de
@@ -47,9 +48,10 @@ function buildPrompt(url, cleanText, existingTitlesAndDates) {
     2. Para eventos de varios días EN EL MISMO VENUE (como una exhibición que dura semanas), el campo "date" debe ser SIEMPRE la fecha de INICIO (nunca una fecha intermedia al azar), y "endDate" la fecha de cierre. IMPORTANTE: esto NO aplica a una gira con fechas en distintas ciudades o venues (ej. un artista tocando en Brighton el día 1, Manchester el día 2 y Edimburgo el día 3) — cada ciudad/venue/fecha de una gira es un evento SEPARADO, con su propio objeto en el arreglo. Nunca combines varias fechas de una gira en un solo evento.
     3. NO incluyas ningún evento que ya esté en esta lista de eventos existentes (compará por título y fecha aproximada, incluso si está redactado un poco distinto):
        ${JSON.stringify(existingTitlesAndDates)}
-    3. Si el texto no menciona ningún evento relacionado con Argentina, o todos ya existen, devuelve un arreglo vacío [].
-    4. El texto incluye links junto al nombre de cada elemento en formato "texto [URL]". Para el campo "link", usá el URL específico de la página de ESE evento. Solo si no encontrás ninguno, usá ${url} como respaldo.
-    5. Devuelve únicamente un arreglo JSON puro (sin texto adicional) con esta forma:
+    4. Si el texto no menciona ningún evento relacionado con Argentina, o todos ya existen, devuelve un arreglo vacío [].
+    5. El texto incluye links junto al nombre de cada elemento en formato "texto [URL]". Para el campo "link", usá el URL específico de la página de ESE evento. Solo si no encontrás ninguno, usá ${url} como respaldo.
+    6. Para el campo "source", usá el nombre real del sitio, medio o entidad al que pertenece esta página (ej. si es el newsletter de una organización, usá el nombre de esa organización; si es un diario, el nombre del diario). Buscá ese nombre en el propio texto (títulos, logos, pie de página). Si no lo encontrás en el texto, usá "${hostname}" como respaldo. NUNCA uses un texto genérico como "Extracción manual" o similar — la gente que ve la agenda necesita saber de qué sitio viene la información.
+    7. Devuelve únicamente un arreglo JSON puro (sin texto adicional) con esta forma:
     [
       {
         "title": "Nombre específico del evento",
@@ -62,7 +64,7 @@ function buildPrompt(url, cleanText, existingTitlesAndDates) {
         "link": "URL del evento específico si se menciona, o en su defecto ${url}",
         "description": "Breve descripción y su relación con Argentina",
         "category": "Música / Deportes / Artes Plásticas / Cine / Comunidad",
-        "source": "Extracción manual"
+        "source": "Nombre real del sitio (ver regla 6)"
       }
     ]
 
