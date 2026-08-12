@@ -120,5 +120,10 @@
   {
     "name": "The Nickel",
     "url": "https://thenickel.co.uk/calendar"
+  },
+  {
+    "name": "Radio Times - TV Guide",
+    "url": "https://www.radiotimes.com/tv/tv-listings/",
+    "useRenderProxy": true
   }
 ]
