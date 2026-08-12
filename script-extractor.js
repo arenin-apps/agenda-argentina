@@ -12,6 +12,7 @@ const {
   stripMarkdownJson,
   readEventos,
   mergeAndSave,
+  readSources,
   sleep
 } = require("./events-utils");
 
@@ -27,41 +28,9 @@ const { REFERENCE_DATE, MAX_DATE } = getDateWindow();
 // por minuto. Con 13s de espera quedamos dentro del límite.
 const DELAY_BETWEEN_REQUESTS_MS = 13000;
 
-const sources = [
-  // FIX: agenda propia curada para la comunidad argentina — la fuente
-  // más confiable de todas, porque ya está filtrada para este público.
-  { name: "SRG (sergius.uk)", url: "https://sergius.uk/events/" },
-  { name: "WB Live", url: "https://www.wblive.co.uk/events" },
-  { name: "Tate Modern", url: "https://www.tate.org.uk/search?q=argentin" },
-  { name: "Blanco Gallery", url: "https://www.blancogallery.com/" },
-  { name: "BFI Player", url: "https://player.bfi.org.uk/search/subscription?q=argentina&availability=1&sort=title" },
-  { name: "Barbican Centre", url: "https://www.barbican.org.uk/search?search=argentin" },
-  { name: "Royal Ballet & Opera", url: "https://www.rbo.org.uk/" },
-  { name: "Sadler's Wells", url: "https://www.sadlerswells.com/" },
-  { name: "Southbank Centre", url: "https://www.southbankcentre.co.uk/" },
-  // FIX: /whats-on/ es más específico que la portada genérica.
-  { name: "Como No", url: "https://comono.co.uk/whats-on/" },
-  // FIX: estas dos son plataformas de venta de entradas cuyo contenido
-  // se arma con JavaScript en el navegador (el HTML crudo llega vacío,
-  // literalmente dice "JavaScript is required for this feature").
-  // useRenderProxy=true hace que se lean a través de un renderizador.
-  { name: "De Puta Madre Club", url: "https://ticket.deputamadreclub.eu/", useRenderProxy: true },
-  { name: "National Gallery", url: "https://www.nationalgallery.org.uk/search?q=argentina&area=event" },
-  { name: "Victoria and Albert Museum", url: "https://www.vam.ac.uk/search?q=argentin&astyped=" },
-  { name: "Natural History Museum", url: "https://www.nhm.ac.uk/whats-on.html" },
-  { name: "Art UK", url: "https://artuk.org/visit/whats-on" },
-  { name: "Argentine Film Festival London", url: "https://argentinefilmfestivallondon.substack.com/" },
-  { name: "Anglo Argentine Society", url: "https://angloargentinesociety.org.uk/events/" },
-  { name: "APARU Events", url: "https://www.aparu.org.uk/aparuevents" },
-  { name: "Nations Championship Rugby", url: "https://nationschampionshiprugby.com/en" },
-  { name: "Allianz Stadium Twickenham", url: "https://allianzstadiumtwickenham.com/whats-on" },
-  // FIX: la portada de Live Nation solo muestra artistas "trending" del
-  // momento, no su catálogo completo. Apuntamos a su búsqueda interna en
-  // vez de la portada — pero esa página también requiere JavaScript
-  // ("JavaScript is required for this feature" en el HTML crudo), así
-  // que también necesita el proxy de renderizado.
-  { name: "Live Nation", url: "https://www.livenation.co.uk/search?q=argentina", useRenderProxy: true }
-];
+// FIX: la lista de fuentes ahora vive en sources.json, no acá. Así se
+// puede agregar/quitar fuentes sin tocar código (ver add-source.js).
+const sources = readSources();
 
 function buildPrompt(sourceName, sourceUrl, cleanText) {
   return `
@@ -99,7 +68,12 @@ function buildPrompt(sourceName, sourceUrl, cleanText) {
 }
 
 async function scrapeAndParse() {
+  if (sources.length === 0) {
+    console.error("❌ ERROR: sources.json está vacío o no se pudo leer. Nada para rastrear.");
+    process.exit(1);
+  }
   console.log(`🚀 Iniciando extracción automatizada.`);
+  console.log(`📚 ${sources.length} fuentes cargadas desde sources.json`);
   console.log(`📅 Ventana válida: ${REFERENCE_DATE} a ${MAX_DATE}`);
   console.log(`⏱️ Pausa de ${DELAY_BETWEEN_REQUESTS_MS / 1000}s entre fuentes (límite gratuito de Gemini).`);
 
