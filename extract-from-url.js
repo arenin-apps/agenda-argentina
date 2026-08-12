@@ -46,7 +46,8 @@ function buildPrompt(url, cleanText, existingTitlesAndDates) {
     2. NO incluyas ningún evento que ya esté en esta lista de eventos existentes (compará por título y fecha aproximada, incluso si está redactado un poco distinto):
        ${JSON.stringify(existingTitlesAndDates)}
     3. Si el texto no menciona ningún evento relacionado con Argentina, o todos ya existen, devuelve un arreglo vacío [].
-    4. Devuelve únicamente un arreglo JSON puro (sin texto adicional) con esta forma:
+    4. El texto incluye links junto al nombre de cada elemento en formato "texto [URL]". Para el campo "link", usá el URL específico de la página de ESE evento. Solo si no encontrás ninguno, usá ${url} como respaldo.
+    5. Devuelve únicamente un arreglo JSON puro (sin texto adicional) con esta forma:
     [
       {
         "title": "Nombre específico del evento",
@@ -85,7 +86,7 @@ async function extractFromUrl() {
     const rawHtml = await response.text();
     // Los newsletters de Mailchimp suelen tener mucho contenido de diseño;
     // usamos un límite más generoso que en el scraper diario.
-    const cleanText = cleanHTML(rawHtml).substring(0, 25000);
+    const cleanText = cleanHTML(rawHtml, targetUrl).substring(0, 25000);
 
     const model = genAI.getGenerativeModel({ model: "gemini-3.5-flash-lite" });
     const aiResponse = await model.generateContent(buildPrompt(targetUrl, cleanText, existingTitlesAndDates));
