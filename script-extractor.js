@@ -43,7 +43,7 @@ function buildPrompt(sourceName, sourceUrl, cleanText) {
 
     Reglas estrictas:
     1. El evento debe ocurrir estrictamente entre el ${REFERENCE_DATE} (hoy) y el ${MAX_DATE} (dentro de 6 meses). Descarta todo evento pasado o posterior.
-    2. Para eventos de varios días (como una exhibición), el campo "date" debe ser SIEMPRE la fecha de INICIO de la muestra (nunca una fecha intermedia al azar), y "endDate" la fecha de cierre. Esto es importante para poder identificar el mismo evento de forma consistente.
+    2. Para eventos de varios días EN EL MISMO VENUE (como una exhibición que dura semanas), el campo "date" debe ser SIEMPRE la fecha de INICIO de la muestra (nunca una fecha intermedia al azar), y "endDate" la fecha de cierre. Esto es importante para poder identificar el mismo evento de forma consistente. IMPORTANTE: esto NO aplica a una gira con fechas en distintas ciudades o venues (ej. un artista tocando en Brighton el día 1, Manchester el día 2 y Edimburgo el día 3) — cada ciudad/venue/fecha de una gira es un evento SEPARADO, con su propio objeto en el arreglo. Nunca combines varias fechas de una gira en un solo evento.
     3. Para Blanco Gallery, corrobora la nacionalidad argentina de los artistas si es posible.
     3. Para Anglo Argentine Society y APARU, todos los eventos son válidos (comunitarios).
     4. El texto incluye links junto al nombre de cada elemento en formato "texto [URL]". Para el campo "link", usá el URL específico de la página de ESE evento (el que aparece junto a su título o su botón de "más info"/"tickets"). Solo si no encontrás ningún link específico para ese evento, usá ${sourceUrl} como respaldo.
