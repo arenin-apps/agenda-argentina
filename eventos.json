@@ -40,6 +40,19 @@
   },
   {
     "title": "A Levitating Territory",
+    "date": "2026-08-12",
+    "dateLabel": "MIÉRCOLES, 12 DE AGOSTO 2026",
+    "venue": "Blanco Gallery",
+    "city": "Londres",
+    "region": "Greater London",
+    "price": "Entrada Libre",
+    "link": "https://www.blancogallery.com/",
+    "description": "Exhibición que presenta a las artistas argentinas Majo Caporaletti y Vicky Polak, curada por Adela Blanco.",
+    "category": "Artes Plásticas",
+    "source": "Blanco Gallery"
+  },
+  {
+    "title": "A Levitating Territory",
     "date": "2026-08-28",
     "dateLabel": "VIERNES, 28 DE AGOSTO 2026",
     "venue": "Blanco Gallery",
@@ -50,6 +63,46 @@
     "description": "Exhibición de arte contemporáneo curada por Adela Blanco que incluye obras de las artistas argentinas Majo Caporaletti y Vicky Polak.",
     "category": "Artes Plásticas",
     "source": "Blanco Gallery"
+  },
+  {
+    "title": "Finders Keepers",
+    "date": "2026-08-28",
+    "dateLabel": "JUEVES, 28 DE AGOSTO 2026",
+    "venue": "Blanco Gallery",
+    "city": "Londres",
+    "region": "Greater London",
+    "price": "Entrada Libre",
+    "link": "https://www.blancogallery.com/",
+    "dateRange": "28.08.26 to 20.09.26",
+    "description": "Exhibición curada por Adela Blanco que incluye a artistas argentinos/latinoamericanos en Blanco Gallery.",
+    "category": "Artes Plásticas",
+    "source": "Blanco Gallery"
+  },
+  {
+    "title": "Estelares en Londres 2026",
+    "date": "2026-09-05",
+    "dateLabel": "SÁBADO, 5 DE SEPTIEMBRE 2026 - 19:00",
+    "venue": "Oslo Hackney",
+    "city": "London",
+    "region": "London",
+    "price": "£30",
+    "link": "https://sergius.uk/events/",
+    "description": "Estelares, una de las bandas más emblemáticas del rock argentino, llega por primera vez a Londres para un concierto histórico.",
+    "category": "Música",
+    "source": "SRG (sergius.uk)"
+  },
+  {
+    "title": "La K'onga",
+    "date": "2026-10-06",
+    "dateLabel": "MARTES, 6 DE OCTUBRE 2026 - 19:00",
+    "venue": "Islington Assembly Hall",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.wblive.co.uk/events",
+    "description": "La sensación argentina del cuarteto se presenta en vivo en Londres en el Islington Assembly Hall.",
+    "category": "Música",
+    "source": "WB Live"
   },
   {
     "title": "No Te Va Gustar",
@@ -65,6 +118,19 @@
     "source": "Como No"
   },
   {
+    "title": "Los Palmeras en Londres 2026",
+    "date": "2026-11-01",
+    "dateLabel": "DOMINGO, 1 DE NOVIEMBRE 2026 - 19:00",
+    "venue": "Scala London",
+    "city": "London",
+    "region": "London",
+    "price": "Entrada Libre",
+    "link": "https://sergius.uk/events/",
+    "description": "La legendaria cumbia santafesina aterriza en Londres de la mano de Los Palmeras, uno de los grupos más emblemáticos de la música popular argentina.",
+    "category": "Música",
+    "source": "SRG (sergius.uk)"
+  },
+  {
     "title": "IRE VS ARG",
     "date": "2026-11-06",
     "dateLabel": "VIERNES, 06 DE NOVIEMBRE 2026 - 20:10",
@@ -76,6 +142,19 @@
     "description": "Partido de rugby del torneo Nations Championship entre Irlanda y Los Pumas (Argentina), correspondiente a la Ronda 4.",
     "category": "Deportes",
     "source": "Nations Championship Rugby"
+  },
+  {
+    "title": "Sobredosis de Soda Londres 2026",
+    "date": "2026-11-12",
+    "dateLabel": "JUEVES, 12 DE NOVIEMBRE 2026 - 19:00",
+    "venue": "The Garage",
+    "city": "London",
+    "region": "London",
+    "price": "Entrada Libre",
+    "link": "https://sergius.uk/events/",
+    "description": "Banda tributo a Soda Stereo que rinde homenaje a la obra de Soda Stereo y Gustavo Cerati, íconos del rock argentino.",
+    "category": "Música",
+    "source": "SRG (sergius.uk)"
   },
   {
     "title": "ITA VS ARG",
