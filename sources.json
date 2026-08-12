@@ -108,5 +108,9 @@
   {
     "name": "Time Out",
     "url": "https://www.timeout.com/london/search?q=argentin"
+  },
+  {
+    "name": "Curzon Cinema",
+    "url": "https://homecinema.curzon.com/countries/"
   }
 ]
