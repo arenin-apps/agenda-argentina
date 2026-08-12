@@ -28,15 +28,24 @@ const { REFERENCE_DATE, MAX_DATE } = getDateWindow();
 const DELAY_BETWEEN_REQUESTS_MS = 13000;
 
 const sources = [
+  // FIX: agenda propia curada para la comunidad argentina — la fuente
+  // más confiable de todas, porque ya está filtrada para este público.
+  { name: "SRG (sergius.uk)", url: "https://sergius.uk/events/" },
+  { name: "WB Live", url: "https://www.wblive.co.uk/events" },
   { name: "Tate Modern", url: "https://www.tate.org.uk/search?q=argentin" },
   { name: "Blanco Gallery", url: "https://www.blancogallery.com/" },
-  { name: "BFI Player", url: "https://player.bfi.org.uk/" },
+  { name: "BFI Player", url: "https://player.bfi.org.uk/search/subscription?q=argentina&availability=1&sort=title" },
   { name: "Barbican Centre", url: "https://www.barbican.org.uk/search?search=argentin" },
   { name: "Royal Ballet & Opera", url: "https://www.rbo.org.uk/" },
   { name: "Sadler's Wells", url: "https://www.sadlerswells.com/" },
   { name: "Southbank Centre", url: "https://www.southbankcentre.co.uk/" },
-  { name: "Como No", url: "https://www.comono.co.uk/" },
-  { name: "De Puta Madre Club", url: "https://ticket.deputamadreclub.eu/" },
+  // FIX: /whats-on/ es más específico que la portada genérica.
+  { name: "Como No", url: "https://comono.co.uk/whats-on/" },
+  // FIX: estas dos son plataformas de venta de entradas cuyo contenido
+  // se arma con JavaScript en el navegador (el HTML crudo llega vacío,
+  // literalmente dice "JavaScript is required for this feature").
+  // useRenderProxy=true hace que se lean a través de un renderizador.
+  { name: "De Puta Madre Club", url: "https://ticket.deputamadreclub.eu/", useRenderProxy: true },
   { name: "National Gallery", url: "https://www.nationalgallery.org.uk/search?q=argentina&area=event" },
   { name: "Victoria and Albert Museum", url: "https://www.vam.ac.uk/search?q=argentin&astyped=" },
   { name: "Natural History Museum", url: "https://www.nhm.ac.uk/whats-on.html" },
@@ -46,7 +55,12 @@ const sources = [
   { name: "APARU Events", url: "https://www.aparu.org.uk/aparuevents" },
   { name: "Nations Championship Rugby", url: "https://nationschampionshiprugby.com/en" },
   { name: "Allianz Stadium Twickenham", url: "https://allianzstadiumtwickenham.com/whats-on" },
-  { name: "Live Nation", url: "https://www.livenation.co.uk/" }
+  // FIX: la portada de Live Nation solo muestra artistas "trending" del
+  // momento, no su catálogo completo. Apuntamos a su búsqueda interna en
+  // vez de la portada — pero esa página también requiere JavaScript
+  // ("JavaScript is required for this feature" en el HTML crudo), así
+  // que también necesita el proxy de renderizado.
+  { name: "Live Nation", url: "https://www.livenation.co.uk/search?q=argentina", useRenderProxy: true }
 ];
 
 function buildPrompt(sourceName, sourceUrl, cleanText) {
@@ -99,9 +113,10 @@ async function scrapeAndParse() {
     if (!isFirstSource) await sleep(DELAY_BETWEEN_REQUESTS_MS);
     isFirstSource = false;
 
-    console.log(`🔍 Rastreando: ${src.name}...`);
+    console.log(`🔍 Rastreando: ${src.name}${src.useRenderProxy ? ' (vía proxy de renderizado)' : ''}...`);
     try {
-      const response = await fetch(src.url, {
+      const fetchUrl = src.useRenderProxy ? `https://r.jina.ai/${src.url}` : src.url;
+      const response = await fetch(fetchUrl, {
         headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" }
       });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
