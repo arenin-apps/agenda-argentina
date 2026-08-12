@@ -91,6 +91,19 @@
     "source": "SRG (sergius.uk)"
   },
   {
+    "title": "CuteCircuit: Talk and Demo",
+    "date": "2026-09-26",
+    "dateLabel": "SÁBADO, 26 DE SEPTIEMBRE 2026",
+    "venue": "Tate Modern",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar sitio web",
+    "link": "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc/cutecircuit-talk-and-demo",
+    "description": "Charla y demostración multisensorial que explora la luz en movimiento, en relación con la exposición del artista argentino Julio Le Parc.",
+    "category": "Artes Plásticas",
+    "source": "Tate"
+  },
+  {
     "title": "Dominic Miller – Brighton",
     "date": "2026-09-27",
     "dateLabel": "DOMINGO, 27 DE SEPTIEMBRE 2026 - 19:00",
@@ -167,6 +180,19 @@
     "description": "Cantautor uruguayo profundamente ligado a la escena musical argentina.",
     "category": "Música",
     "source": "Como No"
+  },
+  {
+    "title": "Family Tour: Julio le Parc",
+    "date": "2026-10-28",
+    "dateLabel": "MIÉRCOLES, 28 DE OCTUBRE 2026",
+    "venue": "Tate Modern",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar sitio web",
+    "link": "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc/family-tour",
+    "description": "Recorrido familiar guiado dentro de la colorida e interactiva exposición del artista argentino Julio Le Parc.",
+    "category": "Artes Plásticas",
+    "source": "Tate"
   },
   {
     "title": "Los Palmeras en Londres 2026",
