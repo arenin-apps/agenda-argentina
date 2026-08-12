@@ -1,0 +1,88 @@
+[
+  {
+    "name": "SRG (sergius.uk)",
+    "url": "https://sergius.uk/events/"
+  },
+  {
+    "name": "WB Live",
+    "url": "https://www.wblive.co.uk/events"
+  },
+  {
+    "name": "Tate Modern",
+    "url": "https://www.tate.org.uk/search?q=argentin"
+  },
+  {
+    "name": "Blanco Gallery",
+    "url": "https://www.blancogallery.com/"
+  },
+  {
+    "name": "BFI Player",
+    "url": "https://player.bfi.org.uk/search/subscription?q=argentina&availability=1&sort=title"
+  },
+  {
+    "name": "Barbican Centre",
+    "url": "https://www.barbican.org.uk/search?search=argentin"
+  },
+  {
+    "name": "Royal Ballet & Opera",
+    "url": "https://www.rbo.org.uk/"
+  },
+  {
+    "name": "Sadler's Wells",
+    "url": "https://www.sadlerswells.com/"
+  },
+  {
+    "name": "Southbank Centre",
+    "url": "https://www.southbankcentre.co.uk/"
+  },
+  {
+    "name": "Como No",
+    "url": "https://comono.co.uk/whats-on/"
+  },
+  {
+    "name": "De Puta Madre Club",
+    "url": "https://ticket.deputamadreclub.eu/",
+    "useRenderProxy": true
+  },
+  {
+    "name": "National Gallery",
+    "url": "https://www.nationalgallery.org.uk/search?q=argentina&area=event"
+  },
+  {
+    "name": "Victoria and Albert Museum",
+    "url": "https://www.vam.ac.uk/search?q=argentin&astyped="
+  },
+  {
+    "name": "Natural History Museum",
+    "url": "https://www.nhm.ac.uk/whats-on.html"
+  },
+  {
+    "name": "Art UK",
+    "url": "https://artuk.org/visit/whats-on"
+  },
+  {
+    "name": "Argentine Film Festival London",
+    "url": "https://argentinefilmfestivallondon.substack.com/"
+  },
+  {
+    "name": "Anglo Argentine Society",
+    "url": "https://angloargentinesociety.org.uk/events/"
+  },
+  {
+    "name": "APARU Events",
+    "url": "https://www.aparu.org.uk/aparuevents"
+  },
+  {
+    "name": "Nations Championship Rugby",
+    "url": "https://nationschampionshiprugby.com/en"
+  },
+  {
+    "name": "Allianz Stadium Twickenham",
+    "url": "https://allianzstadiumtwickenham.com/whats-on"
+  },
+  {
+    "name": "Live Nation",
+    "url": "https://www.livenation.co.uk/search?q=argentina",
+    "useRenderProxy": true
+  }
+]
