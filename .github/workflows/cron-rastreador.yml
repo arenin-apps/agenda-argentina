@@ -21,7 +21,7 @@ jobs:
           node-version: "24"
 
       - name: Install project dependencies
-        run: npm install
+        run: npm install @google/generative-ai
 
       - name: Run Script Extractor with Gemini AI
         env:
