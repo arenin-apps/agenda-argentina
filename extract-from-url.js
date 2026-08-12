@@ -44,7 +44,8 @@ function buildPrompt(url, cleanText, existingTitlesAndDates) {
 
     Reglas estrictas:
     1. El evento debe ocurrir estrictamente entre el ${REFERENCE_DATE} (hoy) y el ${MAX_DATE} (dentro de 6 meses). Descarta eventos pasados.
-    2. NO incluyas ningún evento que ya esté en esta lista de eventos existentes (compará por título y fecha aproximada, incluso si está redactado un poco distinto):
+    2. Para eventos de varios días, el campo "date" debe ser SIEMPRE la fecha de INICIO (nunca una fecha intermedia al azar), y "endDate" la fecha de cierre.
+    3. NO incluyas ningún evento que ya esté en esta lista de eventos existentes (compará por título y fecha aproximada, incluso si está redactado un poco distinto):
        ${JSON.stringify(existingTitlesAndDates)}
     3. Si el texto no menciona ningún evento relacionado con Argentina, o todos ya existen, devuelve un arreglo vacío [].
     4. El texto incluye links junto al nombre de cada elemento en formato "texto [URL]". Para el campo "link", usá el URL específico de la página de ESE evento. Solo si no encontrás ninguno, usá ${url} como respaldo.
