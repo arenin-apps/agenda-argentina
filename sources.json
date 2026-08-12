@@ -84,5 +84,9 @@
     "name": "Live Nation",
     "url": "https://www.livenation.co.uk/search?q=argentina",
     "useRenderProxy": true
+  },
+  {
+    "name": "Somerset House",
+    "url": "https://www.somersethouse.org.uk/whats-on"
   }
 ]
