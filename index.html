@@ -50,7 +50,6 @@
       const [lastUpdated, setLastUpdated] = React.useState(null);
       const [filterCategory, setFilterCategory] = React.useState('Todos');
       const [searchQuery, setSearchQuery] = React.useState('');
-      const [hidePastEvents, setHidePastEvents] = React.useState(true);
 
       React.useEffect(() => {
         fetch('./eventos.json', { cache: 'no-store' })
@@ -79,11 +78,10 @@
         const eventEndDate = new Date(endDateStr + "T00:00:00");
         const referenceEnd = isNaN(eventEndDate.getTime()) ? eventDate : eventEndDate;
 
-        if (hidePastEvents) {
-          const today = new Date();
-          today.setHours(0, 0, 0, 0);
-          if (referenceEnd < today) return false;
-        }
+        // La agenda nunca muestra eventos ya finalizados.
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        if (referenceEnd < today) return false;
 
         const matchesCategory = filterCategory === 'Todos' ||
           (evt.category || '').toLowerCase().includes(filterCategory.toLowerCase());
@@ -145,7 +143,7 @@
                   />
                 </div>
 
-                <div className="md:col-span-5">
+                <div className="md:col-span-7">
                   <div className="flex items-center gap-1.5 mb-1.5">
                     <Filter className="h-3.5 w-3.5 text-slate-400" />
                     <span className="text-xs text-slate-400 font-medium">Categoría</span>
@@ -164,21 +162,6 @@
                         {cat}
                       </button>
                     ))}
-                  </div>
-                </div>
-
-                <div className="md:col-span-2">
-                  <div className="flex items-center gap-2 bg-slate-950/80 p-2.5 rounded-xl border border-slate-800">
-                    <input
-                      type="checkbox"
-                      id="hidePastEvents"
-                      checked={hidePastEvents}
-                      onChange={(e) => setHidePastEvents(e.target.checked)}
-                      className="h-4 w-4 rounded border-slate-800 text-sky-500 bg-slate-900 cursor-pointer"
-                    />
-                    <label htmlFor="hidePastEvents" className="text-xs text-slate-300 font-medium cursor-pointer select-none">
-                      Ocultar pasados
-                    </label>
                   </div>
                 </div>
               </div>
