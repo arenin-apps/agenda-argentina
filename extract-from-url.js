@@ -87,7 +87,7 @@ async function extractFromUrl() {
     // usamos un límite más generoso que en el scraper diario.
     const cleanText = cleanHTML(rawHtml).substring(0, 25000);
 
-    const model = genAI.getGenerativeModel({ model: "gemini-3.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-3.5-flash-lite" });
     const aiResponse = await model.generateContent(buildPrompt(targetUrl, cleanText, existingTitlesAndDates));
     const jsonCleaned = stripMarkdownJson(aiResponse.response.text());
 
