@@ -138,5 +138,9 @@
     "name": "Whats On Stage",
     "url": "https://www.whatsonstage.com/",
     "useRenderProxy": true
+  },
+  {
+    "name": "London Fringe",
+    "url": "https://www.londonfringe.uk/"
   }
 ]
