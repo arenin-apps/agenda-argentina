@@ -112,5 +112,9 @@
   {
     "name": "Curzon Cinema",
     "url": "https://homecinema.curzon.com/countries/"
+  },
+  {
+    "name": "Picture House",
+    "url": "https://www.picturehouses.com/whats-on"
   }
 ]
