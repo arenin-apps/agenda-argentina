@@ -44,7 +44,7 @@ function buildPrompt(url, cleanText, existingTitlesAndDates) {
 
     Reglas estrictas:
     1. El evento debe ocurrir estrictamente entre el ${REFERENCE_DATE} (hoy) y el ${MAX_DATE} (dentro de 6 meses). Descarta eventos pasados.
-    2. Para eventos de varios días, el campo "date" debe ser SIEMPRE la fecha de INICIO (nunca una fecha intermedia al azar), y "endDate" la fecha de cierre.
+    2. Para eventos de varios días EN EL MISMO VENUE (como una exhibición que dura semanas), el campo "date" debe ser SIEMPRE la fecha de INICIO (nunca una fecha intermedia al azar), y "endDate" la fecha de cierre. IMPORTANTE: esto NO aplica a una gira con fechas en distintas ciudades o venues (ej. un artista tocando en Brighton el día 1, Manchester el día 2 y Edimburgo el día 3) — cada ciudad/venue/fecha de una gira es un evento SEPARADO, con su propio objeto en el arreglo. Nunca combines varias fechas de una gira en un solo evento.
     3. NO incluyas ningún evento que ya esté en esta lista de eventos existentes (compará por título y fecha aproximada, incluso si está redactado un poco distinto):
        ${JSON.stringify(existingTitlesAndDates)}
     3. Si el texto no menciona ningún evento relacionado con Argentina, o todos ya existen, devuelve un arreglo vacío [].
