@@ -133,5 +133,10 @@
   {
     "name": "Manchester Theatres",
     "url": "https://www.manchestertheatres.com/whatson?search=argentin"
+  },
+  {
+    "name": "Whats On Stage",
+    "url": "https://www.whatsonstage.com/",
+    "useRenderProxy": true
   }
 ]
