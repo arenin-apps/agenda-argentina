@@ -155,5 +155,10 @@
   {
     "name": "Culture 24",
     "url": "https://www.culture24.org.uk/?s=argentin"
+  },
+  {
+    "name": "Art Fund",
+    "url": "https://www.artfund.org/",
+    "useRenderProxy": true
   }
 ]
