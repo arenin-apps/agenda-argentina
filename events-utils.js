@@ -41,8 +41,31 @@ function isValidEvent(evt) {
 }
 
 // --- Limpieza de HTML crudo a texto plano ------------------------------
-function cleanHTML(html) {
-  return html
+// FIX: antes esta función borraba TODAS las etiquetas, incluyendo los
+// <a href="..."> — así Gemini nunca veía los links de cada evento y
+// terminaba usando siempre el link genérico de la fuente como respaldo.
+// Ahora los links se conservan como "texto [URL]" antes de limpiar el
+// resto, y las URLs relativas (ej. "/events/la-konga-in-london") se
+// resuelven a absolutas usando la URL de la página como base.
+function cleanHTML(html, baseUrl) {
+  const withLinksPreserved = html.replace(
+    /<a\s+[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi,
+    (match, href, innerText) => {
+      const text = innerText.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+      if (!text || href.startsWith("javascript:") || href.startsWith("#")) return text;
+      let absoluteUrl = href;
+      if (baseUrl) {
+        try {
+          absoluteUrl = new URL(href, baseUrl).href;
+        } catch (e) {
+          // Si la URL no se puede resolver, dejamos el href tal cual.
+        }
+      }
+      return `${text} [${absoluteUrl}]`;
+    }
+  );
+
+  return withLinksPreserved
     .replace(/<script[^>]*>([\s\S]*?)<\/script>/gi, "")
     .replace(/<style[^>]*>([\s\S]*?)<\/style>/gi, "")
     .replace(/<svg[^>]*>([\s\S]*?)<\/svg>/gi, "")
