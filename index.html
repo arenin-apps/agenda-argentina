@@ -256,9 +256,11 @@
                           </div>
                         )}
 
-                        {evt.price && (
-                          <div className="pt-3 border-t border-slate-800/60 text-sm text-slate-400">
-                            Precio: <strong className="text-emerald-400">{evt.price}</strong>
+                        {evt.link && (
+                          <div className="pt-3 border-t border-slate-800/60">
+                            <a href={evt.link} target="_blank" rel="noopener noreferrer" className="text-sm text-sky-400 font-bold hover:underline inline-flex items-center gap-1.5">
+                              Ver entradas y precio <ExternalLink className="h-3.5 w-3.5" />
+                            </a>
                           </div>
                         )}
                       </div>
