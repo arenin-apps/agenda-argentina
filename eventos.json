@@ -39,19 +39,6 @@
     "source": "Blanco Gallery"
   },
   {
-    "title": "A Levitating Territory",
-    "date": "2026-08-12",
-    "dateLabel": "MIÉRCOLES, 12 DE AGOSTO 2026",
-    "venue": "Blanco Gallery",
-    "city": "Londres",
-    "region": "Greater London",
-    "price": "Entrada Libre",
-    "link": "https://www.blancogallery.com/",
-    "description": "Exhibición que presenta a las artistas argentinas Majo Caporaletti y Vicky Polak, curada por Adela Blanco.",
-    "category": "Artes Plásticas",
-    "source": "Blanco Gallery"
-  },
-  {
     "title": "A Levitating Territory - Majo Caporaletti & Vicky Polak",
     "date": "2026-08-12",
     "dateLabel": "AGOSTO 2026",
@@ -88,6 +75,19 @@
     "link": "https://www.blancogallery.com/finderskeepers",
     "dateRange": "28.08.26 to 20.09.26",
     "description": "Exhibición curada por Adela Blanco que incluye a artistas argentinos/latinoamericanos en Blanco Gallery.",
+    "category": "Artes Plásticas",
+    "source": "Blanco Gallery"
+  },
+  {
+    "title": "Finders Keepers - Charly Helyar, Eloïse Dethier-Eaton (Curated by Adela Blanco)",
+    "date": "2026-08-28",
+    "dateLabel": "VIERNES, 28 DE AGOSTO 2026",
+    "venue": "Blanco Gallery",
+    "city": "London",
+    "region": "Greater London",
+    "price": "Entrada Libre",
+    "link": "https://www.blancogallery.com/",
+    "description": "Exhibición curada por la galerista Adela Blanco, con fuerte vínculo con la cultura argentina.",
     "category": "Artes Plásticas",
     "source": "Blanco Gallery"
   },
@@ -157,6 +157,19 @@
     "source": "Como No"
   },
   {
+    "title": "Jorge Drexler",
+    "date": "2026-10-27",
+    "dateLabel": "MARTES, 27 DE OCTUBRE 2026 - 19:00",
+    "venue": "Roundhouse",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://link.dice.fm/od8f88629977?dice_id=od8f88629977",
+    "description": "Cantautor uruguayo profundamente ligado a la escena musical argentina.",
+    "category": "Música",
+    "source": "Como No"
+  },
+  {
     "title": "Los Palmeras en Londres 2026",
     "date": "2026-11-01",
     "dateLabel": "DOMINGO, 1 DE NOVIEMBRE 2026 - 19:00",
@@ -209,6 +222,19 @@
     "source": "Nations Championship Rugby"
   },
   {
+    "title": "Ireland vs Argentina",
+    "date": "2026-11-06",
+    "dateLabel": "VIERNES, 06 DE NOVIEMBRE 2026 - 20:10",
+    "venue": "Aviva Stadium",
+    "city": "Dublin",
+    "region": "Leinster",
+    "price": "Consultar web oficial",
+    "link": "https://nationschampionshiprugby.com/en",
+    "description": "Partido de la Nations Championship 2026 de la selección de rugby de Argentina (Los Pumas) contra Irlanda.",
+    "category": "Deportes",
+    "source": "Nations Championship Rugby"
+  },
+  {
     "title": "Sobredosis de Soda Londres 2026",
     "date": "2026-11-12",
     "dateLabel": "JUEVES, 12 DE NOVIEMBRE 2026 - 19:00",
@@ -248,6 +274,19 @@
     "source": "Nations Championship Rugby"
   },
   {
+    "title": "Italia vs Argentina",
+    "date": "2026-11-14",
+    "dateLabel": "SÁBADO, 14 DE NOVIEMBRE 2026 - 12:40",
+    "venue": "Stadio Luigi Ferraris",
+    "city": "Genova",
+    "region": "Liguria",
+    "price": "Consultar web oficial",
+    "link": "https://federugby.ticketone.it/catalog/event-detail/it/52800/90600336/italia-vs-argentina-championship-2026",
+    "description": "Partido de la Nations Championship 2026 de la selección de rugby de Argentina (Los Pumas) contra Italia.",
+    "category": "Deportes",
+    "source": "Nations Championship Rugby"
+  },
+  {
     "title": "FRA VS ARG",
     "date": "2026-11-21",
     "dateLabel": "SÁBADO, 21 DE NOVIEMBRE 2026 - 21:10",
@@ -270,6 +309,19 @@
     "price": "Consultar web oficial",
     "link": "https://nationschampionshiprugby.com/en",
     "description": "Partido de rugby de la Nations Championship entre las selecciones de Francia y Argentina (Los Pumas).",
+    "category": "Deportes",
+    "source": "Nations Championship Rugby"
+  },
+  {
+    "title": "France vs Argentina",
+    "date": "2026-11-21",
+    "dateLabel": "SÁBADO, 21 DE NOVIEMBRE 2026 - 21:10",
+    "venue": "Stade de France",
+    "city": "Paris",
+    "region": "Île-de-France",
+    "price": "Consultar web oficial",
+    "link": "https://nationschampionshiprugby.com/en",
+    "description": "Partido de la Nations Championship 2026 de la selección de rugby de Argentina (Los Pumas) contra Francia.",
     "category": "Deportes",
     "source": "Nations Championship Rugby"
   }
