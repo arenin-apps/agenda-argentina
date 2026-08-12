@@ -146,5 +146,10 @@
   {
     "name": "Screen Scotland",
     "url": "https://www.screen.scot/"
+  },
+  {
+    "name": "Victtoria and Albert Museum",
+    "url": "https://www.vam.ac.uk/",
+    "useRenderProxy": true
   }
 ]
