@@ -97,8 +97,25 @@ function readEventos() {
   }
 }
 
+// FIX: antes se comparaba por título+fecha EXACTOS. Un evento de varios
+// días (como una exhibición) podía quedar guardado 2-3 veces si Gemini
+// devolvía el título con redacción levemente distinta, o una fecha
+// distinta dentro del rango de la muestra, en cada corrida. Ahora se
+// normaliza el título (sin tildes, mayúsculas ni puntuación) y se
+// combina con el venue — así variantes del mismo evento se reconocen
+// como duplicados sin importar la fecha exacta extraída.
+function normalizeText(str) {
+  return (str || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "") // saca tildes
+    .replace(/[^\w\s]/g, "") // saca puntuación
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function eventKey(evt) {
-  return `${evt.title.toLowerCase().trim()}_${evt.date}`;
+  return `${normalizeText(evt.title)}_${normalizeText(evt.venue)}`;
 }
 
 // Combina eventos existentes con nuevos, descarta duplicados (mismo
