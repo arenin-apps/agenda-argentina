@@ -38,8 +38,9 @@ function buildPrompt(url, cleanText, existingTitlesAndDates) {
     Analiza el siguiente texto extraído de: ${url}
     Puede ser un newsletter, boletín, o cualquier página con menciones de
     eventos. Identifica TODOS los eventos, exhibiciones, conciertos,
-    charlas o actividades relacionados con ARGENTINA o la comunidad
-    argentina en el Reino Unido.
+    charlas o actividades relacionados con Argentina, incluyendo:
+    - Artistas o eventos argentinos, o de la comunidad argentina en el Reino Unido.
+    - Artistas de otra nacionalidad pero con fuerte vínculo cultural con Argentina (ej. Jorge Drexler, uruguayo profundamente ligado a la escena musical argentina). Si hay una duda razonable sobre el vínculo, incluí el evento igual.
 
     Reglas estrictas:
     1. El evento debe ocurrir estrictamente entre el ${REFERENCE_DATE} (hoy) y el ${MAX_DATE} (dentro de 6 meses). Descarta eventos pasados.
