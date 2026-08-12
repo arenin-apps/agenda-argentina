@@ -84,9 +84,16 @@ async function extractFromUrl() {
     if (!response.ok) throw new Error(`HTTP ${response.status} al descargar la URL`);
 
     const rawHtml = await response.text();
-    // Los newsletters de Mailchimp suelen tener mucho contenido de diseño;
-    // usamos un límite más generoso que en el scraper diario.
-    const cleanText = cleanHTML(rawHtml, targetUrl).substring(0, 25000);
+    console.log(`📄 HTML crudo descargado: ${rawHtml.length} caracteres.`);
+
+    // Los newsletters de Mailchimp suelen tener mucho HTML de plantilla
+    // antes del contenido real, así que usamos un límite más generoso.
+    const CHAR_LIMIT = 40000;
+    const cleanText = cleanHTML(rawHtml, targetUrl).substring(0, CHAR_LIMIT);
+    console.log(`🧹 Texto limpio: ${cleanText.length} caracteres (límite: ${CHAR_LIMIT}).`);
+    if (cleanText.length < 200) {
+      console.log(`⚠️ El texto limpio es muy corto — es probable que la página no tenga contenido de texto accesible (todo en imágenes, o requiere JavaScript).`);
+    }
 
     const model = genAI.getGenerativeModel({ model: "gemini-3.5-flash-lite" });
     const aiResponse = await model.generateContent(buildPrompt(targetUrl, cleanText, existingTitlesAndDates));
