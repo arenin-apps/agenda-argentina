@@ -37,7 +37,9 @@ function buildPrompt(sourceName, sourceUrl, cleanText) {
     Analiza el siguiente texto extraído de la web de ${sourceName}.
     Identifica TODOS los eventos, exhibiciones, conciertos, transmisiones,
     partidos de rugby de Los Pumas, obras de teatro o proyecciones de
-    películas directamente relacionados con ARGENTINA o artistas argentinos.
+    películas relacionados con Argentina, incluyendo:
+    - Artistas o eventos argentinos.
+    - Artistas de otra nacionalidad pero con fuerte vínculo cultural con Argentina (ej. Jorge Drexler, uruguayo profundamente ligado a la escena musical argentina). Si hay una duda razonable sobre el vínculo, incluí el evento igual.
 
     Reglas estrictas:
     1. El evento debe ocurrir estrictamente entre el ${REFERENCE_DATE} (hoy) y el ${MAX_DATE} (dentro de 6 meses). Descarta todo evento pasado o posterior.
