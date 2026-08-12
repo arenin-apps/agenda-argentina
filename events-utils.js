@@ -7,6 +7,7 @@ const fs = require("fs");
 const path = require("path");
 
 const EVENTOS_PATH = path.join(__dirname, "eventos.json");
+const SOURCES_PATH = path.join(__dirname, "sources.json");
 
 // --- Ventana de fechas válida (hoy a 6 meses) -------------------------
 // Se calcula en cada ejecución, nunca hardcodeada.
@@ -126,6 +127,18 @@ function mergeAndSave(existingEvents, newEvents) {
 // gratuito de Gemini.
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+// --- Lectura de sources.json (la lista de fuentes a scrapear) ----------
+function readSources() {
+  try {
+    const raw = fs.readFileSync(SOURCES_PATH, "utf-8");
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (err) {
+    console.error("❌ ERROR: No se pudo leer sources.json:", err.message);
+    return [];
+  }
+}
+
 module.exports = {
   getDateWindow,
   isWithinWindow,
@@ -134,6 +147,8 @@ module.exports = {
   stripMarkdownJson,
   readEventos,
   mergeAndSave,
+  readSources,
   sleep,
-  EVENTOS_PATH
+  EVENTOS_PATH,
+  SOURCES_PATH
 };
