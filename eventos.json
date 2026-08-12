@@ -144,6 +144,19 @@
     "source": "Nations Championship Rugby"
   },
   {
+    "title": "Ireland vs Argentina (IRE vs ARG)",
+    "date": "2026-11-06",
+    "dateLabel": "VIERNES, 06 DE NOVIEMBRE 2026 - 20:10",
+    "venue": "Aviva Stadium",
+    "city": "Dublín",
+    "region": "Leinster",
+    "price": "Consultar web oficial",
+    "link": "https://nationschampionshiprugby.com/en",
+    "description": "Partido de rugby de la Nations Championship entre las selecciones de Irlanda y Argentina (Los Pumas).",
+    "category": "Deportes",
+    "source": "Nations Championship Rugby"
+  },
+  {
     "title": "Sobredosis de Soda Londres 2026",
     "date": "2026-11-12",
     "dateLabel": "JUEVES, 12 DE NOVIEMBRE 2026 - 19:00",
@@ -170,6 +183,19 @@
     "source": "Nations Championship Rugby"
   },
   {
+    "title": "Italy vs Argentina (ITA vs ARG)",
+    "date": "2026-11-14",
+    "dateLabel": "SÁBADO, 14 DE NOVIEMBRE 2026 - 12:40",
+    "venue": "Stadio Luigi Ferraris",
+    "city": "Génova",
+    "region": "Liguria",
+    "price": "Consultar web oficial",
+    "link": "https://federugby.ticketone.it/catalog/event-detail/it/52800/90600336/italia-vs-argentina-championship-2026",
+    "description": "Partido de rugby de la Nations Championship entre las selecciones de Italia y Argentina (Los Pumas).",
+    "category": "Deportes",
+    "source": "Nations Championship Rugby"
+  },
+  {
     "title": "FRA VS ARG",
     "date": "2026-11-21",
     "dateLabel": "SÁBADO, 21 DE NOVIEMBRE 2026 - 21:10",
@@ -179,6 +205,19 @@
     "price": "Consultar web oficial",
     "link": "https://nationschampionshiprugby.com/en",
     "description": "Partido de rugby del torneo Nations Championship entre Francia y Los Pumas (Argentina), correspondiente a la Ronda 6.",
+    "category": "Deportes",
+    "source": "Nations Championship Rugby"
+  },
+  {
+    "title": "France vs Argentina (FRA vs ARG)",
+    "date": "2026-11-21",
+    "dateLabel": "SÁBADO, 21 DE NOVIEMBRE 2026 - 21:10",
+    "venue": "Stade de France",
+    "city": "París",
+    "region": "Isla de Francia",
+    "price": "Consultar web oficial",
+    "link": "https://nationschampionshiprugby.com/en",
+    "description": "Partido de rugby de la Nations Championship entre las selecciones de Francia y Argentina (Los Pumas).",
     "category": "Deportes",
     "source": "Nations Championship Rugby"
   }
