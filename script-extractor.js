@@ -74,7 +74,8 @@ function buildPrompt(sourceName, sourceUrl, cleanText) {
     1. El evento debe ocurrir estrictamente entre el ${REFERENCE_DATE} (hoy) y el ${MAX_DATE} (dentro de 6 meses). Descarta todo evento pasado o posterior.
     2. Para Blanco Gallery, corrobora la nacionalidad argentina de los artistas si es posible.
     3. Para Anglo Argentine Society y APARU, todos los eventos son válidos (comunitarios).
-    4. Devuelve únicamente un arreglo JSON puro (sin texto adicional) con esta forma:
+    4. El texto incluye links junto al nombre de cada elemento en formato "texto [URL]". Para el campo "link", usá el URL específico de la página de ESE evento (el que aparece junto a su título o su botón de "más info"/"tickets"). Solo si no encontrás ningún link específico para ese evento, usá ${sourceUrl} como respaldo.
+    5. Devuelve únicamente un arreglo JSON puro (sin texto adicional) con esta forma:
     [
       {
         "title": "Nombre específico del evento",
@@ -122,7 +123,7 @@ async function scrapeAndParse() {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
       const rawHtml = await response.text();
-      const cleanText = cleanHTML(rawHtml).substring(0, 15000);
+      const cleanText = cleanHTML(rawHtml, fetchUrl).substring(0, 15000);
 
       const aiResponse = await model.generateContent(buildPrompt(src.name, src.url, cleanText));
       const jsonCleaned = stripMarkdownJson(aiResponse.response.text());
