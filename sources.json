@@ -248,5 +248,9 @@
   {
     "name": "Oxford",
     "url": "https://oxfordcity.co.uk/?s=argentin"
+  },
+  {
+    "name": "Cambridge",
+    "url": "https://www.visitcambridge.org/whats-on/"
   }
 ]
