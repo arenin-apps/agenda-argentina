@@ -232,5 +232,9 @@
   {
     "name": "Gales",
     "url": "https://www.visitwales.com/search"
+  },
+  {
+    "name": "Belfast",
+    "url": "https://visitbelfast.com/whats-on/"
   }
 ]
