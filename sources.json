@@ -208,5 +208,9 @@
   {
     "name": "Edinburgh Fringe",
     "url": "https://www.edfringe.com/search/?term=argentin&sort=relevance&page=1"
+  },
+  {
+    "name": "Edinburgh",
+    "url": "https://www.whatsoninedinburgh.co.uk/events/"
   }
 ]
