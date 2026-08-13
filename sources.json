@@ -212,5 +212,9 @@
   {
     "name": "Edinburgh",
     "url": "https://www.whatsoninedinburgh.co.uk/events/"
+  },
+  {
+    "name": "Gig Guide",
+    "url": "https://www.gig-guide.co.uk/listings"
   }
 ]
