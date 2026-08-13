@@ -148,11 +148,6 @@
     "url": "https://www.screen.scot/"
   },
   {
-    "name": "Victtoria and Albert Museum",
-    "url": "https://www.vam.ac.uk/",
-    "useRenderProxy": true
-  },
-  {
     "name": "Culture 24",
     "url": "https://www.culture24.org.uk/?s=argentin"
   },
@@ -256,5 +251,21 @@
   {
     "name": "Fane",
     "url": "https://www.fane.co.uk/search-results?search=argentin"
+  },
+  {
+    "name": "Celtic Connections",
+    "url": "https://www.celticconnections.com/whats-on/"
+  },
+  {
+    "name": "Wales Millennium Centre",
+    "url": "https://www.wmc.org.uk/en/whats-on/"
+  },
+  {
+    "name": "National Galleries of Scotland",
+    "url": "https://www.nationalgalleries.org/"
+  },
+  {
+    "name": "The MAC Belfast",
+    "url": "https://themaclive.com/"
   }
 ]
