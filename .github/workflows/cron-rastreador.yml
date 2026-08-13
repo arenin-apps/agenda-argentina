@@ -2,7 +2,7 @@ name: Rastreador de Eventos Argentinos
 
 on:
   schedule:
-    - cron: "0 6 * * *" # Todos los días a las 06:00 UTC
+    - cron: "0 4 * * *" # Todos los días a las 04:00 UTC (5am hora de Londres en horario de verano, BST)
   workflow_dispatch: {} # Permite dispararlo manualmente desde la pestaña Actions
 
 permissions:
