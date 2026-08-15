@@ -104,6 +104,59 @@
     "source": "Tate Modern"
   },
   {
+    "title": "Julio Le Parc: Light. Colour. Action.",
+    "date": "2026-08-15",
+    "endDate": "2027-05-03",
+    "dateLabel": "SÁBADO, 15 DE AGOSTO 2026",
+    "venue": "Tate Modern",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Gratis para miembros / Consultar web",
+    "link": "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc",
+    "description": "Exhibición de siete décadas de obras del artista cinético argentino Julio Le Parc, que transforma a los visitantes en participantes activos.",
+    "category": "Artes Plásticas",
+    "source": "Tate Modern"
+  },
+  {
+    "title": "Nine Queens",
+    "date": "2026-08-15",
+    "dateLabel": "SÁBADO, 15 DE AGOSTO 2026 - 00:00",
+    "venue": "Curzon Home Cinema",
+    "city": "London",
+    "region": "Greater London",
+    "price": "Consultar web",
+    "link": "https://homecinema.curzon.com/film/nine-queens/",
+    "description": "Proyección de la reconocida película argentina dirigida por Fabián Bielinsky.",
+    "category": "Cine",
+    "source": "Curzon Cinema"
+  },
+  {
+    "title": "FREE Argentine Tango Classes in Swansea on Thursdays",
+    "date": "2026-08-20",
+    "dateLabel": "JUEVES, 20 DE AGOSTO 2026",
+    "venue": "Taliesin Arts Centre",
+    "city": "Swansea",
+    "region": "Gales",
+    "price": "£0.00",
+    "link": "https://eventslist.co.uk/swansea/events/free-argentine-tango-classes-in-swansea-on-thursdays-2026-08-20",
+    "description": "Clases gratuitas de tango argentino, danza tradicional vinculada culturalmente con Argentina.",
+    "category": "Comunidad",
+    "source": "Events List"
+  },
+  {
+    "title": "Volver",
+    "date": "2026-08-22",
+    "dateLabel": "SÁBADO, 22 DE AGOSTO 2026",
+    "venue": "Picture House",
+    "city": "Reino Unido",
+    "region": "Reino Unido",
+    "price": "Consultar web",
+    "link": "https://www.picturehouses.com/whats-on",
+    "description": "Proyección de la icónica película de Pedro Almodóvar, con profundo arraigo y conexión cultural con la cinematografía de habla hispana, incluyendo la cultura argentina.",
+    "category": "Cine",
+    "source": "Picture House"
+  },
+  {
     "title": "Finders Keepers - Charly Helyar, Eloïse Dethier-Eaton (Curated by Adela Blanco)",
     "date": "2026-08-28",
     "dateLabel": "VIERNES, 28 DE AGOSTO 2026",
@@ -167,6 +220,19 @@
     "description": "Estelares, una de las bandas más emblemáticas del rock argentino, llega por primera vez a Londres para un concierto histórico.",
     "category": "Música",
     "source": "SRG (sergius.uk)"
+  },
+  {
+    "title": "FREE 5 Week Argentine Tango Beginners Course",
+    "date": "2026-09-07",
+    "dateLabel": "LUNES, 7 DE SEPTIEMBRE 2026",
+    "venue": "Taliesin Arts Centre",
+    "city": "Swansea",
+    "region": "Gales",
+    "price": "£0.00",
+    "link": "https://eventslist.co.uk/swansea/events/free-5-week-argentine-tango-beginners-course-2026-09-07",
+    "description": "Curso gratuito de 5 semanas para principiantes de tango argentino.",
+    "category": "Comunidad",
+    "source": "Events List"
   },
   {
     "title": "12th September FREE Argentine Tango in a Day Course and Milonga (Cardiff)",
@@ -271,6 +337,19 @@
     "description": "Concierto de No Te Va Gustar, banda uruguaya con estrecha relación y trayectoria compartida en la escena de rock de Argentina.",
     "category": "Música",
     "source": "Como No"
+  },
+  {
+    "title": "Sabor Argentina",
+    "date": "2026-10-18",
+    "dateLabel": "DOMINGO, 18 DE OCTUBRE 2026",
+    "venue": "The Garden Vauxhall",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Entrada Libre",
+    "link": "https://eventslist.co.uk/london/events/sabor-argentina-2026-10-18",
+    "description": "Evento cultural y gastronómico temático centrado en la cultura de Argentina.",
+    "category": "Comunidad",
+    "source": "Events List"
   },
   {
     "title": "Jorge Drexler",
