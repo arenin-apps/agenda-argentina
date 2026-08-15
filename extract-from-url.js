@@ -63,7 +63,7 @@ function buildPrompt(url, cleanText, existingTitlesAndDates) {
         "price": "Precio estimado o 'Entrada Libre'",
         "link": "URL del evento específico si se menciona, o en su defecto ${url}",
         "description": "Breve descripción y su relación con Argentina",
-        "category": "Música / Deportes / Artes Plásticas / Cine / Comunidad",
+        "category": "Música / Teatro / Deportes / Artes Plásticas / Cine / Comunidad",
         "source": "Nombre real del sitio (ver regla 6)"
       }
     ]
