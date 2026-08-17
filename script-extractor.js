@@ -2,6 +2,14 @@
 // Corre una vez al día vía GitHub Actions. Rastrea las fuentes conocidas,
 // le pide a Gemini que extraiga eventos argentinos, y los agrega a
 // eventos.json (sin duplicar los que ya estaban).
+//
+// CAMBIO (agosto 2026): se agrega soporte real para eventos de
+// "temporada" (exposiciones/muestras largas). Antes, el prompt ya le
+// pedía al modelo usar "date" como fecha de apertura para este tipo de
+// eventos, pero el schema del JSON no tenía campo "endDate" donde poner
+// la fecha de cierre — por eso el modelo terminaba devolviendo la
+// "próxima sesión disponible" cada día, y el evento se duplicaba en
+// eventos.json una vez por cada corrida del scraper.
 
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const {
@@ -42,17 +50,28 @@ function buildPrompt(sourceName, sourceUrl, cleanText) {
     - Artistas de otra nacionalidad pero con fuerte vínculo cultural con Argentina (ej. Jorge Drexler, uruguayo profundamente ligado a la escena musical argentina). Si hay una duda razonable sobre el vínculo, incluí el evento igual.
 
     Reglas estrictas:
-    1. El evento debe ocurrir estrictamente entre el ${REFERENCE_DATE} (hoy) y el ${MAX_DATE} (dentro de 6 meses). Descarta todo evento pasado o posterior.
-    2. Para eventos de varios días EN EL MISMO VENUE (como una exhibición que dura semanas), el campo "date" debe ser SIEMPRE la fecha de INICIO de la muestra (nunca una fecha intermedia al azar), y "endDate" la fecha de cierre. Esto es importante para poder identificar el mismo evento de forma consistente. IMPORTANTE: esto NO aplica a una gira con fechas en distintas ciudades o venues (ej. un artista tocando en Brighton el día 1, Manchester el día 2 y Edimburgo el día 3) — cada ciudad/venue/fecha de una gira es un evento SEPARADO, con su propio objeto en el arreglo. Nunca combines varias fechas de una gira en un solo evento.
+    1. El evento debe ocurrir estrictamente entre el ${REFERENCE_DATE} (hoy) y el ${MAX_DATE} (dentro de 6 meses), CON UNA EXCEPCIÓN: los eventos de tipo "temporada" (ver regla 2) son válidos aunque su fecha de apertura ("date") sea anterior a hoy, siempre que su fecha de cierre ("endDate") no haya pasado todavía. Descarta todo evento puntual pasado o posterior a la ventana.
+
+    2. Distinguí dos tipos de evento:
+       - "unico": un evento de un día u horario específico (concierto, charla, función de teatro, proyección, partido).
+       - "temporada": una exhibición, muestra o instalación que permanece abierta durante varias semanas o meses (por ejemplo, una muestra de arte en un museo). Esto INCLUYE el caso en que la fuente solo te muestra un calendario de "próximas fechas de entrada/sesión para reservar" pero el evento real es la misma exhibición continua — en ese caso seguí siendo "temporada", nunca tomes la próxima fecha de sesión como si fuera un evento puntual nuevo.
+
+       Para "temporada": el campo "date" debe ser SIEMPRE la fecha de INICIO/apertura original de la muestra (nunca una fecha intermedia ni la próxima sesión disponible), y el campo "endDate" la fecha de cierre, en formato YYYY-MM-DD. Si no encontrás la fecha de cierre exacta, dejá "endDate" en null pero igual marcá "type": "temporada".
+       Para "unico": "endDate" siempre va en null.
+
+       IMPORTANTE: esto NO aplica a una gira con fechas en distintas ciudades o venues (ej. un artista tocando en Brighton el día 1, Manchester el día 2 y Edimburgo el día 3) — cada ciudad/venue/fecha de una gira es un evento "unico" SEPARADO, con su propio objeto en el arreglo. Nunca combines varias fechas de una gira en un solo evento, y nunca las marques como "temporada".
+
     3. Para Blanco Gallery, corrobora la nacionalidad argentina de los artistas si es posible.
-    3. Para Anglo Argentine Society y APARU, todos los eventos son válidos (comunitarios).
-    4. El texto incluye links junto al nombre de cada elemento en formato "texto [URL]". Para el campo "link", usá el URL específico de la página de ESE evento (el que aparece junto a su título o su botón de "más info"/"tickets"). Solo si no encontrás ningún link específico para ese evento, usá ${sourceUrl} como respaldo.
-    5. Devuelve únicamente un arreglo JSON puro (sin texto adicional) con esta forma:
+    4. Para Anglo Argentine Society y APARU, todos los eventos son válidos (comunitarios).
+    5. El texto incluye links junto al nombre de cada elemento en formato "texto [URL]". Para el campo "link", usá el URL específico de la página de ESE evento (el que aparece junto a su título o su botón de "más info"/"tickets"). Solo si no encontrás ningún link específico para ese evento, usá ${sourceUrl} como respaldo.
+    6. Devuelve únicamente un arreglo JSON puro (sin texto adicional) con esta forma:
     [
       {
         "title": "Nombre específico del evento",
+        "type": "unico" o "temporada",
         "date": "YYYY-MM-DD",
-        "dateLabel": "DÍA, DD DE MES YYYY - HH:MM (ej. SÁBADO, 20 DE JUNIO 2026)",
+        "endDate": "YYYY-MM-DD o null",
+        "dateLabel": "DÍA, DD DE MES YYYY - HH:MM (ej. SÁBADO, 20 DE JUNIO 2026), o para temporada: 'Hasta el DD de MES de YYYY'",
         "venue": "Nombre del recinto",
         "city": "Ciudad",
         "region": "Región",
@@ -68,6 +87,22 @@ function buildPrompt(sourceName, sourceUrl, cleanText) {
     Texto a analizar:
     ${cleanText}
   `;
+}
+
+// Reemplaza el filtro de ventana simple: un evento de temporada es
+// válido si su fecha de cierre (endDate) todavía no pasó, sin importar
+// si su fecha de apertura (date) quedó antes de hoy o su endDate está
+// mucho más allá de los 6 meses de ventana normal.
+function passesWindow(event) {
+  if (event.type === "temporada") {
+    if (!event.endDate) {
+      // Sin fecha de cierre conocida: la dejamos pasar igual, es mejor
+      // mostrarla sin fecha de cierre que perderla del todo.
+      return true;
+    }
+    return event.endDate >= REFERENCE_DATE;
+  }
+  return isWithinWindow(event.date, REFERENCE_DATE, MAX_DATE);
 }
 
 async function scrapeAndParse() {
@@ -108,8 +143,9 @@ async function scrapeAndParse() {
       if (jsonCleaned && jsonCleaned !== "[]") {
         const events = JSON.parse(jsonCleaned);
         if (Array.isArray(events)) {
-          const withinWindow = events.filter(isValidEvent).filter((e) => isWithinWindow(e.date, REFERENCE_DATE, MAX_DATE));
-          console.log(`✅ ${src.name}: ${events.length} recibidos, ${withinWindow.length} dentro de ventana.`);
+          const withinWindow = events.filter(isValidEvent).filter(passesWindow);
+          const temporadas = withinWindow.filter((e) => e.type === "temporada").length;
+          console.log(`✅ ${src.name}: ${events.length} recibidos, ${withinWindow.length} dentro de ventana (${temporadas} de temporada).`);
           allNewEvents = [...allNewEvents, ...withinWindow];
         }
       } else {
