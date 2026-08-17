@@ -43,6 +43,28 @@
       }
     }
 
+    // Fecha corta legible (sin día de la semana), para el rango de una
+    // temporada/exposición — ej. "3 de mayo de 2027".
+    function formatDateOnly(dateStr) {
+      try {
+        return new Date(dateStr + "T00:00:00").toLocaleDateString('es-AR', {
+          day: 'numeric', month: 'long', year: 'numeric'
+        });
+      } catch (e) {
+        return dateStr;
+      }
+    }
+
+    // NUEVO: para eventos "temporada" (exposiciones/muestras largas),
+    // mostramos el rango en vez de una fecha suelta — así no hace falta
+    // repetir el mismo evento cada día con una fecha distinta.
+    function formatSeasonLabel(evt) {
+      if (evt.endDate) {
+        return `Hasta el ${formatDateOnly(evt.endDate)}`;
+      }
+      return `Desde el ${formatDateOnly(evt.date)}`;
+    }
+
     function App() {
       const [events, setEvents] = React.useState([]);
       const [isLoading, setIsLoading] = React.useState(true);
@@ -210,13 +232,20 @@
                   const mapsUrl = isVirtual ? null :
                     `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${evt.venue}, ${evt.city}, UK`)}`;
 
+                  const isSeason = evt.type === 'temporada';
+
                   return (
                     <div key={`${evt.title}-${evt.date}-${idx}`} className="bg-slate-900 border border-slate-800/80 hover:border-sky-500/30 rounded-2xl p-5 sm:p-6 shadow-xl transition-all">
                       <div className="flex flex-col space-y-3">
-                        <div className="flex items-center gap-2 text-xs">
+                        <div className="flex items-center gap-2 text-xs flex-wrap">
                           <span className="bg-sky-500/10 text-sky-400 border border-sky-500/20 px-2.5 py-0.5 rounded-md font-bold uppercase tracking-wider text-[10px]">
                             {evt.category || 'General'}
                           </span>
+                          {isSeason && (
+                            <span className="bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2.5 py-0.5 rounded-md font-bold uppercase tracking-wider text-[10px]">
+                              Exposición
+                            </span>
+                          )}
                           <span className="text-slate-600">•</span>
                           <span className="text-slate-400 font-mono text-[11px]">{evt.source || 'Fuente desconocida'}</span>
                         </div>
@@ -238,7 +267,7 @@
                         <div className="flex items-center gap-2.5 bg-slate-950/60 border border-slate-850 p-3 rounded-xl">
                           <Calendar className="h-4 w-4 text-sky-400 shrink-0" />
                           <span className="text-xs sm:text-sm font-bold uppercase tracking-wide text-sky-200 font-mono">
-                            {evt.dateLabel || formatFallbackLabel(evt.date)}
+                            {isSeason ? formatSeasonLabel(evt) : (evt.dateLabel || formatFallbackLabel(evt.date))}
                           </span>
                         </div>
 
