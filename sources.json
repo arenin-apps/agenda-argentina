@@ -299,5 +299,9 @@
   {
     "name": "TV Guide 2",
     "url": "https://tvguide.viewersvault.com/"
+  },
+  {
+    "name": "TV Guide",
+    "url": "https://www.tvguide.co.uk/search"
   }
 ]
