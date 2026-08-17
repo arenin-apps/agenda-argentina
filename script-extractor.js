@@ -63,8 +63,9 @@ function buildPrompt(sourceName, sourceUrl, cleanText) {
 
     3. Para Blanco Gallery, corrobora la nacionalidad argentina de los artistas si es posible.
     4. Para Anglo Argentine Society y APARU, todos los eventos son válidos (comunitarios).
-    5. El texto incluye links junto al nombre de cada elemento en formato "texto [URL]". Para el campo "link", usá el URL específico de la página de ESE evento (el que aparece junto a su título o su botón de "más info"/"tickets"). Solo si no encontrás ningún link específico para ese evento, usá ${sourceUrl} como respaldo.
-    6. Devuelve únicamente un arreglo JSON puro (sin texto adicional) con esta forma:
+    5. El evento debe tomar lugar físicamente en el Reino Unido (Inglaterra, Escocia, Gales o Irlanda del Norte), O ser una transmisión/streaming accesible desde el Reino Unido (TV, radio, plataforma online, partido retransmitido). Descartá eventos presenciales que ocurran fuera del Reino Unido, aunque sean de relevancia cultural argentina (ej. una exposición en la Bienal de Venecia, un recital en Buenos Aires, una muestra en España) — esta agenda es específicamente para la comunidad argentina que vive en el Reino Unido, no para noticias culturales argentinas en general.
+    6. El texto incluye links junto al nombre de cada elemento en formato "texto [URL]". Para el campo "link", usá el URL específico de la página de ESE evento (el que aparece junto a su título o su botón de "más info"/"tickets"). Solo si no encontrás ningún link específico para ese evento, usá ${sourceUrl} como respaldo.
+    7. Devuelve únicamente un arreglo JSON puro (sin texto adicional) con esta forma:
     [
       {
         "title": "Nombre específico del evento",
