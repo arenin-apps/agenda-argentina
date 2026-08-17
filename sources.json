@@ -295,5 +295,9 @@
   {
     "name": "What to Watch",
     "url": "https://www.whattowatch.com/search?searchTerm=argentin"
+  },
+  {
+    "name": "TV Guide 2",
+    "url": "https://tvguide.viewersvault.com/"
   }
 ]
