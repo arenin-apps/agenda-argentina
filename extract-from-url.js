@@ -121,10 +121,41 @@ async function extractFromUrl() {
     // Los newsletters de Mailchimp suelen tener mucho HTML de plantilla
     // antes del contenido real, así que usamos un límite más generoso.
     const CHAR_LIMIT = 40000;
-    const cleanText = cleanHTML(rawHtml, targetUrl).substring(0, CHAR_LIMIT);
+    let cleanText = cleanHTML(rawHtml, targetUrl).substring(0, CHAR_LIMIT);
     console.log(`🧹 Texto limpio: ${cleanText.length} caracteres (límite: ${CHAR_LIMIT}).`);
+
+    // FIX (agosto 2026): muchos sitios de venta de entradas (ej.
+    // enterticket.es) son aplicaciones de una sola página (SPA) que
+    // arman el contenido con JavaScript DESPUÉS de cargar — el fetch
+    // normal solo trae un HTML casi vacío (metadatos, sin texto real),
+    // y antes esto simplemente fallaba en silencio. Ahora, si el texto
+    // limpio es sospechosamente corto, reintentamos automáticamente a
+    // través de un proxy de renderizado (mismo servicio que ya usás
+    // para fuentes con "useRenderProxy": true en sources.json), que sí
+    // ejecuta el JavaScript antes de devolver el HTML.
+    if (cleanText.length < 400) {
+      console.log(`⚠️ El texto limpio es muy corto — probablemente la página requiere JavaScript. Reintentando con proxy de renderizado...`);
+      try {
+        const proxyResponse = await fetch(`https://r.jina.ai/${targetUrl}`, {
+          headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" }
+        });
+        if (proxyResponse.ok) {
+          const proxyHtml = await proxyResponse.text();
+          const proxyCleanText = cleanHTML(proxyHtml, targetUrl).substring(0, CHAR_LIMIT);
+          console.log(`🧹 Texto limpio vía proxy: ${proxyCleanText.length} caracteres.`);
+          if (proxyCleanText.length > cleanText.length) {
+            cleanText = proxyCleanText;
+          }
+        } else {
+          console.log(`⚠️ El proxy de renderizado tampoco pudo acceder (HTTP ${proxyResponse.status}).`);
+        }
+      } catch (proxyErr) {
+        console.log(`⚠️ Error usando el proxy de renderizado: ${proxyErr.message}`);
+      }
+    }
+
     if (cleanText.length < 200) {
-      console.log(`⚠️ El texto limpio es muy corto — es probable que la página no tenga contenido de texto accesible (todo en imágenes, o requiere JavaScript).`);
+      console.log(`⚠️ El texto limpio sigue siendo muy corto tras el reintento — es probable que la página no tenga contenido de texto accesible de ninguna forma (todo en imágenes, requiere login, o bloquea bots).`);
     }
 
     const model = genAI.getGenerativeModel({ model: "gemini-3.5-flash-lite" });
