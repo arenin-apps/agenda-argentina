@@ -145,6 +145,19 @@
     "source": "Tate Modern"
   },
   {
+    "title": "Julio Le Parc: Light. Colour. Action.",
+    "date": "2026-08-17",
+    "dateLabel": "LUNES, 17 DE AGOSTO 2026 - 10:00",
+    "venue": "Tate Modern",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Gratis para miembros / Consultar entrada",
+    "link": "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc",
+    "description": "Exhibición de siete décadas de obras del reconocido artista argentino Julio Le Parc, que transforma a los visitantes en participantes activos.",
+    "category": "Artes Plásticas",
+    "source": "Tate Modern"
+  },
+  {
     "title": "FREE Argentine Tango Classes in Swansea on Thursdays",
     "date": "2026-08-20",
     "dateLabel": "JUEVES, 20 DE AGOSTO 2026",
@@ -167,6 +180,19 @@
     "price": "Consultar web",
     "link": "https://www.picturehouses.com/whats-on",
     "description": "Proyección de la icónica película de Pedro Almodóvar, con profundo arraigo y conexión cultural con la cinematografía de habla hispana, incluyendo la cultura argentina.",
+    "category": "Cine",
+    "source": "Picture House"
+  },
+  {
+    "title": "Volver",
+    "date": "2026-08-22",
+    "dateLabel": "SÁBADO, 22 DE AGOSTO 2026",
+    "venue": "Picturehouse Cinemas",
+    "city": "Varias ciudades",
+    "region": "Reino Unido",
+    "price": "Consultar web",
+    "link": "https://www.picturehouses.com/whats-on",
+    "description": "Proyección de la aclamada película del director español Pedro Almodóvar, figura fundamental con estrechos lazos culturales con Argentina y su cinematografía.",
     "category": "Cine",
     "source": "Picture House"
   },
