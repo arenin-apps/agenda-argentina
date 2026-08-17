@@ -120,34 +120,75 @@ function normalizeText(str) {
 // fecha exacta). Para eventos de una sola fecha, venue+fecha es una señal
 // mucho más confiable que el título. Si no hay venue, usamos título+fecha
 // como respaldo.
+//
+// FIX 3 (agosto 2026): para eventos de tipo "temporada" (exposiciones
+// largas), la fecha extraída puede variar día a día si la fuente muestra
+// un calendario de "próximas sesiones" en vez de una sola fecha de
+// apertura — eso hacía que venue+fecha generara una clave distinta cada
+// vez y el evento se duplicara sin parar (ej. "Julio Le Parc" en Tate
+// Modern). Para "temporada" ignoramos la fecha por completo: la clave es
+// solo venue+título (o título solo, si no hay venue), así el mismo
+// evento siempre matchea sin importar qué fecha haya traído el scraper
+// ese día.
 function eventKey(evt) {
   const venue = normalizeText(evt.venue);
+  const title = normalizeText(evt.title);
+
+  if (evt.type === "temporada") {
+    return venue ? `season:${venue}_${title}` : `season-title:${title}`;
+  }
+
   if (venue) {
     return `venue:${venue}_${evt.date}`;
   }
-  return `title:${normalizeText(evt.title)}_${evt.date}`;
+  return `title:${title}_${evt.date}`;
 }
 
-// Combina eventos existentes con nuevos, descarta duplicados (mismo
-// título + fecha) y ordena cronológicamente antes de guardar.
+// Combina eventos existentes con nuevos, descarta duplicados y ordena
+// cronológicamente antes de guardar.
+//
+// FIX (agosto 2026): para eventos de temporada que ya existen, no se
+// agrega una copia nueva (gracias a eventKey ignorando la fecha), pero
+// además: si el registro existente no tenía "endDate" todavía y la
+// nueva extracción sí la trae, se completa — sin pisar la fecha de
+// apertura original ("date") que ya estaba guardada.
 function mergeAndSave(existingEvents, newEvents) {
   const map = new Map();
   existingEvents.forEach((evt) => {
     if (isValidEvent(evt)) map.set(eventKey(evt), evt);
   });
+
   let addedCount = 0;
+  let seasonUpdatedCount = 0;
+
   newEvents.forEach((evt) => {
     if (!isValidEvent(evt)) return;
     const key = eventKey(evt);
+
     if (!map.has(key)) {
       map.set(key, evt);
       addedCount++;
+      return;
     }
+
+    // Ya existe un evento con esta clave.
+    if (evt.type === "temporada") {
+      const existing = map.get(key);
+      if (!existing.endDate && evt.endDate) {
+        // Completamos endDate, pero conservamos todo lo demás del
+        // registro existente (sobre todo "date", la apertura original).
+        map.set(key, { ...existing, endDate: evt.endDate });
+        seasonUpdatedCount++;
+      }
+    }
+    // Si no es temporada, es un duplicado puntual exacto: se ignora,
+    // igual que antes.
   });
+
   const merged = Array.from(map.values());
   merged.sort((a, b) => new Date(a.date) - new Date(b.date));
   fs.writeFileSync(EVENTOS_PATH, JSON.stringify(merged, null, 2), "utf-8");
-  return { total: merged.length, added: addedCount };
+  return { total: merged.length, added: addedCount, seasonUpdated: seasonUpdatedCount };
 }
 
 // Pausa entre solicitudes para respetar el límite de 5/minuto del nivel
