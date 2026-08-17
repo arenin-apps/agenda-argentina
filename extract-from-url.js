@@ -62,10 +62,11 @@ function buildPrompt(url, cleanText, existingTitlesAndDates) {
 
     3. NO incluyas ningún evento que ya esté en esta lista de eventos existentes (compará por título y fecha aproximada, incluso si está redactado un poco distinto — para eventos de temporada, compará por título aunque la fecha no coincida exacto, ya que la apertura pudo haberse guardado con otra fecha extraída en una corrida anterior):
        ${JSON.stringify(existingTitlesAndDates)}
-    4. Si el texto no menciona ningún evento relacionado con Argentina, o todos ya existen, devuelve un arreglo vacío [].
-    5. El texto incluye links junto al nombre de cada elemento en formato "texto [URL]". Para el campo "link", usá el URL específico de la página de ESE evento. Solo si no encontrás ninguno, usá ${url} como respaldo.
-    6. Para el campo "source", usá el nombre real del sitio, medio o entidad al que pertenece esta página (ej. si es el newsletter de una organización, usá el nombre de esa organización; si es un diario, el nombre del diario). Buscá ese nombre en el propio texto (títulos, logos, pie de página). Si no lo encontrás en el texto, usá "${hostname}" como respaldo. NUNCA uses un texto genérico como "Extracción manual" o similar — la gente que ve la agenda necesita saber de qué sitio viene la información.
-    7. Devuelve únicamente un arreglo JSON puro (sin texto adicional) con esta forma:
+    4. El evento debe tomar lugar físicamente en el Reino Unido (Inglaterra, Escocia, Gales o Irlanda del Norte), O ser una transmisión/streaming accesible desde el Reino Unido. Descartá eventos presenciales fuera del Reino Unido, aunque sean de relevancia cultural argentina (ej. una exposición en Buenos Aires o en otro país de Europa) — esta agenda es para la comunidad argentina que vive en el Reino Unido, no para noticias culturales argentinas en general.
+    5. Si el texto no menciona ningún evento relacionado con Argentina que ocurra en el Reino Unido, o todos ya existen, devuelve un arreglo vacío [].
+    6. El texto incluye links junto al nombre de cada elemento en formato "texto [URL]". Para el campo "link", usá el URL específico de la página de ESE evento. Solo si no encontrás ninguno, usá ${url} como respaldo.
+    7. Para el campo "source", usá el nombre real del sitio, medio o entidad al que pertenece esta página (ej. si es el newsletter de una organización, usá el nombre de esa organización; si es un diario, el nombre del diario). Buscá ese nombre en el propio texto (títulos, logos, pie de página). Si no lo encontrás en el texto, usá "${hostname}" como respaldo. NUNCA uses un texto genérico como "Extracción manual" o similar — la gente que ve la agenda necesita saber de qué sitio viene la información.
+    8. Devuelve únicamente un arreglo JSON puro (sin texto adicional) con esta forma:
     [
       {
         "title": "Nombre específico del evento",
