@@ -1,5 +1,20 @@
 [
   {
+    "title": "Argentina Pavilion 2026: Monitor Yin Yang",
+    "type": "temporada",
+    "date": "2026-05-09",
+    "endDate": "2026-11-22",
+    "dateLabel": "Hasta el 22 de noviembre de 2026",
+    "venue": "Arsenale",
+    "city": "Venice",
+    "region": "Italy",
+    "price": "Consultar en el sitio",
+    "link": "https://www.artrabbit.com/events/argentina-pavilion-2026-monitor-yin-yang",
+    "description": "Pabellón oficial de Argentina en Venecia, que presenta la obra 'Monitor Yin Yang' dentro de la ventana de fechas permitidas.",
+    "category": "Artes Plásticas",
+    "source": "Art Rabbit"
+  },
+  {
     "title": "Julio Le Parc: Light. Colour. Action.",
     "date": "2026-08-12",
     "dateLabel": "MIÉRCOLES, 12 DE AGOSTO 2026 - 10:00 (HASTA EL 3 DE MAYO 2027)",
@@ -158,6 +173,21 @@
     "source": "Tate Modern"
   },
   {
+    "title": "Julio Le Parc: Light. Colour. Action.",
+    "type": "temporada",
+    "date": "2026-08-17",
+    "endDate": "2027-05-03",
+    "dateLabel": "Hasta el 3 de mayo de 2027",
+    "venue": "Tate Modern",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Gratis para miembros / Consultar web",
+    "link": "https://www.tate.org.uk/whats-on/tate-modern/julio-le-parc",
+    "description": "Exhibición que descubre siete décadas de obras del artista argentino Julio Le Parc, transformando a los visitantes en participantes activos.",
+    "category": "Artes Plásticas",
+    "source": "Tate Modern"
+  },
+  {
     "title": "FREE Argentine Tango Classes in Swansea on Thursdays",
     "date": "2026-08-20",
     "dateLabel": "JUEVES, 20 DE AGOSTO 2026",
@@ -206,6 +236,21 @@
     "price": "Entrada Libre",
     "link": "https://www.blancogallery.com/",
     "description": "Exhibición curada por la galerista Adela Blanco, con fuerte vínculo con la cultura argentina.",
+    "category": "Artes Plásticas",
+    "source": "Blanco Gallery"
+  },
+  {
+    "title": "Finders Keepers",
+    "type": "temporada",
+    "date": "2026-08-28",
+    "endDate": "2026-09-20",
+    "dateLabel": "Hasta el 20 de septiembre de 2026",
+    "venue": "Blanco Gallery",
+    "city": "Online",
+    "region": "Global",
+    "price": "Entrada Libre",
+    "link": "https://www.blancogallery.com/",
+    "description": "Exposición colectiva que incluye a la artista Charly Helyar y Eloïse Dethier-Eaton, curada por la argentina Adela Blanco.",
     "category": "Artes Plásticas",
     "source": "Blanco Gallery"
   },
