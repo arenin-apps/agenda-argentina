@@ -41,6 +41,21 @@
     "source": "Curzon Cinema"
   },
   {
+    "title": "Delcy Morelos: Origo",
+    "type": "temporada",
+    "date": "2026-08-12",
+    "endDate": null,
+    "dateLabel": "Hasta el 2026",
+    "venue": "Barbican Centre",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.latundra.com/delcy-morelos-origo-la-instalacion-de-tierra-en-londres/",
+    "description": "Instalación de tierra de la artista Delcy Morelos en el corazón brutalista de Londres.",
+    "category": "Artes Plásticas",
+    "source": "La Tundra"
+  },
+  {
     "title": "Argentine Tango Classes in Swansea on Thursdays",
     "date": "2026-08-13",
     "dateLabel": "JUEVES, 13 DE AGOSTO 2026",
@@ -65,6 +80,21 @@
     "description": "Evento gastronómico y cultural temática sobre Argentina.",
     "category": "Comunidad",
     "source": "Events List"
+  },
+  {
+    "title": "In Other Worlds",
+    "type": "temporada",
+    "date": "2026-08-14",
+    "endDate": null,
+    "dateLabel": "Hasta el 2026",
+    "venue": "Barbican Centre",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.latundra.com/in-other-worlds-is-ai-our-future-or-our-demise/",
+    "description": "Exposición inmersiva de Liam Young sobre inteligencia artificial y consecuencias ambientales en el Barbican Centre.",
+    "category": "Artes Plásticas",
+    "source": "La Tundra"
   },
   {
     "title": "FREE Argentine Tango Classes in Swansea on Thursdays",
@@ -104,6 +134,21 @@
     "price": "Entrada Libre",
     "link": "https://www.blancogallery.com/",
     "description": "Exposición colectiva curada por la galerista argentina Adela Blanco, con obra de Charly Helyar y Eloïse Dethier-Eaton.",
+    "category": "Artes Plásticas",
+    "source": "Blanco Gallery"
+  },
+  {
+    "title": "Finders Keepers",
+    "type": "temporada",
+    "date": "2026-08-28",
+    "endDate": "2026-09-20",
+    "dateLabel": "Hasta el 20 de septiembre de 2026",
+    "venue": "Blanco Gallery",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Entrada Libre",
+    "link": "https://www.blancogallery.com/",
+    "description": "Exhibición que cuenta con artistas como Charly Helyar y Eloïse Dethier-Eaton, curada por Adela Blanco.",
     "category": "Artes Plásticas",
     "source": "Blanco Gallery"
   },
@@ -290,6 +335,21 @@
     "source": "Events List"
   },
   {
+    "title": "El Tri | Electric Ballroom - London",
+    "type": "unico",
+    "date": "2026-10-18",
+    "endDate": null,
+    "dateLabel": "DOMINGO, 18 DE OCTUBRE 2026 - 20:00",
+    "venue": "Electric Ballroom",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://ticket.deputamadreclub.eu/tri26ldn/",
+    "description": "Concierto de la banda de rock mexicana El Tri en Londres, enmarcado dentro de su gira internacional.",
+    "category": "Música",
+    "source": "De Puta Madre Club"
+  },
+  {
     "title": "Jorge Drexler",
     "date": "2026-10-27",
     "dateLabel": "MARTES, 27 DE OCTUBRE 2026 - 19:00",
@@ -420,5 +480,20 @@
     "description": "Partido de la Nations Championship 2026 de la selección de rugby de Argentina (Los Pumas) contra Francia.",
     "category": "Deportes",
     "source": "Nations Championship Rugby"
+  },
+  {
+    "title": "Vincent Simone – Tango Passions",
+    "type": "unico",
+    "date": "2027-02-18",
+    "endDate": null,
+    "dateLabel": "JUEVES, 18 DE FEBRERO 2027",
+    "venue": "Grand Theatre Lancaster",
+    "city": "Lancaster",
+    "region": "Inglaterra",
+    "price": "Consultar",
+    "link": "https://eventslist.co.uk/lancaster/events/lancaster-grand-thea-vincent-simone-tango-passions-2027-02-18",
+    "description": "Espectáculo de danza enfocado en la pasión del tango.",
+    "category": "Teatro",
+    "source": "Events List"
   }
 ]
