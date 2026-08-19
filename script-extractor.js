@@ -16,6 +16,7 @@ const {
   getDateWindow,
   isWithinWindow,
   isValidEvent,
+  mentionsArgentina,
   cleanHTML,
   stripMarkdownJson,
   readEventos,
@@ -152,7 +153,11 @@ async function scrapeAndParse() {
       if (jsonCleaned && jsonCleaned !== "[]") {
         const events = JSON.parse(jsonCleaned);
         if (Array.isArray(events)) {
-          const withinWindow = events.filter(isValidEvent).filter(passesWindow);
+          const withinWindow = events.filter(isValidEvent).filter(mentionsArgentina).filter(passesWindow);
+          const descartadosPorRelevancia = events.filter(isValidEvent).filter((e) => !mentionsArgentina(e));
+          if (descartadosPorRelevancia.length > 0) {
+            console.log(`🚫 Descartados por no mencionar Argentina explícitamente: ${descartadosPorRelevancia.map(e => e.title).join(', ')}`);
+          }
           const temporadas = withinWindow.filter((e) => e.type === "temporada").length;
           console.log(`✅ ${src.name}: ${events.length} recibidos, ${withinWindow.length} dentro de ventana (${temporadas} de temporada).`);
           allNewEvents = [...allNewEvents, ...withinWindow];
