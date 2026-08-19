@@ -17,6 +17,7 @@ const {
   getDateWindow,
   isWithinWindow,
   isValidEvent,
+  mentionsArgentina,
   cleanHTML,
   stripMarkdownJson,
   readEventos,
@@ -180,7 +181,11 @@ async function extractFromUrl() {
       return;
     }
 
-    const withinWindow = events.filter(isValidEvent).filter(passesWindow);
+    const withinWindow = events.filter(isValidEvent).filter(mentionsArgentina).filter(passesWindow);
+    const descartadosPorRelevancia = events.filter(isValidEvent).filter((e) => !mentionsArgentina(e));
+    if (descartadosPorRelevancia.length > 0) {
+      console.log(`🚫 Descartados por no mencionar Argentina explícitamente: ${descartadosPorRelevancia.map(e => e.title).join(', ')}`);
+    }
     console.log(`✅ ${events.length} eventos recibidos, ${withinWindow.length} dentro de la ventana válida.`);
 
     const result = mergeAndSave(existingEvents, withinWindow);
