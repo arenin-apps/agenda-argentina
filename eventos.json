@@ -155,6 +155,21 @@
     "source": "Curzon Cinema"
   },
   {
+    "title": "Vincent Simone - Tango Passions",
+    "type": "unico",
+    "date": "2026-08-20",
+    "endDate": null,
+    "dateLabel": "PRÓXIMAMENTE (CONSULTAR FECHA ESPECÍFICA EN WEB)",
+    "venue": "Brighton and Hove",
+    "city": "Brighton",
+    "region": "East Sussex",
+    "price": "Consultar web",
+    "link": "https://www.visitbrighton.com/whats-on/vincent-simone-tango-passions-p2826821",
+    "description": "Espectáculo de tango argentino protagonizado por el bailarín Vincent Simone, vinculado directamente a la cultura y la danza tradicional de Argentina.",
+    "category": "Música",
+    "source": "Brighton"
+  },
+  {
     "title": "Volver",
     "date": "2026-08-22",
     "dateLabel": "SÁBADO, 22 DE AGOSTO 2026",
@@ -553,6 +568,21 @@
     "price": "Consultar",
     "link": "https://eventslist.co.uk/lancaster/events/lancaster-grand-thea-vincent-simone-tango-passions-2027-02-18",
     "description": "Espectáculo de danza enfocado en la pasión del tango.",
+    "category": "Teatro",
+    "source": "Events List"
+  },
+  {
+    "title": "Vincent Simone – Tango Passions",
+    "type": "unico",
+    "date": "2027-02-18",
+    "endDate": null,
+    "dateLabel": "JUEVES, 18 DE FEBRERO 2027",
+    "venue": "Liverpool",
+    "city": "Liverpool",
+    "region": "Inglaterra",
+    "price": "Consultar",
+    "link": "https://eventslist.co.uk/liverpool/events/vincent-simone-tango-passions-2027-02-18",
+    "description": "Espectáculo de danza enfocado en la pasión del tango argentino.",
     "category": "Teatro",
     "source": "Events List"
   }
