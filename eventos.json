@@ -1,20 +1,5 @@
 [
   {
-    "title": "Summer Show",
-    "type": "temporada",
-    "date": "2026-07-16",
-    "endDate": "2026-09-12",
-    "dateLabel": "Hasta el 12 de septiembre de 2026",
-    "venue": "Goodman Gallery",
-    "city": "London",
-    "region": "London West End",
-    "price": "Consultar galería",
-    "link": "https://www.galleriesnow.net/shows/summer-show-19/",
-    "description": "Exposición de verano que incluye obra nueva e histórica de diversos artistas internacionales, entre los que se destaca Laura Lima (artista brasileña con fuerte vínculo cultural y presencia en la escena artística sudamericana).",
-    "category": "Artes Plásticas",
-    "source": "Galleries Now"
-  },
-  {
     "title": "A Levitating Territory - Majo Caporaletti & Vicky Polak",
     "date": "2026-08-12",
     "dateLabel": "AGOSTO 2026",
@@ -112,21 +97,6 @@
     "source": "La Tundra"
   },
   {
-    "title": "Frida: The Making of an Icon",
-    "type": "temporada",
-    "date": "2026-08-19",
-    "endDate": "2027-01-03",
-    "dateLabel": "Hasta el 3 de enero de 2027",
-    "venue": "Tate Modern",
-    "city": "Londres",
-    "region": "Gran Londres",
-    "price": "Gratis para miembros",
-    "link": "https://www.tate.org.uk/whats-on/tate-modern/frida-kahlo-the-making-of-an-icon",
-    "description": "Exhibición sobre la icónica artista Frida Kahlo, fuertemente vinculada a la cultura latinoamericana y de gran resonancia en Argentina.",
-    "category": "Artes Plásticas",
-    "source": "Tate Modern"
-  },
-  {
     "title": "A Levitating Territory",
     "type": "temporada",
     "date": "2026-08-19",
@@ -168,21 +138,6 @@
     "description": "Clases gratuitas de tango argentino, danza tradicional vinculada culturalmente con Argentina.",
     "category": "Comunidad",
     "source": "Events List"
-  },
-  {
-    "title": "David Byrne's American Utopia",
-    "type": "unico",
-    "date": "2026-08-20",
-    "endDate": null,
-    "dateLabel": "JUEVES, 20 DE AGOSTO 2026",
-    "venue": "Picturehouse Cinemas",
-    "city": "Reino Unido",
-    "region": "Reino Unido",
-    "price": "Consultar web",
-    "link": "https://www.picturehouses.com/whats-on",
-    "description": "Proyección del concierto dirigido por Spike Lee de la aclamada obra de David Byrne, artista profundamente vinculado a la cultura latinoamericana y argentina.",
-    "category": "Cine",
-    "source": "Picture House"
   },
   {
     "title": "Nine Queens",
