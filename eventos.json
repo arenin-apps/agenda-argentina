@@ -185,6 +185,21 @@
     "source": "Picture House"
   },
   {
+    "title": "Nine Queens",
+    "type": "unico",
+    "date": "2026-08-20",
+    "endDate": null,
+    "dateLabel": "DISPONIBLE EN STREAMING",
+    "venue": "Curzon Home Cinema",
+    "city": "Online",
+    "region": "Reino Unido",
+    "price": "Consultar web",
+    "link": "https://homecinema.curzon.com/film/nine-queens/",
+    "description": "Proyección de la aclamada película argentina 'Nueve Reinas' (Nine Queens) dirigida por Fabián Bielinsky dentro de la colección dedicada a Argentina en Curzon Home Cinema.",
+    "category": "Cine",
+    "source": "Curzon Cinema"
+  },
+  {
     "title": "Volver",
     "date": "2026-08-22",
     "dateLabel": "SÁBADO, 22 DE AGOSTO 2026",
