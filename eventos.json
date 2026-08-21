@@ -213,21 +213,6 @@
     "source": "Blanco Gallery"
   },
   {
-    "title": "Finders Keepers",
-    "type": "temporada",
-    "date": "2026-08-28",
-    "endDate": "2026-09-20",
-    "dateLabel": "Hasta el 20 de septiembre de 2026",
-    "venue": "Blanco Gallery",
-    "city": "Londres",
-    "region": "Inglaterra",
-    "price": "Entrada Libre",
-    "link": "https://www.blancogallery.com/",
-    "description": "Exhibición que cuenta con artistas como Charly Helyar y Eloïse Dethier-Eaton, curada por Adela Blanco.",
-    "category": "Artes Plásticas",
-    "source": "Blanco Gallery"
-  },
-  {
     "title": "Nube 9 en el International Beatleweek Showcase",
     "type": "unico",
     "date": "2026-08-29",
@@ -371,21 +356,6 @@
     "description": "Concierto del guitarrista anglo-argentino Dominic Miller, conocido por su trabajo con Sting y su exitosa carrera solista.",
     "category": "Música",
     "source": "sergius.uk"
-  },
-  {
-    "title": "Ciro y Los Persa",
-    "type": "unico",
-    "date": "2026-09-28",
-    "endDate": null,
-    "dateLabel": "LUNES, 28 DE SEPTIEMBRE 2026",
-    "venue": "Opium",
-    "city": "Dublin",
-    "region": "Dublin",
-    "price": "Consultar",
-    "link": "https://eventslist.co.uk/dublin/events/ciro-y-los-persa-2026-09-28",
-    "description": "Concierto de la reconocida banda de rock argentina Ciro y Los Persas en Dublín.",
-    "category": "Música / Conciertos",
-    "source": "Events List"
   },
   {
     "title": "Dominic Miller – Edinburgh",
@@ -570,21 +540,6 @@
     "description": "Partido de la Nations Championship 2026 de la selección de rugby de Argentina (Los Pumas) contra Francia.",
     "category": "Deportes",
     "source": "Nations Championship Rugby"
-  },
-  {
-    "title": "Vincent Simone – Tango Passions",
-    "type": "unico",
-    "date": "2027-02-18",
-    "endDate": null,
-    "dateLabel": "JUEVES, 18 DE FEBRERO 2027",
-    "venue": "Grand Theatre Lancaster",
-    "city": "Lancaster",
-    "region": "Inglaterra",
-    "price": "Consultar",
-    "link": "https://eventslist.co.uk/lancaster/events/lancaster-grand-thea-vincent-simone-tango-passions-2027-02-18",
-    "description": "Espectáculo de danza enfocado en la pasión del tango.",
-    "category": "Teatro",
-    "source": "Events List"
   },
   {
     "title": "Vincent Simone – Tango Passions",
