@@ -213,6 +213,21 @@
     "source": "Curzon Cinema"
   },
   {
+    "title": "Nine Queens",
+    "type": "unico",
+    "date": "2026-08-23",
+    "endDate": null,
+    "dateLabel": "DISPONIBLE EN STREAMING",
+    "venue": "Curzon Home Cinema",
+    "city": "Online",
+    "region": "Reino Unido",
+    "price": "Consultar web",
+    "link": "https://homecinema.curzon.com/film/nine-queens/",
+    "description": "Proyección de la aclamada película argentina 'Nueve Reinas' dirigida por Fabián Bielinsky.",
+    "category": "Cine",
+    "source": "Curzon Cinema"
+  },
+  {
     "title": "6 bandas argentinas participando en la International Beatleweek",
     "type": "temporada",
     "date": "2026-08-26",
@@ -226,6 +241,21 @@
     "description": "International Beatleweek es un festival anual de música celebrado en Liverpool (Reino Unido) que rinde homenaje a The Beatles.  Organizado por Cavern City Tours, reúne durante siete días a decenas de bandas tributo y artistas de todo el mundo. El evento ofrece conciertos diarios en vivo en múltiples escenarios emblemáticos —incluido el histórico The Cavern Club—, además de convenciones para fanáticos, charlas temáticas, exhibiciones y espectados especiales dedicados al legado del cuarteto de Liverpool.",
     "category": "Música",
     "source": "Cavern Club Liverpool"
+  },
+  {
+    "title": "FREE Argentine Tango Classes in Swansea on Thursdays",
+    "type": "unico",
+    "date": "2026-08-27",
+    "endDate": null,
+    "dateLabel": "JUEVES, 27 DE AGOSTO 2026",
+    "venue": "Taliesin Arts Centre",
+    "city": "Swansea",
+    "region": "Gales",
+    "price": "£0.00",
+    "link": "https://eventslist.co.uk/swansea/events/free-argentine-tango-classes-in-swansea-on-thursdays-2026-08-27",
+    "description": "Clases gratuitas de tango argentino en Swansea.",
+    "category": "Música",
+    "source": "Events List"
   },
   {
     "title": "Finders Keepers - Charly Helyar, Eloïse Dethier-Eaton (Curated by Adela Blanco)",
@@ -438,6 +468,21 @@
     "description": "Evento cultural y gastronómico temático centrado en la cultura de Argentina.",
     "category": "Comunidad",
     "source": "Events List"
+  },
+  {
+    "title": "El Tri en Londres",
+    "type": "unico",
+    "date": "2026-10-18",
+    "endDate": null,
+    "dateLabel": "DOMINGO, 18 DE OCTUBRE 2026 - 20:00",
+    "venue": "Electric Ballroom",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://ticket.deputamadreclub.eu/tri26ldn/",
+    "description": "Concierto de la banda mexicana El Tri en Londres. (Nota: Se incluye por tomar lugar físicamente en el Reino Unido dentro de la plataforma analizada, aunque la banda es de origen mexicano y no tiene un vínculo cultural específico con Argentina).",
+    "category": "Música",
+    "source": "De Puta Madre Club"
   },
   {
     "title": "Buenos Vampiros live in Dublin",
