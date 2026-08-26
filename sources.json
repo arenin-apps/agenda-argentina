@@ -303,5 +303,9 @@
   {
     "name": "TV Guide",
     "url": "https://www.tvguide.co.uk/search"
+  },
+  {
+    "name": "Wellcome Collection",
+    "url": "https://wellcomecollection.org/whats-on"
   }
 ]
