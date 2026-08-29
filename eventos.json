@@ -1,5 +1,20 @@
 [
   {
+    "title": "Tango After Dark",
+    "type": "temporada",
+    "date": "2026-06-14",
+    "endDate": "2026-11-09",
+    "dateLabel": "Hasta el 9 de NOVIEMBRE de 2026",
+    "venue": "Sadlers Wells",
+    "city": "London",
+    "region": "Inglaterra",
+    "price": "From £18.00",
+    "link": "https://eventslist.co.uk/london/events/tango-after-dark-2026-06-14",
+    "description": "Espectáculo de danza basado en el tango argentino presentado en el prestigioso Sadler's Wells de Londres.",
+    "category": "Teatro / Danza",
+    "source": "Events List"
+  },
+  {
     "title": "A Levitating Territory - Majo Caporaletti & Vicky Polak",
     "date": "2026-08-12",
     "dateLabel": "AGOSTO 2026",
@@ -333,6 +348,21 @@
     "source": "Cavern Club"
   },
   {
+    "title": "A Levitating Territory - Majo Caporaletti & Vicky Polak",
+    "type": "temporada",
+    "date": "2026-08-29",
+    "endDate": null,
+    "dateLabel": "A partir del 29 DE AGOSTO DE 2026",
+    "venue": "Blanco Gallery",
+    "city": "Online",
+    "region": "Reino Unido",
+    "price": "Entrada Libre",
+    "link": "https://www.blancogallery.com/",
+    "description": "Exposición que cuenta con la participación de Majo Caporaletti, artista de origen argentino, dentro de la programación de Blanco Gallery.",
+    "category": "Artes Plásticas",
+    "source": "Blanco Gallery"
+  },
+  {
     "title": "CA7RIEL & Paco Amoroso en Manchester",
     "date": "2026-08-31",
     "dateLabel": "LUNES, 31 DE AGOSTO 2026",
@@ -588,6 +618,21 @@
     "description": "Evento cultural y gastronómico temático centrado en la cultura de Argentina.",
     "category": "Comunidad",
     "source": "Events List"
+  },
+  {
+    "title": "El Tri en London",
+    "type": "unico",
+    "date": "2026-10-18",
+    "endDate": null,
+    "dateLabel": "DOMINGO, 18 DE OCTUBRE 2026 - 20:00",
+    "venue": "Electric Ballroom",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://ticket.deputamadreclub.eu/tri26ldn/",
+    "description": "Concierto de la legendaria banda de rock mexicana El Tri en Londres. (Nota: Evento incluido por el criterio amplio de la fuente, pero verifique la especificidad del vínculo argentino si es estrictamente necesario, ya que la banda es mexicana).",
+    "category": "Música",
+    "source": "De Puta Madre Club"
   },
   {
     "title": "Buenos Vampiros live in Dublin",
