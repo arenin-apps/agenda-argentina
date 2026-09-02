@@ -74,7 +74,8 @@ function buildPrompt(url, cleanText, existingTitlesAndDates) {
     5. Si el texto no menciona ningún evento relacionado con Argentina que ocurra en el Reino Unido, o todos ya existen, devuelve un arreglo vacío [].
     6. El texto incluye links junto al nombre de cada elemento en formato "texto [URL]". Para el campo "link", usá el URL específico de la página de ESE evento. Solo si no encontrás ninguno, usá ${url} como respaldo.
     7. Para el campo "source", usá el nombre real del sitio, medio o entidad al que pertenece esta página (ej. si es el newsletter de una organización, usá el nombre de esa organización; si es un diario, el nombre del diario). Buscá ese nombre en el propio texto (títulos, logos, pie de página). Si no lo encontrás en el texto, usá "${hostname}" como respaldo. NUNCA uses un texto genérico como "Extracción manual" o similar — la gente que ve la agenda necesita saber de qué sitio viene la información.
-    8. Devuelve únicamente un arreglo JSON puro (sin texto adicional) con esta forma:
+    8. Usá la categoría "Workshops" para talleres, laboratorios, cursos o entrenamientos donde la gente participa activamente para aprender o practicar una habilidad con un facilitador (ej. talleres de improvisación vocal, clases regulares, entrenamientos para líderes de grupo). Usá "Comunidad" para encuentros sociales/culturales sin ese componente de aprendizaje activo.
+    9. Devuelve únicamente un arreglo JSON puro (sin texto adicional) con esta forma:
     [
       {
         "title": "Nombre específico del evento",
@@ -88,7 +89,7 @@ function buildPrompt(url, cleanText, existingTitlesAndDates) {
         "price": "Precio estimado o 'Entrada Libre'",
         "link": "URL del evento específico si se menciona, o en su defecto ${url}",
         "description": "Breve descripción y su relación con Argentina",
-        "category": "Música / Teatro / Deportes / Artes Plásticas / Cine / Comunidad",
+        "category": "Música / Teatro / Deportes / Artes Plásticas / Cine / Comunidad / Workshops",
         "source": "Nombre real del sitio (ver regla 6)"
       }
     ]
