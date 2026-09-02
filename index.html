@@ -6,6 +6,7 @@
   <title>Agenda Cultural Argentina en UK</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8667684098323123" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -63,6 +64,33 @@
         return `Hasta el ${formatDateOnly(evt.endDate)}`;
       }
       return `Desde el ${formatDateOnly(evt.date)}`;
+    }
+
+    // Anuncio en medio de la lista de eventos. Tamaño fijo (320x50), igual
+    // patrón que los banners de arriba y abajo de la agenda, para evitar
+    // el problema de tamaños gigantes en mobile que ya resolvimos ahí.
+    function MidContentAd() {
+      const pushed = React.useRef(false);
+      React.useEffect(() => {
+        if (pushed.current) return;
+        pushed.current = true;
+        try {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (e) {
+          console.warn('AdSense push error:', e);
+        }
+      }, []);
+      return (
+        <div className="flex flex-col items-center py-2">
+          <p className="text-[10px] uppercase tracking-widest text-slate-600 mb-1.5">Publicidad</p>
+          <ins
+            className="adsbygoogle"
+            style={{ display: 'inline-block', width: '320px', height: '50px' }}
+            data-ad-client="ca-pub-8667684098323123"
+            data-ad-slot="5122509288"
+          ></ins>
+        </div>
+      );
     }
 
     function App() {
@@ -234,7 +262,7 @@
 
                   const isSeason = evt.type === 'temporada';
 
-                  return (
+                  const card = (
                     <div key={`${evt.title}-${evt.date}-${idx}`} className="bg-slate-900 border border-slate-800/80 hover:border-sky-500/30 rounded-2xl p-5 sm:p-6 shadow-xl transition-all">
                       <div className="flex flex-col space-y-3">
                         <div className="flex items-center gap-2 text-xs flex-wrap">
@@ -293,6 +321,26 @@
                       </div>
                     </div>
                   );
+
+                  // La posición del anuncio se calcula en función de cuántos
+                  // eventos hay en la lista filtrada en este momento (varía
+                  // día a día): a un cuarto de camino, con un mínimo de 12
+                  // eventos totales para mostrarlo (si hay menos, no
+                  // aparece, para no quedar pegado al final), y un máximo
+                  // de posición 14 aunque la lista sea muy larga.
+                  const totalEvents = filteredEvents.length;
+                  const adPosition = Math.min(14, Math.floor(totalEvents / 4));
+                  const showAd = totalEvents >= 12 && idx === adPosition;
+
+                  if (showAd) {
+                    return (
+                      <React.Fragment key={`frag-${idx}`}>
+                        {card}
+                        <MidContentAd />
+                      </React.Fragment>
+                    );
+                  }
+                  return card;
                 })
               )}
             </div>
