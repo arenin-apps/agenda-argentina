@@ -479,6 +479,21 @@
     "source": "Wellcome Gallery"
   },
   {
+    "title": "Nine Queens",
+    "type": "unico",
+    "date": "2026-09-02",
+    "endDate": null,
+    "dateLabel": "DISPONIBLE EN STREAMING",
+    "venue": "Curzon Home Cinema",
+    "city": "Online",
+    "region": "Reino Unido",
+    "price": "Consultar web",
+    "link": "https://homecinema.curzon.com/film/nine-queens/",
+    "description": "Proyección de la icónica película argentina 'Nueve reinas' (Nine Queens), dirigida por Fabián Bielinsky.",
+    "category": "Cine",
+    "source": "Curzon Cinema"
+  },
+  {
     "title": "The project-Argentine Tango community",
     "date": "2026-09-04",
     "dateLabel": "VIERNES, 4 DE SEPTIEMBRE 2026",
@@ -507,6 +522,21 @@
     "source": "Institute of Contemporary Arts"
   },
   {
+    "title": "Pin de Fartie + Q&A",
+    "type": "unico",
+    "date": "2026-09-04",
+    "endDate": null,
+    "dateLabel": "VIERNES, 4 DE SEPTIEMBRE 2026 - 19:00",
+    "venue": "Institute of Contemporary Arts (ICA)",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.ica.art/films/pin-de-fartie",
+    "description": "Proyección de la película del director argentino Alejo Moguillansky, protagonizada por Laura Paredes, que presenta una reinterpretación de Fin de Partie de Samuel Beckett.",
+    "category": "Cine",
+    "source": "Ica Art Films"
+  },
+  {
     "title": "Estelares en Londres 2026",
     "date": "2026-09-05",
     "dateLabel": "SÁBADO, 5 DE SEPTIEMBRE 2026 - 19:00",
@@ -533,6 +563,21 @@
     "description": "Proyección de la película argentina 'Pin de Fartie', dirigida por Alejo Moguillansky (El Pampero Cine).",
     "category": "Cine",
     "source": "Institute of Contemporary Arts"
+  },
+  {
+    "title": "Pin de Fartie + Q&A",
+    "type": "unico",
+    "date": "2026-09-05",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 5 DE SEPTIEMBRE 2026 - 14:00",
+    "venue": "Institute of Contemporary Arts (ICA)",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.ica.art/films/pin-de-fartie",
+    "description": "Segunda función de la película del director argentino Alejo Moguillansky, con actuación de Laura Paredes, incluyendo una sesión de preguntas y respuestas (Q&A).",
+    "category": "Cine",
+    "source": "Ica Art Films"
   },
   {
     "title": "Pin de Fartie - Screening (06 Sep)",
