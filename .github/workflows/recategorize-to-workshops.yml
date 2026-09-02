@@ -1,0 +1,31 @@
+name: Recategorizar a Workshops (uso único)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  recategorize:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Recategorizar eventos de Guillermo Rozenthuler
+        run: node recategorize-to-workshops.js
+
+      - name: Commit y push si hubo cambios
+        run: |
+          git config user.name "arenin-bot"
+          git config user.email "actions@github.com"
+          if git diff --quiet eventos.json; then
+            echo "Sin cambios en eventos.json"
+          else
+            git add eventos.json
+            git commit -m "Recategorizar eventos de Guillermo Rozenthuler a Workshops"
+            git push
+          fi
