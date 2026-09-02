@@ -18,6 +18,7 @@ on:
           - Artes Plásticas
           - Cine
           - Comunidad
+          - Workshops
       fecha_desde:
         description: 'Fecha de inicio, formato YYYY-MM-DD (ej. 2026-09-20)'
         required: true
