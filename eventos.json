@@ -509,6 +509,36 @@
     "source": "Curzon Cinema"
   },
   {
+    "title": "Nine Queens",
+    "type": "unico",
+    "date": "2026-09-03",
+    "endDate": null,
+    "dateLabel": "PRÓXIMAMENTE",
+    "venue": "Curzon Cinema (Home Cinema)",
+    "city": "London",
+    "region": "Greater London",
+    "price": "Consultar web",
+    "link": "https://homecinema.curzon.com/film/nine-queens/",
+    "description": "Proyección de la aclamada película argentina 'Nueve reinas' (2000), dirigida por Fabián Bielinsky y protagonizada por Ricardo Darín y Gastón Pauls.",
+    "category": "Cine",
+    "source": "Curzon Cinema"
+  },
+  {
+    "title": "Estelares",
+    "type": "unico",
+    "date": "2026-09-03",
+    "endDate": null,
+    "dateLabel": "Próximamente 2026",
+    "venue": "Reino Unido",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar",
+    "link": "https://www.latinolife.co.uk/event/estelares",
+    "description": "Concierto de la reconocida banda de rock alternativo Estelares, formada a principios de los años 90 en La Plata, Argentina.",
+    "category": "Música",
+    "source": "Latino Life"
+  },
+  {
     "title": "The project-Argentine Tango community",
     "date": "2026-09-04",
     "dateLabel": "VIERNES, 4 DE SEPTIEMBRE 2026",
@@ -548,6 +578,21 @@
     "price": "Consultar web",
     "link": "https://www.ica.art/films/pin-de-fartie",
     "description": "Proyección de la película del director argentino Alejo Moguillansky, protagonizada por Laura Paredes, que presenta una reinterpretación de Fin de Partie de Samuel Beckett.",
+    "category": "Cine",
+    "source": "Ica Art Films"
+  },
+  {
+    "title": "Pin de Fartie + Q&A",
+    "type": "unico",
+    "date": "2026-09-04",
+    "endDate": null,
+    "dateLabel": "VIERNES, 4 DE SEPTIEMBRE 2026 - 19:00",
+    "venue": "ICA (Institute of Contemporary Arts)",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.ica.art/films/pin-de-fartie",
+    "description": "Proyección con Q&A de la película del director argentino Alejo Moguillansky, una imaginativa adaptación de Fin de Partie de Samuel Beckett que cuenta con la destacada actuación de la actriz argentina Laura Paredes.",
     "category": "Cine",
     "source": "Ica Art Films"
   },
@@ -595,6 +640,21 @@
     "source": "Ica Art Films"
   },
   {
+    "title": "Pin de Fartie + Q&A",
+    "type": "unico",
+    "date": "2026-09-05",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 5 DE SEPTIEMBRE 2026 - 14:00",
+    "venue": "ICA (Institute of Contemporary Arts)",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.ica.art/films/pin-de-fartie",
+    "description": "Proyección con Q&A de la película del director argentino Alejo Moguillansky, una imaginativa adaptación de Fin de Partie de Samuel Beckett que cuenta con la destacada actuación de la actriz argentina Laura Paredes.",
+    "category": "Cine",
+    "source": "Ica Art Films"
+  },
+  {
     "title": "Pin de Fartie - Screening (06 Sep)",
     "type": "unico",
     "date": "2026-09-06",
@@ -608,6 +668,21 @@
     "description": "Proyección de la película argentina 'Pin de Fartie', dirigida por Alejo Moguillansky (El Pampero Cine).",
     "category": "Cine",
     "source": "Institute of Contemporary Arts"
+  },
+  {
+    "title": "Pin de Fartie + Q&A",
+    "type": "unico",
+    "date": "2026-09-06",
+    "endDate": null,
+    "dateLabel": "DOMINGO, 6 DE SEPTIEMBRE 2026 - 17:30",
+    "venue": "ICA (Institute of Contemporary Arts)",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.ica.art/films/pin-de-fartie",
+    "description": "Proyección con Q&A de la película del director argentino Alejo Moguillansky, una imaginativa adaptación de Fin de Partie de Samuel Beckett que cuenta con la destacada actuación de la actriz argentina Laura Paredes.",
+    "category": "Cine",
+    "source": "Ica Art Films"
   },
   {
     "title": "FREE 5 Week Argentine Tango Beginners Course",
