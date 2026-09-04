@@ -15,6 +15,21 @@
     "source": "guillermorozenthuler.com"
   },
   {
+    "title": "International Photography Exhibition 167",
+    "type": "temporada",
+    "date": "2026-06-01",
+    "endDate": "2026-09-11",
+    "dateLabel": "Hasta el 11 de septiembre de 2026",
+    "venue": "Saatchi Gallery",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar en galería",
+    "link": "https://mailchi.mp/argentine-embassy-uk.org/april-2026-newsletter-21508039?e=933d6edbd6",
+    "description": "Exhibición internacional de fotografía de la Royal Photographic Society que cuenta con la participación de la artista argentina Carolina Baldomá entre los seleccionados.",
+    "category": "Artes Plásticas",
+    "source": "Argentine Embassy in the UK"
+  },
+  {
     "title": "Tango After Dark",
     "type": "temporada",
     "date": "2026-06-14",
@@ -638,6 +653,21 @@
     "source": "Events List"
   },
   {
+    "title": "Amar en cuenta regresiva",
+    "type": "unico",
+    "date": "2026-09-07",
+    "endDate": null,
+    "dateLabel": "LUNES, 7 DE SEPTIEMBRE 2026 - 18:30 HS",
+    "venue": "49 Belgrave Square",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar enlace",
+    "link": "https://www.peoplesfundraising.com/event/amar-en-cuenta-regresiva-book-presentation?utm_source=peoplesfundraising&utm_medium=referral",
+    "description": "Presentación del libro de ficción contemporánea del escritor argentino Germán Martins, organizada por APARU con panel de conversación, lectura, firma de libros, bebidas y empanadas.",
+    "category": "Comunidad",
+    "source": "Argentine Embassy in the UK"
+  },
+  {
     "title": "Pin de Fartie - Screening (08 Sep)",
     "type": "unico",
     "date": "2026-09-08",
@@ -754,6 +784,21 @@
     "description": "Curso intensivo de un día de tango argentino y milonga.",
     "category": "Música",
     "source": "Events List"
+  },
+  {
+    "title": "Open House London: Argentine Ambassador's Residence",
+    "type": "temporada",
+    "date": "2026-09-12",
+    "endDate": "2026-09-13",
+    "dateLabel": "12 y 13 de septiembre de 2026 - 10:00 a 17:00",
+    "venue": "49 Belgrave Square",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Entrada Libre",
+    "link": "https://programme.openhouse.org.uk/listings/2060",
+    "description": "Apertura especial de la Residencia del Embajador de Argentina en el marco del Open House Festival, incluyendo exposiciones de arte de artistas argentinos (Internal Maps y Club de la Estampa de Buenos Aires).",
+    "category": "Comunidad",
+    "source": "Argentine Embassy in the UK"
   },
   {
     "title": "Echoes of Buenos Aires – Martin Alvarado and Gerardo Villar y Los Aguirre",
