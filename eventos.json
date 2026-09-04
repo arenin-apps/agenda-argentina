@@ -970,19 +970,6 @@
   },
   {
     "title": "No Te Va Gustar",
-    "date": "2026-10-14",
-    "dateLabel": "MIÉRCOLES, 14 DE OCTUBRE 2026 - 19:00",
-    "venue": "O2 Shepherd’s Bush Empire",
-    "city": "Londres",
-    "region": "Inglaterra",
-    "price": "Agotado",
-    "link": "https://www.comono.co.uk/",
-    "description": "Concierto de No Te Va Gustar, banda uruguaya con estrecha relación y trayectoria compartida en la escena de rock de Argentina.",
-    "category": "Música",
-    "source": "Como No"
-  },
-  {
-    "title": "No Te Va Gustar",
     "type": "unico",
     "date": "2026-10-14",
     "endDate": null,
