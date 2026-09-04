@@ -262,8 +262,20 @@
 
                   const isSeason = evt.type === 'temporada';
 
+                  // Destacar eventos organizados por ARenIN mismo, o por
+                  // Sergius.uk (organizador habitual de conciertos
+                  // argentinos en el Reino Unido) — para que no se
+                  // pierdan como uno más en el listado.
+                  const sourceText = (evt.source || '').toLowerCase();
+                  const isFeaturedOrganizer = sourceText.includes('arenin') || sourceText.includes('sergius');
+                  const featuredLabel = sourceText.includes('arenin')
+                    ? '★ Organiza ARenIN'
+                    : sourceText.includes('sergius')
+                      ? '★ Organiza Sergius.uk'
+                      : null;
+
                   const card = (
-                    <div key={`${evt.title}-${evt.date}-${idx}`} className="bg-slate-900 border border-slate-800/80 hover:border-sky-500/30 rounded-2xl p-5 sm:p-6 shadow-xl transition-all">
+                    <div key={`${evt.title}-${evt.date}-${idx}`} className={`bg-slate-900 border rounded-2xl p-5 sm:p-6 shadow-xl transition-all ${isFeaturedOrganizer ? 'border-emerald-500/50 ring-1 ring-emerald-500/20 hover:border-emerald-400/70' : 'border-slate-800/80 hover:border-sky-500/30'}`}>
                       <div className="flex flex-col space-y-3">
                         <div className="flex items-center gap-2 text-xs flex-wrap">
                           <span className="bg-sky-500/10 text-sky-400 border border-sky-500/20 px-2.5 py-0.5 rounded-md font-bold uppercase tracking-wider text-[10px]">
@@ -272,6 +284,11 @@
                           {isSeason && (
                             <span className="bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2.5 py-0.5 rounded-md font-bold uppercase tracking-wider text-[10px]">
                               Temporada
+                            </span>
+                          )}
+                          {featuredLabel && (
+                            <span className="bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 px-2.5 py-0.5 rounded-md font-bold uppercase tracking-wider text-[10px]">
+                              {featuredLabel}
                             </span>
                           )}
                           <span className="text-slate-600">•</span>
