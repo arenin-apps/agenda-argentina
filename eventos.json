@@ -655,6 +655,21 @@
     "source": "Ica Art Films"
   },
   {
+    "title": "Off-Circuit UK PREMIERE: Pin de Fartie + Q&A",
+    "type": "unico",
+    "date": "2026-09-06",
+    "endDate": null,
+    "dateLabel": "DOMINGO, 6 DE SEPTIEMBRE 2026 - 17:30",
+    "venue": "Institute of Contemporary Arts (ICA)",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.ica.art/films/pin-de-fartie",
+    "description": "Proyección de la nueva película del director argentino Alejo Moguillansky, con la actuación de la actriz argentina Laura Paredes.",
+    "category": "Cine",
+    "source": "Ica Art Films"
+  },
+  {
     "title": "FREE 5 Week Argentine Tango Beginners Course",
     "date": "2026-09-07",
     "dateLabel": "LUNES, 7 DE SEPTIEMBRE 2026",
@@ -681,6 +696,21 @@
     "description": "Proyección de la película argentina 'Pin de Fartie', dirigida por Alejo Moguillansky (El Pampero Cine).",
     "category": "Cine",
     "source": "Institute of Contemporary Arts"
+  },
+  {
+    "title": "Off-Circuit UK PREMIERE: Pin de Fartie + Q&A",
+    "type": "unico",
+    "date": "2026-09-08",
+    "endDate": null,
+    "dateLabel": "MARTES, 8 DE SEPTIEMBRE 2026 - 18:30",
+    "venue": "Institute of Contemporary Arts (ICA)",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.ica.art/films/pin-de-fartie",
+    "description": "Proyección de la nueva película del director argentino Alejo Moguillansky, con la actuación de la actriz argentina Laura Paredes.",
+    "category": "Cine",
+    "source": "Ica Art Films"
   },
   {
     "title": "Pin de Fartie - Screening (09 Sep)",
@@ -711,6 +741,21 @@
     "description": "Reuniones mensuales de canto colectivo espontáneo (Circlesongs), término de otoño, dirigidas por Guillermo Rozenthuler, cantautor y guitarrista argentino nacido en Buenos Aires y radicado en Londres. Fechas: 9 sept y 11 nov en Heath St Baptist Church; 23 sept, 21 oct, 25 nov y 9 dic en St Augustine Church Hall.",
     "category": "Workshops",
     "source": "guillermorozenthuler.com"
+  },
+  {
+    "title": "Argentine Tango Class & Social",
+    "type": "unico",
+    "date": "2026-09-09",
+    "endDate": null,
+    "dateLabel": "MIÉRCOLES, 9 DE SEPTIEMBRE 2026",
+    "venue": "Stirchley United Working Mens Club",
+    "city": "Birmingham",
+    "region": "Birmingham",
+    "price": "Free - £5.00",
+    "link": "https://eventslist.co.uk/birmingham/events/argentine-tango-class-social-2026-09-09",
+    "description": "Clase y encuentro social dedicado al tango argentino.",
+    "category": "Workshops",
+    "source": "Events List"
   },
   {
     "title": "Pin de Fartie - Screening (10 Sep)",
@@ -769,6 +814,21 @@
     "description": "Curso intensivo de un día de tango argentino y milonga.",
     "category": "Música",
     "source": "Events List"
+  },
+  {
+    "title": "Echoes of Buenos Aires – Martin Alvarado and Gerardo Villar y Los Aguirre",
+    "type": "unico",
+    "date": "2026-09-13",
+    "endDate": null,
+    "dateLabel": "DOMINGO, 13 DE SEPTIEMBRE 2026",
+    "venue": "Cambridge",
+    "city": "Cambridge",
+    "region": "Cambridgeshire",
+    "price": "Consultar",
+    "link": "https://www.visitcambridge.org",
+    "description": "Una noche de tango, música folclórica y canciones con el reconocido cantante argentino Martín Alvarado junto a Gerardo Villar y Los Aguirre.",
+    "category": "Música",
+    "source": "Cambridge"
   },
   {
     "title": "tango @ temperance | Martin Alvarado and Los Aguirre (Buenos Aires)",
@@ -918,6 +978,21 @@
     "price": "Agotado",
     "link": "https://www.comono.co.uk/",
     "description": "Concierto de No Te Va Gustar, banda uruguaya con estrecha relación y trayectoria compartida en la escena de rock de Argentina.",
+    "category": "Música",
+    "source": "Como No"
+  },
+  {
+    "title": "No Te Va Gustar",
+    "type": "unico",
+    "date": "2026-10-14",
+    "endDate": null,
+    "dateLabel": "MIÉRCOLES, 14 DE OCTUBRE 2026 - 07:00 PM",
+    "venue": "Dingwalls",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar",
+    "link": "https://gotobeat.com/gig/no-te-va-gustar-live-in-london-uw/",
+    "description": "Concierto de la reconocida banda de rock uruguaya No Te Va Gustar, con una trayectoria profundamente ligada e integrada a la escena musical de Argentina.",
     "category": "Música",
     "source": "Como No"
   },
