@@ -552,21 +552,6 @@
     "source": "Events List"
   },
   {
-    "title": "UK Premiere: Pin de Fartie + Q&A with Alejo Moguillansky",
-    "type": "unico",
-    "date": "2026-09-04",
-    "endDate": null,
-    "dateLabel": "VIERNES, 4 DE SEPTIEMBRE 2026 - 19:00",
-    "venue": "Institute of Contemporary Arts (Cinema 1)",
-    "city": "Londres",
-    "region": "Inglaterra",
-    "price": "Consultar web",
-    "link": "https://www.ica.art/films/pin-de-fartie",
-    "description": "Estreno en el Reino Unido de la película 'Pin de Fartie' del director argentino Alejo Moguillansky y el colectivo El Pampero Cine, con la actuación de Laura Paredes. Incluye un Q&A presencial con el director.",
-    "category": "Cine",
-    "source": "Institute of Contemporary Arts"
-  },
-  {
     "title": "Pin de Fartie + Q&A",
     "type": "unico",
     "date": "2026-09-04",
@@ -608,21 +593,6 @@
     "description": "Estelares, una de las bandas más emblemáticas del rock argentino, llega por primera vez a Londres para un concierto histórico.",
     "category": "Música",
     "source": "SRG (sergius.uk)"
-  },
-  {
-    "title": "Pin de Fartie + Q&A",
-    "type": "unico",
-    "date": "2026-09-05",
-    "endDate": null,
-    "dateLabel": "SÁBADO, 5 DE SEPTIEMBRE 2026 - 14:00",
-    "venue": "Institute of Contemporary Arts (ICA)",
-    "city": "Londres",
-    "region": "Inglaterra",
-    "price": "Consultar web",
-    "link": "https://www.ica.art/films/pin-de-fartie",
-    "description": "Segunda función de la película del director argentino Alejo Moguillansky, con actuación de Laura Paredes, incluyendo una sesión de preguntas y respuestas (Q&A).",
-    "category": "Cine",
-    "source": "Ica Art Films"
   },
   {
     "title": "Pin de Fartie + Q&A",
@@ -696,21 +666,6 @@
     "description": "Proyección de la película argentina 'Pin de Fartie', dirigida por Alejo Moguillansky (El Pampero Cine).",
     "category": "Cine",
     "source": "Institute of Contemporary Arts"
-  },
-  {
-    "title": "Off-Circuit UK PREMIERE: Pin de Fartie + Q&A",
-    "type": "unico",
-    "date": "2026-09-08",
-    "endDate": null,
-    "dateLabel": "MARTES, 8 DE SEPTIEMBRE 2026 - 18:30",
-    "venue": "Institute of Contemporary Arts (ICA)",
-    "city": "Londres",
-    "region": "Inglaterra",
-    "price": "Consultar web",
-    "link": "https://www.ica.art/films/pin-de-fartie",
-    "description": "Proyección de la nueva película del director argentino Alejo Moguillansky, con la actuación de la actriz argentina Laura Paredes.",
-    "category": "Cine",
-    "source": "Ica Art Films"
   },
   {
     "title": "Pin de Fartie - Screening (09 Sep)",
