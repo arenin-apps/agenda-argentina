@@ -45,6 +45,21 @@
     "source": "Events List"
   },
   {
+    "title": "Clases de Teatro en español en Londres: El Método",
+    "type": "temporada",
+    "date": "2026-06-26",
+    "endDate": null,
+    "dateLabel": "Hasta agotar cupos / Clases regulares",
+    "venue": "Londres",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar",
+    "link": "https://www.latundra.com/clases-de-teatro-en-espanol-en-londres/",
+    "description": "Taller de teatro en español en Londres impartido por el director argentino Hernán Cáceres.",
+    "category": "Workshops",
+    "source": "La Tundra"
+  },
+  {
     "title": "A Levitating Territory - Majo Caporaletti & Vicky Polak",
     "date": "2026-08-12",
     "dateLabel": "AGOSTO 2026",
@@ -608,6 +623,51 @@
     "description": "Proyección con Q&A de la película del director argentino Alejo Moguillansky, una imaginativa adaptación de Fin de Partie de Samuel Beckett que cuenta con la destacada actuación de la actriz argentina Laura Paredes.",
     "category": "Cine",
     "source": "Ica Art Films"
+  },
+  {
+    "title": "La Niña Jamón",
+    "type": "unico",
+    "date": "2026-09-05",
+    "endDate": null,
+    "dateLabel": "PRÓXIMAMENTE 2026",
+    "venue": "Teatro en Londres",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar",
+    "link": "https://www.latundra.com/la-nina-jamon-teatro-independiente-y-verdad-en-londres/",
+    "description": "Obra de teatro independiente escrita por la argentina Laura Eva Avelluto y dirigida en Londres por Hernán Cáceres.",
+    "category": "Teatro",
+    "source": "La Tundra"
+  },
+  {
+    "title": "Vasto Mundo",
+    "type": "unico",
+    "date": "2026-09-05",
+    "endDate": null,
+    "dateLabel": "PRÓXIMAMENTE 2026",
+    "venue": "Londres",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar",
+    "link": "https://www.latundra.com/vasto-mundo-un-viaje-filosofico-y-esperanzador/",
+    "description": "Proyección/trabajo audiovisual basado en el cómic 'Vasto Mundo y otras historias' de la ilustradora argentina Flora Márquez.",
+    "category": "Cine",
+    "source": "La Tundra"
+  },
+  {
+    "title": "Estelares",
+    "type": "unico",
+    "date": "2026-09-05",
+    "endDate": null,
+    "dateLabel": "PRÓXIMOS EVENTOS",
+    "venue": "Reino Unido",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.latinolife.co.uk/event/estelares",
+    "description": "Formed in the early 90s, in La Plata, Argentina, Estelares is considered one of Argentina's iconic rock/pop bands.",
+    "category": "Música",
+    "source": "Latino Life"
   },
   {
     "title": "Pin de Fartie + Q&A",
