@@ -57,6 +57,7 @@ function buildPrompt(sourceName, sourceUrl, cleanText) {
     Ejemplo de lo que SÍ califica: Jorge Drexler (uruguayo con trayectoria musical fuertemente ligada a la escena argentina, colaboraciones documentadas).
     Si tenés dudas sobre si el vínculo es lo bastante específico, EXCLUÍ el evento — es preferible perder un evento dudoso que ensuciar la agenda con eventos sin relación real.
     También excluí exhibiciones colectivas o "shows" genéricos de una galería (ej. "Summer Show", muestras grupales anuales sin curaduría temática) salvo que el texto mencione explícitamente algún artista o pieza con conexión argentina específica dentro de esa muestra.
+    IMPORTANTE: si al redactar la "description" de un evento notás que estás aclarando que NO tiene vínculo específico con Argentina (o que se incluye "de todos modos", "por las dudas", etc.), eso es la señal de que tenés que EXCLUIR ese evento del arreglo de salida — nunca lo incluyas con una aclaración de ese tipo.
 
     Reglas estrictas:
     1. El evento debe ocurrir estrictamente entre el ${REFERENCE_DATE} (hoy) y el ${MAX_DATE} (dentro de 6 meses), CON UNA EXCEPCIÓN: los eventos de tipo "temporada" (ver regla 2) son válidos aunque su fecha de apertura ("date") sea anterior a hoy, siempre que su fecha de cierre ("endDate") no haya pasado todavía. Descarta todo evento puntual pasado o posterior a la ventana.
