@@ -700,6 +700,36 @@
     "source": "Ica Art Films"
   },
   {
+    "title": "Nine Queens",
+    "type": "unico",
+    "date": "2026-09-06",
+    "endDate": null,
+    "dateLabel": "DISPONIBLE EN STREAMING",
+    "venue": "Curzon Home Cinema",
+    "city": "Online",
+    "region": "Reino Unido",
+    "price": "Consultar web",
+    "link": "https://homecinema.curzon.com/film/nine-queens/",
+    "description": "Proyección de la aclamada película argentina 'Nueve reinas' (Nine Queens), dirigida por Fabián Bielinsky.",
+    "category": "Cine",
+    "source": "Curzon Cinema"
+  },
+  {
+    "title": "Estelares",
+    "type": "unico",
+    "date": "2026-09-06",
+    "endDate": null,
+    "dateLabel": "PRÓXIMAMENTE",
+    "venue": "Reino Unido",
+    "city": "Londres",
+    "region": "Greater London",
+    "price": "Consultar",
+    "link": "https://www.latinolife.co.uk/event/estelares",
+    "description": "Formada a principios de los años 90 en La Plata, Argentina, Estelares es una de las bandas de rock más consolidadas de Argentina y realiza su debut en el Reino Unido.",
+    "category": "Música",
+    "source": "Latino Life"
+  },
+  {
     "title": "FREE 5 Week Argentine Tango Beginners Course",
     "date": "2026-09-07",
     "dateLabel": "LUNES, 7 DE SEPTIEMBRE 2026",
@@ -726,6 +756,36 @@
     "description": "Presentación del libro de ficción contemporánea del escritor argentino Germán Martins, organizada por APARU con panel de conversación, lectura, firma de libros, bebidas y empanadas.",
     "category": "Comunidad",
     "source": "Argentine Embassy in the UK"
+  },
+  {
+    "title": "Argentine Tango Taster Class",
+    "type": "unico",
+    "date": "2026-09-07",
+    "endDate": null,
+    "dateLabel": "LUNES, 7 DE SEPTIEMBRE 2026",
+    "venue": "Victoria Park Baptist Church",
+    "city": "Bristol",
+    "region": "Bristol",
+    "price": "£11.55",
+    "link": "https://eventslist.co.uk/bristol/events/argentine-tango-taster-class-2026-09-07",
+    "description": "Clase de prueba de tango argentino, danza emblemática de la cultura argentina.",
+    "category": "Workshops",
+    "source": "Events List"
+  },
+  {
+    "title": "Pin de Fartie + Q&A",
+    "type": "unico",
+    "date": "2026-09-07",
+    "endDate": null,
+    "dateLabel": "MARTES, 8 DE SEPTIEMBRE 2026 - 18:30",
+    "venue": "Institute of Contemporary Arts (ICA)",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.ica.art/films/pin-de-fartie",
+    "description": "Proyección de la película del director argentino Alejo Moguillansky, con la actuación de Laura Paredes, presentada como parte de la sección Off-Circuit.",
+    "category": "Cine",
+    "source": "Ica Art Films"
   },
   {
     "title": "Pin de Fartie - Screening (08 Sep)",
@@ -788,6 +848,21 @@
     "source": "Events List"
   },
   {
+    "title": "Pin de Fartie + Q&A",
+    "type": "unico",
+    "date": "2026-09-09",
+    "endDate": null,
+    "dateLabel": "MIÉRCOLES, 9 DE SEPTIEMBRE 2026 - 20:30",
+    "venue": "Institute of Contemporary Arts (ICA)",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.ica.art/films/pin-de-fartie",
+    "description": "Proyección de la película del director argentino Alejo Moguillansky, con la actuación de Laura Paredes, presentada como parte de la sección Off-Circuit.",
+    "category": "Cine",
+    "source": "Ica Art Films"
+  },
+  {
     "title": "Pin de Fartie - Screening (10 Sep)",
     "type": "unico",
     "date": "2026-09-10",
@@ -801,6 +876,21 @@
     "description": "Proyección de la película argentina 'Pin de Fartie', dirigida por Alejo Moguillansky (El Pampero Cine).",
     "category": "Cine",
     "source": "Institute of Contemporary Arts"
+  },
+  {
+    "title": "Pin de Fartie + Q&A",
+    "type": "unico",
+    "date": "2026-09-10",
+    "endDate": null,
+    "dateLabel": "JUEVES, 10 DE SEPTIEMBRE 2026 - 18:30",
+    "venue": "Institute of Contemporary Arts (ICA)",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.ica.art/films/pin-de-fartie",
+    "description": "Proyección de la película del director argentino Alejo Moguillansky, con la actuación de Laura Paredes, presentada como parte de la sección Off-Circuit.",
+    "category": "Cine",
+    "source": "Ica Art Films"
   },
   {
     "title": "Singing Village Labs London — Friday Morning",
@@ -831,6 +921,21 @@
     "description": "Función 18:40. Doble función: Joy (2023) de Julieta Tetelbaum, directora argentina nacida en Buenos Aires y radicada en Londres, junto a Daisies (1966) de Vera Chytilová, explorando el deseo femenino a través de casi sesenta años de cine.",
     "category": "Cine",
     "source": "Genesis Cinema"
+  },
+  {
+    "title": "The project-Argentine Tango community",
+    "type": "unico",
+    "date": "2026-09-11",
+    "endDate": null,
+    "dateLabel": "VIERNES, 11 DE SEPTIEMBRE 2026",
+    "venue": "Croft House Centre",
+    "city": "Sheffield",
+    "region": "Sheffield",
+    "price": "£54.88",
+    "link": "https://eventslist.co.uk/sheffield/events/the-project-argentine-tango-community-2026-09-11",
+    "description": "Evento comunitario y de práctica de tango argentino.",
+    "category": "Comunidad",
+    "source": "Events List"
   },
   {
     "title": "12th September FREE Argentine Tango in a Day Course and Milonga (Cardiff)",
