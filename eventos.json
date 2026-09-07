@@ -986,6 +986,36 @@
     "source": "sergius.uk"
   },
   {
+    "title": "Oca",
+    "type": "unico",
+    "date": "2026-10-02",
+    "endDate": null,
+    "dateLabel": "VIERNES, 02 DE OCTUBRE 2026 - 18:30",
+    "venue": "Barbican Centre - Cinema 1",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://lolaff2026.eventive.org/films/6a7b4d47f835cf0f3c12b0b6",
+    "description": "Proyección en el London Latino Film Festival. Coproducción entre México y Argentina: una joven monja emprende un viaje en busca de fe y libertad guiada por visiones y sueños recurrentes.",
+    "category": "Cine",
+    "source": "London Latino Film Festival"
+  },
+  {
+    "title": "The Distinguished Citizen - El ciudadano ilustre",
+    "type": "unico",
+    "date": "2026-10-03",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 03 DE OCTUBRE 2026 - 19:00",
+    "venue": "Regent Street Cinema",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://lolaff2026.eventive.org/films/6a82dc10c50de5b91ec1ea82",
+    "description": "Proyección en el London Latino Film Festival. Película argentina: un escritor argentino ganador del Nobel acepta volver a su pueblo natal en Argentina tras rechazar premios de todo el mundo, con consecuencias inesperadas.",
+    "category": "Cine",
+    "source": "London Latino Film Festival"
+  },
+  {
     "title": "Peña Argentina ft. Lula Verdomar & María Chiara",
     "type": "unico",
     "date": "2026-10-04",
@@ -1001,6 +1031,36 @@
     "source": "Events List"
   },
   {
+    "title": "Street Wanderers - Los Caminantes de la Calle",
+    "type": "unico",
+    "date": "2026-10-04",
+    "endDate": null,
+    "dateLabel": "DOMINGO, 04 DE OCTUBRE 2026 - 16:00",
+    "venue": "ICA (Institute of Contemporary Arts) - Cinema 2",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://lolaff2026.eventive.org/films/6a82db22a3c2df1b45c765cc",
+    "description": "Proyección en el London Latino Film Festival. Película argentina inspirada en hechos reales: una fiscal y un policía chino investigan una red criminal dentro de la comunidad china de Mendoza, Argentina.",
+    "category": "Cine",
+    "source": "London Latino Film Festival"
+  },
+  {
+    "title": "Martina's Search - A procura de Martina",
+    "type": "unico",
+    "date": "2026-10-05",
+    "endDate": null,
+    "dateLabel": "LUNES, 05 DE OCTUBRE 2026 - 18:45",
+    "venue": "Ciné Lumière - Screen 1",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://lolaff2026.eventive.org/films/martina-s-search-a-procura-de-martina-6a82d69ea4a1e83d5b4680c4",
+    "description": "Proyección en el London Latino Film Festival. Una viuda argentina lleva más de tres décadas buscando a su nieto, uno de los niños desaparecidos durante la dictadura militar de Argentina.",
+    "category": "Cine",
+    "source": "London Latino Film Festival"
+  },
+  {
     "title": "La K'onga",
     "date": "2026-10-06",
     "dateLabel": "MARTES, 6 DE OCTUBRE 2026 - 19:00",
@@ -1012,6 +1072,21 @@
     "description": "La sensación argentina del cuarteto se presenta en vivo en Londres en el Islington Assembly Hall.",
     "category": "Música",
     "source": "WB Live"
+  },
+  {
+    "title": "A Bright Future - Un futuro brillante",
+    "type": "unico",
+    "date": "2026-10-06",
+    "endDate": null,
+    "dateLabel": "MARTES, 06 DE OCTUBRE 2026 - 12:00",
+    "venue": "ICA (Institute of Contemporary Arts) - Cinema 2",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://lolaff2026.eventive.org/films/6a82c8793af184d657457c44",
+    "description": "Proyección en el London Latino Film Festival. Coproducción con Argentina: Elisa, de 18 años, es elegida para ir al Norte, una tierra prometida donde envían a los jóvenes más prometedores, pero empieza a cuestionar si ese futuro es realmente el que le prometieron.",
+    "category": "Cine",
+    "source": "London Latino Film Festival"
   },
   {
     "title": "Primera Fiesta ARenIN Familiar",
