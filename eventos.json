@@ -48,7 +48,7 @@
     "title": "Clases de Teatro en español en Londres: El Método",
     "type": "temporada",
     "date": "2026-06-26",
-    "endDate": null,
+    "endDate": "2026-09-18",
     "dateLabel": "Hasta agotar cupos / Clases regulares",
     "venue": "Londres",
     "city": "Londres",
@@ -904,6 +904,21 @@
     "description": "Una noche de tango, música folclórica y canciones con el reconocido cantante argentino Martín Alvarado junto a Gerardo Villar y Los Aguirre.",
     "category": "Música",
     "source": "Cambridge"
+  },
+  {
+    "title": "FREE 5 Week Argentine Tango Beginners Course",
+    "type": "temporada",
+    "date": "2026-09-14",
+    "endDate": null,
+    "dateLabel": "Funciones hasta el 19 de Octubre 2026",
+    "venue": "Taliesin Arts Centre",
+    "city": "Swansea",
+    "region": "Gales",
+    "price": "£0.00",
+    "link": "https://eventslist.co.uk/swansea/events/free-5-week-argentine-tango-beginners-course-2026-09-14",
+    "description": "Curso para principiantes de 5 semanas dedicado al aprendizaje del tango argentino, expresión cultural de Argentina.",
+    "category": "Workshops",
+    "source": "Events List"
   },
   {
     "title": "tango @ temperance | Martin Alvarado and Los Aguirre (Buenos Aires)",
