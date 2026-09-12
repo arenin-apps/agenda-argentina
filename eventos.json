@@ -423,6 +423,21 @@
     "source": "Blanco Gallery"
   },
   {
+    "title": "Finders Keepers",
+    "type": "temporada",
+    "date": "2026-08-28",
+    "endDate": "2026-09-20",
+    "dateLabel": "Hasta el 20 de septiembre de 2026",
+    "venue": "Blanco Gallery",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Entrada Libre",
+    "link": "https://www.blancogallery.com/",
+    "description": "Exposición curada por Adela Blanco que cuenta con la participación de la artista argentina Majo Caporaletti (junto a Vicky Polak en la sección 'A Levitating Territory'), llevada a cabo en Londres.",
+    "category": "Artes Plásticas",
+    "source": "Blanco Gallery"
+  },
+  {
     "title": "Nube 9 en el International Beatleweek Showcase",
     "type": "unico",
     "date": "2026-08-29",
@@ -630,7 +645,7 @@
     "title": "Pin de Fartie",
     "type": "temporada",
     "date": "2026-09-04",
-    "endDate": "2026-09-13",
+    "endDate": "2026-09-15",
     "dateLabel": "Funciones hasta el 10 de septiembre de 2026",
     "venue": "ICA (Institute of Contemporary Arts)",
     "city": "Londres",
