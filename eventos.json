@@ -1009,6 +1009,36 @@
     "source": "Events List"
   },
   {
+    "title": "LULÚ @ The Castle Cinema",
+    "type": "unico",
+    "date": "2026-09-18",
+    "endDate": null,
+    "dateLabel": "PRÓXIMA FUNCIÓN",
+    "venue": "The Castle Cinema",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.latinolife.co.uk/event/argentinian-gem-lulu-castle-cinema",
+    "description": "Proyección de la joya cinematográfica argentina 'Lulú', presentada en colaboración entre Cinema Mentiré y Jellied Reels, destacando el cine argentino en el Reino Unido.",
+    "category": "Cine",
+    "source": "Latino Life"
+  },
+  {
+    "title": "Pin de Fartie",
+    "type": "temporada",
+    "date": "2026-09-18",
+    "endDate": "2026-09-23",
+    "dateLabel": "Funciones hasta el 23 de septiembre de 2026",
+    "venue": "ICA",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.ica.art/films/pin-de-fartie",
+    "description": "Proyección de la película dirigida por el cineasta argentino Alejo Moguillansky y protagonizada por la actriz argentina Laura Paredes, una adaptación imaginativa de la obra de Samuel Beckett.",
+    "category": "Cine",
+    "source": "Ica Art Films"
+  },
+  {
     "title": "Rioplatenses In Concert",
     "type": "unico",
     "date": "2026-09-20",
