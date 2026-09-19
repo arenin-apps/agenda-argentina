@@ -645,7 +645,7 @@
     "title": "Pin de Fartie",
     "type": "temporada",
     "date": "2026-09-04",
-    "endDate": "2026-09-18",
+    "endDate": "2026-09-23",
     "dateLabel": "Funciones hasta el 10 de septiembre de 2026",
     "venue": "ICA (Institute of Contemporary Arts)",
     "city": "Londres",
@@ -1039,6 +1039,21 @@
     "source": "Ica Art Films"
   },
   {
+    "title": "🇦🇷 Argentinian gem: LULÚ @ The Castle Cinema",
+    "type": "unico",
+    "date": "2026-09-19",
+    "endDate": null,
+    "dateLabel": "PRÓXIMO EVENTO",
+    "venue": "The Castle Cinema",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.latinolife.co.uk/event/argentinian-gem-lulu-castle-cinema",
+    "description": "Proyección de la película argentina 'Lulú', presentada en colaboración entre Cinema Mentiré y Jellied Reels, destacando el cine argentino en el Reino Unido.",
+    "category": "Cine",
+    "source": "Latino Life"
+  },
+  {
     "title": "Rioplatenses In Concert",
     "type": "unico",
     "date": "2026-09-20",
@@ -1108,6 +1123,21 @@
     "source": "sergius.uk"
   },
   {
+    "title": "Ciro y Los Persa",
+    "type": "unico",
+    "date": "2026-09-28",
+    "endDate": null,
+    "dateLabel": "LUNES, 28 DE SEPTIEMBRE 2026",
+    "venue": "Opium",
+    "city": "Dublín",
+    "region": "Irlanda",
+    "price": "Consultar",
+    "link": "https://eventslist.co.uk/dublin/events/ciro-y-los-persa-2026-09-28",
+    "description": "Concierto de la reconocida banda de rock argentina Ciro y Los Persas en su gira.",
+    "category": "Música",
+    "source": "Events List"
+  },
+  {
     "title": "Dominic Miller – Edinburgh",
     "date": "2026-09-29",
     "dateLabel": "MARTES, 29 DE SEPTIEMBRE 2026 - 19:00",
@@ -1119,6 +1149,21 @@
     "description": "Concierto del guitarrista anglo-argentino Dominic Miller, reconocido internacionalmente por su trabajo con Sting y su exitosa carrera en solitario.",
     "category": "Música",
     "source": "sergius.uk"
+  },
+  {
+    "title": "Argentine Tango Class",
+    "type": "unico",
+    "date": "2026-09-29",
+    "endDate": null,
+    "dateLabel": "MARTES, 29 DE SEPTIEMBRE 2026",
+    "venue": "Totos By The River",
+    "city": "Bristol",
+    "region": "Inglaterra",
+    "price": "£10.00",
+    "link": "https://eventslist.co.uk/bristol/events/argentine-tango-class-2026-09-29",
+    "description": "Clase de tango argentino, danza emblemática de la cultura de Argentina.",
+    "category": "Workshops",
+    "source": "Events List"
   },
   {
     "title": "5 week Argentine Tango Beginners course in Westbourne",
@@ -1164,6 +1209,21 @@
     "description": "Proyección en el London Latino Film Festival. Película argentina: un escritor argentino ganador del Nobel acepta volver a su pueblo natal en Argentina tras rechazar premios de todo el mundo, con consecuencias inesperadas.",
     "category": "Cine",
     "source": "London Latino Film Festival"
+  },
+  {
+    "title": "Wee Regional: Argentina",
+    "type": "unico",
+    "date": "2026-10-03",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 3 DE OCTUBRE 2026",
+    "venue": "The Wee Vinoteca",
+    "city": "Luton",
+    "region": "Inglaterra",
+    "price": "Consultar",
+    "link": "https://eventslist.co.uk/luton/events/wee-regional-argentina-2026-10-03-luton",
+    "description": "Evento de cata y degustación regional dedicado exclusivamente a los productos y vinos de Argentina.",
+    "category": "Comunidad",
+    "source": "Events List"
   },
   {
     "title": "Peña Argentina ft. Lula Verdomar & María Chiara",
@@ -1353,6 +1413,21 @@
     "source": "Tate"
   },
   {
+    "title": "FREE Argentine Tango in a Day Course: Workshops and Practilonga Oct",
+    "type": "unico",
+    "date": "2026-10-31",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 31 DE OCTUBRE 2026",
+    "venue": "Taliesin Arts Centre",
+    "city": "Swansea",
+    "region": "Gales",
+    "price": "Gratis",
+    "link": "https://eventslist.co.uk/swansea/events/free-argentine-tango-in-a-day-course-workshops-and-practilonga-oct-2026-10-31",
+    "description": "Talleres y práctica de tango argentino vinculados a la tradición musical y de danza de Argentina.",
+    "category": "Workshops",
+    "source": "Events List"
+  },
+  {
     "title": "Los Palmeras en Londres 2026",
     "date": "2026-11-01",
     "dateLabel": "DOMINGO, 1 DE NOVIEMBRE 2026 - 19:00",
@@ -1472,6 +1547,21 @@
     "description": "Partido de la Nations Championship 2026 de la selección de rugby de Argentina (Los Pumas) contra Francia.",
     "category": "Deportes",
     "source": "Nations Championship Rugby"
+  },
+  {
+    "title": "Argentina Beyond Malbec",
+    "type": "unico",
+    "date": "2027-02-04",
+    "endDate": null,
+    "dateLabel": "JUEVES, 4 DE FEBRERO 2027",
+    "venue": "Spitfire Hangar at Brabazon",
+    "city": "Bristol",
+    "region": "Inglaterra",
+    "price": "Desde £35.00",
+    "link": "https://eventslist.co.uk/bristol/events/argentina-beyond-malbec-2027-02-04-bristol",
+    "description": "Evento de degustación y muestra enfocado en la viticultura y la diversidad de vinos de Argentina más allá del Malbec.",
+    "category": "Comunidad",
+    "source": "Events List"
   },
   {
     "title": "Vincent Simone – Tango Passions",
