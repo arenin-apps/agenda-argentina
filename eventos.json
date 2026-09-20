@@ -1069,6 +1069,21 @@
     "source": "Guillermo Rozenthuler"
   },
   {
+    "title": "The project-Argentine Tango community",
+    "type": "unico",
+    "date": "2026-09-25",
+    "endDate": null,
+    "dateLabel": "VIERNES, 25 DE SEPTIEMBRE 2026",
+    "venue": "Croft House Centre",
+    "city": "Sheffield",
+    "region": "Inglaterra",
+    "price": "£54.88",
+    "link": "https://eventslist.co.uk/sheffield/events/the-project-argentine-tango-community-2026-09-25",
+    "description": "Encuentro de la comunidad enfocado en el tango argentino.",
+    "category": "Workshops",
+    "source": "Events List"
+  },
+  {
     "title": "CuteCircuit: Talk and Demo",
     "date": "2026-09-26",
     "dateLabel": "SÁBADO, 26 DE SEPTIEMBRE 2026",
@@ -1590,6 +1605,21 @@
     "price": "Consultar",
     "link": "https://eventslist.co.uk/lancaster/events/lancaster-grand-thea-vincent-simone-tango-passions-2027-02-18",
     "description": "Espectáculo de baile con temática de tango argentino protagonizado por Vincent Simone en Lancaster.",
+    "category": "Teatro",
+    "source": "Events List"
+  },
+  {
+    "title": "Vincent Simone – Tango Passions",
+    "type": "unico",
+    "date": "2027-03-19",
+    "endDate": null,
+    "dateLabel": "VIERNES, 19 DE MARZO 2027",
+    "venue": "Loughborough Town Hall",
+    "city": "Leicester",
+    "region": "Inglaterra",
+    "price": "Entrada Libre",
+    "link": "https://eventslist.co.uk/leicester/events/vincent-simone-8211-tango-passions",
+    "description": "Espectáculo centrado en la estética y la música del tango argentino.",
     "category": "Teatro",
     "source": "Events List"
   }
