@@ -1069,6 +1069,36 @@
     "source": "Guillermo Rozenthuler"
   },
   {
+    "title": "Nine Queens (Nueve Reinas)",
+    "type": "temporada",
+    "date": "2026-09-21",
+    "endDate": null,
+    "dateLabel": "Disponible en streaming y cartelera",
+    "venue": "Curzon Cinema",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://homecinema.curzon.com/film/nine-queens/",
+    "description": "Proyección de la aclamada película argentina 'Nueve Reinas' (Nine Queens), dirigida por Fabián Bielinsky y protagonizada por Ricardo Darín y Gastón Pauls, dentro de la colección de cine argentino de Curzon.",
+    "category": "Cine",
+    "source": "Curzon Cinema"
+  },
+  {
+    "title": "🇦🇷 Argentinian gem: LULÚ @ The Castle Cinema",
+    "type": "unico",
+    "date": "2026-09-21",
+    "endDate": null,
+    "dateLabel": "PRÓXIMA FUNCIÓN",
+    "venue": "The Castle Cinema",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.latinolife.co.uk/event/argentinian-gem-lulu-castle-cinema",
+    "description": "Proyección de la obra cinematográfica argentina 'Lulú', presentada en colaboración entre Cinema Mentiré y Jellied Reels, destacando el cine argentino en Londres.",
+    "category": "Cine",
+    "source": "Latino Life"
+  },
+  {
     "title": "The project-Argentine Tango community",
     "type": "unico",
     "date": "2026-09-25",
@@ -1192,6 +1222,21 @@
     "price": "£10.00 - £40.00",
     "link": "https://eventslist.co.uk/bournemouth/events/5-week-argentine-tango-beginners-course-in-westbourne-2026-10-01",
     "description": "Curso de iniciación al tango argentino en Westbourne.",
+    "category": "Workshops",
+    "source": "Events List"
+  },
+  {
+    "title": "5 week Argentine Tango Beginners course in Westbourne",
+    "type": "temporada",
+    "date": "2026-10-01",
+    "endDate": null,
+    "dateLabel": "Hasta el 5 de noviembre de 2026",
+    "venue": "West Cliff Baptist Church",
+    "city": "Bournemouth",
+    "region": "Inglaterra",
+    "price": "£10.00 - £40.00",
+    "link": "https://eventslist.co.uk/bournemouth/events/5-week-argentine-tango-beginners-course-in-westbourne-2026-10-01",
+    "description": "Curso de 5 semanas para principiantes de tango argentino.",
     "category": "Workshops",
     "source": "Events List"
   },
