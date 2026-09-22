@@ -1,5 +1,20 @@
 [
   {
+    "title": "Mise-en-scène",
+    "type": "temporada",
+    "date": "2026-04-09",
+    "endDate": "2026-09-26",
+    "dateLabel": "Hasta el 26 de septiembre de 2026",
+    "venue": "Hauser & Wirth Monaco",
+    "city": "Monaco",
+    "region": "Monaco",
+    "price": "Consultar galería",
+    "link": "https://www.galleriesnow.net/shows/mise-en-scene/",
+    "description": "Exhibición inmersiva que incluye obras excepcionales del artista ítalo-argentino Lucio Fontana, junto a otros referentes del arte moderno y contemporáneo.",
+    "category": "Artes Plásticas",
+    "source": "Galleries Now"
+  },
+  {
     "title": "The Singing Village Stroud",
     "type": "unico",
     "date": "2026-05-16",
@@ -1099,6 +1114,51 @@
     "source": "Latino Life"
   },
   {
+    "title": "Argentina v England rugby Nations Championship 2026",
+    "type": "unico",
+    "date": "2026-09-22",
+    "endDate": null,
+    "dateLabel": "Próximo partido de rugby de Los Pumas",
+    "venue": "Transmisión TV / Online en Reino Unido",
+    "city": "Reino Unido",
+    "region": "Reino Unido",
+    "price": "Depende de la plataforma de TV",
+    "link": "https://www.radiotimes.com/tv/sport/rugby-union/argentina-england-rugby-nations-championship-2026-preview/",
+    "description": "Partido de rugby entre la selección argentina (Los Pumas) e Inglaterra en el torneo Nations Championship 2026, con transmisión en vivo en el Reino Unido.",
+    "category": "Deportes",
+    "source": "Radio Times - TV Guide"
+  },
+  {
+    "title": "🇦🇷 Argentinian gem: LULÚ @ The Castle Cinema",
+    "type": "unico",
+    "date": "2026-09-22",
+    "endDate": null,
+    "dateLabel": "LUNES, 22 DE SEPTIEMBRE 2026",
+    "venue": "The Castle Cinema",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar en web",
+    "link": "https://www.latinolife.co.uk/event/argentinian-gem-lulu-castle-cinema",
+    "description": "Proyección de la película argentina 'Lulú', presentada conjuntamente por Cinema Mentiré y Jellied Reels como parte de su programación de cine.",
+    "category": "Cine",
+    "source": "Latino Life"
+  },
+  {
+    "title": "Pin de Fartie (Off-Circuit)",
+    "type": "temporada",
+    "date": "2026-09-22",
+    "endDate": "2026-09-25",
+    "dateLabel": "Funciones hasta el 25 de septiembre de 2026",
+    "venue": "Institute of Contemporary Arts (ICA)",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.ica.art/films/pin-de-fartie",
+    "description": "Proyección de la película del director argentino Alejo Moguillansky, una reinterpretación de Fin de Partie de Samuel Beckett que cuenta con la destacada actuación de la actriz argentina Laura Paredes.",
+    "category": "Cine",
+    "source": "Ica Art Films"
+  },
+  {
     "title": "The project-Argentine Tango community",
     "type": "unico",
     "date": "2026-09-25",
@@ -1229,7 +1289,7 @@
     "title": "5 week Argentine Tango Beginners course in Westbourne",
     "type": "temporada",
     "date": "2026-10-01",
-    "endDate": null,
+    "endDate": "2026-11-05",
     "dateLabel": "Hasta el 5 de noviembre de 2026",
     "venue": "West Cliff Baptist Church",
     "city": "Bournemouth",
@@ -1357,6 +1417,21 @@
     "description": "Proyección en el London Latino Film Festival. Coproducción con Argentina: Elisa, de 18 años, es elegida para ir al Norte, una tierra prometida donde envían a los jóvenes más prometedores, pero empieza a cuestionar si ese futuro es realmente el que le prometieron.",
     "category": "Cine",
     "source": "London Latino Film Festival"
+  },
+  {
+    "title": "Argentine Tango Class",
+    "type": "unico",
+    "date": "2026-10-06",
+    "endDate": null,
+    "dateLabel": "MARTES, 06 DE OCTUBRE 2026",
+    "venue": "Totos By The River",
+    "city": "Bristol",
+    "region": "Bristol",
+    "price": "£10.00",
+    "link": "https://eventslist.co.uk/bristol/events/argentine-tango-class-2026-10-06",
+    "description": "Clase de tango argentino en Bristol.",
+    "category": "Workshops",
+    "source": "Events List"
   },
   {
     "title": "Primera Fiesta ARenIN Familiar",
