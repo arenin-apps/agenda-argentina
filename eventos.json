@@ -105,6 +105,21 @@
     "source": "La Tundra"
   },
   {
+    "title": "La Niña Jamón: Teatro independiente y verdad en Londres",
+    "type": "temporada",
+    "date": "2026-07-19",
+    "endDate": null,
+    "dateLabel": "Funciones en Londres",
+    "venue": "Londres",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar",
+    "link": "https://www.latundra.com/la-nina-jamon-teatro-independiente-y-verdad-en-londres/",
+    "description": "Obra de teatro independiente escrita por la autora argentina Laura Eva Avelluto y dirigida en Londres por Hernán Cáceres.",
+    "category": "Teatro",
+    "source": "La Tundra"
+  },
+  {
     "title": "A Levitating Territory - Majo Caporaletti & Vicky Polak",
     "date": "2026-08-12",
     "dateLabel": "AGOSTO 2026",
@@ -660,7 +675,7 @@
     "title": "Pin de Fartie",
     "type": "temporada",
     "date": "2026-09-04",
-    "endDate": "2026-09-26",
+    "endDate": "2026-10-02",
     "dateLabel": "Funciones hasta el 10 de septiembre de 2026",
     "venue": "ICA (Institute of Contemporary Arts)",
     "city": "Londres",
@@ -1316,6 +1331,21 @@
     "source": "Events List"
   },
   {
+    "title": "Zuccardi: Pure Mountain Wines from Argentina",
+    "type": "unico",
+    "date": "2026-10-01",
+    "endDate": null,
+    "dateLabel": "JUEVES, 1 DE OCTUBRE 2026",
+    "venue": "West London Wine School",
+    "city": "Londres",
+    "region": "Londres",
+    "price": "Consultar web",
+    "link": "https://eventslist.co.uk/london/events/zuccardi-pure-mountain-wines-from-argentina-2026-10-01-london",
+    "description": "Cata de vinos de la reconocida bodega argentina Zuccardi, destacando etiquetas de montaña de origen argentino.",
+    "category": "Comunidad",
+    "source": "Events List"
+  },
+  {
     "title": "Oca",
     "type": "unico",
     "date": "2026-10-02",
@@ -1535,6 +1565,21 @@
     "description": "Evento cultural y gastronómico temático centrado en la cultura de Argentina.",
     "category": "Comunidad",
     "source": "Events List"
+  },
+  {
+    "title": "El Tri en Londres",
+    "type": "unico",
+    "date": "2026-10-18",
+    "endDate": null,
+    "dateLabel": "DOMINGO, 18 DE OCTUBRE 2026 - 20:00",
+    "venue": "Electric Ballroom",
+    "city": "Londres",
+    "region": "Gran Londres",
+    "price": "Consultar",
+    "link": "https://ticket.deputamadreclub.eu/tri26ldn/",
+    "description": "Concierto de la legendaria banda mexicana de rock El Tri en Londres, Reino Unido. Nota: se incluye por tener fecha presencial en el Reino Unido dentro del período, aunque la banda es mexicana y no argentina.",
+    "category": "Música",
+    "source": "De Puta Madre Club"
   },
   {
     "title": "Buenos Vampiros live in Dublin",
