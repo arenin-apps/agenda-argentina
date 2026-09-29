@@ -120,6 +120,21 @@
     "source": "La Tundra"
   },
   {
+    "title": "La Niña Jamón",
+    "type": "temporada",
+    "date": "2026-07-19",
+    "endDate": null,
+    "dateLabel": "Funciones en Londres",
+    "venue": "Londres",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.latundra.com/la-nina-jamon-teatro-independiente-y-verdad-en-londres/",
+    "description": "Obra de teatro independiente escrita por la argentina Laura Eva Avelluto y dirigida en Londres por el director Hernán Cáceres, explorando los vaivenes de las relaciones humanas.",
+    "category": "Teatro",
+    "source": "La Tundra"
+  },
+  {
     "title": "A Levitating Territory - Majo Caporaletti & Vicky Polak",
     "date": "2026-08-12",
     "dateLabel": "AGOSTO 2026",
@@ -1552,6 +1567,21 @@
     "description": "We are honoured to welcome Her Excellency Mariana Plaza, Ambassador of Argentina to the UK, along with distinguished guests, who will join us for an unforgettable evening of culture, music, fine dining, and solidarity.  By purchasing your ticket, you are directly contributing to raising vital funds for the charitable initiatives in Argentina supported by both host organisations:   * For AAS (Registered Charity No. 208002): Pequeños Pasos and Córdoba Athletic Club Museum and Historic Preservation Project.  * For Aparu (Registered Charity No. 1166195): Espartanas (Fundación Espartanos) and Asociación Civil Soles.",
     "category": "Comunidad",
     "source": "The Anglo Argentine Society"
+  },
+  {
+    "title": "KOKO Electronic: Hernan Cattaneo",
+    "type": "temporada",
+    "date": "2026-10-16",
+    "endDate": "2026-10-17",
+    "dateLabel": "Funciones hasta el 17 de Octubre de 2026",
+    "venue": "KOKO",
+    "city": "Londres",
+    "region": "Gran Londres",
+    "price": "Consultar",
+    "link": "https://eventslist.co.uk/london/events/koko-electronic-hernan-cattaneo-2026-10-16",
+    "description": "Presentación del prestigioso DJ y productor de música electrónica argentino Hernán Cattáneo.",
+    "category": "Música",
+    "source": "Events List"
   },
   {
     "title": "Sabor Argentina",
