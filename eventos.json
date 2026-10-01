@@ -1376,6 +1376,21 @@
     "source": "Events List"
   },
   {
+    "title": "La K’onga",
+    "type": "unico",
+    "date": "2026-10-01",
+    "endDate": null,
+    "dateLabel": "PRÓXIMAMENTE 2026",
+    "venue": "Londres",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.latinolife.co.uk/event/la-konga-0",
+    "description": "Concierto de La K’onga, una de las bandas de cuarteto más populares de Argentina, formada en 2003.",
+    "category": "Música",
+    "source": "Latino Life"
+  },
+  {
     "title": "Oca",
     "type": "unico",
     "date": "2026-10-02",
@@ -1389,6 +1404,21 @@
     "description": "Proyección en el London Latino Film Festival. Coproducción entre México y Argentina: una joven monja emprende un viaje en busca de fe y libertad guiada por visiones y sueños recurrentes.",
     "category": "Cine",
     "source": "London Latino Film Festival"
+  },
+  {
+    "title": "The project-Argentine Tango community",
+    "type": "unico",
+    "date": "2026-10-02",
+    "endDate": null,
+    "dateLabel": "VIERNES, 2 DE OCTUBRE 2026",
+    "venue": "Croft House Centre",
+    "city": "Sheffield",
+    "region": "Inglaterra",
+    "price": "£54.88",
+    "link": "https://eventslist.co.uk/sheffield/events/the-project-argentine-tango-community-2026-10-02",
+    "description": "Encuentro de la comunidad enfocado en el tango argentino.",
+    "category": "Comunidad",
+    "source": "Events List"
   },
   {
     "title": "The Distinguished Citizen - El ciudadano ilustre",
@@ -1567,6 +1597,21 @@
     "description": "Partido de rugby de la selección argentina (Los Pumas) contra Gales por la Nations Championship 2026, transmitido en canales y plataformas del Reino Unido.",
     "category": "Deportes",
     "source": "Radio Times - TV Guide"
+  },
+  {
+    "title": "Argentine Tango Class",
+    "type": "unico",
+    "date": "2026-10-13",
+    "endDate": null,
+    "dateLabel": "MARTES, 13 DE OCTUBRE 2026",
+    "venue": "Totos By The River",
+    "city": "Bristol",
+    "region": "Inglaterra",
+    "price": "£10.00",
+    "link": "https://eventslist.co.uk/bristol/events/argentine-tango-class-2026-10-13",
+    "description": "Clase dedicada al aprendizaje y práctica del tango argentino.",
+    "category": "Workshops",
+    "source": "Events List"
   },
   {
     "title": "No Te Va Gustar",
