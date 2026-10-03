@@ -1526,6 +1526,21 @@
     "source": "Ica Art Films"
   },
   {
+    "title": "The Camino to Santiago - Rediscovering its Songs",
+    "type": "temporada",
+    "date": "2026-10-04",
+    "endDate": "2026-10-17",
+    "dateLabel": "Del 4 al 17 de Octubre 2026",
+    "venue": "Farm Street / Spanish Place",
+    "city": "London",
+    "region": "London",
+    "price": "Mínimo £10",
+    "link": "https://www.eventbrite.co.uk/e/the-camino-de-santiago-a-journey-tickets-1996208671874?aff=oddtdtcreator",
+    "description": "Talleres y peregrinación guiados por el músico argentino Rafael Montero para aprender canciones tradicionales de peregrinos.",
+    "category": "Workshops",
+    "source": "Argentine Embassy in the UK Cultural Newsletter"
+  },
+  {
     "title": "Martina's Search - A procura de Martina",
     "type": "unico",
     "date": "2026-10-05",
@@ -1599,6 +1614,21 @@
     "source": "Radio Times - TV Guide"
   },
   {
+    "title": "Noche de Tango Argentino en La Querencia",
+    "type": "unico",
+    "date": "2026-10-09",
+    "endDate": null,
+    "dateLabel": "VIERNES, 9 DE OCTUBRE 2026",
+    "venue": "La Querencia",
+    "city": "Edimburgo",
+    "region": "Escocia",
+    "price": "Consultar",
+    "link": "https://www.opentable.co.uk/r/la-querencia-haymarket-edinburgh",
+    "description": "Inauguración de la nueva sede del restaurante argentino La Querencia en Edimburgo con gastronomía tradicional y espectáculo de tango en vivo.",
+    "category": "Comunidad",
+    "source": "Argentine Embassy in the UK Cultural Newsletter"
+  },
+  {
     "title": "Fiesta ARenIN Familiar (Evento Cancelado)",
     "type": "unico",
     "date": "2026-10-11",
@@ -1659,6 +1689,21 @@
     "source": "Como No"
   },
   {
+    "title": "Revelations of the Wisdom of Ancient Egypt",
+    "type": "unico",
+    "date": "2026-10-15",
+    "endDate": null,
+    "dateLabel": "JUEVES, 15 DE OCTUBRE 2026 - 13:00",
+    "venue": "British Museum",
+    "city": "London",
+    "region": "London",
+    "price": "Consultar en ticket",
+    "link": "https://www.eventbrite.co.uk/e/revelations-of-the-wisdom-of-ancient-egypt-tickets-1991911488884?aff=oddtdtcreator",
+    "description": "Recorrido guiado en el British Museum por la astróloga y autora argentina Carolina B Boschetti (Universidad Nacional de Lomas de Zamora).",
+    "category": "Workshops",
+    "source": "Argentine Embassy in the UK Cultural Newsletter"
+  },
+  {
     "title": "Hernan Cattaneo",
     "type": "unico",
     "date": "2026-10-16",
@@ -1704,6 +1749,21 @@
     "source": "Events List"
   },
   {
+    "title": "Ambassador´s Gala Dinner",
+    "type": "unico",
+    "date": "2026-10-16",
+    "endDate": null,
+    "dateLabel": "VIERNES, 16 DE OCTUBRE 2026 - 18:30",
+    "venue": "The Caledonian Club",
+    "city": "London",
+    "region": "London",
+    "price": "Consultar en ticket",
+    "link": "https://www.peoplesfundraising.com/event/ambassador-gala-dinner-2026?utm_source=peoplesfundraising&utm_medium=referral",
+    "description": "Cena de gala anual organizada por The Anglo-Argentine Society y Aparu en apoyo a proyectos benéficos en Argentina, con presencia de la Embajadora de Argentina en el Reino Unido.",
+    "category": "Comunidad",
+    "source": "Argentine Embassy in the UK Cultural Newsletter"
+  },
+  {
     "title": "Sabor Argentina",
     "date": "2026-10-18",
     "dateLabel": "DOMINGO, 18 DE OCTUBRE 2026",
@@ -1730,6 +1790,21 @@
     "description": "Concierto de la legendaria banda mexicana de rock El Tri en Londres, Reino Unido. Nota: se incluye por tener fecha presencial en el Reino Unido dentro del período, aunque la banda es mexicana y no argentina.",
     "category": "Música",
     "source": "De Puta Madre Club"
+  },
+  {
+    "title": "Maldita - Presentación de libro de Florencia Canale",
+    "type": "unico",
+    "date": "2026-10-23",
+    "endDate": null,
+    "dateLabel": "VIERNES, 23 DE OCTUBRE 2026",
+    "venue": "Embajada Argentina en el Reino Unido",
+    "city": "London",
+    "region": "London",
+    "price": "Entrada Libre (requiere registro)",
+    "link": "https://tally.so/r/EkyV8r",
+    "description": "Presentación de la novela 'Maldita' de la escritora argentina Florencia Canale, organizada por la Embajada Argentina en el Reino Unido.",
+    "category": "Comunidad",
+    "source": "Argentine Embassy in the UK Cultural Newsletter"
   },
   {
     "title": "Buenos Vampiros live in Dublin",
