@@ -690,7 +690,7 @@
     "title": "Pin de Fartie",
     "type": "temporada",
     "date": "2026-09-04",
-    "endDate": "2026-10-02",
+    "endDate": "2026-10-07",
     "dateLabel": "Funciones hasta el 10 de septiembre de 2026",
     "venue": "ICA (Institute of Contemporary Arts)",
     "city": "Londres",
@@ -1466,6 +1466,21 @@
     "source": "La Tundra"
   },
   {
+    "title": "Taller introductorio de traducción de guaraní en la London Spanish Book & Zine Fair",
+    "type": "unico",
+    "date": "2026-10-03",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 3 DE OCTUBRE 2026",
+    "venue": "Conway Hall",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.latundra.com/sobre-el-arte-de-traducir-el-imaginario-guarani-en-la-london-spanish-book-zine-fair/",
+    "description": "Taller en el marco de la London Spanish Book & Zine Fair impartido por la traductora literaria Iliana Franco Alvarenga (Ambue Translations), enfocado en la traducción del imaginario guaraní, lengua con fuerte arraigo en la región y la cultura de Argentina.",
+    "category": "Workshops",
+    "source": "La Tundra"
+  },
+  {
     "title": "Peña Argentina ft. Lula Verdomar & María Chiara",
     "type": "unico",
     "date": "2026-10-04",
@@ -1494,6 +1509,21 @@
     "description": "Proyección en el London Latino Film Festival. Película argentina inspirada en hechos reales: una fiscal y un policía chino investigan una red criminal dentro de la comunidad china de Mendoza, Argentina.",
     "category": "Cine",
     "source": "London Latino Film Festival"
+  },
+  {
+    "title": "Street Wanderers",
+    "type": "unico",
+    "date": "2026-10-04",
+    "endDate": null,
+    "dateLabel": "DOMINGO, 4 DE OCTUBRE 2026 - 16:00",
+    "venue": "ICA",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.ica.art/films/lolaff-los-caminantes-de-la-calle-street-wanderers",
+    "description": "Proyección dentro del London Latino Film Festival que entrelaza un thriller criminal con un drama de migrantes ambientado en la ciudad de Mendoza, Argentina.",
+    "category": "Cine",
+    "source": "Ica Art Films"
   },
   {
     "title": "Martina's Search - A procura de Martina",
@@ -1567,6 +1597,21 @@
     "description": "Partido de rugby de la selección argentina (Los Pumas) contra Inglaterra en el torneo Nations Championship 2026, con transmisión en vivo disponible en el Reino Unido.",
     "category": "Deportes",
     "source": "Radio Times - TV Guide"
+  },
+  {
+    "title": "Fiesta ARenIN Familiar (Evento Cancelado)",
+    "type": "unico",
+    "date": "2026-10-11",
+    "endDate": null,
+    "dateLabel": "DOMINGO, 11 DE OCTUBRE 2026 - 15:00",
+    "venue": "Metropolis Vauxhall",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "£10",
+    "link": "https://sergius.uk/event/fiesta-arenin-familiar/",
+    "description": "Fiesta de argentinos en Inglaterra para toda la familia (evento indicado como cancelado en la fuente).",
+    "category": "Comunidad",
+    "source": "SRG (sergius.uk)"
   },
   {
     "title": "Argentina v Wales rugby Nations Championship 2026",
@@ -1756,6 +1801,36 @@
     "source": "SRG (sergius.uk)"
   },
   {
+    "title": "Argentina v England rugby Nations Championship 2026",
+    "type": "unico",
+    "date": "2026-11-01",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 1 DE NOVIEMBRE 2026",
+    "venue": "Televisión / Streaming (Reino Unido)",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Variable / Según emisora",
+    "link": "https://www.radiotimes.com/tv/sport/rugby-union/argentina-england-rugby-nations-championship-2026-preview/",
+    "description": "Partido de rugby de la selección argentina (Los Pumas) contra Inglaterra en el marco del Nations Championship 2026, con transmisión en directo en el Reino Unido.",
+    "category": "Deportes",
+    "source": "Radio Times - TV Guide"
+  },
+  {
+    "title": "Illusion of an Everlasting Summer",
+    "type": "temporada",
+    "date": "2026-11-04",
+    "endDate": "2026-11-11",
+    "dateLabel": "Funciones hasta el 11 de noviembre de 2026",
+    "venue": "Everyman Cinema Leeds, Screen 4",
+    "city": "Leeds",
+    "region": "West Yorkshire",
+    "price": "Consultar web",
+    "link": "https://www.leedsfilm.com/whats-on/illusion-of-an-everlasting-summer-4ss3",
+    "description": "Documental de largo recorrido dirigido por la aclamada fotógrafa Alessandra Sanguinetti, que traza las vidas de dos primas en Argentina durante 25 años.",
+    "category": "Cine",
+    "source": "Leeds Film"
+  },
+  {
     "title": "Germán Cornejo’s Tango After Dark",
     "date": "2026-11-05",
     "dateLabel": "JUEVES, 5 DE NOVIEMBRE 2026 - 19:30",
@@ -1767,6 +1842,21 @@
     "description": "Espectáculo internacional de tango argentino creado por el Campeón Mundial de Tango Germán Cornejo, acompañado por una compañía de diez bailarines, músicos en vivo y cantantes interpretando la música de Astor Piazzolla.",
     "category": "Música",
     "source": "Extracción manual"
+  },
+  {
+    "title": "The Days Off",
+    "type": "temporada",
+    "date": "2026-11-05",
+    "endDate": "2026-11-11",
+    "dateLabel": "Funciones en múltiples horarios hasta noviembre de 2026",
+    "venue": "Vue in the Light, Screen 7",
+    "city": "Leeds",
+    "region": "West Yorkshire",
+    "price": "Consultar web",
+    "link": "https://www.leedsfilm.com/whats-on/the-days-off-b3xd",
+    "description": "Ópera prima de Lucila Mariani ambientada en una Argentina de futuro cercano, una historia sobre el paso a la edad adulta entre lo cotidiano y lo insólito.",
+    "category": "Cine",
+    "source": "Leeds Film"
   },
   {
     "title": "Ireland vs Argentina",
@@ -1795,6 +1885,21 @@
     "description": "La destacada comediante argentina Laila Roth llega a Londres con su nuevo y renovado show de stand-up, tras agotar funciones en gran parte del mundo y consolidarse en la escena internacional.",
     "category": "Teatro",
     "source": "Enterticket"
+  },
+  {
+    "title": "Argentina v Scotland rugby Nations Championship 2026",
+    "type": "unico",
+    "date": "2026-11-08",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 8 DE NOVIEMBRE 2026",
+    "venue": "Televisión / Streaming (Reino Unido)",
+    "city": "Edimburgo",
+    "region": "Escocia",
+    "price": "Variable / Según emisora",
+    "link": "https://www.radiotimes.com/tv/sport/rugby-union/argentina-scotland-rugby-nations-championship-2026-preview/",
+    "description": "Partido de rugby de la selección argentina (Los Pumas) contra Escocia en el Nations Championship 2026, disponible para ver en televisión y streaming en el Reino Unido.",
+    "category": "Deportes",
+    "source": "Radio Times - TV Guide"
   },
   {
     "title": "Sobredosis de Soda Londres 2026",
@@ -1849,6 +1954,21 @@
     "description": "Curso de tango argentino para niveles de mejora y milonga.",
     "category": "Música",
     "source": "Events List"
+  },
+  {
+    "title": "Argentina v Wales rugby Nations Championship 2026",
+    "type": "unico",
+    "date": "2026-11-15",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 15 DE NOVIEMBRE 2026",
+    "venue": "Televisión / Streaming (Reino Unido)",
+    "city": "Cardiff",
+    "region": "Gales",
+    "price": "Variable / Según emisora",
+    "link": "https://www.radiotimes.com/tv/sport/rugby-union/argentina-wales-rugby-nations-championship-2026-preview/",
+    "description": "Encuentro de rugby entre Los Pumas (Argentina) y Gales correspondiente al torneo Nations Championship 2026, con cobertura y retransmisión en directo en el Reino Unido.",
+    "category": "Deportes",
+    "source": "Radio Times - TV Guide"
   },
   {
     "title": "France vs Argentina",
