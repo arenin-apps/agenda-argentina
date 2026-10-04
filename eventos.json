@@ -1541,6 +1541,21 @@
     "source": "Argentine Embassy in the UK Cultural Newsletter"
   },
   {
+    "title": "La K'onga",
+    "type": "unico",
+    "date": "2026-10-04",
+    "endDate": null,
+    "dateLabel": "PRÓXIMO EVENTO",
+    "venue": "Reino Unido",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.latinolife.co.uk/event/la-konga-0",
+    "description": "La K’onga es considerada una de las bandas de cuarteto más populares de Argentina, género musical originario de Córdoba, Argentina.",
+    "category": "Música",
+    "source": "Latino Life"
+  },
+  {
     "title": "Martina's Search - A procura de Martina",
     "type": "unico",
     "date": "2026-10-05",
@@ -1906,6 +1921,21 @@
     "source": "Leeds Film"
   },
   {
+    "title": "Illusion of an Everlasting Summer",
+    "type": "temporada",
+    "date": "2026-11-04",
+    "endDate": "2026-11-11",
+    "dateLabel": "Funciones hasta el 11 de noviembre de 2026",
+    "venue": "Everyman Cinema Leeds, Leeds Screen 4",
+    "city": "Leeds",
+    "region": "West Yorkshire",
+    "price": "Consultar web",
+    "link": "https://www.leedsfilm.com/whats-on/illusion-of-an-everlasting-summer-4ss3",
+    "description": "Largometraje documental dirigido por la aclamada fotógrafa Alessandra Sanguinetti, que retrata a lo largo de 25 años la vida de dos primas. Producción con coproducción/temática de Argentina.",
+    "category": "Cine",
+    "source": "Leeds Film"
+  },
+  {
     "title": "Germán Cornejo’s Tango After Dark",
     "date": "2026-11-05",
     "dateLabel": "JUEVES, 5 DE NOVIEMBRE 2026 - 19:30",
@@ -1930,6 +1960,21 @@
     "price": "Consultar web",
     "link": "https://www.leedsfilm.com/whats-on/the-days-off-b3xd",
     "description": "Ópera prima de Lucila Mariani ambientada en una Argentina de futuro cercano, una historia sobre el paso a la edad adulta entre lo cotidiano y lo insólito.",
+    "category": "Cine",
+    "source": "Leeds Film"
+  },
+  {
+    "title": "The Days Off",
+    "type": "temporada",
+    "date": "2026-11-05",
+    "endDate": null,
+    "dateLabel": "Funciones a partir del 5 de noviembre de 2026",
+    "venue": "Vue in the Light, Leeds Screen 7",
+    "city": "Leeds",
+    "region": "West Yorkshire",
+    "price": "Consultar web",
+    "link": "https://www.leedsfilm.com/whats-on/the-days-off-b3xd",
+    "description": "Ópera prima de Lucila Mariani ambientada en la Argentina del futuro cercano, un relato de crecimiento personal entre lo cotidiano y lo fantástico.",
     "category": "Cine",
     "source": "Leeds Film"
   },
