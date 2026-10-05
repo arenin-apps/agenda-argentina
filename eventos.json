@@ -1644,6 +1644,21 @@
     "source": "Argentine Embassy in the UK Cultural Newsletter"
   },
   {
+    "title": "The project-Argentine Tango community",
+    "type": "unico",
+    "date": "2026-10-09",
+    "endDate": null,
+    "dateLabel": "VIERNES, 9 DE OCTUBRE 2026",
+    "venue": "Croft House Centre",
+    "city": "Sheffield",
+    "region": "Inglaterra",
+    "price": "£54.88",
+    "link": "https://eventslist.co.uk/sheffield/events/the-project-argentine-tango-community-2026-10-09",
+    "description": "Encuentro y comunidad de tango argentino.",
+    "category": "Comunidad",
+    "source": "Events List"
+  },
+  {
     "title": "Fiesta ARenIN Familiar (Evento Cancelado)",
     "type": "unico",
     "date": "2026-10-11",
@@ -1967,7 +1982,7 @@
     "title": "The Days Off",
     "type": "temporada",
     "date": "2026-11-05",
-    "endDate": null,
+    "endDate": "2026-11-05",
     "dateLabel": "Funciones a partir del 5 de noviembre de 2026",
     "venue": "Vue in the Light, Leeds Screen 7",
     "city": "Leeds",
