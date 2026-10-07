@@ -1629,6 +1629,21 @@
     "source": "Radio Times - TV Guide"
   },
   {
+    "title": "The Match",
+    "type": "temporada",
+    "date": "2026-10-08",
+    "endDate": "2026-10-14",
+    "dateLabel": "Funciones del 8 al 14 de octubre de 2026",
+    "venue": "BFI London Film Festival",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar sitio web del BFI",
+    "link": "https://whatson.bfi.org.uk/lff/Online/default.asp",
+    "description": "Proyección del documental deportivo 'The Match', dirigido por Juan Cabral y Santiago Franco, que revisita el histórico partido de la Copa del Mundo de 1986 entre Inglaterra y Argentina e incluye la participación de figuras como Jorge Valdano, en el marco del BFI London Film Festival.",
+    "category": "Cine",
+    "source": "argentinefilmfestivallondon.substack.com"
+  },
+  {
     "title": "Noche de Tango Argentino en La Querencia",
     "type": "unico",
     "date": "2026-10-09",
@@ -1659,6 +1674,21 @@
     "source": "Events List"
   },
   {
+    "title": "Life of Jorge Luis Borges",
+    "type": "temporada",
+    "date": "2026-10-10",
+    "endDate": "2026-10-13",
+    "dateLabel": "Funciones el 10 y 13 de octubre de 2026",
+    "venue": "BFI London Film Festival",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar sitio web del BFI",
+    "link": "https://whatson.bfi.org.uk/lff/Online/default.asp?doWork::WScontent::loadArticle=Load&BOparam::WScontent::loadArticle::article_id=67C2D7F9-E81D-4765-BE50-8D0B2CDBD2FB&BOparam::WScontent::loadArticle::context_id=83B3CDC6-1FED-4E3E-8D89-14675D42B8DB",
+    "description": "Proyección de la película argentina 'Life of Jorge Luis Borges', dirigida por el cineasta argentino Mariano Llinás, en el BFI London Film Festival.",
+    "category": "Cine",
+    "source": "argentinefilmfestivallondon.substack.com"
+  },
+  {
     "title": "Fiesta ARenIN Familiar (Evento Cancelado)",
     "type": "unico",
     "date": "2026-10-11",
@@ -1672,6 +1702,21 @@
     "description": "Fiesta de argentinos en Inglaterra para toda la familia (evento indicado como cancelado en la fuente).",
     "category": "Comunidad",
     "source": "SRG (sergius.uk)"
+  },
+  {
+    "title": "Glaxo",
+    "type": "temporada",
+    "date": "2026-10-12",
+    "endDate": "2026-10-15",
+    "dateLabel": "Funciones del 12 al 15 de octubre de 2026",
+    "venue": "BFI London Film Festival",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar sitio web del BFI",
+    "link": "https://whatson.bfi.org.uk/lff/Online/default.asp",
+    "description": "Proyección de la quinta película del director argentino Benjamín Naishtat, 'Glaxo', adaptada de la novela de Hernán Ronsino y protagonizada por los actores argentinos Lali Espósito, Marcelo Subiotto y Esteban Lamothe, en el marco del BFI London Film Festival.",
+    "category": "Cine",
+    "source": "argentinefilmfestivallondon.substack.com"
   },
   {
     "title": "Argentina v Wales rugby Nations Championship 2026",
