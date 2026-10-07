@@ -45,21 +45,6 @@
     "source": "Argentine Embassy in the UK"
   },
   {
-    "title": "Tango After Dark",
-    "type": "temporada",
-    "date": "2026-06-14",
-    "endDate": "2026-11-09",
-    "dateLabel": "Hasta el 9 de NOVIEMBRE de 2026",
-    "venue": "Sadlers Wells",
-    "city": "London",
-    "region": "Inglaterra",
-    "price": "From £18.00",
-    "link": "https://eventslist.co.uk/london/events/tango-after-dark-2026-06-14",
-    "description": "Espectáculo de danza basado en el tango argentino presentado en el prestigioso Sadler's Wells de Londres.",
-    "category": "Teatro / Danza",
-    "source": "Events List"
-  },
-  {
     "title": "Clases de Teatro en español en Londres: El Método",
     "type": "temporada",
     "date": "2026-06-26",
@@ -1809,36 +1794,6 @@
     "source": "The Anglo Argentine Society"
   },
   {
-    "title": "KOKO Electronic: Hernan Cattaneo",
-    "type": "temporada",
-    "date": "2026-10-16",
-    "endDate": "2026-10-17",
-    "dateLabel": "Funciones hasta el 17 de Octubre de 2026",
-    "venue": "KOKO",
-    "city": "Londres",
-    "region": "Gran Londres",
-    "price": "Consultar",
-    "link": "https://eventslist.co.uk/london/events/koko-electronic-hernan-cattaneo-2026-10-16",
-    "description": "Presentación del prestigioso DJ y productor de música electrónica argentino Hernán Cattáneo.",
-    "category": "Música",
-    "source": "Events List"
-  },
-  {
-    "title": "Ambassador´s Gala Dinner",
-    "type": "unico",
-    "date": "2026-10-16",
-    "endDate": null,
-    "dateLabel": "VIERNES, 16 DE OCTUBRE 2026 - 18:30",
-    "venue": "The Caledonian Club",
-    "city": "London",
-    "region": "London",
-    "price": "Consultar en ticket",
-    "link": "https://www.peoplesfundraising.com/event/ambassador-gala-dinner-2026?utm_source=peoplesfundraising&utm_medium=referral",
-    "description": "Cena de gala anual organizada por The Anglo-Argentine Society y Aparu en apoyo a proyectos benéficos en Argentina, con presencia de la Embajadora de Argentina en el Reino Unido.",
-    "category": "Comunidad",
-    "source": "Argentine Embassy in the UK Cultural Newsletter"
-  },
-  {
     "title": "Sabor Argentina",
     "date": "2026-10-18",
     "dateLabel": "DOMINGO, 18 DE OCTUBRE 2026",
@@ -1981,21 +1936,6 @@
     "source": "Leeds Film"
   },
   {
-    "title": "Illusion of an Everlasting Summer",
-    "type": "temporada",
-    "date": "2026-11-04",
-    "endDate": "2026-11-11",
-    "dateLabel": "Funciones hasta el 11 de noviembre de 2026",
-    "venue": "Everyman Cinema Leeds, Leeds Screen 4",
-    "city": "Leeds",
-    "region": "West Yorkshire",
-    "price": "Consultar web",
-    "link": "https://www.leedsfilm.com/whats-on/illusion-of-an-everlasting-summer-4ss3",
-    "description": "Largometraje documental dirigido por la aclamada fotógrafa Alessandra Sanguinetti, que retrata a lo largo de 25 años la vida de dos primas. Producción con coproducción/temática de Argentina.",
-    "category": "Cine",
-    "source": "Leeds Film"
-  },
-  {
     "title": "Germán Cornejo’s Tango After Dark",
     "date": "2026-11-05",
     "dateLabel": "JUEVES, 5 DE NOVIEMBRE 2026 - 19:30",
@@ -2020,21 +1960,6 @@
     "price": "Consultar web",
     "link": "https://www.leedsfilm.com/whats-on/the-days-off-b3xd",
     "description": "Ópera prima de Lucila Mariani ambientada en una Argentina de futuro cercano, una historia sobre el paso a la edad adulta entre lo cotidiano y lo insólito.",
-    "category": "Cine",
-    "source": "Leeds Film"
-  },
-  {
-    "title": "The Days Off",
-    "type": "temporada",
-    "date": "2026-11-05",
-    "endDate": "2026-11-05",
-    "dateLabel": "Funciones a partir del 5 de noviembre de 2026",
-    "venue": "Vue in the Light, Leeds Screen 7",
-    "city": "Leeds",
-    "region": "West Yorkshire",
-    "price": "Consultar web",
-    "link": "https://www.leedsfilm.com/whats-on/the-days-off-b3xd",
-    "description": "Ópera prima de Lucila Mariani ambientada en la Argentina del futuro cercano, un relato de crecimiento personal entre lo cotidiano y lo fantástico.",
     "category": "Cine",
     "source": "Leeds Film"
   },
@@ -2221,21 +2146,6 @@
     "link": "https://eventslist.co.uk/bristol/events/argentina-beyond-malbec-2027-02-04-bristol",
     "description": "Evento de degustación y muestra enfocado en la viticultura y la diversidad de vinos de Argentina más allá del Malbec.",
     "category": "Comunidad",
-    "source": "Events List"
-  },
-  {
-    "title": "Vincent Simone – Tango Passions",
-    "type": "unico",
-    "date": "2027-02-18",
-    "endDate": null,
-    "dateLabel": "JUEVES, 18 DE FEBRERO 2027",
-    "venue": "Liverpool",
-    "city": "Liverpool",
-    "region": "Inglaterra",
-    "price": "Consultar",
-    "link": "https://eventslist.co.uk/liverpool/events/vincent-simone-tango-passions-2027-02-18",
-    "description": "Espectáculo de danza enfocado en la pasión del tango argentino.",
-    "category": "Teatro",
     "source": "Events List"
   },
   {
