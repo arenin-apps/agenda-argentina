@@ -1623,7 +1623,7 @@
     "city": "Londres",
     "region": "Inglaterra",
     "price": "Consultar sitio web del BFI",
-    "link": "https://whatson.bfi.org.uk/lff/Online/default.asp",
+    "link": "https://whatson.bfi.org.uk/lff/Online/default.asp?BOparam::WScontent::loadArticle::permalink=match-lff26",
     "description": "Proyección del documental deportivo 'The Match', dirigido por Juan Cabral y Santiago Franco, que revisita el histórico partido de la Copa del Mundo de 1986 entre Inglaterra y Argentina e incluye la participación de figuras como Jorge Valdano, en el marco del BFI London Film Festival.",
     "category": "Cine",
     "source": "argentinefilmfestivallondon.substack.com"
@@ -1683,7 +1683,7 @@
     "city": "Londres",
     "region": "Inglaterra",
     "price": "Consultar sitio web del BFI",
-    "link": "https://whatson.bfi.org.uk/lff/Online/default.asp?doWork::WScontent::loadArticle=Load&BOparam::WScontent::loadArticle::article_id=67C2D7F9-E81D-4765-BE50-8D0B2CDBD2FB&BOparam::WScontent::loadArticle::context_id=83B3CDC6-1FED-4E3E-8D89-14675D42B8DB",
+    "link": "https://whatson.bfi.org.uk/lff/Online/default.asp?BOparam::WScontent::loadArticle::permalink=life-of-jorge-luis-borges-lff26",
     "description": "Proyección de la película argentina 'Life of Jorge Luis Borges', dirigida por el cineasta argentino Mariano Llinás, en el BFI London Film Festival.",
     "category": "Cine",
     "source": "argentinefilmfestivallondon.substack.com"
@@ -1713,7 +1713,7 @@
     "city": "Londres",
     "region": "Inglaterra",
     "price": "Consultar sitio web del BFI",
-    "link": "https://whatson.bfi.org.uk/lff/Online/default.asp",
+    "link": "https://whatson.bfi.org.uk/lff/Online/default.asp?BOparam::WScontent::loadArticle::permalink=glaxo-lff26",
     "description": "Proyección de la quinta película del director argentino Benjamín Naishtat, 'Glaxo', adaptada de la novela de Hernán Ronsino y protagonizada por los actores argentinos Lali Espósito, Marcelo Subiotto y Esteban Lamothe, en el marco del BFI London Film Festival.",
     "category": "Cine",
     "source": "argentinefilmfestivallondon.substack.com"
@@ -2222,5 +2222,20 @@
     "description": "Espectáculo centrado en la estética y la música del tango argentino.",
     "category": "Teatro",
     "source": "Events List"
+  },
+  {
+    "title": "Prince",
+    "type": "temporada",
+    "date": "2026-10-08",
+    "endDate": "2026-10-09",
+    "dateLabel": "Funciones el 8 y 9 de octubre de 2026",
+    "venue": "BFI London Film Festival (ICA y BFI Southbank)",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar sitio web del BFI",
+    "link": "https://whatson.bfi.org.uk/lff/Online/default.asp?BOparam::WScontent::loadArticle::permalink=prince-lff26",
+    "description": "Comedia kitsch coproducción de Uruguay y Argentina, dirigida por el uruguayo Federico Borgia y con elenco argentino (Esteban Bigliardi, Maitina De Marco). Un perro afgano campeón hereda la casa de su dueña y se convierte en el premio de una feroz disputa familiar. Estreno mundial en el BFI London Film Festival.",
+    "category": "Cine",
+    "source": "argentinefilmfestivallondon.substack.com"
   }
 ]
