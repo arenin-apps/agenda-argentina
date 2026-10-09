@@ -1629,6 +1629,21 @@
     "source": "argentinefilmfestivallondon.substack.com"
   },
   {
+    "title": "Prince",
+    "type": "temporada",
+    "date": "2026-10-08",
+    "endDate": "2026-10-09",
+    "dateLabel": "Funciones el 8 y 9 de octubre de 2026",
+    "venue": "BFI London Film Festival (ICA y BFI Southbank)",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar sitio web del BFI",
+    "link": "https://whatson.bfi.org.uk/lff/Online/default.asp?BOparam::WScontent::loadArticle::permalink=prince-lff26",
+    "description": "Comedia kitsch coproducción de Uruguay y Argentina, dirigida por el uruguayo Federico Borgia y con elenco argentino (Esteban Bigliardi, Maitina De Marco). Un perro afgano campeón hereda la casa de su dueña y se convierte en el premio de una feroz disputa familiar. Estreno mundial en el BFI London Film Festival.",
+    "category": "Cine",
+    "source": "argentinefilmfestivallondon.substack.com"
+  },
+  {
     "title": "Noche de Tango Argentino en La Querencia",
     "type": "unico",
     "date": "2026-10-09",
@@ -1794,6 +1809,21 @@
     "source": "Argentine Embassy in the UK Cultural Newsletter"
   },
   {
+    "title": "Tango Classes and Dancing near Oxford street & Baker street",
+    "type": "unico",
+    "date": "2026-10-15",
+    "endDate": null,
+    "dateLabel": "JUEVES, 15 DE OCTUBRE 2026 - 19:30",
+    "venue": "La Divina",
+    "city": "London",
+    "region": "Greater London",
+    "price": "£20",
+    "link": "https://eventslist.co.uk/london/events/tango-classes-and-dancing-near-oxford-street-baker-street-2026-10-15-london",
+    "description": "Clases de Tango Argentino y baile cerca de Oxford Street y Baker Street.",
+    "category": "Workshops",
+    "source": "Events List"
+  },
+  {
     "title": "Hernan Cattaneo",
     "type": "unico",
     "date": "2026-10-16",
@@ -1822,6 +1852,36 @@
     "description": "We are honoured to welcome Her Excellency Mariana Plaza, Ambassador of Argentina to the UK, along with distinguished guests, who will join us for an unforgettable evening of culture, music, fine dining, and solidarity.  By purchasing your ticket, you are directly contributing to raising vital funds for the charitable initiatives in Argentina supported by both host organisations:   * For AAS (Registered Charity No. 208002): Pequeños Pasos and Córdoba Athletic Club Museum and Historic Preservation Project.  * For Aparu (Registered Charity No. 1166195): Espartanas (Fundación Espartanos) and Asociación Civil Soles.",
     "category": "Comunidad",
     "source": "The Anglo Argentine Society"
+  },
+  {
+    "title": "Free Argentine Tango Practica – Notting Hill",
+    "type": "unico",
+    "date": "2026-10-16",
+    "endDate": null,
+    "dateLabel": "VIERNES, 16 DE OCTUBRE 2026 - 19:00",
+    "venue": "The Tabernacle",
+    "city": "London",
+    "region": "Greater London",
+    "price": "Check website",
+    "link": "https://eventslist.co.uk/london/events/free-argentine-tango-practica-notting-hill-all-levels-no-partner-needed-2026-10",
+    "description": "Práctica gratuita de Tango Argentino para todos los niveles en Notting Hill.",
+    "category": "Comunidad",
+    "source": "Events List"
+  },
+  {
+    "title": "Saturday Tango Intensive near Marylebone",
+    "type": "unico",
+    "date": "2026-10-17",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 17 DE OCTUBRE 2026 - 16:00",
+    "venue": "La Divina",
+    "city": "London",
+    "region": "Greater London",
+    "price": "£30",
+    "link": "https://eventslist.co.uk/london/events/saturday-tango-intensive-near-marylebone-2026-10-17",
+    "description": "Intensivo de Tango Argentino cerca de Marylebone.",
+    "category": "Workshops",
+    "source": "Events List"
   },
   {
     "title": "Sabor Argentina",
@@ -2164,6 +2224,21 @@
     "source": "Nations Championship Rugby"
   },
   {
+    "title": "LUJURIA",
+    "type": "unico",
+    "date": "2026-11-28",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 28 DE NOVIEMBRE 2026 - 19:30",
+    "venue": "The Fiddlers Elbow",
+    "city": "London",
+    "region": "Greater London",
+    "price": "£13.20",
+    "link": "https://eventslist.co.uk/london/events/lujuria",
+    "description": "Concierto de la banda de rock argentina Lujuria en Londres.",
+    "category": "Música",
+    "source": "Events List"
+  },
+  {
     "title": "Argentina Beyond Malbec",
     "type": "unico",
     "date": "2027-02-04",
@@ -2222,20 +2297,5 @@
     "description": "Espectáculo centrado en la estética y la música del tango argentino.",
     "category": "Teatro",
     "source": "Events List"
-  },
-  {
-    "title": "Prince",
-    "type": "temporada",
-    "date": "2026-10-08",
-    "endDate": "2026-10-09",
-    "dateLabel": "Funciones el 8 y 9 de octubre de 2026",
-    "venue": "BFI London Film Festival (ICA y BFI Southbank)",
-    "city": "Londres",
-    "region": "Inglaterra",
-    "price": "Consultar sitio web del BFI",
-    "link": "https://whatson.bfi.org.uk/lff/Online/default.asp?BOparam::WScontent::loadArticle::permalink=prince-lff26",
-    "description": "Comedia kitsch coproducción de Uruguay y Argentina, dirigida por el uruguayo Federico Borgia y con elenco argentino (Esteban Bigliardi, Maitina De Marco). Un perro afgano campeón hereda la casa de su dueña y se convierte en el premio de una feroz disputa familiar. Estreno mundial en el BFI London Film Festival.",
-    "category": "Cine",
-    "source": "argentinefilmfestivallondon.substack.com"
   }
 ]
