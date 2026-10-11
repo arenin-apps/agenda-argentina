@@ -1719,6 +1719,21 @@
     "source": "SRG (sergius.uk)"
   },
   {
+    "title": "Argentina v England rugby Nations Championship 2026",
+    "type": "unico",
+    "date": "2026-10-11",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 11 DE OCTUBRE 2026",
+    "venue": "Televisión / Streaming (Reino Unido)",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Incluido con suscripción de TV",
+    "link": "https://www.radiotimes.com/tv/sport/rugby-union/argentina-england-rugby-nations-championship-2026-preview/",
+    "description": "Partido de rugby union entre la selección de Argentina (Los Pumas) y Inglaterra en el marco de la Nations Championship 2026, con transmisión en vivo para el Reino Unido.",
+    "category": "Deportes",
+    "source": "Radio Times - TV Guide"
+  },
+  {
     "title": "Glaxo",
     "type": "temporada",
     "date": "2026-10-12",
@@ -1996,6 +2011,21 @@
     "description": "Recorrido familiar guiado dentro de la colorida e interactiva exposición del artista argentino Julio Le Parc.",
     "category": "Artes Plásticas",
     "source": "Tate"
+  },
+  {
+    "title": "Lucas Dorado - El Sueño",
+    "type": "unico",
+    "date": "2026-10-30",
+    "endDate": null,
+    "dateLabel": "VIERNES, 30 DE OCTUBRE 2026 - 19:30",
+    "venue": "Ladbroke Hall",
+    "city": "Londres",
+    "region": "Londres",
+    "price": "£15.45",
+    "link": "https://eventslist.co.uk/london/events/lucas-dorado-el-sueo-2026-10-30-london",
+    "description": "Concierto del artista Lucas Dorado presentando 'El Sueño', con fuerte vinculación cultural argentina.",
+    "category": "Música",
+    "source": "Events List"
   },
   {
     "title": "FREE Argentine Tango in a Day Course: Workshops and Practilonga Oct",
