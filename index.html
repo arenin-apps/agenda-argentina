@@ -65,6 +65,10 @@
       return `Desde el ${formatDateOnly(evt.date)}`;
     }
 
+    function isStreamingEvt(evt) {
+      return ((evt && evt.category) || '').toLowerCase().includes('streaming')
+    }
+
     function App() {
       const [events, setEvents] = React.useState([]);
       const [isLoading, setIsLoading] = React.useState(true);
@@ -222,7 +226,7 @@
                   <p className="text-slate-400 font-medium">No se encontraron eventos con estos filtros.</p>
                 </div>
               ) : (
-                filteredEvents.map((evt, idx) => {
+                [...filteredEvents].sort((a, b) => Number(isStreamingEvt(a)) - Number(isStreamingEvt(b))).map((evt, idx) => {
                   const venueText = (evt.venue || '').toLowerCase();
                   const cityText = (evt.city || '').toLowerCase();
                   const isVirtual = (evt.category || '').toLowerCase().includes('tv') ||
@@ -284,7 +288,7 @@
                         <div className="flex items-center gap-2.5 bg-slate-950/60 border border-slate-850 p-3 rounded-xl">
                           <Calendar className="h-4 w-4 text-sky-400 shrink-0" />
                           <span className="text-xs sm:text-sm font-bold uppercase tracking-wide text-sky-200 font-mono">
-                            {isSeason ? formatSeasonLabel(evt) : (evt.dateLabel || formatFallbackLabel(evt.date))}
+                            {isSeason && !isStreamingEvt(evt) ? formatSeasonLabel(evt) : (evt.dateLabel || formatFallbackLabel(evt.date))}
                           </span>
                         </div>
 
@@ -318,7 +322,7 @@
           </main>
 
           <footer className="border-t border-slate-900 py-8 mt-12 text-slate-500 text-center text-xs">
-            © {new Date().getFullYear()} Agenda Cultural Argentina en UK. Proyecto libre y comunitario.
+            © {new Date().getFullYear()} Agenda Cultural Argentina en UK. Proyecto libre y comunitario. Datos de TV y streaming: TMDB. This product uses the TMDB API but is not endorsed or certified by TMDB.
           </footer>
         </div>
       );
