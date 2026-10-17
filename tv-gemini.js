@@ -77,7 +77,7 @@ async function consultar(modelo, apiKey, prompt) {
     signal: AbortSignal.timeout(120000),
   })
   if (!res.ok) {
-    const cuerpo = (await res.text()).slice(0, 300)
+    const cuerpo = (await res.text()).replace(/\s+/g, ' ').slice(0, 1500)
     throw new Error('HTTP ' + res.status + ' con ' + modelo + ': ' + cuerpo)
   }
   const data = await res.json()
