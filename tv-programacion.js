@@ -100,7 +100,14 @@ async function leerBBC(dias) {
 
 async function leerITV(dias) {
   const out = []
+  let fallos = 0
   for (const dia of dias) {
+    // ITV bloquea las consultas desde los servidores de GitHub: si falla dos
+    // veces seguidas se omite el resto de la semana en vez de esperar cada dia.
+    if (fallos >= 2) {
+      console.warn('ITV: se omiten los dias restantes por fallos repetidos.')
+      break
+    }
     try {
       const html = await pedir('https://www.itv.com/watch/tv-guide/' + dia)
       const m = html.match(/<script id="__NEXT_DATA__"[^>]*>([\s\S]*?)<\/script>/)
@@ -117,7 +124,9 @@ async function leerITV(dias) {
           })
         }
       }
+      fallos = 0
     } catch (err) {
+      fallos++
       console.warn('ITV ' + dia + ': ' + err.message)
     }
     await sleep(600)
