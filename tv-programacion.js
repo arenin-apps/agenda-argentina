@@ -55,7 +55,11 @@ function enLondres(fechaIso) {
 }
 
 async function pedir(url) {
-  const res = await fetch(url, { headers: { 'User-Agent': UA, 'Accept-Language': 'en-GB,en;q=0.9' } })
+  // Tiempo maximo por pagina: si una guia no responde, se salta (no cuelga el proceso).
+  const res = await fetch(url, {
+    headers: { 'User-Agent': UA, 'Accept-Language': 'en-GB,en;q=0.9' },
+    signal: AbortSignal.timeout(20000),
+  })
   if (!res.ok) throw new Error('HTTP ' + res.status)
   return res.text()
 }
