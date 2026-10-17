@@ -64,6 +64,16 @@ async function descubrir(tipo, extra) {
   return (data.results || []).map((r) => Object.assign({}, r, { tipo }))
 }
 
+// TMDB lista variantes de la misma plataforma (planes con anuncios, canales
+// dentro de Amazon, etc.). Se limpian para mostrar un nombre claro.
+function limpiarPlataforma(nombre) {
+  return String(nombre || '')
+    .replace(/\s+Standard with Adverts?$/i, '')
+    .replace(/\s+with Ads$/i, '')
+    .replace(/\s+(Amazon|Apple TV|Roku) Channel$/i, '')
+    .trim()
+}
+
 const iso = (d) => d.toISOString().slice(0, 10)
 
 async function main() {
@@ -96,7 +106,7 @@ async function main() {
     if (!gb) continue
     const suscripcion = gb.flatrate || []
     const todas = suscripcion.concat(gb.free || [], gb.ads || [])
-    const plataformas = [...new Set(todas.map((p) => p.provider_name))]
+    const plataformas = [...new Set(todas.map((p) => limpiarPlataforma(p.provider_name)))].filter(Boolean)
     if (!plataformas.length) continue
 
     const titulo = r.title || r.name || r.original_title || r.original_name
