@@ -2289,6 +2289,21 @@
     "source": "TMDB (streaming Reino Unido)"
   },
   {
+    "title": "Germany Women U17 v Argentina Women U17",
+    "type": "unico",
+    "date": "2026-10-17",
+    "endDate": null,
+    "dateLabel": "sab 17 oct, 16:00 (hora UK)",
+    "venue": "DAZN",
+    "city": "Reino Unido",
+    "region": "Reino Unido",
+    "price": "Ver canal",
+    "link": "https://b8b8.tv/football/dazn-schedule",
+    "description": "Este es un partido de la fase de grupos de la Copa Mundial Femenina Sub-17 de la FIFA entre Alemania y Argentina.",
+    "category": "TV y Streaming",
+    "source": "Busqueda semanal de TV (Gemini + Google)"
+  },
+  {
     "title": "Sabor Argentina",
     "date": "2026-10-18",
     "dateLabel": "DOMINGO, 18 DE OCTUBRE 2026",
@@ -2315,6 +2330,21 @@
     "description": "Concierto de la legendaria banda mexicana de rock El Tri en Londres, Reino Unido. Nota: se incluye por tener fecha presencial en el Reino Unido dentro del período, aunque la banda es mexicana y no argentina.",
     "category": "Música",
     "source": "De Puta Madre Club"
+  },
+  {
+    "title": "Belgrano v River Plate",
+    "type": "unico",
+    "date": "2026-10-19",
+    "endDate": null,
+    "dateLabel": "lun 19 oct, 00:15 (hora UK)",
+    "venue": "Premier Sports 2",
+    "city": "Reino Unido",
+    "region": "Reino Unido",
+    "price": "Ver canal",
+    "link": "https://www.livesportontv.com/football/premier-sports-schedule",
+    "description": "Este es un partido de la Primera División Argentina entre Belgrano y River Plate.",
+    "category": "TV y Streaming",
+    "source": "Busqueda semanal de TV (Gemini + Google)"
   },
   {
     "title": "Maldita - Presentación de libro de Florencia Canale",
@@ -2360,6 +2390,21 @@
     "description": "Clase de tango argentino para principiantes absolutos.",
     "category": "Workshops",
     "source": "Events List"
+  },
+  {
+    "title": "Independiente v Boca Juniors",
+    "type": "unico",
+    "date": "2026-10-25",
+    "endDate": null,
+    "dateLabel": "dom 25 oct, 20:00 (hora UK)",
+    "venue": "Premier Player",
+    "city": "Reino Unido",
+    "region": "Reino Unido",
+    "price": "Ver canal",
+    "link": "https://www.livesportontv.com/football/premier-sports-schedule",
+    "description": "Este es un partido de la Primera División Argentina entre Independiente y Boca Juniors.",
+    "category": "TV y Streaming",
+    "source": "Busqueda semanal de TV (Gemini + Google)"
   },
   {
     "title": "Jorge Drexler",
