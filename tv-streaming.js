@@ -70,6 +70,7 @@ function limpiarPlataforma(nombre) {
   return String(nombre || '')
     .replace(/\s+Standard with Adverts?$/i, '')
     .replace(/\s+with Ads$/i, '')
+    .replace(/\s+Standard$/i, '')
     .replace(/\s+(Amazon|Apple TV|Roku) Channel$/i, '')
     .trim()
 }
