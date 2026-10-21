@@ -2450,6 +2450,21 @@
     "source": "Como No"
   },
   {
+    "title": "Practice and enjoy Argentine Tango",
+    "type": "unico",
+    "date": "2026-10-27",
+    "endDate": null,
+    "dateLabel": "MARTES, 27 DE OCTUBRE 2026 - 20:15",
+    "venue": "Warwick SPACE",
+    "city": "Warwick",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://eventslist.co.uk/warwick/events/practice-and-enjoy-argentine-tango-2026-10-27-warwick",
+    "description": "Espacio de práctica y disfrute del tango argentino en Warwick.",
+    "category": "Workshops",
+    "source": "Events List"
+  },
+  {
     "title": "Family Tour: Julio le Parc",
     "date": "2026-10-28",
     "dateLabel": "MIÉRCOLES, 28 DE OCTUBRE 2026",
@@ -2745,6 +2760,21 @@
     "price": "£13.20",
     "link": "https://eventslist.co.uk/london/events/lujuria",
     "description": "Concierto de la banda de rock argentina Lujuria en Londres.",
+    "category": "Música",
+    "source": "Events List"
+  },
+  {
+    "title": "FRENZY Presents IKKHI + support",
+    "type": "unico",
+    "date": "2026-12-04",
+    "endDate": null,
+    "dateLabel": "VIERNES, 4 DE DICIEMBRE 2026 - 22:00",
+    "venue": "Upstairs At The Mash House",
+    "city": "Dundee",
+    "region": "Escocia",
+    "price": "Desde £13",
+    "link": "https://eventslist.co.uk/dundee/events/frenzy-presents-ikkhi-support-2026-12-04",
+    "description": "Presentación del DJ y productor argentino Ikkhi en Dundee.",
     "category": "Música",
     "source": "Events List"
   },
