@@ -1187,6 +1187,21 @@
     "source": "The Railway"
   },
   {
+    "title": "Taller de Teatro en español en Londres, «El Método»",
+    "type": "temporada",
+    "date": "2026-09-26",
+    "endDate": null,
+    "dateLabel": "Clases regulares en curso",
+    "venue": "Londres",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar",
+    "link": "https://www.latundra.com/clases-de-teatro-en-espanol-en-londres/",
+    "description": "Taller de teatro en español impartido por el director argentino Hernán Cáceres en Londres.",
+    "category": "Workshops",
+    "source": "La Tundra"
+  },
+  {
     "title": "Dominic Miller – Brighton",
     "date": "2026-09-27",
     "dateLabel": "DOMINGO, 27 DE SEPTIEMBRE 2026 - 19:00",
@@ -2360,6 +2375,21 @@
     "description": "Serie (2022). Eric regresa a Cabo Qwert para resolver el misterio de la desaparición de sus padres. Al volver a este pueblo, se encontrará con amigos y enemigos y tendrá que desvelar los misterios del parque de atracciones de terror que hay en el pueblo.",
     "category": "TV y Streaming",
     "source": "TMDB (streaming Reino Unido)"
+  },
+  {
+    "title": "Papeles y papeles: Sobre las acuarelas de Isabela Córdoba",
+    "type": "temporada",
+    "date": "2026-10-22",
+    "endDate": "2026-11-06",
+    "dateLabel": "Hasta el 6 de noviembre de 2026",
+    "venue": "Unity Theatre",
+    "city": "Liverpool",
+    "region": "Inglaterra",
+    "price": "Consultar",
+    "link": "https://www.latundra.com/papeles-y-papeles-sobre-las-acuarelas-de-isabela-cordoba/",
+    "description": "Exposición de acuarelas de la artista argentina Isabela Córdoba Torres en el Unity Theatre como parte de ELA Feria 2026.",
+    "category": "Artes Plásticas",
+    "source": "La Tundra"
   },
   {
     "title": "Maldita - Presentación de libro de Florencia Canale",
