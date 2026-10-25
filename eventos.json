@@ -2482,6 +2482,21 @@
     "source": "Ica Art Films"
   },
   {
+    "title": "Off-Circuit: The Night is Fading Away",
+    "type": "unico",
+    "date": "2026-10-26",
+    "endDate": null,
+    "dateLabel": "LUNES, 26 DE OCTUBRE 2026 - 20:40",
+    "venue": "Institute of Contemporary Arts (ICA)",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.ica.art/films/off-circuit-the-night-is-fading-away",
+    "description": "Proyección de 'The Night is Fading Away', una película dirigida por los cineastas argentinos Ramiro Sonzini y Ezequiel Salinas.",
+    "category": "Cine",
+    "source": "Ica Art Films"
+  },
+  {
     "title": "Jorge Drexler",
     "date": "2026-10-27",
     "dateLabel": "MARTES, 27 DE OCTUBRE 2026 - 19:00",
@@ -2564,6 +2579,21 @@
     "price": "Consultar web",
     "link": "https://www.ica.art/films/off-circuit-the-night-is-fading-away",
     "description": "Proyección con estreno en el Reino Unido de 'The Night is Fading Away', una película dirigida por los cineastas argentinos Ramiro Sonzini y Ezequiel Salinas.",
+    "category": "Cine",
+    "source": "Ica Art Films"
+  },
+  {
+    "title": "Off-Circuit: The Night is Fading Away",
+    "type": "unico",
+    "date": "2026-10-29",
+    "endDate": null,
+    "dateLabel": "JUEVES, 29 DE OCTUBRE 2026 - 20:45",
+    "venue": "Institute of Contemporary Arts (ICA)",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.ica.art/films/off-circuit-the-night-is-fading-away",
+    "description": "Proyección de 'The Night is Fading Away', una película dirigida por los cineastas argentinos Ramiro Sonzini y Ezequiel Salinas.",
     "category": "Cine",
     "source": "Ica Art Films"
   },
