@@ -1202,6 +1202,21 @@
     "source": "La Tundra"
   },
   {
+    "title": "Taller de Teatro en español: El Método con Hernán Cáceres",
+    "type": "temporada",
+    "date": "2026-09-26",
+    "endDate": null,
+    "dateLabel": "Clases regulares en Londres",
+    "venue": "Londres",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar",
+    "link": "https://www.latundra.com/clases-de-teatro-en-espanol-en-londres/",
+    "description": "Taller de teatro en español impartido por el director argentino Hernán Cáceres, enfocado en técnicas teatrales y creación de vínculos comunitarios.",
+    "category": "Workshops",
+    "source": "La Tundra"
+  },
+  {
     "title": "Dominic Miller – Brighton",
     "date": "2026-09-27",
     "dateLabel": "DOMINGO, 27 DE SEPTIEMBRE 2026 - 19:00",
@@ -1938,6 +1953,21 @@
     "price": "Consultar",
     "link": "https://www.latundra.com/papeles-y-papeles-sobre-las-acuarelas-de-isabela-cordoba/",
     "description": "Exposición de acuarelas de la artista argentina Isabela Córdoba Torres en el Unity Theatre como parte de ELA Feria 2026.",
+    "category": "Artes Plásticas",
+    "source": "La Tundra"
+  },
+  {
+    "title": "Exposición de acuarelas de Isabela Córdoba Torres en ELA Feria 2026",
+    "type": "temporada",
+    "date": "2026-10-22",
+    "endDate": "2026-11-06",
+    "dateLabel": "Hasta el 6 de noviembre de 2026",
+    "venue": "Unity Theatre",
+    "city": "Liverpool",
+    "region": "Inglaterra",
+    "price": "Consultar",
+    "link": "https://www.latundra.com/papeles-y-papeles-sobre-las-acuarelas-de-isabela-cordoba/",
+    "description": "Muestra de acuarelas de la artista argentina Isabela Córdoba Torres en el Unity Theatre de Liverpool como parte de ELA Feria 2026.",
     "category": "Artes Plásticas",
     "source": "La Tundra"
   },
