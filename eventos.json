@@ -2658,6 +2658,21 @@
     "source": "Events List"
   },
   {
+    "title": "Free Argentine Tango Practica – Notting Hill",
+    "type": "unico",
+    "date": "2026-10-30",
+    "endDate": null,
+    "dateLabel": "VIERNES, 30 DE OCTUBRE 2026 - 19:00",
+    "venue": "The Tabernacle",
+    "city": "London",
+    "region": "Greater London",
+    "price": "Check website",
+    "link": "https://eventslist.co.uk/london/events/free-argentine-tango-practica-notting-hill-all-levels-no-partner-needed-2026-10",
+    "description": "Práctica abierta y gratuita de tango argentino en Notting Hill.",
+    "category": "Workshops",
+    "source": "Events List"
+  },
+  {
     "title": "FREE Argentine Tango in a Day Course: Workshops and Practilonga Oct",
     "type": "unico",
     "date": "2026-10-31",
@@ -2686,6 +2701,21 @@
     "description": "Un partido de fútbol de la Primera División Argentina entre Vélez Sarsfield y San Lorenzo.",
     "category": "TV y Streaming",
     "source": "Busqueda semanal de TV (Gemini + Google)"
+  },
+  {
+    "title": "Tango Absolute Beginner Class",
+    "type": "unico",
+    "date": "2026-10-31",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 31 DE OCTUBRE 2026 - 13:00",
+    "venue": "Ritmo Latino Dance Studio",
+    "city": "London",
+    "region": "Greater London",
+    "price": "£22",
+    "link": "https://eventslist.co.uk/london/events/tango-absolute-beginner-class-2026-10-31-london",
+    "description": "Clase de tango argentino para principiantes absolutos.",
+    "category": "Workshops",
+    "source": "Events List"
   },
   {
     "title": "Los Palmeras en Londres 2026",
@@ -2927,6 +2957,21 @@
     "price": "£0.00",
     "link": "https://eventslist.co.uk/cardiff/events/free-improvers-argentine-tango-in-a-day-course-and-milonga-cardiff-2026-11-14",
     "description": "Curso de tango argentino para niveles de mejora y milonga.",
+    "category": "Música",
+    "source": "Events List"
+  },
+  {
+    "title": "TRÍADA",
+    "type": "unico",
+    "date": "2026-11-19",
+    "endDate": null,
+    "dateLabel": "JUEVES, 19 DE NOVIEMBRE 2026 - 20:00",
+    "venue": "The Jazz Social Pop-Up",
+    "city": "London",
+    "region": "Greater London",
+    "price": "£15.19",
+    "link": "https://eventslist.co.uk/london/events/trada-2026-11-19-london",
+    "description": "Concierto del proyecto musical Tríada, vinculado al jazz y ritmos sudamericanos/argentinos.",
     "category": "Música",
     "source": "Events List"
   },
