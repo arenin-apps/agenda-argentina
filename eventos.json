@@ -2628,6 +2628,21 @@
     "source": "Ica Art Films"
   },
   {
+    "title": "Service95 Book Club: Translated Fiction Showcase",
+    "type": "unico",
+    "date": "2026-10-28",
+    "endDate": null,
+    "dateLabel": "MIÉRCOLES, 28 DE OCTUBRE 2026 - 19:45",
+    "venue": "Purcell Room",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.southbankcentre.co.uk/whats-on/service95-book-club-translated-fiction-showcase/",
+    "description": "Exhibición de ficción traducida con la participación de la destacada escritora argentina Samanta Schweblin (cuya imagen y presencia figuran en el evento), autora de aclamadas obras como 'Distancia de rescate'.",
+    "category": "Literatura / Literatura & poetry",
+    "source": "Southbank Centre"
+  },
+  {
     "title": "Off-Circuit: The Night is Fading Away",
     "type": "unico",
     "date": "2026-10-29",
@@ -3017,6 +3032,21 @@
     "description": "Taller intensivo de sábado dedicado al tango argentino.",
     "category": "Workshops",
     "source": "Events List"
+  },
+  {
+    "title": "The Illusion of an Everlasting Summer",
+    "type": "unico",
+    "date": "2026-11-22",
+    "endDate": null,
+    "dateLabel": "DOMINGO, 22 DE NOVIEMBRE 2026",
+    "venue": "Bertha DocHouse Curzon Bloomsbury",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://dochouse.org/event/the-illusion-of-an-everlasting-summer/",
+    "description": "Película documental que sigue las vidas de dos primas, Guillermina y Belinda, mientras crecen en la vasta región argentina. Conexión directa y específica con Argentina.",
+    "category": "Cine",
+    "source": "Dochouse"
   },
   {
     "title": "LUJURIA",
