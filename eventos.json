@@ -1217,6 +1217,21 @@
     "source": "La Tundra"
   },
   {
+    "title": "Clases de Teatro en español en Londres",
+    "type": "temporada",
+    "date": "2026-09-26",
+    "endDate": null,
+    "dateLabel": "Clases regulares con Hernán Cáceres",
+    "venue": "Londres",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar",
+    "link": "https://www.latundra.com/clases-de-teatro-en-espanol-en-londres/",
+    "description": "Taller de teatro en español en Londres «El Método» impartido por el director y actor argentino Hernán Cáceres.",
+    "category": "Workshops",
+    "source": "La Tundra"
+  },
+  {
     "title": "Dominic Miller – Brighton",
     "date": "2026-09-27",
     "dateLabel": "DOMINGO, 27 DE SEPTIEMBRE 2026 - 19:00",
@@ -2774,6 +2789,21 @@
     "description": "Un partido de fútbol de la Primera División Argentina entre Boca Juniors y River Plate.",
     "category": "TV y Streaming",
     "source": "Busqueda semanal de TV (Gemini + Google)"
+  },
+  {
+    "title": "Practice and enjoy Argentine Tango",
+    "type": "unico",
+    "date": "2026-11-03",
+    "endDate": null,
+    "dateLabel": "MARTES, 3 DE NOVIEMBRE 2026 - 20:15",
+    "venue": "Warwick SPACE",
+    "city": "Warwick",
+    "region": "Inglaterra",
+    "price": "Check website",
+    "link": "https://eventslist.co.uk/warwick/events/practice-and-enjoy-argentine-tango-2026-11-03-warwick",
+    "description": "Espacio de práctica y disfrute del tango argentino.",
+    "category": "Workshops",
+    "source": "Events List"
   },
   {
     "title": "Illusion of an Everlasting Summer",
