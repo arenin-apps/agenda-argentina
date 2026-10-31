@@ -2776,6 +2776,21 @@
     "source": "Argentine Embassy in the UK"
   },
   {
+    "title": "The Night is Fading Away",
+    "type": "temporada",
+    "date": "2026-11-03",
+    "endDate": null,
+    "dateLabel": "Funciones desde el 3 de Noviembre 2026",
+    "venue": "ICA",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.ica.art/films/off-circuit-the-night-is-fading-away",
+    "description": "Proyección de la película dirigida por los cineastas argentinos Ramiro Sonzini y Ezequiel Salinas, presentada en el ICA como parte de su programación de cine.",
+    "category": "Cine",
+    "source": "Ica Art Films"
+  },
+  {
     "title": "Illusion of an Everlasting Summer",
     "type": "temporada",
     "date": "2026-11-04",
@@ -2907,6 +2922,21 @@
     "source": "Argentine Embassy in the UK"
   },
   {
+    "title": "Enjoy Argentine Tango classes & practica with Luis & Elizabeth",
+    "type": "unico",
+    "date": "2026-11-06",
+    "endDate": null,
+    "dateLabel": "VIERNES, 6 DE NOVIEMBRE 2026 - 18:30",
+    "venue": "St Mary's Church",
+    "city": "Warwick",
+    "region": "Inglaterra",
+    "price": "Check website",
+    "link": "https://eventslist.co.uk/warwick/events/enjoy-argentine-tango-classes-practica-with-luis-elizabeth-2026-11-06-warwick",
+    "description": "Clases y práctica de tango argentino dictadas por Luis y Elizabeth.",
+    "category": "Workshops",
+    "source": "Events List"
+  },
+  {
     "title": "El Unipersonal de Laila Roth",
     "type": "unico",
     "date": "2026-11-07",
@@ -2979,6 +3009,21 @@
     "link": "https://eventslist.co.uk/london/events/world-of-wine-tasting-argentina-2026-11-11-london",
     "description": "Cata de vinos enfocada exclusivamente en etiquetas y producción de Argentina.",
     "category": "Comunidad",
+    "source": "Events List"
+  },
+  {
+    "title": "Argentine Tango Class & Social",
+    "type": "unico",
+    "date": "2026-11-11",
+    "endDate": null,
+    "dateLabel": "MIÉRCOLES, 11 DE NOVIEMBRE 2026 - 19:00",
+    "venue": "Stirchley United Working Mens Club",
+    "city": "Birmingham",
+    "region": "Inglaterra",
+    "price": "Free – £5",
+    "link": "https://eventslist.co.uk/birmingham/events/argentine-tango-class-social-2026-11-11",
+    "description": "Clase y encuentro social enfocado en el tango argentino.",
+    "category": "Workshops",
     "source": "Events List"
   },
   {
