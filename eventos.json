@@ -2849,6 +2849,21 @@
     "source": "Leeds Film"
   },
   {
+    "title": "Tango After Dark",
+    "type": "temporada",
+    "date": "2026-11-05",
+    "endDate": null,
+    "dateLabel": "Funciones a partir del 5 de noviembre de 2026",
+    "venue": "Off-West End Theatre",
+    "city": "Londres",
+    "region": "Londres",
+    "price": "Consultar web",
+    "link": "https://www.whatsonstage.com/shows/london-theatre/off-west-end-theatre/tango-after-dark_1716737/",
+    "description": "Espectáculo de tango argentino que presenta la cultura, la danza y la música tradicional de Argentina en la escena de Londres.",
+    "category": "Teatro",
+    "source": "Whats On Stage"
+  },
+  {
     "title": "Ireland vs Argentina",
     "date": "2026-11-06",
     "dateLabel": "VIERNES, 06 DE NOVIEMBRE 2026 - 20:10",
@@ -2937,6 +2952,21 @@
     "source": "Events List"
   },
   {
+    "title": "Tango After Dark",
+    "type": "unico",
+    "date": "2026-11-06",
+    "endDate": null,
+    "dateLabel": "VIERNES, 6 DE NOVIEMBRE 2026 - 19:30",
+    "venue": "Sadler's Wells",
+    "city": "Londres",
+    "region": "Greater London",
+    "price": "£15",
+    "link": "https://eventslist.co.uk/london/events/tango-after-dark-2026-11-06",
+    "description": "Espectáculo de danza y música inspirado en el tango argentino.",
+    "category": "Teatro",
+    "source": "Events List"
+  },
+  {
     "title": "El Unipersonal de Laila Roth",
     "type": "unico",
     "date": "2026-11-07",
@@ -2952,6 +2982,51 @@
     "source": "Enterticket"
   },
   {
+    "title": "Tango Absolute Beginner Class",
+    "type": "unico",
+    "date": "2026-11-07",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 7 DE NOVIEMBRE 2026 - 13:00",
+    "venue": "Ritmo Latino Dance Studio",
+    "city": "Londres",
+    "region": "Greater London",
+    "price": "£22",
+    "link": "https://eventslist.co.uk/london/events/tango-absolute-beginner-class-2026-11-07-london",
+    "description": "Clase introductoria para principiantes de tango argentino.",
+    "category": "Workshops",
+    "source": "Events List"
+  },
+  {
+    "title": "Tango After Dark",
+    "type": "unico",
+    "date": "2026-11-07",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 7 DE NOVIEMBRE 2026 - 14:00",
+    "venue": "Sadler's Wells",
+    "city": "Londres",
+    "region": "Greater London",
+    "price": "£15",
+    "link": "https://eventslist.co.uk/london/events/tango-after-dark-2026-11-07",
+    "description": "Espectáculo de danza y música inspirado en el tango argentino.",
+    "category": "Teatro",
+    "source": "Events List"
+  },
+  {
+    "title": "Tango After Dark",
+    "type": "unico",
+    "date": "2026-11-08",
+    "endDate": null,
+    "dateLabel": "DOMINGO, 8 DE NOVIEMBRE 2026 - 14:00",
+    "venue": "Sadler's Wells",
+    "city": "Londres",
+    "region": "Greater London",
+    "price": "£15",
+    "link": "https://eventslist.co.uk/london/events/tango-after-dark-2026-11-08",
+    "description": "Espectáculo de danza y música inspirado en el tango argentino.",
+    "category": "Teatro",
+    "source": "Events List"
+  },
+  {
     "title": "World of Wine Tasting: Argentina with Tomas from Vinyes Ocults",
     "type": "unico",
     "date": "2026-11-09",
@@ -2964,6 +3039,21 @@
     "link": "https://eventslist.co.uk/london/events/world-of-wine-tasting-argentina-with-tomas-from-vinyes-ocults-2026-11-09-london",
     "description": "Cata de vinos dirigida por Tomás de la bodega argentina Vinyes Ocults.",
     "category": "Comunidad",
+    "source": "Events List"
+  },
+  {
+    "title": "Tango After Dark",
+    "type": "unico",
+    "date": "2026-11-09",
+    "endDate": null,
+    "dateLabel": "LUNES, 9 DE NOVIEMBRE 2026 - 19:30",
+    "venue": "Sadler's Wells",
+    "city": "Londres",
+    "region": "Greater London",
+    "price": "£15",
+    "link": "https://eventslist.co.uk/london/events/tango-after-dark-2026-11-09",
+    "description": "Espectáculo de danza y música inspirado en el tango argentino.",
+    "category": "Teatro",
     "source": "Events List"
   },
   {
