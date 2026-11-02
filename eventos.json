@@ -3364,6 +3364,21 @@
     "source": "Events List"
   },
   {
+    "title": "Vincent Simone - Tango Passions",
+    "type": "unico",
+    "date": "2027-02-03",
+    "endDate": null,
+    "dateLabel": "MIÉRCOLES, 3 DE FEBRERO 2027 - 19:30",
+    "venue": "The Apex",
+    "city": "Bury St Edmunds",
+    "region": "Suffolk",
+    "price": "Check website",
+    "link": "https://eventslist.co.uk/bury-st-edmunds/events/vincent-simone-tango-passions-2027-02-03",
+    "description": "Espectáculo de danza basado en el tango argentino.",
+    "category": "Teatro",
+    "source": "Events List"
+  },
+  {
     "title": "Argentina Beyond Malbec",
     "type": "unico",
     "date": "2027-02-04",
@@ -3405,6 +3420,21 @@
     "price": "Consultar",
     "link": "https://eventslist.co.uk/liverpool/events/vincent-simone-tango-passions-2027-02-18",
     "description": "Espectáculo de danza enfocado en la temática del tango argentino.",
+    "category": "Teatro",
+    "source": "Events List"
+  },
+  {
+    "title": "Vincent Simone – Tango Passions",
+    "type": "unico",
+    "date": "2027-02-18",
+    "endDate": null,
+    "dateLabel": "JUEVES, 18 DE FEBRERO 2027 - 19:30",
+    "venue": "Check website",
+    "city": "Liverpool",
+    "region": "Merseyside",
+    "price": "Check website",
+    "link": "https://eventslist.co.uk/liverpool/events/vincent-simone-tango-passions",
+    "description": "Espectáculo de danza centrado en el tango argentino.",
     "category": "Teatro",
     "source": "Events List"
   },
