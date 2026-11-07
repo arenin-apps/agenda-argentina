@@ -1,5 +1,20 @@
 [
   {
+    "title": "The Illusion of an Everlasting Summer",
+    "type": "temporada",
+    "date": "2025-11-22",
+    "endDate": null,
+    "dateLabel": "Funciones a partir del 22 de noviembre de 2025",
+    "venue": "Bertha DocHouse (Curzon Bloomsbury)",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://dochouse.org/event/the-illusion-of-an-everlasting-summer/",
+    "description": "Película documental que sigue las vidas de dos primas, Guillermina y Belinda, mientras crecen en la vasta región argentina. Vínculo específico: ambientada y centrada en Argentina.",
+    "category": "Cine",
+    "source": "Dochouse"
+  },
+  {
     "title": "Mise-en-scène",
     "type": "temporada",
     "date": "2026-04-09",
@@ -3042,6 +3057,21 @@
     "source": "Events List"
   },
   {
+    "title": "Tine Thing Helseth & Friends: The Boulangerie",
+    "type": "unico",
+    "date": "2026-11-07",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 7 DE NOVIEMBRE 2026 - 14:00",
+    "venue": "Queen Elizabeth Hall",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.southbankcentre.co.uk/whats-on/tine-thing-helseth-friends-the-boulangerie/",
+    "description": "Concierto que incluye en su repertorio la obra 'Café 1930' de la Suite 'L'histoire du tango' del compositor argentino Astor Piazzolla.",
+    "category": "Música",
+    "source": "Southbank Centre"
+  },
+  {
     "title": "Tango After Dark",
     "type": "unico",
     "date": "2026-11-08",
@@ -3218,6 +3248,36 @@
     "description": "Comedia del Voilà Festival en la que la ruptura entre dos bailarines de tango estalla sobre el escenario y un director excéntrico convierte el caos en función. Funciones el 12 y el 15 de noviembre a las 19:30 (duración: 1 hora). Recomendada por el boletín cultural de la Embajada Argentina en el Reino Unido.",
     "category": "Teatro",
     "source": "Argentine Embassy in the UK"
+  },
+  {
+    "title": "Enjoy Argentine Tango classes & practica with Luis & Elizabeth",
+    "type": "unico",
+    "date": "2026-11-13",
+    "endDate": null,
+    "dateLabel": "VIERNES, 13 DE NOVIEMBRE 2026 - 18:30",
+    "venue": "St Mary's Church",
+    "city": "Warwick",
+    "region": "Warwickshire",
+    "price": "Check website",
+    "link": "https://eventslist.co.uk/warwick/events/enjoy-argentine-tango-classes-practica-with-luis-elizabeth-2026-11-13-warwick",
+    "description": "Clases y práctica de tango argentino impartidas por Luis y Elizabeth.",
+    "category": "Workshops",
+    "source": "Events List"
+  },
+  {
+    "title": "Free Argentine Tango Practica – Notting Hill",
+    "type": "unico",
+    "date": "2026-11-13",
+    "endDate": null,
+    "dateLabel": "VIERNES, 13 DE NOVIEMBRE 2026 - 19:00",
+    "venue": "The Tabernacle",
+    "city": "London",
+    "region": "Greater London",
+    "price": "Check website",
+    "link": "https://eventslist.co.uk/london/events/free-argentine-tango-practica-notting-hill-all-levels-no-partner-needed-2026-11",
+    "description": "Práctica abierta de tango argentino en Notting Hill, Londres.",
+    "category": "Workshops",
+    "source": "Events List"
   },
   {
     "title": "Italy vs Argentina",
