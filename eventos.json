@@ -3072,6 +3072,21 @@
     "source": "Events List"
   },
   {
+    "title": "Ireland v Argentina rugby Nations Championship 2026",
+    "type": "unico",
+    "date": "2026-11-08",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 8 DE NOVIEMBRE 2026",
+    "venue": "Televisión / Streaming en el Reino Unido",
+    "city": "Reino Unido",
+    "region": "Reino Unido",
+    "price": "Según suscripción de TV",
+    "link": "https://www.radiotimes.com/tv/sport/rugby-union/ireland-argentina-rugby-nations-championship-2026-preview/",
+    "description": "Partido de rugby del torneo Nations Championship entre las selecciones de Irlanda y Argentina (Los Pumas), transmitido para el Reino Unido.",
+    "category": "TV y Streaming",
+    "source": "Radio Times - TV Guide"
+  },
+  {
     "title": "World of Wine Tasting: Argentina with Tomas from Vinyes Ocults",
     "type": "unico",
     "date": "2026-11-09",
@@ -3541,6 +3556,21 @@
     "link": "https://eventslist.co.uk/liverpool/events/vincent-simone-tango-passions",
     "description": "Espectáculo de danza centrado en el tango argentino.",
     "category": "Teatro",
+    "source": "Events List"
+  },
+  {
+    "title": "Winona Riders @ The Victoria",
+    "type": "unico",
+    "date": "2027-03-01",
+    "endDate": null,
+    "dateLabel": "LUNES, 1 DE MARZO 2027 - 19:00",
+    "venue": "The Victoria",
+    "city": "Londres",
+    "region": "Londres",
+    "price": "Check website",
+    "link": "https://eventslist.co.uk/london/events/winona riders-the-victoria-2027-03-01",
+    "description": "Concierto de la banda de rock psicodélico argentina Winona Riders en su gira por el Reino Unido.",
+    "category": "Música",
     "source": "Events List"
   },
   {
