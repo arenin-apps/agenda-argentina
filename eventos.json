@@ -3306,6 +3306,21 @@
     "source": "Events List"
   },
   {
+    "title": "Tango Absolute Beginner Class",
+    "type": "unico",
+    "date": "2026-11-14",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 14 DE NOVIEMBRE 2026 - 13:00",
+    "venue": "Ritmo Latino Dance Studio",
+    "city": "London",
+    "region": "Greater London",
+    "price": "£22",
+    "link": "https://eventslist.co.uk/london/events/tango-absolute-beginner-class-2026-11-14-london",
+    "description": "Clase de tango argentino para principiantes absolutos en Londres.",
+    "category": "Workshops",
+    "source": "Events List"
+  },
+  {
     "title": "The Swan, the Werewolf and Gianpiero",
     "type": "unico",
     "date": "2026-11-15",
@@ -3587,5 +3602,20 @@
     "description": "Espectáculo centrado en la estética y la música del tango argentino.",
     "category": "Teatro",
     "source": "Events List"
+  },
+  {
+    "title": "Los Pibes Chorros y Jarfaiter en Londres 2027",
+    "type": "unico",
+    "date": "2027-05-09",
+    "endDate": null,
+    "dateLabel": "DOMINGO, 9 DE MAYO 2027 - 19:00",
+    "venue": "Consultar venue",
+    "city": "London",
+    "region": "Greater London",
+    "price": "£29.70",
+    "link": "https://sergius.uk/event/los-pibes-chorros-y-jarfaiter-en-londres-2027/",
+    "description": "El icónico grupo argentino de cumbia villera Los Pibes Chorros regresa a Londres para presentarse en vivo dentro de su gira en el Reino Unido.",
+    "category": "Música",
+    "source": "SRG (sergius.uk)"
   }
 ]
