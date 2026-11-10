@@ -3147,6 +3147,21 @@
     "source": "Events List"
   },
   {
+    "title": "A Dark Tango Comedy Play \"The Swan, the Werewolf and Gianpiero\"",
+    "type": "unico",
+    "date": "2026-11-10",
+    "endDate": null,
+    "dateLabel": "PRÓXIMAMENTE",
+    "venue": "Reino Unido",
+    "city": "Londres",
+    "region": "Gran Londres",
+    "price": "Consultar web",
+    "link": "https://www.latinolife.co.uk/event/dark-tango-comedy-play-swan-werewolf-and-gianpiero",
+    "description": "Obra de teatro que combina la comedia oscura con el tango argentino, ambientada en la ruptura de dos bailarines.",
+    "category": "Teatro",
+    "source": "Latino Life"
+  },
+  {
     "title": "World of Wine Tasting: Argentina",
     "type": "unico",
     "date": "2026-11-11",
@@ -3632,5 +3647,20 @@
     "description": "El icónico grupo argentino de cumbia villera Los Pibes Chorros regresa a Londres para presentarse en vivo dentro de su gira en el Reino Unido.",
     "category": "Música",
     "source": "SRG (sergius.uk)"
+  },
+  {
+    "title": "Los Pibes Chorros @ The Garage",
+    "type": "unico",
+    "date": "2027-05-09",
+    "endDate": null,
+    "dateLabel": "DOMINGO, 9 DE MAYO 2027 - 19:00",
+    "venue": "The Garage",
+    "city": "London",
+    "region": "London",
+    "price": "Consultar web",
+    "link": "https://eventslist.co.uk/london/events/los-pibes-chorros-the-garage-2027-05-09",
+    "description": "Concierto de la reconocida banda argentina de cumbia villera Los Pibes Chorros en Londres.",
+    "category": "Música",
+    "source": "Events List"
   }
 ]
