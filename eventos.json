@@ -1235,7 +1235,7 @@
     "title": "Clases de Teatro en español en Londres",
     "type": "temporada",
     "date": "2026-09-26",
-    "endDate": null,
+    "endDate": "2027-05-13",
     "dateLabel": "Clases regulares con Hernán Cáceres",
     "venue": "Londres",
     "city": "Londres",
@@ -3295,6 +3295,21 @@
     "source": "Events List"
   },
   {
+    "title": "Argentina v England rugby Nations Championship 2026",
+    "type": "unico",
+    "date": "2026-11-13",
+    "endDate": null,
+    "dateLabel": "PRÓXIMAMENTE - NOVIEMBRE 2026",
+    "venue": "Televisión / Streaming UK",
+    "city": "Reino Unido",
+    "region": "Reino Unido",
+    "price": "Consultar operador",
+    "link": "https://www.radiotimes.com/tv/sport/rugby-union/argentina-england-rugby-nations-championship-2026-preview/",
+    "description": "Partido de rugby de la selección argentina (Los Pumas) contra Inglaterra en la Nations Championship 2026, con transmisión en vivo en el Reino Unido.",
+    "category": "TV y Streaming",
+    "source": "Radio Times - TV Guide"
+  },
+  {
     "title": "Italy vs Argentina",
     "date": "2026-11-14",
     "dateLabel": "SÁBADO, 14 DE NOVIEMBRE 2026 - 12:40",
@@ -3426,6 +3441,36 @@
     "source": "Argentine Embassy in the UK"
   },
   {
+    "title": "Tango Classes and Dancing near Oxford street & Baker street",
+    "type": "unico",
+    "date": "2026-11-19",
+    "endDate": null,
+    "dateLabel": "JUEVES, 19 DE NOVIEMBRE 2026 - 19:30",
+    "venue": "La Divina",
+    "city": "Londres",
+    "region": "Greater London",
+    "price": "£20",
+    "link": "https://eventslist.co.uk/london/events/tango-classes-and-dancing-near-oxford-street-baker-street-2026-19-london",
+    "description": "Clases y baile de tango argentino cerca de Oxford Street y Baker Street.",
+    "category": "Workshops",
+    "source": "Events List"
+  },
+  {
+    "title": "Enjoy Argentine Tango classes & practica with Luis & Elizabeth",
+    "type": "unico",
+    "date": "2026-11-20",
+    "endDate": null,
+    "dateLabel": "VIERNES, 20 DE NOVIEMBRE 2026 - 18:30",
+    "venue": "St Mary's Church",
+    "city": "Warwick",
+    "region": "Warwickshire",
+    "price": "Check website",
+    "link": "https://eventslist.co.uk/warwick/events/enjoy-argentine-tango-classes-practica-with-luis-elizabeth-2026-11-20-warwick",
+    "description": "Clases y práctica de tango argentino impartidas por Luis y Elizabeth.",
+    "category": "Workshops",
+    "source": "Events List"
+  },
+  {
     "title": "France vs Argentina",
     "date": "2026-11-21",
     "dateLabel": "SÁBADO, 21 DE NOVIEMBRE 2026 - 21:10",
@@ -3482,6 +3527,21 @@
     "description": "Exposición de obras de técnica mixta de Deborah Essés sobre la tensión entre el amor y el odio, del 25 al 29 de noviembre, todos los días de 18:00 a 20:00. Incluida en el boletín cultural de la Embajada Argentina en el Reino Unido.",
     "category": "Artes Plásticas",
     "source": "Argentine Embassy in the UK"
+  },
+  {
+    "title": "Argentine Tango Class & Social",
+    "type": "unico",
+    "date": "2026-11-25",
+    "endDate": null,
+    "dateLabel": "MIÉRCOLES, 25 DE NOVIEMBRE 2026 - 19:00",
+    "venue": "Stirchley United Working Mens Club",
+    "city": "Birmingham",
+    "region": "West Midlands",
+    "price": "Free – £5",
+    "link": "https://eventslist.co.uk/birmingham/events/argentine-tango-class-social-2026-11-25",
+    "description": "Clase de tango argentino y evento social.",
+    "category": "Workshops",
+    "source": "Events List"
   },
   {
     "title": "LUJURIA",
