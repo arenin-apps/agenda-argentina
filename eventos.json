@@ -3381,6 +3381,36 @@
     "source": "Argentine Embassy in the UK"
   },
   {
+    "title": "GERMAN CORNEJO’S TANGO AFTER DARK",
+    "type": "temporada",
+    "date": "2026-11-15",
+    "endDate": null,
+    "dateLabel": "Espectáculo de tango argentino",
+    "venue": "Reino Unido",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar",
+    "link": "https://www.latinolife.co.uk/event/german-cornejos-tango-after-dark",
+    "description": "Espectáculo de tango creado y protagonizado por el artista argentino Germán Cornejo, que transporta al público al mundo de la vida nocturna de Buenos Aires.",
+    "category": "Teatro",
+    "source": "Latino Life"
+  },
+  {
+    "title": "A Dark Tango Comedy Play \"The Swan, the Werewolf and Gianpiero\"",
+    "type": "unico",
+    "date": "2026-11-15",
+    "endDate": null,
+    "dateLabel": "Consultar fecha exacta en la web",
+    "venue": "Reino Unido",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar",
+    "link": "https://www.latinolife.co.uk/event/dark-tango-comedy-play-swan-werewolf-and-gianpiero",
+    "description": "Obra de teatro de comedia oscura que fusiona elementos del tango argentino con una trama humorística y teatral.",
+    "category": "Teatro",
+    "source": "Latino Life"
+  },
+  {
     "title": "Autumn Internationals: Scotland v Argentina",
     "type": "unico",
     "date": "2026-11-16",
@@ -3572,6 +3602,21 @@
     "description": "Práctica libre de tango argentino en Notting Hill, apta para todos los niveles y sin necesidad de pareja.",
     "category": "Workshops",
     "source": "Events List"
+  },
+  {
+    "title": "La Bola Negra + Los Javis Q&A",
+    "type": "unico",
+    "date": "2026-11-27",
+    "endDate": null,
+    "dateLabel": "VIERNES, 27 DE NOVIEMBRE 2026",
+    "venue": "Picturehouse",
+    "city": "Reino Unido",
+    "region": "Reino Unido",
+    "price": "Consultar web",
+    "link": "https://www.picturehouses.com/whats-on",
+    "description": "Proyección de la película La Bola Negra con sesión de preguntas y respuestas (Q&A) junto a Los Javis (Javier Calvo y Javier Ambrossi), directores españoles con amplia difusión y relevancia cultural en el circuito de cine hispanohablante, incluyendo Argentina.",
+    "category": "Cine",
+    "source": "Picture House"
   },
   {
     "title": "LUJURIA",
