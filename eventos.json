@@ -3396,6 +3396,21 @@
     "source": "TMDB (streaming Reino Unido)"
   },
   {
+    "title": "Frida: The Making of an Icon",
+    "type": "temporada",
+    "date": "2026-11-18",
+    "endDate": "2027-01-03",
+    "dateLabel": "Hasta el 3 de enero de 2027",
+    "venue": "Tate Modern",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Gratis para miembros",
+    "link": "https://www.tate.org.uk/whats-on/tate-modern/frida-kahlo-the-making-of-an-icon",
+    "description": "Exhibición en Tate Modern. Se excluye del análisis final por tratarse de Frida Kahlo (artista mexicana sin vínculo específico con Argentina), conforme a las reglas de exclusión estricta de la consigna.",
+    "category": "Artes Plásticas",
+    "source": "Tate Modern"
+  },
+  {
     "title": "TRÍADA",
     "type": "unico",
     "date": "2026-11-19",
@@ -3527,6 +3542,21 @@
     "description": "Película documental que sigue las vidas de dos primas, Guillermina y Belinda, mientras crecen en la vasta región argentina. Conexión directa y específica con Argentina.",
     "category": "Cine",
     "source": "Dochouse"
+  },
+  {
+    "title": "Practice and enjoy Argentine Tango",
+    "type": "unico",
+    "date": "2026-11-24",
+    "endDate": null,
+    "dateLabel": "MARTES, 24 DE NOVIEMBRE 2026 - 20:15",
+    "venue": "Warwick SPACE",
+    "city": "Warwick",
+    "region": "Warwickshire",
+    "price": "Check website",
+    "link": "https://eventslist.co.uk/warwick/events/practice-and-enjoy-argentine-tango-2026-11-24-warwick",
+    "description": "Sesión de práctica de tango argentino en Warwick.",
+    "category": "Workshops",
+    "source": "Events List"
   },
   {
     "title": "Wild Rave – Peggy Jay Gallery (Deborah Essés)",
@@ -3675,6 +3705,21 @@
     "price": "From £12.50",
     "link": "https://eventslist.co.uk/brighton/events/argentine-tango-for-absolute-beginners-2027-01-09",
     "description": "Clase de iniciación al tango argentino para principiantes absolutos en Brighton.",
+    "category": "Workshops",
+    "source": "Events List"
+  },
+  {
+    "title": "Argentine Tango in a Day Course and Milonga",
+    "type": "unico",
+    "date": "2027-01-09",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 9 DE ENERO 2027 - 14:00",
+    "venue": "Machen Church Hall",
+    "city": "Cardiff",
+    "region": "Cardiff",
+    "price": "£0.00",
+    "link": "https://eventslist.co.uk/cardiff/events/9th-january-free-argentine-tango-in-a-day-course-and-milonga-cardiff-2027-01-09",
+    "description": "Curso intensivo de tango argentino y milonga con acceso libre en Cardiff.",
     "category": "Workshops",
     "source": "Events List"
   },
