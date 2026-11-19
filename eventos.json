@@ -3619,6 +3619,21 @@
     "source": "Events List"
   },
   {
+    "title": "Tasting with Tim: Argentina Uncorked",
+    "type": "unico",
+    "date": "2026-11-28",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 28 DE NOVIEMBRE 2026 - 19:30",
+    "venue": "The Jericho Wine Rooms",
+    "city": "Oxford",
+    "region": "Reino Unido",
+    "price": "£25",
+    "link": "https://eventslist.co.uk/oxford/events/tasting-with-tim-argentina-uncorked-2026-11-28",
+    "description": "Cata de vinos dedicada exclusivamente a etiquetas y bodegas de Argentina.",
+    "category": "Comunidad",
+    "source": "Events List"
+  },
+  {
     "title": "The Anglo-Argentine Society Christmas Recital & Party 2026",
     "type": "unico",
     "date": "2026-12-03",
@@ -3676,6 +3691,21 @@
     "link": "https://eventslist.co.uk/london/events/argentina-with-chef-rulo-2026-12-05-london",
     "description": "Experiencia gastronómica temática de Argentina a cargo del Chef Rulo.",
     "category": "Comunidad",
+    "source": "Events List"
+  },
+  {
+    "title": "The Romano Viazzani Ensemble: London Tango at Christmas",
+    "type": "unico",
+    "date": "2026-12-19",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 19 DE DICIEMBRE 2026 - 19:00",
+    "venue": "St James's Church",
+    "city": "London",
+    "region": "Reino Unido",
+    "price": "Check website",
+    "link": "https://eventslist.co.uk/london/events/the-romano-viazzani-ensemble-london-tango-at-christmas",
+    "description": "Concierto navideño de tango tradicional argentino a cargo del Romano Viazzani Ensemble.",
+    "category": "Música",
     "source": "Events List"
   },
   {
