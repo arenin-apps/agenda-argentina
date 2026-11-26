@@ -3709,6 +3709,21 @@
     "source": "Events List"
   },
   {
+    "title": "After Dark: Samba Café – Chineke! Orchestra",
+    "type": "unico",
+    "date": "2026-11-27",
+    "endDate": null,
+    "dateLabel": "VIERNES, 27 DE NOVIEMBRE 2026 - 21:30",
+    "venue": "Queen Elizabeth Hall",
+    "city": "Londres",
+    "region": "Inglaterra",
+    "price": "Consultar web",
+    "link": "https://www.southbankcentre.co.uk/whats-on/after-dark-samba-cafe-chineke-orchestra/",
+    "description": "Concierto de música de cámara latinoamericana que incluye obras del célebre compositor argentino Astor Piazzolla ('Nightclub 1960' y 'Café 1930' de L'histoire du tango), interpretado por miembros de la Chineke! Orchestra junto al guitarrista Plínio Fernandes.",
+    "category": "Música",
+    "source": "Southbank Centre"
+  },
+  {
     "title": "LUJURIA",
     "type": "unico",
     "date": "2026-11-28",
@@ -3752,6 +3767,21 @@
     "description": "Partido de rugby en vivo de la selección argentina (Los Pumas) contra Escocia en el marco del Finals Weekend del Nations Championship en el Reino Unido.",
     "category": "Deportes",
     "source": "Nations Championship Rugby"
+  },
+  {
+    "title": "Practice and enjoy Argentine Tango",
+    "type": "unico",
+    "date": "2026-12-01",
+    "endDate": null,
+    "dateLabel": "MARTES, 1 DE DICIEMBRE 2026 - 20:15",
+    "venue": "Warwick SPACE",
+    "city": "Warwick",
+    "region": "Warwickshire",
+    "price": "Check website",
+    "link": "https://eventslist.co.uk/warwick/events/practice-and-enjoy-argentine-tango-2026-12-01-warwick",
+    "description": "Sesión de práctica enfocada en el tango argentino.",
+    "category": "Workshops",
+    "source": "Events List"
   },
   {
     "title": "The Anglo-Argentine Society Christmas Recital & Party 2026",
@@ -3814,6 +3844,36 @@
     "source": "Events List"
   },
   {
+    "title": "Matéando: Meet New People Over Argentine Yerba Mate",
+    "type": "unico",
+    "date": "2026-12-05",
+    "endDate": null,
+    "dateLabel": "SÁBADO, 5 DE DICIEMBRE 2026 - 16:00",
+    "venue": "Check website",
+    "city": "Exeter",
+    "region": "Devon",
+    "price": "Check website",
+    "link": "https://eventslist.co.uk/exeter/events/mateando-meet-new-people-over-argentine-yerba-mate-2026-12-05",
+    "description": "Encuentro social comunitario centrado en compartir el tradicional mate argentino.",
+    "category": "Comunidad",
+    "source": "Events List"
+  },
+  {
+    "title": "Argentine Tango Class & Social",
+    "type": "unico",
+    "date": "2026-12-09",
+    "endDate": null,
+    "dateLabel": "MIÉRCOLES, 9 DE DICIEMBRE 2026 - 19:00",
+    "venue": "Stirchley United Working Mens Club",
+    "city": "Birmingham",
+    "region": "West Midlands",
+    "price": "Free – £5",
+    "link": "https://eventslist.co.uk/birmingham/events/argentine-tango-class-social-2026-12-09",
+    "description": "Clase de tango argentino y evento social bailable.",
+    "category": "Workshops",
+    "source": "Events List"
+  },
+  {
     "title": "The Romano Viazzani Ensemble: London Tango at Christmas",
     "type": "unico",
     "date": "2026-12-19",
@@ -3870,6 +3930,21 @@
     "price": "£0.00",
     "link": "https://eventslist.co.uk/cardiff/events/9th-january-free-argentine-tango-in-a-day-course-and-milonga-cardiff-2027-01-09",
     "description": "Curso intensivo de tango argentino y milonga con acceso libre en Cardiff.",
+    "category": "Workshops",
+    "source": "Events List"
+  },
+  {
+    "title": "Argentine Tango Course in Burnham | Block 1",
+    "type": "unico",
+    "date": "2027-01-11",
+    "endDate": null,
+    "dateLabel": "LUNES, 11 DE ENERO 2027 - 19:00",
+    "venue": "Learn to Dance",
+    "city": "High Wycombe",
+    "region": "Buckinghamshire",
+    "price": "£60.29",
+    "link": "https://eventslist.co.uk/high-wycombe/events/argentine-tango-course-in-burnham-block-1-foundations-technique-2027-01-11",
+    "description": "Curso de fundamentos y técnica de tango argentino.",
     "category": "Workshops",
     "source": "Events List"
   },
